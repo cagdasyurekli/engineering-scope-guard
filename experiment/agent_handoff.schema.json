@@ -1,0 +1,831 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cagdasyurekli/engineering-scope-guard/blob/main/experiment/agent_handoff.schema.json",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_actions": {
+      "items": {
+        "$ref": "#/$defs/action_kind"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "current_decision": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "maxLength": 240,
+          "minLength": 1,
+          "type": "string"
+        },
+        "evidence_commit": {
+          "oneOf": [
+            {
+              "pattern": "^[0-9a-f]{40}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_commit_semantics": {
+          "enum": [
+            "authoritative_evidence_commit",
+            "omitted_to_avoid_self_reference"
+          ]
+        },
+        "goal": {
+          "maxLength": 120,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "goal",
+        "decision",
+        "evidence_commit"
+      ],
+      "type": "object"
+    },
+    "evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string"
+          },
+          "role": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "role",
+          "sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 12,
+      "minItems": 1,
+      "type": "array"
+    },
+    "experimental_state": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/legacy_experimental_state"
+        },
+        {
+          "$ref": "#/$defs/reasoning_effort_experimental_state"
+        }
+      ]
+    },
+    "forbidden_actions": {
+      "items": {
+        "enum": [
+          "run_final_live_canary",
+          "run_pilot_v2",
+          "run_pilot_v3",
+          "run_exploratory_experiment",
+          "select_or_freeze_exploratory_tasks",
+          "run_confirmatory_experiment",
+          "freeze_pilot_v2_before_canary_success",
+          "automatic_repair_and_rerun_after_material_canary_defect",
+          "change_experimental_treatment",
+          "expose_held_out_task_bodies",
+          "increase_retry_budgets",
+          "reset_or_relabel_experimental_evidence"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "git": {
+      "additionalProperties": false,
+      "properties": {
+        "base_branch": {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        "branch": {
+          "oneOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "head_sha": {
+          "oneOf": [
+            {
+              "pattern": "^[0-9a-f]{40}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "head_sha_semantics": {
+          "enum": [
+            "authoritative_evidence_commit",
+            "omitted_to_avoid_self_reference"
+          ]
+        },
+        "pr_number": {
+          "oneOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pr_url": {
+          "oneOf": [
+            {
+              "format": "uri",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "base_branch",
+        "head_sha",
+        "head_sha_semantics",
+        "branch",
+        "pr_number",
+        "pr_url"
+      ],
+      "type": "object"
+    },
+    "goal": {
+      "additionalProperties": false,
+      "properties": {
+        "completed_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "decision": {
+          "maxLength": 240,
+          "minLength": 1,
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 120,
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "blocked",
+            "abandoned"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "status",
+        "decision",
+        "completed_at"
+      ],
+      "type": "object"
+    },
+    "next_action": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization": {
+          "enum": [
+            "explicit_current_request",
+            "standing_user_authorization",
+            "not_authorized"
+          ]
+        },
+        "kind": {
+          "$ref": "#/$defs/action_kind"
+        },
+        "reason": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "requires_explicit_user_authorization": {
+          "type": "boolean"
+        },
+        "safe_without_explicit_authorization": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "requires_explicit_user_authorization",
+        "authorization",
+        "safe_without_explicit_authorization",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "notes": {
+      "items": {
+        "maxLength": 500,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 10,
+      "type": "array"
+    },
+    "repository": {
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "properties": {
+        "ci_required": {
+          "type": "boolean"
+        },
+        "ci_status": {
+          "$ref": "#/$defs/check_state"
+        },
+        "codeql_required": {
+          "type": "boolean"
+        },
+        "codeql_status": {
+          "$ref": "#/$defs/check_state"
+        },
+        "tests_passed": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/count"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tests_passed",
+        "ci_required",
+        "ci_status",
+        "codeql_required",
+        "codeql_status"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "repository",
+    "goal",
+    "current_decision",
+    "git",
+    "verification",
+    "experimental_state",
+    "next_action",
+    "allowed_actions",
+    "forbidden_actions",
+    "evidence",
+    "notes"
+  ],
+  "title": "Engineering Scope Guard Agent Handoff",
+  "type": "object",
+  "$defs": {
+    "action_kind": {
+      "enum": [
+        "none",
+        "review",
+        "persist_and_merge",
+        "inspect_pr",
+        "merge_if_green",
+        "prepare_next_goal",
+        "request_authorization",
+        "run_authorized_goal"
+      ]
+    },
+    "check_state": {
+      "enum": [
+        "passed",
+        "failed",
+        "not_required",
+        "pending_pr",
+        "derive_from_pr",
+        "derive_from_branch"
+      ]
+    },
+    "count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "artifact_reference": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 200,
+          "minLength": 1,
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "legacy_experimental_state": {
+      "additionalProperties": false,
+      "properties": {
+        "live_canary_executed": {
+          "type": "boolean"
+        },
+        "pilot_v2_evaluator_calls": {
+          "$ref": "#/$defs/count"
+        },
+        "pilot_v2_subject_calls": {
+          "$ref": "#/$defs/count"
+        },
+        "policy_comparisons": {
+          "$ref": "#/$defs/count"
+        },
+        "valid_observations": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [
+        "live_canary_executed",
+        "pilot_v2_subject_calls",
+        "pilot_v2_evaluator_calls",
+        "policy_comparisons",
+        "valid_observations"
+      ],
+      "type": "object"
+    },
+    "reasoning_effort_experimental_state": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "terminal": {
+                "properties": {
+                  "path": {
+                    "const": "insufficient_population"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/reasoning_effort_insufficient_terminal"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "terminal": {
+                "properties": {
+                  "path": {
+                    "const": "pre_subject_integrity_stop"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/reasoning_effort_pre_subject_terminal"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "terminal": {
+                "properties": {
+                  "path": {
+                    "const": "experiment_terminal"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/reasoning_effort_experiment_terminal"
+          }
+        }
+      ],
+      "properties": {
+        "boundaries": {
+          "additionalProperties": false,
+          "properties": {
+            "next_authority_boundary": {
+              "const": "authorize_private_canonical_branch_push"
+            },
+            "publication_authorized": {
+              "const": false
+            },
+            "raw_private_material_tracked": {
+              "const": false
+            },
+            "repository_private": {
+              "const": true
+            },
+            "visibility_change_authorized": {
+              "const": false
+            }
+          },
+          "required": [
+            "raw_private_material_tracked",
+            "repository_private",
+            "publication_authorized",
+            "visibility_change_authorized",
+            "next_authority_boundary"
+          ],
+          "type": "object"
+        },
+        "execution": {
+          "$ref": "#/$defs/reasoning_effort_execution"
+        },
+        "public_artifacts": {
+          "$ref": "#/$defs/reasoning_effort_public_artifacts"
+        },
+        "qualification": {
+          "$ref": "#/$defs/reasoning_effort_qualification"
+        },
+        "schema_version": {
+          "const": "evaluator-stable-reasoning-effort-v1"
+        },
+        "terminal": {
+          "$ref": "#/$defs/reasoning_effort_terminal"
+        }
+      },
+      "required": [
+        "schema_version",
+        "qualification",
+        "execution",
+        "terminal",
+        "public_artifacts",
+        "boundaries"
+      ],
+      "type": "object"
+    },
+    "reasoning_effort_qualification": {
+      "additionalProperties": false,
+      "properties": {
+        "attempted_candidates": {
+          "$ref": "#/$defs/count"
+        },
+        "gold_failures": {
+          "$ref": "#/$defs/count"
+        },
+        "infrastructure_failures": {
+          "$ref": "#/$defs/count"
+        },
+        "minimum_gate_passed": {
+          "type": "boolean"
+        },
+        "qualified_independent_clusters": {
+          "$ref": "#/$defs/count"
+        },
+        "validation_failures": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [
+        "attempted_candidates",
+        "validation_failures",
+        "gold_failures",
+        "infrastructure_failures",
+        "qualified_independent_clusters",
+        "minimum_gate_passed"
+      ],
+      "type": "object"
+    },
+    "reasoning_effort_execution": {
+      "additionalProperties": false,
+      "properties": {
+        "admissible_cells": {
+          "$ref": "#/$defs/count"
+        },
+        "alternates_activated": {
+          "$ref": "#/$defs/count"
+        },
+        "canary_subject_invocation_starts": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "completed_cells": {
+          "$ref": "#/$defs/count"
+        },
+        "evaluator_invocation_starts": {
+          "$ref": "#/$defs/count"
+        },
+        "experiment_started": {
+          "type": "boolean"
+        },
+        "experiment_subject_invocation_starts": {
+          "maximum": 56,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "missing_cells": {
+          "$ref": "#/$defs/count"
+        },
+        "schedule_cells": {
+          "$ref": "#/$defs/count"
+        },
+        "stage_1_status": {
+          "enum": [
+            "not_applicable",
+            "not_reached",
+            "passed",
+            "failed"
+          ]
+        },
+        "total_subject_invocation_starts": {
+          "maximum": 56,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "experiment_started",
+        "canary_subject_invocation_starts",
+        "experiment_subject_invocation_starts",
+        "total_subject_invocation_starts",
+        "evaluator_invocation_starts",
+        "schedule_cells",
+        "completed_cells",
+        "admissible_cells",
+        "missing_cells",
+        "alternates_activated",
+        "stage_1_status"
+      ],
+      "type": "object"
+    },
+    "reasoning_effort_terminal": {
+      "additionalProperties": false,
+      "properties": {
+        "disposition": {
+          "enum": [
+            "TASK/EVALUATOR POPULATION STILL INSUFFICIENT — LIVE EXPERIMENT NOT STARTED",
+            "LOW FAVORED",
+            "MEDIUM FAVORED",
+            "WORK DIFFERENCE WITHOUT ACCEPTANCE EVIDENCE",
+            "NO MATERIAL EXPLORATORY DIFFERENCE DETECTED",
+            "INCONCLUSIVE",
+            "EXPERIMENT INVALID / TERMINATED"
+          ]
+        },
+        "esg_rr_002_candidate_decision": {
+          "enum": [
+            "not_applicable",
+            "not_justified",
+            "candidate_justified"
+          ]
+        },
+        "path": {
+          "enum": [
+            "insufficient_population",
+            "pre_subject_integrity_stop",
+            "experiment_terminal"
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "disposition",
+        "esg_rr_002_candidate_decision"
+      ],
+      "type": "object"
+    },
+    "reasoning_effort_public_artifacts": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/artifact_reference"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contract": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/artifact_reference"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "qualification_summary": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "terminal_envelope": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/artifact_reference"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "terminal_report": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "terminal_result": {
+          "$ref": "#/$defs/artifact_reference"
+        }
+      },
+      "required": [
+        "qualification_summary",
+        "terminal_result",
+        "terminal_report",
+        "contract",
+        "terminal_envelope",
+        "analysis"
+      ],
+      "type": "object"
+    },
+    "reasoning_effort_zero_execution": {
+      "properties": {
+        "execution": {
+          "properties": {
+            "admissible_cells": {
+              "const": 0
+            },
+            "alternates_activated": {
+              "const": 0
+            },
+            "canary_subject_invocation_starts": {
+              "const": 0
+            },
+            "completed_cells": {
+              "const": 0
+            },
+            "evaluator_invocation_starts": {
+              "const": 0
+            },
+            "experiment_started": {
+              "const": false
+            },
+            "experiment_subject_invocation_starts": {
+              "const": 0
+            },
+            "missing_cells": {
+              "const": 0
+            },
+            "schedule_cells": {
+              "const": 0
+            },
+            "stage_1_status": {
+              "const": "not_applicable"
+            },
+            "total_subject_invocation_starts": {
+              "const": 0
+            }
+          }
+        }
+      }
+    },
+    "reasoning_effort_common_only_artifacts": {
+      "properties": {
+        "public_artifacts": {
+          "properties": {
+            "analysis": {
+              "type": "null"
+            },
+            "contract": {
+              "type": "null"
+            },
+            "terminal_envelope": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    },
+    "reasoning_effort_insufficient_terminal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/reasoning_effort_zero_execution"
+        },
+        {
+          "$ref": "#/$defs/reasoning_effort_common_only_artifacts"
+        }
+      ],
+      "properties": {
+        "qualification": {
+          "properties": {
+            "minimum_gate_passed": {
+              "const": false
+            }
+          }
+        },
+        "terminal": {
+          "properties": {
+            "disposition": {
+              "const": "TASK/EVALUATOR POPULATION STILL INSUFFICIENT — LIVE EXPERIMENT NOT STARTED"
+            },
+            "esg_rr_002_candidate_decision": {
+              "const": "not_applicable"
+            }
+          }
+        }
+      }
+    },
+    "reasoning_effort_pre_subject_terminal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/reasoning_effort_zero_execution"
+        },
+        {
+          "$ref": "#/$defs/reasoning_effort_common_only_artifacts"
+        }
+      ],
+      "properties": {
+        "qualification": {
+          "properties": {
+            "minimum_gate_passed": {
+              "const": true
+            }
+          }
+        },
+        "terminal": {
+          "properties": {
+            "disposition": {
+              "const": "EXPERIMENT INVALID / TERMINATED"
+            },
+            "esg_rr_002_candidate_decision": {
+              "const": "not_applicable"
+            }
+          }
+        }
+      }
+    },
+    "reasoning_effort_experiment_terminal": {
+      "properties": {
+        "public_artifacts": {
+          "properties": {
+            "analysis": {
+              "$ref": "#/$defs/artifact_reference"
+            },
+            "contract": {
+              "$ref": "#/$defs/artifact_reference"
+            },
+            "terminal_envelope": {
+              "$ref": "#/$defs/artifact_reference"
+            }
+          }
+        },
+        "qualification": {
+          "properties": {
+            "minimum_gate_passed": {
+              "const": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

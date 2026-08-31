@@ -1,0 +1,159 @@
+{
+  "schema_name": "engineering-scope-guard.pilot-readiness",
+  "schema_version": 1,
+  "as_of": "2026-08-27",
+  "evidence_class": "readiness-only-no-pilot-runs",
+  "conclusion": "NO-GO",
+  "pilot_authorized": false,
+  "research_questions": {
+    "feasibility": [
+      "Can eligible opaque tasks be supplied and executed with complete acceptance, failure, isolation, and usage records?",
+      "Can deterministic quality gates and the corrective protocol run reproducibly within the fixed timeout?"
+    ],
+    "variance_and_measurement": [
+      "What between-task and within-task variation, arm discordance, timeout frequency, and missingness would a later confirmatory design need to accommodate?",
+      "Are task-level cost and token distributions measurable without conflating provider cache pricing with agent work?"
+    ],
+    "exploratory_policy_effect": [
+      "What is the task-level distribution of exploratory differences between default Codex and C-short v0.1 under identical subject configuration?"
+    ]
+  },
+  "arms": [
+    {
+      "id": "baseline",
+      "role": "default Codex behavior",
+      "policy_path": null,
+      "policy_sha256": null
+    },
+    {
+      "id": "short",
+      "role": "treatment",
+      "policy_path": "experiment/arms/short.txt",
+      "policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "policy_version": "C-short v0.1"
+    }
+  ],
+  "excluded_arms": [
+    {
+      "id": "full",
+      "policy_version": "D v0.1",
+      "reason": "negative development variant with no acceptance advantage over C-short v0.1 and no evidence-based Pilot question"
+    }
+  ],
+  "task_supply": {
+    "catalog_status": "absent",
+    "custodian_status": "unconfirmed",
+    "confirmed_distinct_eligible_tasks": 0,
+    "minimum_required_distinct_pilot_tasks": 12,
+    "minimum_required_opaque_inventory": 24,
+    "pilot_tasks_per_stratum": 3,
+    "strata": [
+      "over-build-prone",
+      "irreducible",
+      "seeded-guard-retention",
+      "seeded-shared-root-cause"
+    ],
+    "partition_seed": "engineering-scope-guard-pilot-v0.1-2026-08-27",
+    "partition_rule": "Within each frozen stratum, rank opaque IDs by SHA-256 of partition_seed, a NUL byte, and task ID; allocate the first three to Pilot and retain at least the next three unseen for confirmatory planning.",
+    "run_order_rule": "Rank task-and-repetition blocks by SHA-256 of partition_seed, a NUL byte, task ID, a NUL byte, and repetition ID; run both arms adjacently within each block and alternate baseline-first/short-first, with the starting arm selected by the low bit of SHA-256(partition_seed plus a NUL byte plus arm-order).",
+    "task_bodies_inspected": false,
+    "confirmatory_task_bodies_inspected": false
+  },
+  "run_budget": {
+    "status": "contingent-not-authorized",
+    "distinct_pilot_tasks": 12,
+    "arms": 2,
+    "repetitions_per_task_arm": 2,
+    "planned_agent_runs": 48,
+    "infrastructure_only_replacement_runs": 8,
+    "total_agent_run_ceiling": 56,
+    "maximum_turns_per_run": 2,
+    "maximum_corrective_rounds": 1,
+    "maximum_planned_agent_turns": 96
+  },
+  "subject_configuration": {
+    "status": "proposed-requires-preflight-receipt",
+    "codex_version": "0.150.1",
+    "model": "gpt-5.6-terra",
+    "provider_model_version": "unavailable",
+    "reasoning_effort": "medium",
+    "permissions": "automatic approval review with workspace-write sandbox",
+    "additional_writable_directories": [],
+    "network_required_by_tasks": false,
+    "mcp_servers": [],
+    "plugins": [],
+    "hooks": [],
+    "required_agent_tools": [
+      "repository shell/exec",
+      "repository file editing/apply-patch"
+    ],
+    "network_or_browser_tools": [],
+    "tool_allowlist_enforced_by_current_harness": false,
+    "user_config_loaded": false,
+    "user_rules_loaded": false,
+    "session_persistence": "fresh per cell; retained only if required for the single corrective round",
+    "timeout_seconds_per_turn": 900,
+    "timeout_seconds_per_run": 1800,
+    "corrective_feedback": "On initial hidden-check failure, return only predeclared failing check names once, identically across arms; retain the initial failure and stop after the second evaluation."
+  },
+  "reviewers": {
+    "confirmed_independent_experienced_reviewers": 0,
+    "llm_judge_equivalent_to_human_review": false,
+    "permitted_quality_evidence": "exact hidden checks, repository regression tests, existing lint/type/build checks, evaluator/config protection, seeded guard retention, and seeded shared-root-cause checks",
+    "prohibited_claims": [
+      "maintainability improved",
+      "code quality improved",
+      "quality preserved",
+      "non-inferior quality",
+      "proportional engineering established"
+    ]
+  },
+  "measurement": {
+    "primary_feasibility": [
+      "completion and classified failure",
+      "automated acceptance and arm discordance",
+      "acceptance ceiling and floor behavior",
+      "timeout frequency",
+      "isolation and harness failure",
+      "measurement completeness and missingness"
+    ],
+    "variance": [
+      "task-level cost and token distribution where available",
+      "between-task variance",
+      "within-task and seed variance",
+      "task-by-arm heterogeneity"
+    ],
+    "secondary_mechanisms": [
+      "turns",
+      "tool calls where reliably observable",
+      "failed-verification loops",
+      "post-verification edits",
+      "read and exploration activity",
+      "corrective-round use"
+    ],
+    "diagnostics_only": [
+      "LOC",
+      "files",
+      "dependencies",
+      "complexity"
+    ],
+    "unit_of_resampling": "distinct task",
+    "repeated_runs_independent_tasks": false
+  },
+  "version_and_retention": {
+    "policy_change_after_pilot_outcomes": "Creates a new exploratory policy version; retain old runs and never combine effect estimates across incompatible versions.",
+    "retain_all_attempts_failures_and_deviations": true,
+    "confirmatory_freeze_started": false
+  },
+  "gate_status": {
+    "interpretable_arm_design": "pass",
+    "adequate_task_supply": "fail",
+    "opaque_pilot_confirmatory_partition": "fail",
+    "local_process_envelope_isolation": "pass",
+    "live_subject_configuration_receipt": "fail",
+    "provider_cache_or_billing_interpretability": "fail",
+    "task_specific_quality_evaluators": "fail",
+    "reviewer_capacity_for_broad_quality_claims": "fail",
+    "realistic_run_budget": "contingent"
+  }
+}

@@ -1,0 +1,20 @@
+title = "Engineering Scope Guard Gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "The frozen Pilot-v3 authorization receipt stores a SHA-256 digest, not a credential."
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "line"
+regexes = ['''^\s*"confirmation_token_sha256": "[0-9a-f]{64}",?$''']
+paths = ['''(^|/)experiment/pilot_v3_qualification\.json$''']
+
+[[allowlists]]
+description = "Frozen host qualification stores exact Git commit revisions, not Sourcegraph tokens."
+targetRules = ["sourcegraph-access-token"]
+condition = "AND"
+regexTarget = "line"
+regexes = ['''^\s*"(dataset_revision|evaluator_revision|repolaunch_revision)": "[0-9a-f]{40}",?$''']
+paths = ['''(^|/)experiment/pilot_host_qualification\.json$''']

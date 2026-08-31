@@ -1,0 +1,95 @@
+{
+  "canary_invocations": 1,
+  "confirmatory_tasks_exposed": 0,
+  "contract_sha256": "0a887395bad0e482737a6335db50227e6cca0a134f02c55e47c8c6a3add8267d",
+  "decision": "CANARY PASSED \u2014 POOL FREEZE PERMITTED",
+  "durability": {
+    "evidence_file_sha256": "b2f7ef61551783538434de0f142b7c43a165c9852e10d5e929f0f8682ca32bd0",
+    "recovery": {
+      "action": "complete",
+      "completed_external_work_preserved": true,
+      "last_durable_stage": "ledger_committed",
+      "rerun_requires_predeclared_authority": false,
+      "same_attempt_resume": true
+    },
+    "terminal_stage": "ledger_committed"
+  },
+  "evidence_class": "non-Pilot infrastructure qualification only",
+  "ledger": {
+    "events": 4,
+    "file_sha256": "54926ba91c669d87630754135f9bea4c2773f393b968b6783138c06c9e16017a",
+    "final_event_sha256": "f79b1883adc9591fb75046e6b0687bb2faf348585ce199ba6230be6f6ae71597",
+    "terminal_action": "complete"
+  },
+  "pilot_v2_evaluator_calls": 0,
+  "pilot_v2_subject_calls": 0,
+  "policy_evidence": false,
+  "preflight": {
+    "canary_image_id": "sha256:2fdd0bcab5e6b8bc2bfb56e47554847695013d1e17e619fa954f3e8e7141b44f",
+    "codex_version": "codex-cli 0.150.1",
+    "credential_bridge": {
+      "credential_artifact": "auth.json",
+      "login_method": "chatgpt",
+      "source_permissions": "0600",
+      "storage": "file"
+    },
+    "dataset_files_sha256": {
+      "c-00000-of-00001.parquet": "30c0b8cb9e7140e05a4e539f20be0c325be597cbba4bf35e232355987ddddd0c",
+      "cpp-00000-of-00001.parquet": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+      "cs-00000-of-00001.parquet": "29ffe16d0b2cd802e753262b8b0d7fe3f2bb1b489396da238146e79f37937c1f",
+      "go-00000-of-00001.parquet": "76d2b5dff0f3fac8303d30fa85495539e487d25974ad7c21cd21a545cb4756e2",
+      "java-00000-of-00001.parquet": "00387685808c71d21ada175335304b1c118859453afadd58ea21a00b0d568ee8",
+      "js-00000-of-00001.parquet": "bc6ec49ffaf9db97840d55eba6954fae8f5fb0fb071cf49e187f36ffadd55a7a",
+      "rust-00000-of-00001.parquet": "02ac78e2c51a84eb174ac393bb07b77478f1f96cf260af18835a711dd8074ebc",
+      "ts-00000-of-00001.parquet": "7e23783e27230c9cfab1035690035c25523043d6af635bc78da3fd2010c32714"
+    },
+    "docker_environment": {
+      "configured_cpus": 6,
+      "configured_memory_mib": 16384,
+      "configured_swap_mib": 2048,
+      "engine_architecture": "linux/arm64",
+      "engine_reported_cpus": 6,
+      "engine_usable_memory_bytes": 16746352640,
+      "engine_version": "29.7.2",
+      "requested_platform": "linux/amd64"
+    },
+    "evaluator_interface": {
+      "prediction_mapping": "{instance_id: {model_patch: git diff}}",
+      "source_sha256": "dabb0be957547f8bb030c5e53ff60c70ac24cbdbaa011a377cd9242acbcdd703",
+      "structured_report": "<output>/<instance_id>/report.json",
+      "structured_results": "<output>/results.json"
+    },
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf"
+  },
+  "receipt": {
+    "admissible": true,
+    "evaluator_resolved": true,
+    "evaluator_rounds": 1,
+    "receipt_sha256": "b62916d3db5405b7b51e3949866773a7a70192e17d9ad3d8179dcb76903fe123",
+    "report_sha256": "f17f1d7f0f69deb37ad6d9476c0137318da0ce2b2297c721fe862c0b4c15ebc6",
+    "results_sha256": "69ec53b3dd1c5faeef24337f75bd497d2ef0b8de5763527a6ee4d38a040356ac",
+    "termination": "accepted_completed",
+    "usage": {
+      "cached_input_tokens": 311040,
+      "input_tokens": 341933,
+      "output_tokens": 4078,
+      "reasoning_output_tokens": 1382,
+      "total_tokens": 346011
+    },
+    "usage_complete": true
+  },
+  "schema_name": "engineering-scope-guard.pilot-v2-canary-qualification",
+  "schema_version": 1,
+  "status": "pass",
+  "task_identity": {
+    "created_at": "2026-04-12T05:58:06Z",
+    "docker_image": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1096",
+    "fail_to_pass_count": 1,
+    "instance_id": "BYVoid__OpenCC-1096",
+    "language": "cpp",
+    "pass_to_pass_count": 76,
+    "rank_commitment": "917f0d75890dccc101706c3bd93cd50ab814aab5464f700c7e2ed2a6aada370c",
+    "repo": "BYVoid/OpenCC"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_name": "engineering-scope-guard.development-experiment-evidence",
+  "schema_version": 1,
+  "date": "2026-08-27",
+  "interpretation": "exploratory development diagnostics only; not efficacy evidence",
+  "policy_version": "v0.1",
+  "harness_versions": {"wave_1": "v0.1", "wave_2": "v0.2"},
+  "planned_sessions": 24,
+  "infrastructure_replacements": 0,
+  "pre_provider_failed_invocations": 12,
+  "arms": {
+    "baseline": {
+      "runs": 8, "accepted": 8, "turns_completed": 8, "timeouts": 0,
+      "execution_failures": 0, "billing_status": "unavailable",
+      "usage": {"input_tokens": 863394, "cached_input_tokens": 729856, "output_tokens": 12141, "reasoning_output_tokens": 2010},
+      "wall_time_ms": 354047, "verification_commands": 19,
+      "failed_verification_commands": 13, "failed_verification_loops": 3,
+      "post_hoc_rework_paths": 2, "read_search_commands": 51,
+      "files_modified": 16, "loc_added": 229, "loc_deleted": 9,
+      "dependencies_added": 0, "dependencies_removed": 0
+    },
+    "short": {
+      "runs": 8, "accepted": 8, "turns_completed": 8, "timeouts": 0,
+      "execution_failures": 0, "billing_status": "unavailable",
+      "usage": {"input_tokens": 837252, "cached_input_tokens": 701696, "output_tokens": 10558, "reasoning_output_tokens": 2027},
+      "wall_time_ms": 322450, "verification_commands": 20,
+      "failed_verification_commands": 11, "failed_verification_loops": 1,
+      "post_hoc_rework_paths": 0, "read_search_commands": 50,
+      "files_modified": 13, "loc_added": 136, "loc_deleted": 5,
+      "dependencies_added": 0, "dependencies_removed": 0
+    },
+    "full": {
+      "runs": 8, "accepted": 8, "turns_completed": 8, "timeouts": 0,
+      "execution_failures": 0, "billing_status": "unavailable",
+      "usage": {"input_tokens": 873740, "cached_input_tokens": 738048, "output_tokens": 12818, "reasoning_output_tokens": 2541},
+      "wall_time_ms": 366329, "verification_commands": 19,
+      "failed_verification_commands": 12, "failed_verification_loops": 1,
+      "post_hoc_rework_paths": 1, "read_search_commands": 55,
+      "files_modified": 16, "loc_added": 207, "loc_deleted": 8,
+      "dependencies_added": 0, "dependencies_removed": 0
+    }
+  },
+  "full_minus_short": {
+    "accepted": 0, "input_tokens": 36488, "cached_input_tokens": 36352,
+    "output_tokens": 2260, "reasoning_output_tokens": 514,
+    "wall_time_ms": 43879, "read_search_commands": 5,
+    "files_modified": 3, "loc_added": 71
+  },
+  "decision": "no-go for full D v0.1 unchanged; propose C-short v0.1 and harness v0.2 for a separate Pilot-design goal"
+}

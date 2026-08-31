@@ -1,0 +1,817 @@
+{
+  "bounded_disposition": {
+    "class": "candidate_retired",
+    "confirmatory_claim": false,
+    "equivalence_or_noninferiority_claim": false,
+    "exploratory_only": true,
+    "fired_gates": [
+      "no_accepted_outcome_mechanism",
+      "search_increase",
+      "cached_context_increase",
+      "wall_or_work_increase",
+      "structural_proxy_only"
+    ],
+    "monetary_savings_claim": false
+  },
+  "contract_sha256": "2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "corrective_search_context_activation_diagnostics": {
+    "cached_input_tokens": {
+      "baseline_task_mean": 1108659.2,
+      "difference_95_percentile_interval": {
+        "lower": -183577.6,
+        "upper": 568832.0
+      },
+      "tasks_decreased": 1,
+      "tasks_increased": 4,
+      "tasks_tied": 0,
+      "treatment_minus_baseline": 147353.6,
+      "treatment_task_mean": 1256012.8
+    },
+    "completed_web_searches": {
+      "baseline_task_mean": 0.4,
+      "difference_95_percentile_interval": {
+        "lower": 0.0,
+        "upper": 1.5
+      },
+      "tasks_decreased": 0,
+      "tasks_increased": 2,
+      "tasks_tied": 3,
+      "treatment_minus_baseline": 0.7,
+      "treatment_task_mean": 1.1
+    },
+    "corrective_rounds": {
+      "baseline_task_mean": 0.6,
+      "difference_95_percentile_interval": {
+        "lower": -0.3,
+        "upper": 0.0
+      },
+      "tasks_decreased": 1,
+      "tasks_increased": 0,
+      "tasks_tied": 4,
+      "treatment_minus_baseline": -0.1,
+      "treatment_task_mean": 0.5
+    },
+    "local_read_search_interactions": {
+      "baseline_task_mean": 23.9,
+      "difference_95_percentile_interval": {
+        "lower": -3.7,
+        "upper": 33.8
+      },
+      "tasks_decreased": 3,
+      "tasks_increased": 2,
+      "tasks_tied": 0,
+      "treatment_minus_baseline": 12.6,
+      "treatment_task_mean": 36.5
+    },
+    "pre_activation_treatment_exposure": false,
+    "treatment_cell_activation_evidence": [
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-01-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 3,
+        "pre_activation_command_executions": 27,
+        "pre_activation_local_read_search_interactions": 59
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-02-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 2,
+        "pre_activation_command_executions": 25,
+        "pre_activation_local_read_search_interactions": 82
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-03-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 24,
+        "pre_activation_local_read_search_interactions": 29
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-04-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 3,
+        "pre_activation_local_read_search_interactions": 4
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-05-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 6,
+        "pre_activation_local_read_search_interactions": 10
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-06-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 7,
+        "pre_activation_local_read_search_interactions": 11
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-07-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 7,
+        "pre_activation_local_read_search_interactions": 12
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-08-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 41,
+        "pre_activation_local_read_search_interactions": 40
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-09-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 14,
+        "pre_activation_local_read_search_interactions": 36
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-10-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 13,
+        "pre_activation_local_read_search_interactions": 29
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-11-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 0,
+        "pre_activation_command_executions": 13,
+        "pre_activation_local_read_search_interactions": 26
+      },
+      {
+        "activated": true,
+        "cell_id": "exploratory-block-12-treatment",
+        "mechanism_annotation": {
+          "apparent_pre_activation_behavioral_effect": false,
+          "broad_proof_of_minimality_search": false,
+          "c_short_equivalent_behavior": false,
+          "evidence_references": [],
+          "evidence_supported_optional_removal_or_simplification": false,
+          "necessary_correctness_suppression": false
+        },
+        "post_activation_command_executions": 1,
+        "post_activation_local_read_search_interactions": 1,
+        "pre_activation_command_executions": 4,
+        "pre_activation_local_read_search_interactions": 6
+      }
+    ],
+    "treatment_cells_with_activation": 12,
+    "treatment_cells_without_activation": 0
+  },
+  "discordance_and_replicated_patterns": {
+    "baseline_only": 0,
+    "baseline_only_task_clusters": 0,
+    "both_accepted": 4,
+    "both_negative": 5,
+    "treatment_only": 1,
+    "treatment_only_task_clusters": 1
+  },
+  "execution_completeness_and_missingness": {
+    "admissible_cells": 24,
+    "complete_task_clusters": 5,
+    "frozen_cells": 32,
+    "imputation_performed": false,
+    "incomplete_task_commitments": [
+      "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+      "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce"
+    ],
+    "missing_cell_ids": [
+      "exploratory-block-13-baseline",
+      "exploratory-block-13-treatment",
+      "exploratory-block-14-baseline",
+      "exploratory-block-14-treatment",
+      "exploratory-block-15-baseline",
+      "exploratory-block-15-treatment",
+      "exploratory-block-16-baseline",
+      "exploratory-block-16-treatment"
+    ],
+    "terminal_action": "batch_stopped"
+  },
+  "jointly_accepted_work_and_mechanism": {
+    "evidence_supported_removal_cells": [],
+    "matched_pairs": 4,
+    "metric_mean_treatment_minus_baseline": {
+      "cached_input_tokens": 469696.0,
+      "calculated_fresh_input_tokens": 13716.5,
+      "command_executions": 4.75,
+      "completed_web_searches": 0.0,
+      "corrective_rounds": 0.0,
+      "input_tokens": 483412.5,
+      "local_read_search_interactions": 10.75,
+      "output_tokens": 1477.25,
+      "reasoning_output_tokens": 647.25,
+      "subject_turns": 1.0,
+      "wall_seconds": 152.192768
+    },
+    "selection_warning": "conditioning on joint acceptance is descriptive mechanism evidence and does not replace unconditional intention-to-treat quality",
+    "task_clusters_with_matched_pairs": 2,
+    "trajectory_fields_with_mean_reduction": []
+  },
+  "reporting_order": [
+    "execution_completeness_and_missingness",
+    "unconditional_quality",
+    "discordance_and_replicated_patterns",
+    "unconditional_work",
+    "jointly_accepted_work_and_mechanism",
+    "corrective_search_context_activation_diagnostics",
+    "task_bootstrap_and_leave_one_task_out",
+    "retirement_gates",
+    "bounded_disposition"
+  ],
+  "retirement_gates": [
+    {
+      "fired": false,
+      "gate": "necessary_correctness_suppression"
+    },
+    {
+      "fired": false,
+      "gate": "adverse_acceptance"
+    },
+    {
+      "fired": true,
+      "gate": "no_accepted_outcome_mechanism"
+    },
+    {
+      "fired": false,
+      "gate": "corrective_round_increase"
+    },
+    {
+      "fired": true,
+      "gate": "search_increase"
+    },
+    {
+      "fired": true,
+      "gate": "cached_context_increase"
+    },
+    {
+      "fired": true,
+      "gate": "wall_or_work_increase"
+    },
+    {
+      "fired": true,
+      "gate": "structural_proxy_only"
+    },
+    {
+      "fired": false,
+      "gate": "pre_activation_effect"
+    },
+    {
+      "fired": false,
+      "gate": "c_short_equivalence"
+    },
+    {
+      "fired": false,
+      "gate": "broad_minimality_search"
+    }
+  ],
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-exploratory-analysis",
+  "schema_version": 1,
+  "structural_diagnostics_only": {
+    "dependency_delta": {
+      "reason": "the frozen durable receipt does not encode normalized manifest dependencies",
+      "status": "unavailable",
+      "treated_as_zero": false
+    },
+    "files_changed": {
+      "baseline_task_mean": 3.6,
+      "difference_95_percentile_interval": {
+        "lower": -1.3,
+        "upper": -0.1
+      },
+      "tasks_decreased": 3,
+      "tasks_increased": 0,
+      "tasks_tied": 2,
+      "treatment_minus_baseline": -0.6,
+      "treatment_task_mean": 3.0
+    },
+    "lines_added": {
+      "baseline_task_mean": 59.7,
+      "difference_95_percentile_interval": {
+        "lower": -6.8,
+        "upper": 8.9
+      },
+      "tasks_decreased": 3,
+      "tasks_increased": 2,
+      "tasks_tied": 0,
+      "treatment_minus_baseline": 0.0,
+      "treatment_task_mean": 59.7
+    },
+    "lines_deleted": {
+      "baseline_task_mean": 8.4,
+      "difference_95_percentile_interval": {
+        "lower": -3.6,
+        "upper": 2.0
+      },
+      "tasks_decreased": 2,
+      "tasks_increased": 1,
+      "tasks_tied": 2,
+      "treatment_minus_baseline": -0.6,
+      "treatment_task_mean": 7.8
+    }
+  },
+  "task_bootstrap_and_leave_one_task_out": {
+    "cluster_unit": "task/repository",
+    "leave_one_task_out": [
+      {
+        "acceptance_treatment_minus_baseline": 0.125,
+        "cached_input_tokens_treatment_minus_baseline": 273600.0,
+        "calculated_fresh_input_tokens_treatment_minus_baseline": 8002.75,
+        "command_executions_treatment_minus_baseline": 2.625,
+        "completed_web_searches_treatment_minus_baseline": 0.875,
+        "corrective_rounds_treatment_minus_baseline": -0.125,
+        "input_tokens_treatment_minus_baseline": 281602.75,
+        "local_read_search_interactions_treatment_minus_baseline": 3.25,
+        "omitted_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "output_tokens_treatment_minus_baseline": 1166.0,
+        "reasoning_output_tokens_treatment_minus_baseline": 583.125,
+        "subject_turns_treatment_minus_baseline": 0.875,
+        "wall_seconds_treatment_minus_baseline": 72.795018
+      },
+      {
+        "acceptance_treatment_minus_baseline": 0.125,
+        "cached_input_tokens_treatment_minus_baseline": -44352.0,
+        "calculated_fresh_input_tokens_treatment_minus_baseline": -10143.875,
+        "command_executions_treatment_minus_baseline": 0.875,
+        "completed_web_searches_treatment_minus_baseline": 0.875,
+        "corrective_rounds_treatment_minus_baseline": -0.125,
+        "input_tokens_treatment_minus_baseline": -54495.875,
+        "local_read_search_interactions_treatment_minus_baseline": 10.0,
+        "omitted_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "output_tokens_treatment_minus_baseline": -356.375,
+        "reasoning_output_tokens_treatment_minus_baseline": -418.25,
+        "subject_turns_treatment_minus_baseline": 0.875,
+        "wall_seconds_treatment_minus_baseline": 5.482424
+      },
+      {
+        "acceptance_treatment_minus_baseline": 0.125,
+        "cached_input_tokens_treatment_minus_baseline": 158144.0,
+        "calculated_fresh_input_tokens_treatment_minus_baseline": -5426.25,
+        "command_executions_treatment_minus_baseline": 3.25,
+        "completed_web_searches_treatment_minus_baseline": 0.375,
+        "corrective_rounds_treatment_minus_baseline": -0.125,
+        "input_tokens_treatment_minus_baseline": 152717.75,
+        "local_read_search_interactions_treatment_minus_baseline": 17.125,
+        "omitted_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "output_tokens_treatment_minus_baseline": 127.0,
+        "reasoning_output_tokens_treatment_minus_baseline": -188.375,
+        "subject_turns_treatment_minus_baseline": 0.875,
+        "wall_seconds_treatment_minus_baseline": 48.696576
+      },
+      {
+        "acceptance_treatment_minus_baseline": 0.125,
+        "cached_input_tokens_treatment_minus_baseline": 177888.0,
+        "calculated_fresh_input_tokens_treatment_minus_baseline": -7331.375,
+        "command_executions_treatment_minus_baseline": 3.0,
+        "completed_web_searches_treatment_minus_baseline": 0.875,
+        "corrective_rounds_treatment_minus_baseline": -0.125,
+        "input_tokens_treatment_minus_baseline": 170556.625,
+        "local_read_search_interactions_treatment_minus_baseline": 16.125,
+        "omitted_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "output_tokens_treatment_minus_baseline": 386.0,
+        "reasoning_output_tokens_treatment_minus_baseline": -47.625,
+        "subject_turns_treatment_minus_baseline": 0.875,
+        "wall_seconds_treatment_minus_baseline": 20.423548
+      },
+      {
+        "acceptance_treatment_minus_baseline": 0.0,
+        "cached_input_tokens_treatment_minus_baseline": 171488.0,
+        "calculated_fresh_input_tokens_treatment_minus_baseline": -6335.25,
+        "command_executions_treatment_minus_baseline": 2.75,
+        "completed_web_searches_treatment_minus_baseline": 0.5,
+        "corrective_rounds_treatment_minus_baseline": 0.0,
+        "input_tokens_treatment_minus_baseline": 165152.75,
+        "local_read_search_interactions_treatment_minus_baseline": 16.5,
+        "omitted_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "output_tokens_treatment_minus_baseline": 213.875,
+        "reasoning_output_tokens_treatment_minus_baseline": -213.375,
+        "subject_turns_treatment_minus_baseline": 1.0,
+        "wall_seconds_treatment_minus_baseline": 56.607146
+      }
+    ],
+    "ordered_bootstrap_resamples": 3125,
+    "repetitions_are_independent_n": false
+  },
+  "unconditional_quality": {
+    "marginal_acceptance": {
+      "baseline": {
+        "accepted": 5,
+        "admissible": 12,
+        "best_case_rate": 0.5625,
+        "missing": 4,
+        "rate": 0.416667,
+        "worst_case_rate": 0.3125
+      },
+      "treatment": {
+        "accepted": 7,
+        "admissible": 12,
+        "best_case_rate": 0.6875,
+        "missing": 4,
+        "rate": 0.583333,
+        "worst_case_rate": 0.4375
+      }
+    },
+    "paired_acceptance": {
+      "baseline_task_mean": 0.4,
+      "difference_95_percentile_interval": {
+        "lower": 0.0,
+        "upper": 0.3
+      },
+      "tasks_decreased": 0,
+      "tasks_increased": 1,
+      "tasks_tied": 4,
+      "treatment_minus_baseline": 0.1,
+      "treatment_task_mean": 0.5
+    }
+  },
+  "unconditional_work": {
+    "cached_input_tokens": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 982464.0,
+          "median": 577152.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 1109077.333333,
+          "median": 750080.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 1108659.2,
+        "difference_95_percentile_interval": {
+          "lower": -183577.6,
+          "upper": 568832.0
+        },
+        "tasks_decreased": 1,
+        "tasks_increased": 4,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 147353.6,
+        "treatment_task_mean": 1256012.8
+      }
+    },
+    "calculated_fresh_input_tokens": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 66051.083333,
+          "median": 59158.5
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 60023.5,
+          "median": 56905.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 69075.4,
+        "difference_95_percentile_interval": {
+          "lower": -30234.5,
+          "upper": 12591.5
+        },
+        "tasks_decreased": 1,
+        "tasks_increased": 4,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": -4246.8,
+        "treatment_task_mean": 64828.6
+      }
+    },
+    "command_executions": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 15.75,
+          "median": 12.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 17.916667,
+          "median": 14.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 16.9,
+        "difference_95_percentile_interval": {
+          "lower": 0.3,
+          "upper": 5.9
+        },
+        "tasks_decreased": 1,
+        "tasks_increased": 4,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 2.5,
+        "treatment_task_mean": 19.4
+      }
+    },
+    "completed_web_searches": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 0.333333,
+          "median": 0.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 0.916667,
+          "median": 0.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 0.4,
+        "difference_95_percentile_interval": {
+          "lower": 0.0,
+          "upper": 1.5
+        },
+        "tasks_decreased": 0,
+        "tasks_increased": 2,
+        "tasks_tied": 3,
+        "treatment_minus_baseline": 0.7,
+        "treatment_task_mean": 1.1
+      }
+    },
+    "corrective_rounds": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 0.583333,
+          "median": 1.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 0.416667,
+          "median": 0.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 0.6,
+        "difference_95_percentile_interval": {
+          "lower": -0.3,
+          "upper": 0.0
+        },
+        "tasks_decreased": 1,
+        "tasks_increased": 0,
+        "tasks_tied": 4,
+        "treatment_minus_baseline": -0.1,
+        "treatment_task_mean": 0.5
+      }
+    },
+    "input_tokens": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 1048515.083333,
+          "median": 636310.5
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 1169100.833333,
+          "median": 805112.5
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 1177734.6,
+        "difference_95_percentile_interval": {
+          "lower": -214609.0,
+          "upper": 582079.7
+        },
+        "tasks_decreased": 1,
+        "tasks_increased": 4,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 143106.8,
+        "treatment_task_mean": 1320841.4
+      }
+    },
+    "local_read_search_interactions": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 23.25,
+          "median": 24.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 33.416667,
+          "median": 27.5
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 23.9,
+        "difference_95_percentile_interval": {
+          "lower": -3.7,
+          "upper": 33.8
+        },
+        "tasks_decreased": 3,
+        "tasks_increased": 2,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 12.6,
+        "treatment_task_mean": 36.5
+      }
+    },
+    "output_tokens": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 7591.166667,
+          "median": 7163.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 7777.083333,
+          "median": 7883.5
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 8231.2,
+        "difference_95_percentile_interval": {
+          "lower": -1604.1,
+          "upper": 1911.9
+        },
+        "tasks_decreased": 2,
+        "tasks_increased": 3,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 307.3,
+        "treatment_task_mean": 8538.5
+      }
+    },
+    "reasoning_output_tokens": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 2943.916667,
+          "median": 2722.5
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 2866.083333,
+          "median": 3104.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 3236.8,
+        "difference_95_percentile_interval": {
+          "lower": -1382.6,
+          "upper": 908.1
+        },
+        "tasks_decreased": 2,
+        "tasks_increased": 3,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": -56.9,
+        "treatment_task_mean": 3179.9
+      }
+    },
+    "subject_turns": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 1.583333,
+          "median": 2.0
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 2.416667,
+          "median": 2.0
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 1.6,
+        "difference_95_percentile_interval": {
+          "lower": 0.7,
+          "upper": 1.0
+        },
+        "tasks_decreased": 0,
+        "tasks_increased": 5,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 0.9,
+        "treatment_task_mean": 2.5
+      }
+    },
+    "wall_seconds": {
+      "marginal_by_arm": {
+        "baseline": {
+          "cells": 12,
+          "mean": 683.370067,
+          "median": 463.589318
+        },
+        "treatment": {
+          "cells": 12,
+          "mean": 691.111827,
+          "median": 455.454039
+        }
+      },
+      "paired_task_cluster": {
+        "baseline_task_mean": 723.392677,
+        "difference_95_percentile_interval": {
+          "lower": -41.996011,
+          "upper": 129.22234
+        },
+        "tasks_decreased": 2,
+        "tasks_increased": 3,
+        "tasks_tied": 0,
+        "treatment_minus_baseline": 40.800942,
+        "treatment_task_mean": 764.193619
+      }
+    }
+  }
+}

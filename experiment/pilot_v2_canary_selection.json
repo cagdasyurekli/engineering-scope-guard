@@ -1,0 +1,19 @@
+{
+  "existing_confirmatory_reserve_task": false,
+  "future_pilot_v2_or_confirmatory_task": false,
+  "pilot_v1_task": false,
+  "schema_name": "engineering-scope-guard.pilot-v2-canary-selection",
+  "schema_version": 1,
+  "selection_rule": "old Pilot-repository holdout; minimum F2P plus P2P count; then SHA-256 rank",
+  "selection_uses_task_body_or_outcome": false,
+  "task": {
+    "created_at": "2026-04-12T05:58:06Z",
+    "docker_image": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1096",
+    "fail_to_pass_count": 1,
+    "instance_id": "BYVoid__OpenCC-1096",
+    "language": "cpp",
+    "pass_to_pass_count": 76,
+    "rank_commitment": "917f0d75890dccc101706c3bd93cd50ab814aab5464f700c7e2ed2a6aada370c",
+    "repo": "BYVoid/OpenCC"
+  }
+}

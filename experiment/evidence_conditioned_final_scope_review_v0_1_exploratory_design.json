@@ -1,0 +1,245 @@
+{
+  "analysis": {
+    "accepted_outcome_work": {
+      "interpretation": "conditional descriptive mechanism evidence only; never a replacement for unconditional intention-to-treat quality",
+      "primary_comparison": "within each task, compare only matched repetitions accepted in both arms, average eligible repetition differences within task, then summarize tasks equally",
+      "selection_warning": "conditioning on acceptance can select different outcomes by arm; always report unconditional quality beside this analysis",
+      "unmatched_arm_accepted_summaries": "report separately by arm and task as descriptive selected populations; do not use them for a causal work claim"
+    },
+    "analysis_population": "all frozen randomized cells; accepted outcomes, evaluator failures, empty patches, subject failures, and timeouts remain assigned to their frozen arm under intention-to-treat semantics",
+    "claim_boundaries": [
+      "no equivalence claim",
+      "no non-inferiority claim",
+      "no universal quality-preservation claim",
+      "no broad maintainability claim",
+      "no per-language efficacy claim",
+      "no monetary-savings claim without provider-reported amount and currency",
+      "no downstream-lifecycle-savings claim",
+      "no confirmatory-proof claim"
+    ],
+    "discordance": "report matched-repetition both-accepted, both-negative, baseline-only, and treatment-only counts plus task-level acceptance patterns",
+    "incomplete_task_clusters": "exclude incomplete task clusters from the primary paired estimate without imputation; retain every admissible cell in marginal summaries and report arm/reason missingness plus best-case and worst-case acceptance bounds",
+    "leave_one_task_out": "recompute paired acceptance and every paired work summary after omitting each complete task cluster once",
+    "marginal_acceptance": "report accepted numerator, admissible denominator, and rate separately by arm across all admissible cells",
+    "paired_acceptance": "average the two binary repetitions within each arm and task, subtract baseline from treatment, then average complete task clusters equally",
+    "quality_precedes_work": true,
+    "task_uncertainty": "for N complete clusters, exhaust all N^N ordered task-cluster bootstrap resamples; use equal task weights and nearest-rank 2.5 and 97.5 percentiles; do not resample cells independently",
+    "unconditional_work": "for every durable work measure, average repetitions within arm and complete task, compare arms at task level, and also report arm-level marginal distributions over all admissible cells",
+    "work_measures": {
+      "diagnostic_only": [
+        "final changed files",
+        "final added lines",
+        "final deleted lines",
+        "final dependency delta"
+      ],
+      "trajectory": [
+        "input tokens",
+        "cached input tokens",
+        "calculated fresh input tokens",
+        "output tokens",
+        "reasoning-output tokens",
+        "wall time",
+        "subject turns",
+        "corrective rounds",
+        "command executions",
+        "local read/search interactions",
+        "completed web-search interactions"
+      ]
+    }
+  },
+  "arms": [
+    {
+      "id": "baseline",
+      "intervention": null
+    },
+    {
+      "family": "Evidence-Conditioned Final Scope Review",
+      "id": "treatment",
+      "path": "experiment/arms/evidence_conditioned_final_scope_review_v0_1.txt",
+      "sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "version": "v0.1"
+    }
+  ],
+  "attempts": {
+    "experimental_negative_outcomes": [
+      "subject_failure",
+      "timeout",
+      "evaluator_test_failure",
+      "empty_patch"
+    ],
+    "infrastructure_invalid": [
+      "provider_api_infrastructure_failure",
+      "local_docker_runtime_infrastructure_failure",
+      "official_evaluator_error",
+      "official_evaluator_incomplete"
+    ],
+    "infrastructure_retry_capacity_batch_total": 4,
+    "maximum_total_attempts_per_cell": 2,
+    "operator_interruption_capacity_batch_total": 2,
+    "rules": [
+      "valid negative outcomes are never rerun",
+      "each infrastructure-invalid cell may restart at most once only while batch capacity remains",
+      "all attempt categories share the per-cell maximum",
+      "allowances never increase after freeze or outcome review",
+      "contradictory or multiple terminal identities stop the batch",
+      "malformed or contradictory durable evidence stops the batch",
+      "exhausted required allowance or per-cell capacity stops the batch with preserved missingness"
+    ]
+  },
+  "corrective_round": {
+    "maximum": 1,
+    "rules": {
+      "empty_patch": "valid negative outcome; no correction",
+      "error_or_incomplete": "only frozen infrastructure-invalid handling",
+      "failure_feedback_available": "provide named failing checks only and permit the single corrective round",
+      "failure_feedback_unavailable": "valid negative outcome; no invented feedback and no correction",
+      "multiple_or_contradictory_terminal_identity": "stop batch"
+    }
+  },
+  "decision": "EXPLORATORY DESIGN QUALIFIED — TASK SELECTION AND FREEZE REQUIRE SEPARATE AUTHORIZATION",
+  "design_version": "evidence-conditioned-final-scope-review-exploratory-v0.1",
+  "execution_authorized": false,
+  "experimental_unit": {
+    "independent_unit": "task and repository cluster",
+    "repetitions_are_independent_n": false,
+    "task_count": 8,
+    "task_repetitions_per_arm": 2,
+    "total_cells": 32
+  },
+  "isolation_and_durability": {
+    "completed_cells_never_repeat": true,
+    "fresh_per_attempt": [
+      "repository or worktree",
+      "Codex home and session",
+      "credential copy",
+      "raw output root",
+      "derived evidence root",
+      "evaluator-writable root"
+    ],
+    "immutable_reusable_dependencies": [
+      "pinned evaluator and dataset dependencies"
+    ],
+    "ledger": "fsynced canonical JSONL SHA-256 hash chain",
+    "receipt_boundary": "construct a receipt only after required durable official evaluator evidence and credential-cleanup evidence exist",
+    "restart_source": "durable ledger state only"
+  },
+  "operator_pause": {
+    "mid_attempt": "record cause contemporaneously before outcome review; preserve the interrupted attempt immutably; restart only with the next attempt number in fresh isolation if operator allowance and per-cell capacity remain",
+    "planned": "only between cells before attempt_started; record before outcome review and consume no interruption allowance",
+    "relabel_as_infrastructure_permitted": false,
+    "stop_when_allowance_exhausted": true
+  },
+  "retirement_gates": [
+    {
+      "gate": "necessary_correctness_suppression",
+      "trigger": "the same task shows treatment-caused suppression or removal of necessary correctness work in both repetitions, or one such event recurs on two task clusters"
+    },
+    {
+      "gate": "adverse_acceptance",
+      "trigger": "paired task-level treatment acceptance is below baseline and baseline-only discordant task clusters outnumber treatment-only clusters; only prospectively classified arm-independent infrastructure missingness may explain the pattern"
+    },
+    {
+      "gate": "no_accepted_outcome_mechanism",
+      "trigger": "jointly accepted matched comparisons do not show both a concrete evidence-supported removal or simplification of unsupported optional work and a reduction in at least one trajectory work measure"
+    },
+    {
+      "gate": "corrective_round_increase",
+      "trigger": "the treatment task-cluster mean is higher and more complete task clusters increase than decrease"
+    },
+    {
+      "gate": "search_increase",
+      "trigger": "the treatment task-cluster mean for local read/search or completed web search is higher and more complete task clusters increase than decrease"
+    },
+    {
+      "gate": "cached_context_increase",
+      "trigger": "the treatment task-cluster mean for cached input is higher and more complete task clusters increase than decrease"
+    },
+    {
+      "gate": "wall_or_work_increase",
+      "trigger": "the treatment task-cluster mean for wall time or another trajectory work measure is higher and more complete task clusters increase than decrease"
+    },
+    {
+      "gate": "structural_proxy_only",
+      "trigger": "the apparent benefit exists only in changed files, lines, dependencies, or another final-patch size diagnostic without accepted-outcome trajectory-work evidence"
+    },
+    {
+      "gate": "pre_activation_effect",
+      "trigger": "durable trajectory evidence shows the treatment changing ordinary discovery, correctness, or integration work before its frozen activation boundary"
+    },
+    {
+      "gate": "c_short_equivalence",
+      "trigger": "durable trajectory evidence shows up-front literal narrowing, reuse hunting, or other behavior materially equivalent to C-short v0.1"
+    },
+    {
+      "gate": "broad_minimality_search",
+      "trigger": "the final review initiates broad proof-of-minimality searching in both repetitions of one task or on two task clusters"
+    }
+  ],
+  "sample_size_rationale": "Eight repository-distinct task clusters cover all eight languages in the frozen source frame while keeping 32 subject cells and evaluator work bounded. Two repetitions per arm expose within-task instability, replicated correctness suppression, and mechanism consistency. This is not a power calculation and uses no Pilot-v3 effect size.",
+  "schedule_algorithm": {
+    "arm_order": "derive one orientation bit per opaque task commitment by SHA-256; repetition 1 uses that arm order and repetition 2 reverses it, so every task is baseline-first once and treatment-first once",
+    "block_order": "rank all task-repetition blocks by SHA-256 of schedule seed, future pool commitment, opaque task commitment, and repetition; execute each two-arm block contiguously",
+    "manual_rearrangement_permitted": false,
+    "schedule_seed": "engineering-scope-guard-evidence-conditioned-final-scope-review-v0.1-order",
+    "ties": "break only by opaque task commitment and repetition",
+    "uses_interim_outcomes": false
+  },
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-exploratory-design",
+  "schema_version": 1,
+  "selection": {
+    "contamination_boundary": "known development, Pilot, successor, continuation, canary, replacement, evaluator-failure, task-body, patch, and outcome details never affect eligibility, rank, sample size, or schedule",
+    "eligibility": [
+      "member of the frozen SWE-bench-Live MultiLang source snapshot",
+      "member of the reconstructable post-Pilot-v3 opaque reserve commitment",
+      "repository and task absent from every development, Pilot-v1, Pilot-v2, Pilot-v3, successor, continuation, canary, and host-qualification replacement exposure",
+      "one selected task per repository",
+      "language is one of c, cpp, cs, go, java, js, rust, or ts",
+      "pinned host and container image are feasible",
+      "official evaluator and nonempty rebuild, fail-to-pass, pass-to-pass, and test commands are available"
+    ],
+    "eligible_metadata_fields": [
+      "opaque instance identity",
+      "repository identity",
+      "language",
+      "creation timestamp",
+      "container image identity",
+      "evaluator command availability",
+      "fail-to-pass count",
+      "pass-to-pass count"
+    ],
+    "exploratory_partition": "at a separately authorized selection goal, carve exactly eight repositories from the current opaque reserve into a new exploratory-only partition",
+    "language_order": [
+      "c",
+      "cpp",
+      "cs",
+      "go",
+      "java",
+      "js",
+      "rust",
+      "ts"
+    ],
+    "prohibited_inputs": [
+      "task body",
+      "difficulty",
+      "expected success",
+      "known patch size",
+      "outcome history",
+      "semantic similarity to Pilot-v3 failures",
+      "manual preference"
+    ],
+    "ranking": "for each language in fixed order, sort eligible candidates by SHA-256 of selection seed, source revision, language, and opaque instance identity; choose the first repository not already selected",
+    "reserve_recommitment": "after future selection, exclude every task from each selected repository and publish only remaining task count, repository count, and a domain-separated SHA-256 commitment over cryptographically ranked remaining opaque identities; emit no remaining identity or body",
+    "selection_seed": "engineering-scope-guard-evidence-conditioned-final-scope-review-v0.1-selection",
+    "source_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "starting_opaque_reserve_commitment_sha256": "4e8137ee3a23571546f1fec4831b26fd3d0a93a4bbdf70d90088284c87a05605",
+    "task_bodies_or_actual_identities_present": false
+  },
+  "significance_tests_are_retirement_gates": false,
+  "task_pool_frozen": false,
+  "treatment": {
+    "family": "Evidence-Conditioned Final Scope Review",
+    "path": "experiment/arms/evidence_conditioned_final_scope_review_v0_1.txt",
+    "sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+    "version": "v0.1"
+  }
+}

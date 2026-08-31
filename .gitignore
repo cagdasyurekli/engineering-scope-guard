@@ -1,0 +1,30 @@
+# Python / local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local experiment/output data
+.local/
+graphify-out/
+artifacts/
+runs/
+*.jsonl
+!tests/fixtures/**/*.jsonl
+
+# Private working-discussion and project-memory exports
+*PROJECT_MEMORY*
+*DECISION_LOG_SUPPLEMENT*
+*conversation-export*
+*chat-export*
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

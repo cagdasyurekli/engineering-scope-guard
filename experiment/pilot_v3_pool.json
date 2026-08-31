@@ -1,0 +1,135 @@
+{
+  "confirmatory_reserve": {
+    "ids_or_bodies_emitted": false,
+    "opaque_ids_commitment_sha256": "4e8137ee3a23571546f1fec4831b26fd3d0a93a4bbdf70d90088284c87a05605",
+    "pilot_and_reserve_repositories_disjoint": true,
+    "pilot_v3_repositories_excluded": 8,
+    "pre_v3_count": 499,
+    "pre_v3_repositories": 207,
+    "remaining_count": 462,
+    "remaining_repositories": 199,
+    "tasks_removed_by_repository_exclusion": 37
+  },
+  "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+  "schema_name": "engineering-scope-guard.pilot-v3-pool",
+  "schema_version": 1,
+  "selection": {
+    "algorithm": "one task per language by SHA-256 rank; repository-distinct",
+    "historical_repositories_sha256": "375b5b419cc7cf0ee3734a7f40b25a5152ae906dc7421387d5d6c72c14020b00",
+    "historical_task_ids_sha256": "4dccd96ff3793ad283e3214bf813dbd21b02330a451a598c2bf786247a94a130",
+    "post_freeze_replacement_allowance": 0,
+    "seed": "engineering-scope-guard-pilot-v3-pool-2026-08-28",
+    "selected_from_pre_v3_opaque_reserve": true,
+    "selection_fields": [
+      "FAIL_TO_PASS",
+      "PASS_TO_PASS",
+      "created_at",
+      "docker_image",
+      "instance_id",
+      "language",
+      "rebuild_cmds",
+      "repo",
+      "test_cmds"
+    ],
+    "source_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "task_bodies_or_prior_outcomes_used": false
+  },
+  "slots": [
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "created_at": "2026-06-02T20:47:06Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.timescale_1776_timescaledb-9955",
+      "fail_to_pass_count": 76,
+      "language": "c",
+      "pass_to_pass_count": 201,
+      "repo": "timescale/timescaledb",
+      "selection_rank_commitment": "01d0f5a8c0c7ef49b1b064b7ef93ca1dd038672b80c325df4b8056c7b2cc56f6",
+      "slot": 1,
+      "task_snapshot_sha256": "4f709697afa9ece978028e7e2c9afe47ec56ce4ed96788f91cbc8c6aea075a15"
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "created_at": "2026-04-08T19:03:46Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.shader-slang_1776_slang-10768",
+      "fail_to_pass_count": 2,
+      "language": "cpp",
+      "pass_to_pass_count": 4507,
+      "repo": "shader-slang/slang",
+      "selection_rank_commitment": "00519d89a76eaae4d2657994f99d0e17f3d8c33b3171517b57f899569cf6b731",
+      "slot": 2,
+      "task_snapshot_sha256": "3f6b8749f657504f64ab3d52e52f30615995ab6832b0e357f75e7346753afaac"
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "created_at": "2026-04-22T05:59:21Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.azure_1776_azure-sdk-for-net-58482",
+      "fail_to_pass_count": 2,
+      "language": "cs",
+      "pass_to_pass_count": 1519,
+      "repo": "Azure/azure-sdk-for-net",
+      "selection_rank_commitment": "0463bffc0fc31c0597d75df918666020496e29ec75d34683940d981b7b3ae01e",
+      "slot": 3,
+      "task_snapshot_sha256": "bc8317137778c80f333858a98e27d22032496ef90ff45a2b1853757c7bf0b590"
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "created_at": "2026-04-09T16:25:25Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.influxdata_1776_telegraf-18686",
+      "fail_to_pass_count": 3,
+      "language": "go",
+      "pass_to_pass_count": 9433,
+      "repo": "influxdata/telegraf",
+      "selection_rank_commitment": "07ca0f46fbee29656c3ebd5e383ec00908bd0d6ff917a7c77eac41fb8e7faa3a",
+      "slot": 4,
+      "task_snapshot_sha256": "725f719e0a4a0ce5c049d8fce4c3635acbaada7d0a104f63940780486fd14934"
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "created_at": "2026-03-27T20:06:36Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.checkstyle_1776_checkstyle-19487",
+      "fail_to_pass_count": 1,
+      "language": "java",
+      "pass_to_pass_count": 5916,
+      "repo": "checkstyle/checkstyle",
+      "selection_rank_commitment": "010f1b6c438e413b4b026375d0526740415a613116c2eac2d2c8212b4c04d051",
+      "slot": 5,
+      "task_snapshot_sha256": "a5a4d761e31fff3356d3ad7edc49e5653e47b15d674f1793c51827c7b7f77a15"
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "created_at": "2026-03-23T14:32:01Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.gladysassistant_1776_gladys-2504",
+      "fail_to_pass_count": 2,
+      "language": "js",
+      "pass_to_pass_count": 3386,
+      "repo": "GladysAssistant/Gladys",
+      "selection_rank_commitment": "01b1f32770f822e524b32da2d3d0b1276281ebe6f2f6fc8118d375542090fbca",
+      "slot": 6,
+      "task_snapshot_sha256": "1623ba291ff27860ca64e772971f4fab5d028d2eb326e42e4a9a17971f829a0f"
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "created_at": "2026-07-16T14:14:10Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.gleam-lang_1776_gleam-5982",
+      "fail_to_pass_count": 2497,
+      "language": "rust",
+      "pass_to_pass_count": 3606,
+      "repo": "gleam-lang/gleam",
+      "selection_rank_commitment": "00e046b7347e559bf105842b6d5dff5160592d1094a9f8a33c12a01beff6ce96",
+      "slot": 7,
+      "task_snapshot_sha256": "7742a6fc29806caa2210df9ca1f87a263b8ae18c04f7b213b893a3e0d8718b70"
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "created_at": "2026-04-04T00:13:07Z",
+      "docker_image": "starryzhang/sweb.eval.x86_64.ether_1776_etherpad-7445",
+      "fail_to_pass_count": 2,
+      "language": "ts",
+      "pass_to_pass_count": 1092,
+      "repo": "ether/etherpad",
+      "selection_rank_commitment": "16600db4ee76cc6bbddbfa1361c244e7c287bbee3c40dd86d9398d392c197c07",
+      "slot": 8,
+      "task_snapshot_sha256": "6d7f85719adc8f444c7a1ca56b97f652f0b39450ffb2db3f8ed284cbda8f4d70"
+    }
+  ]
+}

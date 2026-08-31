@@ -1,0 +1,69 @@
+{
+  "activity": {
+    "confirmatory_task_bodies_exposed": 0,
+    "interim_arm_effect_analyses": 0,
+    "official_evaluator_calls": 0,
+    "subject_calls": 0,
+    "successor_cells_executed": 0
+  },
+  "authorization_sha256": "a0e82151c38e4643fd5e8e74541409a65d919fcdbc555b75c42442c0801c4c69",
+  "checks": {
+    "completed_cells_not_repeated_after_restart": true,
+    "credential_cleanup_before_terminal_return": true,
+    "durable_checkpoint_ordering": true,
+    "exact_frozen_schedule_and_arm_assignments": true,
+    "four_infrastructure_reruns_preserved": true,
+    "fresh_attempt_isolation": true,
+    "original_artifact_and_ledger_bytes_unchanged": true,
+    "positions_2_through_32_start_at_attempt_1": true,
+    "predecessor_position_1_attempt_1_immutable": true,
+    "strict_runtime_dependencies_current": true,
+    "successor_position_1_attempt_3_forbidden": true,
+    "successor_position_1_starts_only_at_attempt_2": true,
+    "two_operator_interruptions_preserved_separately": true,
+    "zero_provider_qualification": true
+  },
+  "decision": "PILOT-V3 SUCCESSOR EXECUTION INTERFACE QUALIFIED \u2014 LIVE EXECUTION REQUIRES SEPARATE AUTHORIZATION",
+  "evidence_sha256": {
+    "experiment/pilot_v3_successor_execution_dry_run.json": "267b152f2490f2249b3dbd99f70cb7470e53f7e0e58db4abee07309f93cdd454",
+    "experiment/pilot_v3_successor_execution_preflight.json": "23cb73db6a269771c35449b0a0ac2f12c48319e1aba26b68f57e07bb83411df9"
+  },
+  "immutable_sha256_after": {
+    ".local/pilot-v3-runner/pilot-v3-ledger.jsonl": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+    "experiment/pilot_v3_execution_contract.json": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "experiment/pilot_v3_pool.json": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "experiment/pilot_v3_schedule.json": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "experiment/pilot_v3_terminal_result.json": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+  },
+  "immutable_sha256_before": {
+    ".local/pilot-v3-runner/pilot-v3-ledger.jsonl": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+    "experiment/pilot_v3_execution_contract.json": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "experiment/pilot_v3_pool.json": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "experiment/pilot_v3_schedule.json": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "experiment/pilot_v3_terminal_result.json": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+  },
+  "interface_sha256": {
+    "scripts/pilot_v3_runner.py": "ecea3b25adf777b97a94a89c108e9986812fa09b15ce74ea2556cb035319ca45",
+    "scripts/pilot_v3_successor.py": "7df6077cabcb38c7eb5d65915d6c9520f502b9138dd4d4997d3b8d691aefd5a3",
+    "src/engineering_scope_guard/pilot_v3_successor.py": "164e6b546189d153a369be53d028ba504a3dc78e24dfb9039b7822361507487a",
+    "tests/test_pilot_v3_successor.py": "bfa813ca4a840a05963813f492eaa4efd0a7f7110fa68cf1bf4951193859dd46"
+  },
+  "live_execution_authorized_by_qualification": false,
+  "schema_name": "engineering-scope-guard.pilot-v3-successor-execution-interface-qualification",
+  "schema_version": 1,
+  "status": "pass",
+  "successor_ledger": {
+    "events": 1,
+    "next_position": 1,
+    "next_trajectory_attempt": 2,
+    "path": ".local/pilot-v3-successor/pilot-v3-successor-ledger.jsonl",
+    "sha256": "41303a6a5c86ae39784238d4d8b29440823d8b9ed80707d42e20b261453285c7"
+  },
+  "verification_commands": [
+    "PYTHONPATH=src python3 -m unittest tests.test_pilot_v3_successor tests.test_pilot_v3_adapter tests.test_pilot_v3 tests.test_pilot_runner",
+    "PYTHONPATH=src python3 -m unittest discover -s tests",
+    "python3 -m compileall -q src scripts tests",
+    "PYTHONPATH=src python3 scripts/pilot_v3_successor.py execution-preflight",
+    "PYTHONPATH=src python3 scripts/pilot_v3_successor.py execution-dry-run"
+  ]
+}

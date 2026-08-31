@@ -1,0 +1,273 @@
+{
+  "algorithm": "SHA-256-ranked repetition blocks with per-task arm counterbalancing",
+  "arms": [
+    "baseline",
+    "short"
+  ],
+  "cells": [
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "short",
+      "cell_id": "v3-slot-04-short-rep-1",
+      "position": 1,
+      "repetition": 1,
+      "requested_task_slot": 4
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "baseline",
+      "cell_id": "v3-slot-04-baseline-rep-1",
+      "position": 2,
+      "repetition": 1,
+      "requested_task_slot": 4
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "short",
+      "cell_id": "v3-slot-01-short-rep-1",
+      "position": 3,
+      "repetition": 1,
+      "requested_task_slot": 1
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "baseline",
+      "cell_id": "v3-slot-01-baseline-rep-1",
+      "position": 4,
+      "repetition": 1,
+      "requested_task_slot": 1
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "short",
+      "cell_id": "v3-slot-07-short-rep-1",
+      "position": 5,
+      "repetition": 1,
+      "requested_task_slot": 7
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "baseline",
+      "cell_id": "v3-slot-07-baseline-rep-1",
+      "position": 6,
+      "repetition": 1,
+      "requested_task_slot": 7
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "short",
+      "cell_id": "v3-slot-06-short-rep-1",
+      "position": 7,
+      "repetition": 1,
+      "requested_task_slot": 6
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "baseline",
+      "cell_id": "v3-slot-06-baseline-rep-1",
+      "position": 8,
+      "repetition": 1,
+      "requested_task_slot": 6
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "short",
+      "cell_id": "v3-slot-08-short-rep-1",
+      "position": 9,
+      "repetition": 1,
+      "requested_task_slot": 8
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "baseline",
+      "cell_id": "v3-slot-08-baseline-rep-1",
+      "position": 10,
+      "repetition": 1,
+      "requested_task_slot": 8
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "short",
+      "cell_id": "v3-slot-03-short-rep-1",
+      "position": 11,
+      "repetition": 1,
+      "requested_task_slot": 3
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "baseline",
+      "cell_id": "v3-slot-03-baseline-rep-1",
+      "position": 12,
+      "repetition": 1,
+      "requested_task_slot": 3
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "baseline",
+      "cell_id": "v3-slot-05-baseline-rep-1",
+      "position": 13,
+      "repetition": 1,
+      "requested_task_slot": 5
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "short",
+      "cell_id": "v3-slot-05-short-rep-1",
+      "position": 14,
+      "repetition": 1,
+      "requested_task_slot": 5
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "short",
+      "cell_id": "v3-slot-02-short-rep-1",
+      "position": 15,
+      "repetition": 1,
+      "requested_task_slot": 2
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "baseline",
+      "cell_id": "v3-slot-02-baseline-rep-1",
+      "position": 16,
+      "repetition": 1,
+      "requested_task_slot": 2
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "baseline",
+      "cell_id": "v3-slot-08-baseline-rep-2",
+      "position": 17,
+      "repetition": 2,
+      "requested_task_slot": 8
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "short",
+      "cell_id": "v3-slot-08-short-rep-2",
+      "position": 18,
+      "repetition": 2,
+      "requested_task_slot": 8
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "baseline",
+      "cell_id": "v3-slot-07-baseline-rep-2",
+      "position": 19,
+      "repetition": 2,
+      "requested_task_slot": 7
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "short",
+      "cell_id": "v3-slot-07-short-rep-2",
+      "position": 20,
+      "repetition": 2,
+      "requested_task_slot": 7
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "baseline",
+      "cell_id": "v3-slot-01-baseline-rep-2",
+      "position": 21,
+      "repetition": 2,
+      "requested_task_slot": 1
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "short",
+      "cell_id": "v3-slot-01-short-rep-2",
+      "position": 22,
+      "repetition": 2,
+      "requested_task_slot": 1
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "baseline",
+      "cell_id": "v3-slot-03-baseline-rep-2",
+      "position": 23,
+      "repetition": 2,
+      "requested_task_slot": 3
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "short",
+      "cell_id": "v3-slot-03-short-rep-2",
+      "position": 24,
+      "repetition": 2,
+      "requested_task_slot": 3
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "short",
+      "cell_id": "v3-slot-05-short-rep-2",
+      "position": 25,
+      "repetition": 2,
+      "requested_task_slot": 5
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "baseline",
+      "cell_id": "v3-slot-05-baseline-rep-2",
+      "position": 26,
+      "repetition": 2,
+      "requested_task_slot": 5
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "baseline",
+      "cell_id": "v3-slot-06-baseline-rep-2",
+      "position": 27,
+      "repetition": 2,
+      "requested_task_slot": 6
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "short",
+      "cell_id": "v3-slot-06-short-rep-2",
+      "position": 28,
+      "repetition": 2,
+      "requested_task_slot": 6
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "baseline",
+      "cell_id": "v3-slot-04-baseline-rep-2",
+      "position": 29,
+      "repetition": 2,
+      "requested_task_slot": 4
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "short",
+      "cell_id": "v3-slot-04-short-rep-2",
+      "position": 30,
+      "repetition": 2,
+      "requested_task_slot": 4
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "short",
+      "cell_id": "v3-slot-02-short-rep-2",
+      "position": 31,
+      "repetition": 2,
+      "requested_task_slot": 2
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "baseline",
+      "cell_id": "v3-slot-02-baseline-rep-2",
+      "position": 32,
+      "repetition": 2,
+      "requested_task_slot": 2
+    }
+  ],
+  "contract_version": "pilot-v3.0",
+  "manual_edits_permitted": false,
+  "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+  "repetitions_per_task_arm": 2,
+  "schedule_sha256": "9defe1ea2e376640284b53f618647aa54cff6e279dcb55d2137ff652ece80764",
+  "schema_name": "engineering-scope-guard.pilot-v3-schedule",
+  "schema_version": 1,
+  "seed": "engineering-scope-guard-pilot-v3-order-2026-08-28"
+}

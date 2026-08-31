@@ -1,0 +1,3 @@
+{"session_id":"fixture-session","transcript_path":null,"cwd":"/fixture","hook_event_name":"SessionStart","model":"fixture-model","permission_mode":"default","source":"startup"}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"/fixture","hook_event_name":"PreToolUse","model":"fixture-model","permission_mode":"default","turn_id":"fixture-turn","tool_name":"Bash","tool_use_id":"tool-1","tool_input":{"command":"python -m unittest"}}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"/fixture","hook_event_name":"PostToolUse","model":"fixture-model","permission_mode":"default","turn_id":"fixture-turn","tool_name":"Bash","tool_use_id":"tool-1","tool_input":{"command":"python -m unittest"},"tool_response":{"status":"completed"}}

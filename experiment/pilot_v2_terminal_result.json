@@ -1,0 +1,126 @@
+{
+  "analysis": {
+    "arm_effect_analysis_performed": false,
+    "claims_supported": [
+      "The frozen Pilot-v2 contract does not define external operator interruption as a resumable class."
+    ],
+    "interim_baseline_vs_short_comparisons": 0,
+    "policy_efficacy_estimable_in_this_goal": false,
+    "reason": "Execution stopped after an external user-requested interruption; interim arm analysis was explicitly prohibited."
+  },
+  "completed_cells": [
+    {
+      "admissible_under_contract": true,
+      "cell_id": "v2-slot-11-short-rep-1",
+      "evaluator_rounds": 2,
+      "termination": "evaluator_test_failure",
+      "trajectory_attempt": 1,
+      "usage_complete": true
+    },
+    {
+      "admissible_under_contract": true,
+      "cell_id": "v2-slot-11-baseline-rep-1",
+      "evaluator_rounds": 2,
+      "termination": "evaluator_test_failure",
+      "trajectory_attempt": 1,
+      "usage_complete": true
+    },
+    {
+      "admissible_under_contract": true,
+      "cell_id": "v2-slot-03-baseline-rep-1",
+      "evaluator_rounds": 1,
+      "termination": "accepted_completed",
+      "trajectory_attempt": 1,
+      "usage_complete": true
+    },
+    {
+      "admissible_under_contract": true,
+      "cell_id": "v2-slot-03-short-rep-1",
+      "evaluator_rounds": 1,
+      "termination": "accepted_completed",
+      "trajectory_attempt": 1,
+      "usage_complete": true
+    },
+    {
+      "admissible_under_contract": true,
+      "cell_id": "v2-slot-07-short-rep-1",
+      "evaluator_rounds": 1,
+      "termination": "accepted_completed",
+      "trajectory_attempt": 1,
+      "usage_complete": true
+    },
+    {
+      "admissible_under_contract": true,
+      "cell_id": "v2-slot-07-baseline-rep-1",
+      "evaluator_rounds": 1,
+      "termination": "accepted_completed",
+      "trajectory_attempt": 1,
+      "usage_complete": true
+    }
+  ],
+  "contract": {
+    "canonical_sha256": "ae839cb6f3d2073643e214e9c920c7e7d6911dc030d9a51fb5e9d63d15a95be6",
+    "final_pool_sha256": "b644244a4aae2a5396e045ce5415e485fb387c0bbe84d1225369e862ea621083",
+    "raw_file_sha256": "4c1019f74becb059f0f1c8440d3fb676ff4595904e57cd79fd69770d6543d53c",
+    "schedule_sha256": "74e1203fea0fce45c69084e34596e666330a4e17b5a79414f9e65163b60e2766",
+    "version": "pilot-v2.0"
+  },
+  "interruption": {
+    "cause_classification": "external_user_requested_operational_interruption",
+    "contract_resumable_class": false,
+    "credential_material_removed": true,
+    "evaluator_result_present": false,
+    "fabricated_infrastructure_rerun_entitlement": false,
+    "interrupted_cell": "v2-slot-05-baseline-rep-1",
+    "interrupted_trajectory_attempt": 1,
+    "ledger_disposition": "preserved_attempt_started_without_attempt_finished_or_batch_stopped",
+    "next_legal_action_reported_by_frozen_state_machine": "resolve_partial",
+    "operator_context_authorizes_continuation": false,
+    "operator_context_source": "user supplied contemporaneously after interruption",
+    "operator_context_summary": "The pause was operational because the user needed to leave and intended to continue later; it was unrelated to any experimental result, arm performance, evaluator outcome, token usage, task difficulty, or interim comparison.",
+    "provider_infrastructure_failure_observed": false,
+    "rerun_or_continuation_authorized": false,
+    "runtime_infrastructure_failure_observed": false,
+    "subject_turn_completed": true
+  },
+  "invocations": {
+    "completed_corrective_rounds": 2,
+    "evaluator_processes_started": 9,
+    "evaluator_results_completed": 8,
+    "subject_processes_started": 9
+  },
+  "ledger": {
+    "event_counts": {
+      "attempt_finished": 6,
+      "attempt_started": 7,
+      "contract_frozen": 1,
+      "schedule_frozen": 1
+    },
+    "events": 15,
+    "last_event_sha256": "d344cc5f725d4c7985e3208dadd10a6110ff38f3f599f4b7ad5155af4a51c83c",
+    "last_event_type": "attempt_started",
+    "modified_for_terminal_reporting": false,
+    "sha256": "a998efd2c7e1783607c3494b3a38baca174e3760066f34125288f685012344b5"
+  },
+  "next_action": {
+    "authorization": "not_authorized",
+    "kind": "request_separate_protocol_completeness_decision",
+    "scope": "Decide whether an operator-interruption successor or continuation is scientifically admissible; do not create or execute it in this goal."
+  },
+  "recorded_at": "2026-08-28T18:03:37Z",
+  "schedule": {
+    "admissible_completed_cells": 6,
+    "cells_started": 7,
+    "incomplete_attempt_started_cells": 1,
+    "infrastructure_reruns_authorized": 0,
+    "infrastructure_reruns_consumed": 0,
+    "post_freeze_task_replacements": 0,
+    "scheduled_cells": 44,
+    "unstarted_cells": 37
+  },
+  "schema_name": "engineering-scope-guard.pilot-v2-terminal-result",
+  "schema_version": 1,
+  "status": "externally_interrupted_unresolved_partial",
+  "terminal_decision": "PILOT-V2 EXECUTION STOPPED — EXTERNAL INTERRUPTION REQUIRES A SEPARATE PROTOCOL-COMPLETENESS DECISION",
+  "visual_omission_reason": "Arm comparison is prohibited and an exact terminal audit table is less misleading than a chart."
+}

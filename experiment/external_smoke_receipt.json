@@ -1,0 +1,86 @@
+{
+  "schema_name": "engineering-scope-guard.external-task-smoke-receipt",
+  "schema_version": 1,
+  "receipt_kind": "single-condition instrumentation-and-evaluator receipt",
+  "interpretation": "pre-subject infrastructure receipt only; not policy or task efficacy evidence",
+  "started_at_utc": "2026-08-27T16:33:28Z",
+  "completed_at_utc": "2026-08-27T16:34:34Z",
+  "source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "evaluator_repository": "microsoft/SWE-bench-Live",
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac"
+  },
+  "task": {
+    "instance_id": "BYVoid__OpenCC-1257",
+    "repository": "BYVoid/OpenCC",
+    "language": "cpp",
+    "selection_rule": "minimum F2P plus P2P count among deterministically selected Pilot tasks, then hash rank",
+    "selection_used_task_body_solution_or_outcome": false,
+    "task_body_fetched": false,
+    "reference_patch_inspected": false,
+    "fail_to_pass_count": 1,
+    "pass_to_pass_count": 123
+  },
+  "fixed_subject": {
+    "codex_version": "0.150.1",
+    "model": "gpt-5.6-terra",
+    "model_backend_snapshot": "unavailable",
+    "reasoning_effort": "medium",
+    "sandbox": "workspace-write",
+    "approval_mode": "automatic review",
+    "tools": "repository-only shell and file editing; no MCP, plugins, hooks, config, or rules",
+    "maximum_turns": 2,
+    "timeout_seconds_per_turn": 900,
+    "corrective_rounds": 1,
+    "configuration_changed_from_task_outcome": false
+  },
+  "host": {
+    "operating_system": "macOS 26.6.2 (25G83)",
+    "architecture": "arm64",
+    "container_runtime": "unavailable",
+    "docker_cli": "command not found"
+  },
+  "evaluator_preflight": {
+    "required_mechanism": "official Linux Docker evaluator",
+    "documented_gold_command": "python -m evaluation.evaluation --dataset SWE-bench-Live/MultiLang --split cpp --platform linux --patch_dir gold --output_dir logs/gold --workers 1 --overwrite 0",
+    "documented_gold_repetitions": 3,
+    "documented_baseline_resources": "4 CPUs and 16 GB RAM per instance; some large C++ repositories may need 50 GB RAM",
+    "image": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257:latest",
+    "image_os": "linux",
+    "image_architecture": "amd64",
+    "image_compressed_layer_bytes": 807365846,
+    "image_layer_count": 20,
+    "image_config_digest": "sha256:fc1669e959225dbbd54c011985098c17a624d3669891bbcdcfee834d8cd35795",
+    "status": "failed",
+    "failure": "no compatible container runtime is installed on the ARM host"
+  },
+  "execution": {
+    "termination_status": "blocked-before-subject",
+    "failure_class": "infrastructure-pre-subject-failure",
+    "codex_subject_invoked": false,
+    "provider_request_made": false,
+    "evaluator_invoked": false,
+    "persisted_task_result": false
+  },
+  "evaluator_outcome": {
+    "status": "unavailable",
+    "fail_to_pass": "not run",
+    "pass_to_pass": "not run",
+    "build_lint_type": "not run",
+    "unrelated_breakage": "not measured"
+  },
+  "trace": {
+    "status": "unavailable",
+    "reason": "subject was not invoked after evaluator preflight failed"
+  },
+  "usage": {
+    "status": "unavailable",
+    "input_tokens": "unavailable",
+    "cached_input_tokens": "unavailable",
+    "reasoning_output_tokens": "unavailable",
+    "output_tokens": "unavailable",
+    "provider_billed_cost": "unavailable",
+    "reason": "no provider request was made"
+  }
+}

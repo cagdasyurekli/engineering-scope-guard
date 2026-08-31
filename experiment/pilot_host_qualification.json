@@ -1,0 +1,2343 @@
+{
+  "as_of": "2026-08-27",
+  "bounded_conclusion": "A valid 12-task Pilot pool exists on the fixed environment after applying only pre-authorized infrastructure replacements, and resource burden is operationally feasible.",
+  "codex_runs": 0,
+  "completed_at": "2026-08-27T23:08:51.271007+00:00",
+  "deviations": [
+    {
+      "class": "receipt-relative-output-path",
+      "correction": "resolved evaluator output from evaluator working directory and switched future runs to absolute paths",
+      "effect_on_official_evaluation": "none; official evaluation completed before receipt lookup",
+      "instance_id": "BYVoid__OpenCC-1257",
+      "repetition": 1,
+      "retained_prior_wrapper_record": {
+        "classification": "evaluator-runtime-failure",
+        "outcome": "FAIL"
+      }
+    }
+  ],
+  "fixed_environment": {
+    "configured_cpus": 6,
+    "configured_memory_mib": 16384,
+    "configured_swap_mib": 2048,
+    "engine_architecture": "linux/arm64",
+    "engine_reported_cpus": 6,
+    "engine_usable_memory_bytes": 16746352640,
+    "engine_version": "29.7.2",
+    "requested_platform": "linux/amd64"
+  },
+  "pilot_authorized": false,
+  "policy_arm_runs": 0,
+  "policy_experiment": false,
+  "procedure": {
+    "dataset_snapshot_path": "<redacted-local-reference>",
+    "evaluator_checkout_path": "<redacted-local-reference>",
+    "gold_repetitions_per_task": 3,
+    "official_images_modified_or_rebuilt": false,
+    "workers": 1
+  },
+  "replacement_rule": {
+    "allowance": 8,
+    "audit_trail": [
+      {
+        "invalid_host_validity": "unstable/invalid-on-host",
+        "invalid_task": "GitoxideLabs__gitoxide-2476",
+        "language_stratum": "rust",
+        "rank_commitment": "04d4659ce5785cdde9ec3439544d38b5f070886cfcd2e2675d6f41a1023cf3a4",
+        "replacement_repo": "lakehq/sail",
+        "replacement_task": "lakehq__sail-2284",
+        "selection_fields": [
+          "instance_id",
+          "repo",
+          "created_at",
+          "docker_image",
+          "FAIL_TO_PASS",
+          "PASS_TO_PASS",
+          "rebuild_cmds",
+          "test_cmds",
+          "language"
+        ],
+        "task_body_or_policy_performance_inspected": false
+      },
+      {
+        "invalid_host_validity": "invalid-classify-separately",
+        "invalid_task": "colbymchenry__codegraph-951",
+        "language_stratum": "c",
+        "rank_commitment": "03d9cc992a1696f8d77ab775f3df0508dbe47be1f9e0b4684fb6113acd705070",
+        "replacement_repo": "xroche/httrack",
+        "replacement_task": "xroche__httrack-408",
+        "selection_fields": [
+          "instance_id",
+          "repo",
+          "created_at",
+          "docker_image",
+          "FAIL_TO_PASS",
+          "PASS_TO_PASS",
+          "rebuild_cmds",
+          "test_cmds",
+          "language"
+        ],
+        "task_body_or_policy_performance_inspected": false
+      },
+      {
+        "invalid_host_validity": "unstable/invalid-on-host",
+        "invalid_task": "kubernetes-sigs__controller-runtime-3494",
+        "language_stratum": "go",
+        "rank_commitment": "023f73de81cf07f7a5524784b27d13e27f8d8fbd976ab3aed4b43526d6f40676",
+        "replacement_repo": "caddyserver/caddy",
+        "replacement_task": "caddyserver__caddy-7567",
+        "selection_fields": [
+          "instance_id",
+          "repo",
+          "created_at",
+          "docker_image",
+          "FAIL_TO_PASS",
+          "PASS_TO_PASS",
+          "rebuild_cmds",
+          "test_cmds",
+          "language"
+        ],
+        "task_body_or_policy_performance_inspected": false
+      },
+      {
+        "invalid_host_validity": "invalid-classify-separately",
+        "invalid_task": "open-gsd__gsd-core-1799",
+        "language_stratum": "js",
+        "rank_commitment": "27ed5fb153ae0a57a872b5cf02ab5b87913537748f037d6f3ea7807a6b086363",
+        "replacement_repo": "thlorenz/doctoc",
+        "replacement_task": "thlorenz__doctoc-329",
+        "selection_fields": [
+          "instance_id",
+          "repo",
+          "created_at",
+          "docker_image",
+          "FAIL_TO_PASS",
+          "PASS_TO_PASS",
+          "rebuild_cmds",
+          "test_cmds",
+          "language"
+        ],
+        "task_body_or_policy_performance_inspected": false
+      }
+    ],
+    "consumed": 4,
+    "rule": "next hash-ranked eligible task in the same frozen language stratum, excluding Pilot repositories",
+    "selection_uses_task_bodies_or_policy_performance": false
+  },
+  "schema_name": "engineering-scope-guard.pilot-host-qualification",
+  "schema_version": 1,
+  "source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "dataset_snapshot_files_sha256": {
+      "c-00000-of-00001.parquet": "30c0b8cb9e7140e05a4e539f20be0c325be597cbba4bf35e232355987ddddd0c",
+      "cpp-00000-of-00001.parquet": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+      "cs-00000-of-00001.parquet": "29ffe16d0b2cd802e753262b8b0d7fe3f2bb1b489396da238146e79f37937c1f",
+      "go-00000-of-00001.parquet": "76d2b5dff0f3fac8303d30fa85495539e487d25974ad7c21cd21a545cb4756e2",
+      "java-00000-of-00001.parquet": "00387685808c71d21ada175335304b1c118859453afadd58ea21a00b0d568ee8",
+      "js-00000-of-00001.parquet": "bc6ec49ffaf9db97840d55eba6954fae8f5fb0fb071cf49e187f36ffadd55a7a",
+      "rust-00000-of-00001.parquet": "02ac78e2c51a84eb174ac393bb07b77478f1f96cf260af18835a711dd8074ebc",
+      "ts-00000-of-00001.parquet": "7e23783e27230c9cfab1035690035c25523043d6af635bc78da3fd2010c32714"
+    },
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf"
+  },
+  "status": "complete",
+  "summary": {
+    "all_attempt_wall_seconds": {
+      "count": 48,
+      "max": 1267.46,
+      "median": 204.038,
+      "min": 22.897,
+      "sum": 14962.303
+    },
+    "classifications": {
+      "evaluator-runtime-failure": 1,
+      "official-gold-success": 40,
+      "official-gold-test-failure": 7
+    },
+    "effective_confirmatory_reserve": {
+      "effective_confirmatory_reserve_count": 499,
+      "effective_confirmatory_reserve_ids_sha256": "609b0dfba0a27dbd535f3db67375d84a454c7ad98b7fdd03cf501fdd16958930",
+      "effective_confirmatory_reserve_repositories": 207,
+      "original_confirmatory_reserve_count": 538,
+      "pilot_and_effective_reserve_repositories_disjoint": true,
+      "replacement_repositories_now_excluded": [
+        "caddyserver/caddy",
+        "lakehq/sail",
+        "thlorenz/doctoc",
+        "xroche/httrack"
+      ],
+      "reserve_ids_or_bodies_emitted": false,
+      "tasks_removed_by_replacement_repository_exclusion": 39
+    },
+    "evaluated_tasks": 16,
+    "fail_attempts": 8,
+    "final_pool_attempt_wall_seconds": {
+      "count": 36,
+      "max": 1267.46,
+      "median": 180.773,
+      "min": 22.897,
+      "sum": 10628.831
+    },
+    "final_pool_instance_ids": [
+      "BYVoid__OpenCC-1257",
+      "MudBlazor__MudBlazor-12974",
+      "caddyserver__caddy-7567",
+      "dragonflydb__dragonfly-7493",
+      "floci-io__floci-1908",
+      "gui-cs__Terminal.Gui-4860",
+      "iOfficeAI__AionUi-1818",
+      "lakehq__sail-2284",
+      "mc1arke__sonarqube-community-branch-plugin-1221",
+      "rust-lang__rust-analyzer-22827",
+      "thlorenz__doctoc-329",
+      "xroche__httrack-408"
+    ],
+    "final_pool_size": 12,
+    "final_pool_task_median_wall_seconds": {
+      "count": 12,
+      "max": 981.163,
+      "median": 156.027,
+      "min": 23.066,
+      "sum": 3149.903
+    },
+    "frozen_host_valid": 8,
+    "frozen_invalid": 4,
+    "operational_feasibility_assessment": "feasible-on-bounded-infrastructure-evidence",
+    "operational_feasibility_basis": "All 48 qualification attempts completed sequentially on the frozen allocation with zero OOMs/timeouts; all required images fit in the current Docker store; the projected evaluator-only work is schedulable sequentially. This does not establish subject/provider feasibility.",
+    "pass_attempts": 40,
+    "planned_pilot_burden": {
+      "aggregate_evaluator_once_for_48_trajectories_seconds": 12599.612,
+      "aggregate_evaluator_twice_for_48_trajectories_seconds": 25199.224,
+      "combined_procedural_ceiling_once_seconds": 98999.612,
+      "combined_procedural_ceiling_twice_seconds": 111599.224,
+      "measured_final_pool_task_median_sum_seconds": 3149.903,
+      "planned_subject_trajectories": 48,
+      "predeclared_subject_timeout_ceiling_seconds": 86400,
+      "scope": "Evaluator-only arithmetic from gold medians. It excludes Codex/subject runtime, provider billing, image pulls, human review, and policy effects; gold duration is not a prediction of subject duration.",
+      "trajectories_per_task": 4
+    },
+    "recorded_gold_attempts": 48,
+    "replacement_host_valid": 4,
+    "resource_evidence": {
+      "architecture_or_emulation_warning_lines": 0,
+      "oom_or_resource_failures": 0,
+      "per_run_capacity_receipts": 48,
+      "point_sample_limitation": "Capacity, OOM/timeout state, retained evaluator output, and selected interactive docker-stats point samples are evidence; no continuous resource telemetry or peak claim was introduced.",
+      "selected_interactive_point_samples": [
+        {
+          "cpu_percent": 208.41,
+          "instance_id": "GitoxideLabs__gitoxide-2476",
+          "memory_usage": "5.298 GiB / 15.6 GiB",
+          "repetition": 3
+        },
+        {
+          "cpu_percent": 112.93,
+          "instance_id": "MudBlazor__MudBlazor-12974",
+          "memory_usage": "2.546 GiB / 15.6 GiB",
+          "repetition": 1
+        },
+        {
+          "block_io": "19 GB written at the observed late point",
+          "cpu_percent": null,
+          "instance_id": "dragonflydb__dragonfly-7493",
+          "memory_usage": "selected points rose from 188 MiB through 1.000, 1.477, and 2.565 GiB before falling to 674 MiB",
+          "repetition": 1
+        },
+        {
+          "cpu_percent": 154.0,
+          "instance_id": "floci-io__floci-1908",
+          "memory_usage": "5.936 GiB / 15.6 GiB",
+          "repetition": 1
+        }
+      ],
+      "timeouts": 0
+    },
+    "storage": {
+      "docker_snapshot": {
+        "images": [
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-14 18:32:54 +0200 CEST",
+            "CreatedSince": "13 days ago",
+            "Digest": "<none>",
+            "ID": "1bd0dd517125",
+            "Repository": "starryzhang/sweb.eval.x86_64.floci-io_1776_floci-1908",
+            "SharedSize": "N/A",
+            "Size": "2.72GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-14 00:40:40 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "1b914fbd3c63",
+            "Repository": "starryzhang/sweb.eval.x86_64.rust-lang_1776_rust-analyzer-22827",
+            "SharedSize": "N/A",
+            "Size": "36.2GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-12 15:27:12 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "0d4346eb4747",
+            "Repository": "starryzhang/sweb.eval.x86_64.lakehq_1776_sail-2284",
+            "SharedSize": "N/A",
+            "Size": "41.2GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-12 15:23:41 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "d86060b6f369",
+            "Repository": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257",
+            "SharedSize": "N/A",
+            "Size": "3.12GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-12 14:21:00 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "bedb3c4d2bb1",
+            "Repository": "starryzhang/sweb.eval.x86_64.dragonflydb_1776_dragonfly-7493",
+            "SharedSize": "N/A",
+            "Size": "24.7GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-12 04:12:04 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "5fc4373118a7",
+            "Repository": "starryzhang/sweb.eval.x86_64.xroche_1776_httrack-408",
+            "SharedSize": "N/A",
+            "Size": "3.09GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-11 22:50:48 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "edea0ae22d57",
+            "Repository": "starryzhang/sweb.eval.x86_64.colbymchenry_1776_codegraph-951",
+            "SharedSize": "N/A",
+            "Size": "3.45GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-08-11 12:11:14 +0200 CEST",
+            "CreatedSince": "2 weeks ago",
+            "Digest": "<none>",
+            "ID": "15617e21553d",
+            "Repository": "starryzhang/sweb.eval.x86_64.open-gsd_1776_gsd-core-1799",
+            "SharedSize": "N/A",
+            "Size": "3.13GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-05-08 03:37:12 +0200 CEST",
+            "CreatedSince": "3 months ago",
+            "Digest": "<none>",
+            "ID": "d9bacf28ad50",
+            "Repository": "starryzhang/sweb.eval.x86_64.gui-cs_1776_terminal.gui-4860",
+            "SharedSize": "N/A",
+            "Size": "3.81GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-05-07 03:13:46 +0200 CEST",
+            "CreatedSince": "3 months ago",
+            "Digest": "<none>",
+            "ID": "f0c7dae1c586",
+            "Repository": "starryzhang/sweb.eval.x86_64.mudblazor_1776_mudblazor-12974",
+            "SharedSize": "N/A",
+            "Size": "4.59GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-05-04 10:00:15 +0200 CEST",
+            "CreatedSince": "3 months ago",
+            "Digest": "<none>",
+            "ID": "236ef40451c0",
+            "Repository": "starryzhang/sweb.eval.x86_64.kubernetes-sigs_1776_controller-runtime-3494",
+            "SharedSize": "N/A",
+            "Size": "7.32GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-05-04 07:27:11 +0200 CEST",
+            "CreatedSince": "3 months ago",
+            "Digest": "<none>",
+            "ID": "5c92fc982ee4",
+            "Repository": "starryzhang/sweb.eval.x86_64.gitoxidelabs_1776_gitoxide-2476",
+            "SharedSize": "N/A",
+            "Size": "37.9GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-05-04 04:42:20 +0200 CEST",
+            "CreatedSince": "3 months ago",
+            "Digest": "<none>",
+            "ID": "97e93641e982",
+            "Repository": "starryzhang/sweb.eval.x86_64.caddyserver_1776_caddy-7567",
+            "SharedSize": "N/A",
+            "Size": "4.58GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-05-03 16:27:04 +0200 CEST",
+            "CreatedSince": "3 months ago",
+            "Digest": "<none>",
+            "ID": "fc12231c4c12",
+            "Repository": "starryzhang/sweb.eval.x86_64.mc1arke_1776_sonarqube-community-branch-plugin-1221",
+            "SharedSize": "N/A",
+            "Size": "6.35GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-04-26 20:54:36 +0200 CEST",
+            "CreatedSince": "4 months ago",
+            "Digest": "<none>",
+            "ID": "75e8911e3728",
+            "Repository": "starryzhang/sweb.eval.x86_64.iofficeai_1776_aionui-1818",
+            "SharedSize": "N/A",
+            "Size": "8.81GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "2026-04-24 18:21:36 +0200 CEST",
+            "CreatedSince": "4 months ago",
+            "Digest": "<none>",
+            "ID": "c2bcd85de2ed",
+            "Repository": "starryzhang/sweb.eval.x86_64.thlorenz_1776_doctoc-329",
+            "SharedSize": "N/A",
+            "Size": "1.9GB",
+            "Tag": "latest",
+            "UniqueSize": "N/A"
+          },
+          {
+            "Containers": "0",
+            "CreatedAt": "1970-01-01 01:00:00 +0100 CET",
+            "CreatedSince": "56 years ago",
+            "Digest": "<none>",
+            "ID": "d9e853e87e55",
+            "Repository": "alpine",
+            "SharedSize": "N/A",
+            "Size": "12.2MB",
+            "Tag": "3.20",
+            "UniqueSize": "N/A"
+          }
+        ],
+        "measurement_note": "Docker-reported point-in-time local storage; displayed image sizes share layers and therefore must not be summed as unique disk usage.",
+        "system_df": [
+          {
+            "Active": "0",
+            "Reclaimable": "171.3GB (94%)",
+            "Size": "180.6GB",
+            "TotalCount": "17",
+            "Type": "Images"
+          },
+          {
+            "Active": "0",
+            "Reclaimable": "0B",
+            "Size": "0B",
+            "TotalCount": "0",
+            "Type": "Containers"
+          },
+          {
+            "Active": "0",
+            "Reclaimable": "0B",
+            "Size": "0B",
+            "TotalCount": "25",
+            "Type": "Local Volumes"
+          },
+          {
+            "Active": "0",
+            "Reclaimable": "0B",
+            "Size": "0B",
+            "TotalCount": "0",
+            "Type": "Build Cache"
+          }
+        ]
+      },
+      "image_inspect_size_bytes_by_task": {
+        "BYVoid__OpenCC-1257": 807388055,
+        "GitoxideLabs__gitoxide-2476": 8948813918,
+        "MudBlazor__MudBlazor-12974": 1474366199,
+        "caddyserver__caddy-7567": 1083566853,
+        "colbymchenry__codegraph-951": 880222406,
+        "dragonflydb__dragonfly-7493": 5987415847,
+        "floci-io__floci-1908": 926516507,
+        "gui-cs__Terminal.Gui-4860": 1241245401,
+        "iOfficeAI__AionUi-1818": 2683882953,
+        "kubernetes-sigs__controller-runtime-3494": 1391155253,
+        "lakehq__sail-2284": 9738180786,
+        "mc1arke__sonarqube-community-branch-plugin-1221": 2637906472,
+        "open-gsd__gsd-core-1799": 866596814,
+        "rust-lang__rust-analyzer-22827": 7757647667,
+        "thlorenz__doctoc-329": 477051600,
+        "xroche__httrack-408": 781234765
+      }
+    }
+  },
+  "tasks": [
+    {
+      "host_validity": "host-valid",
+      "instance_id": "BYVoid__OpenCC-1257",
+      "language": "cpp",
+      "official_image": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257",
+      "replaces": null,
+      "repo": "BYVoid/OpenCC",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "2b42c0de037abfb92a8cbeb98640b4201ffa3cf1238c77c3470f92d602946afc",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257@sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1"
+            ],
+            "size_bytes": 807388055
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "report_sha256": "4c76ff7faca3a8090b9f499e1d83dc51aeb6af9cc9f2efebc4d7e91ee0728374",
+          "requested_platform": "linux/amd64",
+          "results_sha256": "2f038ac17c9c3f42d0c3099c0b6a73e4a6997bef97847a3ec0d4535ec51ea077",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 57.493,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "dbda90219a71797852e030060b8731d63894342f699b00289f2320894ebfb942",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257@sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1"
+            ],
+            "size_bytes": 807388055
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 59.845,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "0247dfb6a2853094d60709eb0cbe0a618165d38e9fa21b20c3852b49d067a08d",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257@sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1"
+            ],
+            "size_bytes": 807388055
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 63.565,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "unstable/invalid-on-host",
+      "instance_id": "GitoxideLabs__gitoxide-2476",
+      "language": "rust",
+      "official_image": "starryzhang/sweb.eval.x86_64.gitoxidelabs_1776_gitoxide-2476",
+      "replaces": null,
+      "repo": "GitoxideLabs/gitoxide",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "evaluator-runtime-failure",
+          "command_log_sha256": "e15ffc802b73749c7918ae400053045b2a9d5ba5a4970798a8a13950f02ab79b",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": false,
+            "inspection_error": "Error response from daemon: No such image: starryzhang/sweb.eval.x86_64.gitoxidelabs_1776_gitoxide-2476:latest"
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 402.14,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "c6edfa230aaa8d7f5a35fd5646f89b0e79480a5a9b245ede1c6877b45a5e21c8",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:5c92fc982ee4797639ff881f1b9dda5cd3dead6356b800f8ebf659a5fbb761f0",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.gitoxidelabs_1776_gitoxide-2476@sha256:5c92fc982ee4797639ff881f1b9dda5cd3dead6356b800f8ebf659a5fbb761f0"
+            ],
+            "size_bytes": 8948813918
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 1033.638,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "0f01539373101655e7e1c58e726ecb898c3b420919ec31d391747034d5b67a3c",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:5c92fc982ee4797639ff881f1b9dda5cd3dead6356b800f8ebf659a5fbb761f0",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.gitoxidelabs_1776_gitoxide-2476@sha256:5c92fc982ee4797639ff881f1b9dda5cd3dead6356b800f8ebf659a5fbb761f0"
+            ],
+            "size_bytes": 8948813918
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 144.523,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "MudBlazor__MudBlazor-12974",
+      "language": "cs",
+      "official_image": "starryzhang/sweb.eval.x86_64.mudblazor_1776_mudblazor-12974",
+      "replaces": null,
+      "repo": "MudBlazor/MudBlazor",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "0d5978fcb40500eed39670c7c0cf22c2229354be9b5146f88ea070f317c0f38f",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.mudblazor_1776_mudblazor-12974@sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a"
+            ],
+            "size_bytes": 1474366199
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 235.991,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "dea095d1cf4393413ae7cf0384656b815343217985ff9fceafc5dd8c38f5e0bf",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.mudblazor_1776_mudblazor-12974@sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a"
+            ],
+            "size_bytes": 1474366199
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 209.823,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "c86f69dcc40c574f7f0b7ef1f942558e3cca16e9249d302f31ffbf5a50a0fb52",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.mudblazor_1776_mudblazor-12974@sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a"
+            ],
+            "size_bytes": 1474366199
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 227.836,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "invalid-classify-separately",
+      "instance_id": "colbymchenry__codegraph-951",
+      "language": "c",
+      "official_image": "starryzhang/sweb.eval.x86_64.colbymchenry_1776_codegraph-951",
+      "replaces": null,
+      "repo": "colbymchenry/codegraph",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "6c743fe87cb28e17b71aac0ea028ed3c3ffc85858ac610e06a0db0a449d2c8c1",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:edea0ae22d57cf815fb24775235662ee3d05fd5e66a3aeedadfbdc74e39fb955",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.colbymchenry_1776_codegraph-951@sha256:edea0ae22d57cf815fb24775235662ee3d05fd5e66a3aeedadfbdc74e39fb955"
+            ],
+            "size_bytes": 880222406
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 124.959,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "b1eb37f179f501f32dc9e1eea9a5f839d75c0ff9ce37cec9011797d1323a8b89",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:edea0ae22d57cf815fb24775235662ee3d05fd5e66a3aeedadfbdc74e39fb955",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.colbymchenry_1776_codegraph-951@sha256:edea0ae22d57cf815fb24775235662ee3d05fd5e66a3aeedadfbdc74e39fb955"
+            ],
+            "size_bytes": 880222406
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 102.708,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "d9d162dc71a776856b93e58269d6c48da5cec42d960647e762d6d3e85cbc4e72",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:edea0ae22d57cf815fb24775235662ee3d05fd5e66a3aeedadfbdc74e39fb955",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.colbymchenry_1776_codegraph-951@sha256:edea0ae22d57cf815fb24775235662ee3d05fd5e66a3aeedadfbdc74e39fb955"
+            ],
+            "size_bytes": 880222406
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 100.353,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "dragonflydb__dragonfly-7493",
+      "language": "cpp",
+      "official_image": "starryzhang/sweb.eval.x86_64.dragonflydb_1776_dragonfly-7493",
+      "replaces": null,
+      "repo": "dragonflydb/dragonfly",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "b899357feed5543282d80ef3a6552d2f721a63a90c3a27598e29d5daecfc75af",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.dragonflydb_1776_dragonfly-7493@sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807"
+            ],
+            "size_bytes": 5987415847
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 1267.46,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "6a9ba9e7413d28eb2d1ebf2b05622b4684550020a1bceb0bca9284a5ae85c8fb",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.dragonflydb_1776_dragonfly-7493@sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807"
+            ],
+            "size_bytes": 5987415847
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 981.163,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "214e3231fcbed6b40918b3c1a24f2a3024e021aaf50783d7b3d1ec488bc5f9bf",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.dragonflydb_1776_dragonfly-7493@sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807"
+            ],
+            "size_bytes": 5987415847
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 971.583,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "floci-io__floci-1908",
+      "language": "java",
+      "official_image": "starryzhang/sweb.eval.x86_64.floci-io_1776_floci-1908",
+      "replaces": null,
+      "repo": "floci-io/floci",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "78357b39d5bea245421ca6308e489a0578e3da101c5a1a1e683c27507097fc49",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.floci-io_1776_floci-1908@sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576"
+            ],
+            "size_bytes": 926516507
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 836.79,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "cacf91888b85c0950d85b87c80d499af1f612eda7a367833c027c0774dc99598",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.floci-io_1776_floci-1908@sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576"
+            ],
+            "size_bytes": 926516507
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 832.705,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "3921f9c6c9b3d52ac607b4c1657cc3169607ec6d78e280bda4e7bec3a34bd1bb",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.floci-io_1776_floci-1908@sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576"
+            ],
+            "size_bytes": 926516507
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 836.658,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "gui-cs__Terminal.Gui-4860",
+      "language": "cs",
+      "official_image": "starryzhang/sweb.eval.x86_64.gui-cs_1776_terminal.gui-4860",
+      "replaces": null,
+      "repo": "gui-cs/Terminal.Gui",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "817ef977c61a811a91160fdd6b7eb47296c8a4b77a09828ce10b127ef2b8f0ab",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.gui-cs_1776_terminal.gui-4860@sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0"
+            ],
+            "size_bytes": 1241245401
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 198.253,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "413ed0cd76ef66315310ebb9c3980b7f15e52164024c239859446f36c555ab3a",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.gui-cs_1776_terminal.gui-4860@sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0"
+            ],
+            "size_bytes": 1241245401
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 166.203,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "fdfa661e9eacb5ebbc3ff3b4b0d0e27e79bad6c6e09baa6f57f5416b3c2b3653",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.gui-cs_1776_terminal.gui-4860@sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0"
+            ],
+            "size_bytes": 1241245401
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 442.726,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "iOfficeAI__AionUi-1818",
+      "language": "ts",
+      "official_image": "starryzhang/sweb.eval.x86_64.iofficeai_1776_aionui-1818",
+      "replaces": null,
+      "repo": "iOfficeAI/AionUi",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "3f0428305d2b5493e965b25320b64af30a6e37c517ae652b16c80fcf2b57a852",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.iofficeai_1776_aionui-1818@sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9"
+            ],
+            "size_bytes": 2683882953
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 195.342,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "0f2d6e29c8188f6e67ce9ee761381678a9e60c3ff241af9cf491847da291df4a",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.iofficeai_1776_aionui-1818@sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9"
+            ],
+            "size_bytes": 2683882953
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 99.191,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "3e8319eb34cd78dda025b34a4a73ad0ce7976edfd6937c3c3496bdef91b2a978",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.iofficeai_1776_aionui-1818@sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9"
+            ],
+            "size_bytes": 2683882953
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 100.142,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "unstable/invalid-on-host",
+      "instance_id": "kubernetes-sigs__controller-runtime-3494",
+      "language": "go",
+      "official_image": "starryzhang/sweb.eval.x86_64.kubernetes-sigs_1776_controller-runtime-3494",
+      "replaces": null,
+      "repo": "kubernetes-sigs/controller-runtime",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "cc5a78f9049910339cf1d8dd740d18b1a301d8d800facbea328449f9aa282ba0",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:236ef40451c0d397242dfc4c32ecf6b651d7e39bf20499873458447002b5b756",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.kubernetes-sigs_1776_controller-runtime-3494@sha256:236ef40451c0d397242dfc4c32ecf6b651d7e39bf20499873458447002b5b756"
+            ],
+            "size_bytes": 1391155253
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 256.637,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "e2b113013db1a65bf06e77958c78aebc3f62562a7bb192f1b2baedc60942f209",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:236ef40451c0d397242dfc4c32ecf6b651d7e39bf20499873458447002b5b756",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.kubernetes-sigs_1776_controller-runtime-3494@sha256:236ef40451c0d397242dfc4c32ecf6b651d7e39bf20499873458447002b5b756"
+            ],
+            "size_bytes": 1391155253
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 216.098,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "fa933acc9cb78e9ebd2b171e77cc9e010583044dafe070271b3046c5d4367088",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:236ef40451c0d397242dfc4c32ecf6b651d7e39bf20499873458447002b5b756",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.kubernetes-sigs_1776_controller-runtime-3494@sha256:236ef40451c0d397242dfc4c32ecf6b651d7e39bf20499873458447002b5b756"
+            ],
+            "size_bytes": 1391155253
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 214.347,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+      "language": "java",
+      "official_image": "starryzhang/sweb.eval.x86_64.mc1arke_1776_sonarqube-community-branch-plugin-1221",
+      "replaces": null,
+      "repo": "mc1arke/sonarqube-community-branch-plugin",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "ed4ef52b4ca36659e6bc26d111a6536e94ed900db7aa3a637e88f0111204ee65",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.mc1arke_1776_sonarqube-community-branch-plugin-1221@sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03"
+            ],
+            "size_bytes": 2637906472
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 136.343,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "c31c26cf7e3dba08723c86a65d6210b5976bbe9265c078ea9e4f462a5dd920ee",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.mc1arke_1776_sonarqube-community-branch-plugin-1221@sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03"
+            ],
+            "size_bytes": 2637906472
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 60.098,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "583557975a2d83337566d3098a8ca564a4441ef78704c56ede2aed430198f656",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.mc1arke_1776_sonarqube-community-branch-plugin-1221@sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03"
+            ],
+            "size_bytes": 2637906472
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 60.026,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "invalid-classify-separately",
+      "instance_id": "open-gsd__gsd-core-1799",
+      "language": "js",
+      "official_image": "starryzhang/sweb.eval.x86_64.open-gsd_1776_gsd-core-1799",
+      "replaces": null,
+      "repo": "open-gsd/gsd-core",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "be0c7c20c3ed1770682b3908c35b7b8d5a949824f49622ca7038367d31f826d0",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:15617e21553dc4e91eed6339eeebf03dfb2fa8ec35f303ee179dece24d23f2cd",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.open-gsd_1776_gsd-core-1799@sha256:15617e21553dc4e91eed6339eeebf03dfb2fa8ec35f303ee179dece24d23f2cd"
+            ],
+            "size_bytes": 866596814
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 593.994,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "542cd8ee7910f7898b9196aff74ea42b8895edd4ee497a3e852c0d2ba0aaaf80",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:15617e21553dc4e91eed6339eeebf03dfb2fa8ec35f303ee179dece24d23f2cd",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.open-gsd_1776_gsd-core-1799@sha256:15617e21553dc4e91eed6339eeebf03dfb2fa8ec35f303ee179dece24d23f2cd"
+            ],
+            "size_bytes": 866596814
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 573.499,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-test-failure",
+          "command_log_sha256": "7fb3625f995eb4ffcdcaa860dd31cdec0b4f64f570889446245d87a0a6a15a3e",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:15617e21553dc4e91eed6339eeebf03dfb2fa8ec35f303ee179dece24d23f2cd",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.open-gsd_1776_gsd-core-1799@sha256:15617e21553dc4e91eed6339eeebf03dfb2fa8ec35f303ee179dece24d23f2cd"
+            ],
+            "size_bytes": 866596814
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "FAIL",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 570.576,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "rust-lang__rust-analyzer-22827",
+      "language": "rust",
+      "official_image": "starryzhang/sweb.eval.x86_64.rust-lang_1776_rust-analyzer-22827",
+      "replaces": null,
+      "repo": "rust-lang/rust-analyzer",
+      "role": "frozen-pilot",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "bedc7c9f77ebc8e20a97cc106ee24daca9ae8cf18aa8bc35a2067fe1e90ed562",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.rust-lang_1776_rust-analyzer-22827@sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae"
+            ],
+            "size_bytes": 7757647667
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 502.258,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "28c2f4d30948e3d382b27cecc3a36dd5369fca4f1538d8414370bb43dd914fa9",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.rust-lang_1776_rust-analyzer-22827@sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae"
+            ],
+            "size_bytes": 7757647667
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 249.299,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "28412f39e795f898db672def60ddbe32987ad078c5d5a807d3343d7f7fefb4b3",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.rust-lang_1776_rust-analyzer-22827@sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae"
+            ],
+            "size_bytes": 7757647667
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 249.474,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "lakehq__sail-2284",
+      "language": "rust",
+      "official_image": "starryzhang/sweb.eval.x86_64.lakehq_1776_sail-2284",
+      "replaces": "GitoxideLabs__gitoxide-2476",
+      "repo": "lakehq/sail",
+      "role": "infrastructure-replacement",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "2771ac7fa2fd42a91c1135d0c42a3d920cb4bf567c67145257ba1459b3f306e0",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.lakehq_1776_sail-2284@sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6"
+            ],
+            "size_bytes": 9738180786
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 466.683,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "d49146d87d9f648a4502208659248d372201aed1b7cde2460e177bb353252258",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.lakehq_1776_sail-2284@sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6"
+            ],
+            "size_bytes": 9738180786
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 225.264,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "2346eedb3cc1acdad75032527e646de482a17f196a0544a600456c4ed2c715ec",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.lakehq_1776_sail-2284@sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6"
+            ],
+            "size_bytes": 9738180786
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 228.127,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "xroche__httrack-408",
+      "language": "c",
+      "official_image": "starryzhang/sweb.eval.x86_64.xroche_1776_httrack-408",
+      "replaces": "colbymchenry__codegraph-951",
+      "repo": "xroche/httrack",
+      "role": "infrastructure-replacement",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "2cc16a6d42f5823d6229060beadd4c4f4ab42a257c0e231f882af7ded82ae1f7",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.xroche_1776_httrack-408@sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b"
+            ],
+            "size_bytes": 781234765
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 120.703,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "56acf33f7f8c53ece7ac68705dc4a93aa78356c1076ce733592c5516407854c9",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.xroche_1776_httrack-408@sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b"
+            ],
+            "size_bytes": 781234765
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 113.62,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "86b42fc643f7d123e28ea319778af38ced8492c2d49b30bc7348353a935f51eb",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.xroche_1776_httrack-408@sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b"
+            ],
+            "size_bytes": 781234765
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 113.801,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "caddyserver__caddy-7567",
+      "language": "go",
+      "official_image": "starryzhang/sweb.eval.x86_64.caddyserver_1776_caddy-7567",
+      "replaces": "kubernetes-sigs__controller-runtime-3494",
+      "repo": "caddyserver/caddy",
+      "role": "infrastructure-replacement",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "0a3fd5ea9a7502706bca12fb603135f2df435a4c4aa020fb92b0e96dbd761175",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.caddyserver_1776_caddy-7567@sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f"
+            ],
+            "size_bytes": 1083566853
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 100.481,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "416529b3e25cbbb76f240a0f5e8f64b22a01e6c52dc792b1ddfc43fde8222b8b",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.caddyserver_1776_caddy-7567@sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f"
+            ],
+            "size_bytes": 1083566853
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 71.44,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "713a16ea35a5364c3fa2c5b66a50be4f7da766d5e5aa119d0aef1a76f283f973",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.caddyserver_1776_caddy-7567@sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f"
+            ],
+            "size_bytes": 1083566853
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 70.878,
+          "workers": 1
+        }
+      ]
+    },
+    {
+      "host_validity": "host-valid",
+      "instance_id": "thlorenz__doctoc-329",
+      "language": "js",
+      "official_image": "starryzhang/sweb.eval.x86_64.thlorenz_1776_doctoc-329",
+      "replaces": "open-gsd__gsd-core-1799",
+      "repo": "thlorenz/doctoc",
+      "role": "infrastructure-replacement",
+      "runs": [
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "0bed61e532e1355c516539428850f7b779f706e4aa7c91145036a13604f716bd",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.thlorenz_1776_doctoc-329@sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af"
+            ],
+            "size_bytes": 477051600
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 1,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 31.604,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "b9ead380ff65495a4c400e57666b034888d553b8f80966cc4f78cc07634950ec",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.thlorenz_1776_doctoc-329@sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af"
+            ],
+            "size_bytes": 477051600
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 2,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 23.066,
+          "workers": 1
+        },
+        {
+          "architecture_or_emulation_warnings": [],
+          "classification": "official-gold-success",
+          "command_log_sha256": "25ddb9ba42c29a944af54febe2aba148921f5fa34a7fc8559c132c4899df77d0",
+          "docker_limits": {
+            "configured_cpus": 6,
+            "configured_memory_mib": 16384,
+            "configured_swap_mib": 2048,
+            "engine_architecture": "linux/arm64",
+            "engine_reported_cpus": 6,
+            "engine_usable_memory_bytes": 16746352640,
+            "engine_version": "29.7.2",
+            "requested_platform": "linux/amd64"
+          },
+          "exit_code": 0,
+          "official_image": {
+            "available_after_run": true,
+            "declared_architecture": "amd64",
+            "declared_os": "linux",
+            "id": "sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af",
+            "repo_digests": [
+              "starryzhang/sweb.eval.x86_64.thlorenz_1776_doctoc-329@sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af"
+            ],
+            "size_bytes": 477051600
+          },
+          "oom_or_resource_failure": false,
+          "outcome": "PASS",
+          "repetition": 3,
+          "requested_platform": "linux/amd64",
+          "timed_out": false,
+          "timeout_seconds": 9300,
+          "wall_seconds": 22.897,
+          "workers": 1
+        }
+      ]
+    }
+  ],
+  "validity_rule": {
+    "evaluator_image_or_infrastructure_failure": "classify-separately",
+    "frozen_before_first_run": true,
+    "mixed_results": "unstable/invalid-on-host",
+    "repeated_resource_failure": "invalid-on-fixed-environment",
+    "three_successes": "host-valid"
+  },
+  "public_sanitization": {
+    "local_references_redacted": true,
+    "raw_run_fields_removed": [
+      "command",
+      "container_states_after_run",
+      "raw_output_dir",
+      "report",
+      "resolved",
+      "results"
+    ],
+    "scientific_outcomes_changed": false,
+    "status": "public-safe-derived-receipt"
+  }
+}

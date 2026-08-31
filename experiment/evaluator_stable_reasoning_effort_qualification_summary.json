@@ -1,0 +1,25 @@
+{
+  "alternate_cluster_count": 4,
+  "attempted_candidates": 20,
+  "build_environment_failures": 0,
+  "evaluator_runtime_failures": 0,
+  "flaky_validation_failures": 1,
+  "gold_patch_evaluation_failures": 0,
+  "infrastructure_timeouts": 3,
+  "minimum_gate_passed": true,
+  "primary_cluster_count": 12,
+  "private_receipt_sha256": "97212c3a62ba91591399a5b7461c916c26552764cbd1700a025950f2fe6c3715",
+  "qualification_rate": 0.8,
+  "qualified_independent_clusters": 16,
+  "schema_name": "engineering-scope-guard.evaluator-stable-qualification.public-summary",
+  "schema_version": 2,
+  "source": {
+    "candidate_order_sha256": "c0faf6ca92191fa14d18e63e0f970c9c49f3bfeffbb4eeb8c96716fadfc4ba05",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "embedded_repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "evaluator_revision": "7c5ee6c11595bb0290832eb9e5b7aa81ead1cfc0"
+  },
+  "status": "stable_pool_ready",
+  "subject_invocation_starts": 0,
+  "task_identities_withheld": true
+}

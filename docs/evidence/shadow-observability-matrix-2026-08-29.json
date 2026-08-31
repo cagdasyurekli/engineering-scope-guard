@@ -1,0 +1,210 @@
+{
+  "audit_date": "2026-08-29",
+  "decision": "NO MATERIAL OBSERVABILITY GAP — RETAIN RESEARCH-ONLY",
+  "entries": [
+    {
+      "classifications": ["reliably_observable", "native_or_substitute_already_sufficient"],
+      "domain": "repository",
+      "fact": "before/after file additions, deletions, and modifications",
+      "v0_boundary": "Snapshot schema 2 compares repository-relative entry kind, SHA-256, and byte size; Git/VCS supplies the underlying fact more simply for tracked content."
+    },
+    {
+      "classifications": ["reliably_observable", "native_or_substitute_already_sufficient"],
+      "domain": "repository",
+      "fact": "strict-UTF-8 line additions and deletions",
+      "v0_boundary": "Deterministic only under strict-utf8-lines-v1; binary, symlink, and special entries contribute zero LOC; Git diff/stat and language tools are established substitutes."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "repository",
+      "fact": "dependency additions, removals, and specification changes",
+      "v0_boundary": "Covers supported package.json and selected pyproject.toml tables, normalizes names, and hashes specifications; manifest diffs and ecosystem tools expose the same underlying changes with broader language coverage."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "context_state",
+      "fact": "persistent instruction footprint",
+      "v0_boundary": "Reports byte deltas only for configured relative instruction paths, defaulting to root AGENTS.md and AGENTS.override.md; it does not prove that Codex loaded those bytes. Git, file size, and native instruction inspection are sufficient."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "context_state",
+      "fact": "repeated context loading",
+      "v0_boundary": "No V0 event records loaded instruction/context bytes or repeated loads."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "context_state",
+      "fact": "fresh versus cached token usage",
+      "v0_boundary": "V0 records only whether a completed turn contains a usage object; it discards input, cached-input, output, and reasoning-output values that current codex exec JSONL documents directly."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "context_state",
+      "fact": "compaction boundaries",
+      "v0_boundary": "Recognizes supplied PreCompact/PostCompact hook names but hook-only input is always degraded and no 0.151.0 live canary was run; Codex hooks and App Server document native compaction events."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "context_state",
+      "fact": "session and turn continuation",
+      "v0_boundary": "Validates thread-start and balanced turn boundaries in one supplied trace but does not retain thread identity or reconstruct cross-file continuation; native thread APIs and logs expose continuation directly."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "context_state",
+      "fact": "reopening or rereading after a state transition",
+      "v0_boundary": "Command hashes are not correlated with paths or compaction/checkpoint transitions; non-shell read inputs are discarded."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference", "native_or_substitute_already_sufficient"],
+      "domain": "context_state",
+      "fact": "goal or checkpoint continuity",
+      "v0_boundary": "V0 has no goal/checkpoint model; current Codex App Server exposes persisted goal state and thread continuation natively."
+    },
+    {
+      "classifications": ["reliably_observable"],
+      "domain": "coverage",
+      "fact": "missing or malformed V0 input coverage",
+      "v0_boundary": "V0 visibly reports malformed lines, unknown hashed identifiers, missing/invalid fields, sequence imbalance, snapshot warnings, and unavailable usage/command dimensions. This is observer-health normalization, not a new coding-workflow fact."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "repeated_work",
+      "fact": "repeated exact command invocation",
+      "v0_boundary": "Equal SHA-256 command summaries can be counted deterministically for observed completed exec commands or hook Bash records, but V0 does not aggregate repetition and live evidence contains only one command; native traces preserve the command and order."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "repeated_work",
+      "fact": "repeated same-file reads",
+      "v0_boundary": "V0 does not retain tool arguments for non-Bash reads and hashes the whole Bash command, so same-path identity is unavailable."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference", "native_or_substitute_already_sufficient"],
+      "domain": "repeated_work",
+      "fact": "repeated search queries",
+      "v0_boundary": "V0 recognizes a web_search item type but does not retain or fingerprint queries; current Codex App Server, Copilot SDK, and trace systems expose search/tool arguments."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "repeated_work",
+      "fact": "identical-result repetition",
+      "v0_boundary": "Tool and command outputs are neither retained nor fingerprinted."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "repeated_work",
+      "fact": "retries",
+      "v0_boundary": "Duplicate observed command hashes can be a retry proxy, but provider retries, corrected tool arguments, and retry cause are not represented; native/OTel traces expose richer attempt events."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "repeated_work",
+      "fact": "correction rounds",
+      "v0_boundary": "Turn and command counts do not establish that later work corrected earlier work."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "repeated_work",
+      "fact": "abandoned edits or work",
+      "v0_boundary": "Before/after snapshots expose final structural delta, not transient edits, abandonment, or intent."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "repeated_work",
+      "fact": "state-recovery work",
+      "v0_boundary": "No event identifies recovery intent; repeated activity remains an unproven proxy."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "verification",
+      "fact": "tests, lint, type checks, and builds executed",
+      "v0_boundary": "Classifies observed shell command shapes and records program basename, status, and exit code; shell parsing, wrapper commands, non-shell tools, missing events, and hook degradation create false negatives. Native logs and CI are authoritative."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "verification",
+      "fact": "verification pass or fail status",
+      "v0_boundary": "Uses command status/exit code when present; absence is unavailable rather than failure. CI/test output provides the stronger result."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "verification",
+      "fact": "repeated verification",
+      "v0_boundary": "Equal command hashes and verification kinds can be counted from observed summaries, but V0 does not aggregate them and cannot establish equivalent tests with changed arguments."
+    },
+    {
+      "classifications": ["partially_observable"],
+      "domain": "verification",
+      "fact": "missing verification evidence",
+      "v0_boundary": "The command-verification coverage dimension reports unavailable/degraded evidence, but cannot prove verification did not occur outside the supplied trace."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "verification",
+      "fact": "evaluator-independent completion or termination",
+      "v0_boundary": "Turn completed/failed and runtime error counts establish protocol termination, not correct or accepted task completion."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference", "native_or_substitute_already_sufficient"],
+      "domain": "tools",
+      "fact": "configured tool exposure",
+      "v0_boundary": "Doctor checks only exec JSON and hooks; V0 does not inventory tools. Native configuration, SDK/App Server, and product UIs expose configured tools."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "tools",
+      "fact": "tool invocation and repeated use",
+      "v0_boundary": "Reliably summarizes observed command executions and counts file-change items; non-Bash hook tool names and exec MCP/web arguments are not emitted in derived output. Native and OTel traces retain richer tool identity/order."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference", "native_or_substitute_already_sufficient"],
+      "domain": "tools",
+      "fact": "tool output volume",
+      "v0_boundary": "V0 intentionally discards raw output and does not record output byte counts; App Server and trace systems expose output/duration fields."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "tools",
+      "fact": "unused configured tools",
+      "v0_boundary": "No tool inventory exists, so exposure cannot be joined to observed use."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "tools",
+      "fact": "objectively wrong tool selection",
+      "v0_boundary": "V0 has no externally defined expected-tool oracle; invocation frequency cannot establish selection quality."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "outcome",
+      "fact": "turn or session completed",
+      "v0_boundary": "Exec turn terminal events and supplied SessionEnd hooks expose protocol boundaries with known gaps; native runtimes expose them directly."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "outcome",
+      "fact": "accepted or correct outcome",
+      "v0_boundary": "No acceptance, evaluator, user approval, test sufficiency, or correctness field exists."
+    },
+    {
+      "classifications": ["unobservable_without_semantic_inference"],
+      "domain": "outcome",
+      "fact": "user correction or rejection",
+      "v0_boundary": "A later prompt or turn is not sufficient to label correction/rejection, and V0 does not retain prompt semantics."
+    },
+    {
+      "classifications": ["partially_observable", "native_or_substitute_already_sufficient"],
+      "domain": "outcome",
+      "fact": "timeout or runtime failure",
+      "v0_boundary": "Counts turn.failed and error events and command failures when exposed, but cannot reliably distinguish provider, transport, sandbox, timeout, or task failure from current derived fields."
+    }
+  ],
+  "schema_name": "engineering-scope-guard.shadow-observability-matrix",
+  "schema_version": 1,
+  "summary": {
+    "potential_material_gap_count": 0,
+    "track_2_gate_passed": false
+  }
+}

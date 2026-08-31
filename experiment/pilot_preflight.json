@@ -1,0 +1,46 @@
+{
+  "base_commit": "c71df19b4a90d0ae408c09fa3c1518e5f0e7aef0",
+  "checks": {
+    "codex_subject_canary": true,
+    "confirmatory_reserve_emitted": false,
+    "contract_audit": true,
+    "contract_tracked_from_main": true,
+    "docker_architecture_resources_and_images": true,
+    "evaluator_and_source_revisions": true,
+    "fresh_isolation_canary": true,
+    "head_equal_origin_main": true,
+    "no_experimental_byte_drift": true,
+    "pilot_ledger_absent": true,
+    "pilot_state_roots_absent": true,
+    "working_tree_clean_before_preflight": true
+  },
+  "contract": {
+    "contract_file_sha256": "91bca22dde1d157a3d298c25fcda90ceba8c95b56a9a5e3b48e8e21402112f41",
+    "contract_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+    "final_pool_sha256": "611693dc971177e76b5d7b45eb58f8dffd7c4821bf12b0dc6c540b6d580973fa",
+    "path": "experiment/pilot_execution_contract.json",
+    "schedule_sha256": "ab92971b4309ecb6a7ccdd18c97358a2db4ba3342261c6831f8d6b0ace04aa2e",
+    "short_policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "version": "pilot-v1.0"
+  },
+  "evidence_source_sha256": {
+    "scripts/pilot_contract.py": "dcf0db30dae404bb2412a4978fcf3d5dfd39f74e8a4ea037455b94d442fce473",
+    "scripts/pilot_harness_qualification.py": "52a8e9fc53d31e7cc90d6a424520d9ff2c6e43c9d1a58b0d5c82598eae316473",
+    "src/engineering_scope_guard/pilot_contract.py": "8b77d6d876fddcda7a534f5401dc623135995c850211691c81aa7aa58cb1e132"
+  },
+  "experimental_parameters_changed": false,
+  "pilot_cells_executed": 0,
+  "policy_comparisons_executed": 0,
+  "preflight_passed": false,
+  "preflight_restarted_from_beginning": true,
+  "recorded_at": "2026-08-28",
+  "schema_name": "engineering-scope-guard.pilot-preflight",
+  "schema_version": 1,
+  "status": "blocked",
+  "stop": {
+    "class": "harness_failure",
+    "discrepancy": "No integrated live batch runner launches and coordinates the frozen schedule, Codex subject, Docker evaluator, process-group timeouts, same-session corrective round, attempt receipts, and hash-chained ledger.",
+    "frozen_action": "stop_batch",
+    "stopped_before_cell": 1
+  }
+}

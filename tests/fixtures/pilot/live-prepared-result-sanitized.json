@@ -1,0 +1,13 @@
+{
+  "schema_name": "engineering-scope-guard.live-prepared-result-sanitized",
+  "schema_version": 1,
+  "prepared": {
+    "started_at": "2026-08-28T00:00:00+00:00",
+    "ended_at": "2026-08-28T00:00:01+00:00"
+  },
+  "observed_runtime_types": {
+    "started_at": "str",
+    "ended_at": "str"
+  },
+  "contains_provider_content": false
+}

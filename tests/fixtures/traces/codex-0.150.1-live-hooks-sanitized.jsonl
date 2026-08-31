@@ -1,0 +1,6 @@
+{"session_id":"fixture-session","transcript_path":null,"cwd":"fixture-root","hook_event_name":"SessionStart","model":"fixture-model","permission_mode":"never","source":"startup"}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"fixture-root","hook_event_name":"UserPromptSubmit","model":"fixture-model","permission_mode":"never","turn_id":"fixture-turn","prompt":"<prompt-redacted>"}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"fixture-root","hook_event_name":"PreToolUse","model":"fixture-model","permission_mode":"never","turn_id":"fixture-turn","tool_name":"Bash","tool_use_id":"fixture-tool","tool_input":{"command":"<command-redacted>"}}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"fixture-root","hook_event_name":"PostToolUse","model":"fixture-model","permission_mode":"never","turn_id":"fixture-turn","tool_name":"Bash","tool_use_id":"fixture-tool","tool_input":{"command":"<command-redacted>"},"tool_response":"<tool-output-redacted>"}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"fixture-root","hook_event_name":"Stop","model":"fixture-model","permission_mode":"never","turn_id":"fixture-turn","stop_hook_active":false,"last_assistant_message":"<assistant-message-redacted>"}
+{"session_id":"fixture-session","transcript_path":null,"cwd":"fixture-root","hook_event_name":"SessionEnd","reason":"other"}

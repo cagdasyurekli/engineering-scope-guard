@@ -1,0 +1,63 @@
+{
+  "fixtures": [
+    {
+      "expected_behavior": "Complete and retain the adjacent correctness work during normal implementation; it is supported necessary correctness, not review-eligible optional work.",
+      "expected_outcome": "keep",
+      "id": "adjacent_correctness_edge_case",
+      "scenario": "A narrow requirement exposes an adjacent correctness edge case required by the chosen implementation."
+    },
+    {
+      "expected_behavior": "Fix and retain the shared root cause when repository evidence supports it; the final review must not narrow the change to one literal call site.",
+      "expected_outcome": "keep",
+      "id": "justified_shared_root_cause",
+      "scenario": "Several symptoms share one evidenced root cause even though the request names only one symptom."
+    },
+    {
+      "expected_behavior": "Remove or simplify the abstraction only when its lack of support and safe separability are clear and correctness confidence is preserved.",
+      "expected_outcome": "remove_if_clear_and_safe",
+      "id": "speculative_abstraction",
+      "scenario": "Implementation introduced an unused abstraction solely for hypothetical future extensibility."
+    },
+    {
+      "expected_behavior": "Remove or revert the unrelated refactor only when it is clearly separable and doing so preserves correctness confidence.",
+      "expected_outcome": "remove_if_clear_and_safe",
+      "id": "unrelated_refactor",
+      "scenario": "The task patch contains a stylistic refactor unrelated to required behavior."
+    },
+    {
+      "expected_behavior": "Do not apply the scope review; continue ordinary diagnosis, correction, and relevant validation.",
+      "expected_outcome": "suspend_review",
+      "id": "relevant_failing_test",
+      "scenario": "A relevant test is failing at the supposed review point."
+    },
+    {
+      "expected_behavior": "Keep the supporting work because uncertainty and entanglement do not satisfy the removal boundary.",
+      "expected_outcome": "keep",
+      "id": "uncertain_entangled_support",
+      "scenario": "Supporting work may be optional but is entangled with the working implementation and its removal risk is uncertain."
+    },
+    {
+      "expected_behavior": "Use the already-known repository evidence; remove duplicate task-introduced machinery only if it is clearly unsupported, separable, and safe, without initiating a broad reuse search.",
+      "expected_outcome": "remove_if_clear_and_safe",
+      "id": "known_existing_mechanism",
+      "scenario": "A repository mechanism already known from normal work satisfies the need duplicated by a task-introduced addition."
+    },
+    {
+      "expected_behavior": "Do not perform the broad search and keep the working addition because its unsupported status cannot be established within the review boundary.",
+      "expected_outcome": "keep_without_search",
+      "id": "broad_search_required",
+      "scenario": "Proving that an addition could be reused or made smaller would require repository-wide or alternative-search work."
+    },
+    {
+      "expected_behavior": "Make no change; finding no clearly unsupported and safely separable addition is a valid review result.",
+      "expected_outcome": "no_op",
+      "id": "nothing_unnecessary",
+      "scenario": "The implementation is correct and every task-introduced addition has support or is not safely separable."
+    }
+  ],
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-semantic-fixtures",
+  "schema_version": 1,
+  "treatment_name": "Evidence-Conditioned Final Scope Review",
+  "treatment_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+  "treatment_version": "v0.1"
+}

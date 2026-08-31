@@ -1,0 +1,339 @@
+{
+  "all_cells_begin_at_attempt": 1,
+  "all_isolation_roots_unique": true,
+  "baseline_cells": 16,
+  "cells_resolved": 32,
+  "contract_sha256": "2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "delivery_plans": [
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-01-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 1,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-01-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 2,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-02-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 3,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-02-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 4,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-03-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 5,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-03-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 6,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-04-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 7,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-04-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 8,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-05-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 9,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-05-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 10,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-06-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 11,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-06-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 12,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-07-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 13,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-07-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 14,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-08-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 15,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-08-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 16,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-09-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 17,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-09-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 18,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-10-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 19,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-10-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 20,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-11-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 21,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-11-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 22,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-12-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 23,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-12-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 24,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-13-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 25,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-13-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 26,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-14-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 27,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-14-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 28,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-15-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 29,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-15-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 30,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "treatment",
+      "cell_id": "exploratory-block-16-treatment",
+      "late_stage_resume": true,
+      "late_stage_stdin_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+      "ordinary_task_treatment_exposure": false,
+      "position": 31,
+      "trajectory_attempt": 1
+    },
+    {
+      "arm": "baseline",
+      "cell_id": "exploratory-block-16-baseline",
+      "late_stage_resume": false,
+      "late_stage_stdin_sha256": null,
+      "ordinary_task_treatment_exposure": false,
+      "position": 32,
+      "trajectory_attempt": 1
+    }
+  ],
+  "evaluator_calls": 0,
+  "experimental_observations": 0,
+  "ledger_written": false,
+  "positions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-execution-dry-run",
+  "schema_version": 1,
+  "status": "pass",
+  "subject_calls": 0,
+  "treatment_cells": 16
+}

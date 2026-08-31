@@ -1,0 +1,974 @@
+{
+  "authorization_sha256": "a0e82151c38e4643fd5e8e74541409a65d919fcdbc555b75c42442c0801c4c69",
+  "cells": [
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "short",
+      "attempt_kind": "preserved-predecessor-successor",
+      "cell_id": "v3-slot-04-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-04-short-rep-1/attempt-2/codex-home",
+        "derived": "attempts/v3-slot-04-short-rep-1/attempt-2/derived",
+        "evaluator": "attempts/v3-slot-04-short-rep-1/attempt-2/evaluator",
+        "raw": "attempts/v3-slot-04-short-rep-1/attempt-2/raw",
+        "repository": "attempts/v3-slot-04-short-rep-1/attempt-2/repository"
+      },
+      "position": 1,
+      "repetition": 1,
+      "requested_task_slot": 4,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 2
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-04-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-04-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-04-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-04-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-04-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-04-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 2,
+      "repetition": 1,
+      "requested_task_slot": 4,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-01-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-01-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-01-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-01-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-01-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-01-short-rep-1/attempt-1/repository"
+      },
+      "position": 3,
+      "repetition": 1,
+      "requested_task_slot": 1,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-01-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-01-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-01-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-01-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-01-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-01-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 4,
+      "repetition": 1,
+      "requested_task_slot": 1,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-07-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-07-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-07-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-07-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-07-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-07-short-rep-1/attempt-1/repository"
+      },
+      "position": 5,
+      "repetition": 1,
+      "requested_task_slot": 7,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-07-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-07-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-07-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-07-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-07-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-07-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 6,
+      "repetition": 1,
+      "requested_task_slot": 7,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-06-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-06-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-06-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-06-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-06-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-06-short-rep-1/attempt-1/repository"
+      },
+      "position": 7,
+      "repetition": 1,
+      "requested_task_slot": 6,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-06-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-06-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-06-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-06-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-06-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-06-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 8,
+      "repetition": 1,
+      "requested_task_slot": 6,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-08-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-08-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-08-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-08-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-08-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-08-short-rep-1/attempt-1/repository"
+      },
+      "position": 9,
+      "repetition": 1,
+      "requested_task_slot": 8,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-08-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-08-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-08-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-08-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-08-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-08-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 10,
+      "repetition": 1,
+      "requested_task_slot": 8,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-03-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-03-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-03-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-03-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-03-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-03-short-rep-1/attempt-1/repository"
+      },
+      "position": 11,
+      "repetition": 1,
+      "requested_task_slot": 3,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-03-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-03-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-03-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-03-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-03-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-03-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 12,
+      "repetition": 1,
+      "requested_task_slot": 3,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-05-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-05-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-05-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-05-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-05-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-05-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 13,
+      "repetition": 1,
+      "requested_task_slot": 5,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-05-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-05-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-05-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-05-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-05-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-05-short-rep-1/attempt-1/repository"
+      },
+      "position": 14,
+      "repetition": 1,
+      "requested_task_slot": 5,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-02-short-rep-1",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-02-short-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-02-short-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-02-short-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-02-short-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-02-short-rep-1/attempt-1/repository"
+      },
+      "position": 15,
+      "repetition": 1,
+      "requested_task_slot": 2,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-02-baseline-rep-1",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-02-baseline-rep-1/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-02-baseline-rep-1/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-02-baseline-rep-1/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-02-baseline-rep-1/attempt-1/raw",
+        "repository": "attempts/v3-slot-02-baseline-rep-1/attempt-1/repository"
+      },
+      "position": 16,
+      "repetition": 1,
+      "requested_task_slot": 2,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-08-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-08-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-08-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-08-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-08-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-08-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 17,
+      "repetition": 2,
+      "requested_task_slot": 8,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "ether__etherpad-7445",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-08-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-08-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-08-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-08-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-08-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-08-short-rep-2/attempt-1/repository"
+      },
+      "position": 18,
+      "repetition": 2,
+      "requested_task_slot": 8,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-07-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-07-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-07-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-07-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-07-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-07-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 19,
+      "repetition": 2,
+      "requested_task_slot": 7,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "gleam-lang__gleam-5982",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-07-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-07-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-07-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-07-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-07-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-07-short-rep-2/attempt-1/repository"
+      },
+      "position": 20,
+      "repetition": 2,
+      "requested_task_slot": 7,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-01-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-01-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-01-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-01-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-01-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-01-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 21,
+      "repetition": 2,
+      "requested_task_slot": 1,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "timescale__timescaledb-9955",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-01-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-01-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-01-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-01-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-01-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-01-short-rep-2/attempt-1/repository"
+      },
+      "position": 22,
+      "repetition": 2,
+      "requested_task_slot": 1,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-03-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-03-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-03-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-03-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-03-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-03-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 23,
+      "repetition": 2,
+      "requested_task_slot": 3,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "Azure__azure-sdk-for-net-58482",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-03-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-03-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-03-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-03-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-03-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-03-short-rep-2/attempt-1/repository"
+      },
+      "position": 24,
+      "repetition": 2,
+      "requested_task_slot": 3,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-05-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-05-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-05-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-05-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-05-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-05-short-rep-2/attempt-1/repository"
+      },
+      "position": 25,
+      "repetition": 2,
+      "requested_task_slot": 5,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "checkstyle__checkstyle-19487",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-05-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-05-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-05-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-05-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-05-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-05-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 26,
+      "repetition": 2,
+      "requested_task_slot": 5,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-06-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-06-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-06-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-06-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-06-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-06-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 27,
+      "repetition": 2,
+      "requested_task_slot": 6,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "GladysAssistant__Gladys-2504",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-06-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-06-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-06-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-06-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-06-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-06-short-rep-2/attempt-1/repository"
+      },
+      "position": 28,
+      "repetition": 2,
+      "requested_task_slot": 6,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-04-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-04-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-04-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-04-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-04-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-04-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 29,
+      "repetition": 2,
+      "requested_task_slot": 4,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-04-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-04-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-04-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-04-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-04-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-04-short-rep-2/attempt-1/repository"
+      },
+      "position": 30,
+      "repetition": 2,
+      "requested_task_slot": 4,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "short",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-02-short-rep-2",
+      "intervention_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-02-short-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-02-short-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-02-short-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-02-short-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-02-short-rep-2/attempt-1/repository"
+      },
+      "position": 31,
+      "repetition": 2,
+      "requested_task_slot": 2,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    },
+    {
+      "actual_task_id": "shader-slang__slang-10768",
+      "arm": "baseline",
+      "attempt_kind": "first_attempt",
+      "cell_id": "v3-slot-02-baseline-rep-2",
+      "intervention_sha256": null,
+      "isolation_roots_relative": {
+        "codex_home": "attempts/v3-slot-02-baseline-rep-2/attempt-1/codex-home",
+        "derived": "attempts/v3-slot-02-baseline-rep-2/attempt-1/derived",
+        "evaluator": "attempts/v3-slot-02-baseline-rep-2/attempt-1/evaluator",
+        "raw": "attempts/v3-slot-02-baseline-rep-2/attempt-1/raw",
+        "repository": "attempts/v3-slot-02-baseline-rep-2/attempt-1/repository"
+      },
+      "position": 32,
+      "repetition": 2,
+      "requested_task_slot": 2,
+      "source_and_evaluator": {
+        "dataset": "SWE-bench-Live/MultiLang",
+        "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+        "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+        "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+        "workers": 1
+      },
+      "subject": {
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "trajectory_attempt": 1
+    }
+  ],
+  "codex_invocations": 0,
+  "contract_sha256": "ad7cd1522114b8512be20f9c5a73268e1071d9138eba7bacb6ea8d54a902aca3",
+  "decision": "PILOT-V3 SUCCESSOR EXECUTION INTERFACE QUALIFIED \u2014 LIVE EXECUTION REQUIRES SEPARATE AUTHORIZATION",
+  "evaluator_invocations": 0,
+  "infrastructure_rerun_allowance": 4,
+  "ledger_modified": false,
+  "operator_interruption_allowance": 2,
+  "pilot_cells_executed": 0,
+  "policy_comparisons_executed": 0,
+  "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+  "position_1_attempt_1_executable": false,
+  "position_1_attempt_3_permitted": false,
+  "positions_resolved": 32,
+  "preflight": {
+    "authorization_sha256": "a0e82151c38e4643fd5e8e74541409a65d919fcdbc555b75c42442c0801c4c69",
+    "contract_file_sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "evaluator_invocations": 0,
+    "execute_marker_present": false,
+    "infrastructure_rerun_allowance": 4,
+    "infrastructure_reruns_consumed": 0,
+    "next_legal_action": "launch",
+    "next_position": 1,
+    "next_trajectory_attempt": 2,
+    "operator_interruption_allowance": 2,
+    "operator_interruptions_consumed": 0,
+    "pool_file_sha256": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "predecessor_ledger_file_sha256": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+    "schedule_file_sha256": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "schema_name": "engineering-scope-guard.pilot-v3-successor-execution-preflight",
+    "schema_version": 1,
+    "stale_trajectory_credentials": 0,
+    "status": "pass",
+    "subject_invocations": 0,
+    "successor_events": 1,
+    "successor_ledger_file_sha256": "41303a6a5c86ae39784238d4d8b29440823d8b9ed80707d42e20b261453285c7",
+    "terminal_result_file_sha256": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+  },
+  "schedule_sha256": "9defe1ea2e376640284b53f618647aa54cff6e279dcb55d2137ff652ece80764",
+  "schema_name": "engineering-scope-guard.pilot-v3-successor-execution-dry-run",
+  "schema_version": 1,
+  "status": "pass"
+}

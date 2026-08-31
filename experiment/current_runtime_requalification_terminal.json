@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "baseline_reasoning_effort": "low",
+    "model": "gpt-5.6-sol",
+    "treatment_reasoning_effort": "medium"
+  },
+  "claim_boundaries": {
+    "billing_savings_established": false,
+    "causal_effect_established": false,
+    "confirmatory_evidence": false,
+    "equivalence_or_noninferiority_established": false,
+    "preserved_quality_established": false
+  },
+  "completed_at": "2026-08-30T14:59:44Z",
+  "disposition": "NO LIVE EXPERIMENT JUSTIFIED",
+  "gold_qualification": {
+    "attempts": 15,
+    "design": {
+      "gold_repetitions_per_task": 2,
+      "language_count": 8,
+      "selection": "first manifest-qualified SHA-256-ranked reserve task per language",
+      "task_body_or_model_outcome_used": false,
+      "timeout_seconds": 3600,
+      "workers": 1
+    },
+    "fully_qualified_language_count": 6,
+    "official_gold_successes": 12,
+    "official_gold_test_failures": 2,
+    "replacement_count": 2,
+    "replacement_limit": 2,
+    "runtime_failures": 1,
+    "status": "design_blocked",
+    "unattempted_language_count": 1
+  },
+  "private_evidence_commitments": {
+    "gold_receipt_sha256": "b2e67daa9281c6532171305e7236353be13c8a85b31d7296d16b6633903296f7",
+    "reserve_receipt_sha256": "eb0e9ca378646e30b5613dea8664667f82247a5bd60ff50e28cfb04027d66f68",
+    "reserve_selected_ids_sha256": "e08c9820f804e81d03b0e9144b853d85c6959b5202c29740c10ecbb00ecfdd51"
+  },
+  "reason": "gold_replacement_allowance_exhausted",
+  "schema_name": "engineering-scope-guard.current-runtime-requalification-terminal",
+  "schema_version": 1,
+  "source": {
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "embedded_repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "evaluator_revision": "7c5ee6c11595bb0290832eb9e5b7aa81ead1cfc0"
+  },
+  "subject_accounting": {
+    "content_free_runtime_canaries": 1,
+    "experimental_subject_invocation_returns": 0,
+    "experimental_subject_invocation_starts": 0,
+    "frozen_cell_attempts": 0
+  }
+}

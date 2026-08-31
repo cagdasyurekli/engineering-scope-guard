@@ -1,0 +1,387 @@
+{
+  "claims": [
+    {
+      "agent_model_runtime": {
+        "agent": "Codex CLI 0.150.1",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "canonical_artifacts": [
+        "experiment/pilot_v3_successor_terminal_result.json",
+        "experiment/pilot_v3_c_short_mechanism_diagnostic.json",
+        "docs/C_SHORT_V0_1_DISPOSITION_AND_MECHANISM_ANALYSIS.md"
+      ],
+      "claim_id": "ESG-RR-001-C01",
+      "claim_type": "empirical_result",
+      "contradictions": [
+        "One complete repetition pair favored C-short and three were accepted in both arms.",
+        "The earlier authored development pool showed a directional work reduction, but it was development evidence with ceiling outcomes and is not pooled."
+      ],
+      "evidence_class": "project_local_exploratory_experiment",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "Across seven complete task clusters in the exploratory Pilot-v3 successor, C-short minus baseline acceptance was -14.3 percentage points, with an exact task-bootstrap 95% percentile interval from -50.0 to +14.3 percentage points.",
+      "expiry_revalidation_status": {
+        "status": "historical_result_supported_current_applicability_not_revalidated",
+        "trigger": "Any material change to Codex, model, evaluator, task distribution, treatment bytes, or harness requires a new evidence record rather than extension of this claim."
+      },
+      "forbidden_broader_interpretations": [
+        "Minimality prompts make coding agents worse.",
+        "C-short caused a 14.3 percentage-point quality loss.",
+        "Quality was preserved.",
+        "The study established equivalence, non-inferiority, or a population effect."
+      ],
+      "important_limitations": [
+        "Exploratory, not confirmatory.",
+        "Seven independent complete task clusters and a broad interval.",
+        "One frozen cell was missing; no value was imputed.",
+        "No per-language, maintainability, or downstream-work inference."
+      ],
+      "mechanism_status": "not_applicable_to_primary_effect",
+      "n_independent_units": 7,
+      "outcome_definition": "Official evaluator accepted_completed outcome, averaged over two correlated repetitions within each complete task cluster.",
+      "point_estimate": {
+        "unit": "percentage_points",
+        "value": -14.2857
+      },
+      "project_or_external": "project_experiment",
+      "repetitions_runs": {
+        "admissible_marginal_cells": 31,
+        "complete_paired_cells": 28,
+        "repetitions_per_task_arm": 2
+      },
+      "status": "exploratory",
+      "task_repository_scope": "Seven complete repository-distinct SWE-bench-Live/MultiLang task clusters from the frozen eight-task/eight-repository Pilot-v3 pool.",
+      "uncertainty_interval": {
+        "level": 0.95,
+        "lower": -50.0,
+        "method": "Exact nonparametric task bootstrap over 7^7 ordered resamples; nearest-rank percentile interval.",
+        "unit": "percentage_points",
+        "upper": 14.2857
+      }
+    },
+    {
+      "agent_model_runtime": {
+        "agent": "Codex CLI 0.150.1",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "canonical_artifacts": [
+        "experiment/pilot_v3_successor_terminal_result.json",
+        "experiment/pilot_v3_c_short_mechanism_diagnostic.json"
+      ],
+      "claim_id": "ESG-RR-001-C02",
+      "claim_type": "empirical_result",
+      "contradictions": [
+        "Two of seven complete clusters used less input and wall time under C-short.",
+        "Reasoning-output tokens were lower at the aggregate paired point estimate."
+      ],
+      "evidence_class": "project_local_exploratory_experiment",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "In the seven complete task clusters, C-short's paired input-token ratio was 1.223 (95% interval 1.012 to 1.448) and its paired wall-time ratio was 1.326 (95% interval 1.052 to 1.575), so this sample did not show less input or wall work under C-short.",
+      "expiry_revalidation_status": {
+        "status": "historical_result_supported_current_applicability_not_revalidated",
+        "trigger": "Revalidate only in a new frozen study after material model, runtime, caching, evaluator, or task-distribution change."
+      },
+      "forbidden_broader_interpretations": [
+        "C-short always increases tokens or wall time.",
+        "Every extra token or second was unnecessary.",
+        "The ratios are provider cost or billing ratios.",
+        "Scope Guard saves tokens."
+      ],
+      "important_limitations": [
+        "Provider billing amount and currency were unavailable.",
+        "Cached and calculated fresh input have different semantics.",
+        "Work directions are exploratory and task heterogeneous.",
+        "Work must be interpreted beside acceptance, not as a standalone objective."
+      ],
+      "mechanism_status": "work_direction_only_not_causal",
+      "n_independent_units": 7,
+      "outcome_definition": "Provider-reported input tokens and receipt wall time, averaged within task and compared as C-short divided by baseline.",
+      "point_estimate": {
+        "input_token_ratio": 1.222743,
+        "wall_time_ratio": 1.326281
+      },
+      "project_or_external": "project_experiment",
+      "repetitions_runs": {
+        "complete_paired_cells": 28,
+        "repetitions_per_task_arm": 2
+      },
+      "status": "exploratory",
+      "task_repository_scope": "Seven complete repository-distinct SWE-bench-Live/MultiLang task clusters from the frozen Pilot-v3 pool.",
+      "uncertainty_interval": {
+        "input_token_ratio_95_percentile": [
+          1.011998,
+          1.448256
+        ],
+        "method": "Exact nonparametric task bootstrap with nearest-rank percentiles.",
+        "wall_time_ratio_95_percentile": [
+          1.05211,
+          1.574845
+        ]
+      }
+    },
+    {
+      "agent_model_runtime": {
+        "agent": "Codex CLI 0.150.1",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "canonical_artifacts": [
+        "experiment/pilot_v3_c_short_mechanism_diagnostic.json",
+        "docs/C_SHORT_V0_1_DISPOSITION_AND_MECHANISM_ANALYSIS.md"
+      ],
+      "claim_id": "ESG-RR-001-C03",
+      "claim_type": "empirical_decomposition",
+      "contradictions": [
+        "Calculated fresh input also increased in aggregate, but by much less than cached input.",
+        "Per subject turn, calculated fresh input was slightly lower under C-short."
+      ],
+      "evidence_class": "project_local_deterministic_derived_metric",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "Of the 3,591,203-token aggregate paired input difference, 3,455,488 tokens, or 96.2%, were cached input and 135,715, or 3.8%, were calculated fresh input.",
+      "expiry_revalidation_status": {
+        "status": "historical_result_supported",
+        "trigger": "Recompute if any receipt, usage-field definition, analysis code, or complete-cluster population changes."
+      },
+      "forbidden_broader_interpretations": [
+        "Cached input is free.",
+        "Cached input is wasted input.",
+        "The decomposition establishes provider billing or monetary cost.",
+        "C-short caused repeated context ingestion."
+      ],
+      "important_limitations": [
+        "Fresh input is calculated as input minus cached input.",
+        "Provider-side cache mechanics and billed amount were unavailable.",
+        "The decomposition is aggregate over complete paired cells."
+      ],
+      "mechanism_status": "supports_repeated_context_interpretation_but_not_causal_clause_attribution",
+      "n_independent_units": 7,
+      "outcome_definition": "Difference in aggregate provider-reported input components across the 28 complete paired cells.",
+      "point_estimate": {
+        "cached_input_difference": 3455488,
+        "cached_share": 0.962209,
+        "calculated_fresh_input_difference": 135715,
+        "calculated_fresh_share": 0.037791,
+        "total_input_difference": 3591203
+      },
+      "project_or_external": "project_experiment",
+      "repetitions_runs": {
+        "complete_paired_cells": 28,
+        "repetitions_per_task_arm": 2
+      },
+      "status": "exploratory_derived",
+      "task_repository_scope": "Seven complete Pilot-v3 task clusters.",
+      "uncertainty_interval": null
+    },
+    {
+      "agent_model_runtime": {
+        "agent": "Codex CLI 0.150.1",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "canonical_artifacts": [
+        "docs/C_SHORT_V0_1_DISPOSITION_AND_MECHANISM_ANALYSIS.md",
+        "experiment/pilot_v3_c_short_mechanism_diagnostic.json",
+        "experiment/arms/short.txt"
+      ],
+      "claim_id": "ESG-RR-001-C04",
+      "claim_type": "mechanism_hypothesis",
+      "contradictions": [
+        "Only one task cluster supplied the replicated literal-minimality-compatible pattern.",
+        "One repetition pair favored C-short and several pairs were null.",
+        "The evaluator may encode behavior implicit rather than explicit in the short issue statement."
+      ],
+      "evidence_class": "project_local_post_hoc_mechanism_analysis",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "One task cluster showed a replicated arm-linked patch and acceptance pattern consistent with the post-hoc hypothesis that up-front literal-minimality guidance can suppress acceptance-relevant adjacent handling.",
+      "expiry_revalidation_status": {
+        "status": "hypothesis_only_not_causally_validated",
+        "trigger": "Requires a separately justified prospective mechanism study before causal or prevalence language is permitted."
+      },
+      "forbidden_broader_interpretations": [
+        "The prompt caused the failures.",
+        "Minimality prompts make coding agents worse.",
+        "The mechanism generalizes beyond the observed task cluster.",
+        "The observed omitted behavior was objectively overengineering or underengineering."
+      ],
+      "important_limitations": [
+        "Post-hoc and not independently manipulated.",
+        "One task cluster supplied the replicated pattern.",
+        "No raw task body, source, patch, or check name is public in the diagnostic."
+      ],
+      "mechanism_status": "post_hoc_concrete_hypothesis_not_causal",
+      "n_independent_units": 1,
+      "outcome_definition": "Replicated baseline-only acceptance discordance with structurally coherent arm-linked behavior across two repetitions.",
+      "point_estimate": null,
+      "project_or_external": "project_experiment",
+      "repetitions_runs": {
+        "replicated_repetitions": 2
+      },
+      "status": "post_hoc_exploratory",
+      "task_repository_scope": "One public Pilot-v3 task cluster, GladysAssistant__Gladys-2504.",
+      "uncertainty_interval": null
+    },
+    {
+      "agent_model_runtime": {
+        "agent": "Codex CLI 0.150.1",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "canonical_artifacts": [
+        "docs/C_SHORT_V0_1_DISPOSITION_AND_MECHANISM_ANALYSIS.md",
+        "docs/DECISIONS.md"
+      ],
+      "claim_id": "ESG-RR-001-C05",
+      "claim_type": "project_decision",
+      "contradictions": [
+        "The estimate interval includes a smaller C-short advantage.",
+        "C-short had favorable results in the authored development pool, which was not efficacy evidence."
+      ],
+      "evidence_class": "project_governance_decision_based_on_exploratory_evidence",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "Engineering Scope Guard retired exact C-short v0.1 unchanged and did not advance it to confirmatory execution.",
+      "expiry_revalidation_status": {
+        "status": "historical_project_decision_current",
+        "trigger": "A later treatment would require a new identity, hypothesis, evidence record, and explicit authorization; it would not rewrite this decision."
+      },
+      "forbidden_broader_interpretations": [
+        "The experiment proved C-short is harmful.",
+        "All minimality guidance should be retired.",
+        "The retirement decision is a measured causal effect."
+      ],
+      "important_limitations": [
+        "This is a project strategy/governance decision, not an empirical outcome.",
+        "It applies only to byte-exact C-short v0.1 within this research program."
+      ],
+      "mechanism_status": "decision_considered_post_hoc_mechanism_without_treating_it_as_causal",
+      "n_independent_units": 7,
+      "outcome_definition": "Frozen project advancement and retirement criteria applied to the terminal exploratory evidence.",
+      "point_estimate": null,
+      "project_or_external": "project_decision",
+      "repetitions_runs": {
+        "complete_paired_cells_considered": 28
+      },
+      "status": "project_decision",
+      "task_repository_scope": "Exact C-short v0.1 in the Engineering Scope Guard Pilot-v3 program.",
+      "uncertainty_interval": null
+    },
+    {
+      "agent_model_runtime": {
+        "agent": "Codex CLI 0.151.0",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
+      },
+      "canonical_artifacts": [
+        "docs/EVIDENCE_CONDITIONED_FINAL_SCOPE_REVIEW_V0_1_TERMINAL_ANALYSIS.md",
+        "experiment/evidence_conditioned_final_scope_review_v0_1_terminal_result.json",
+        "experiment/evidence_conditioned_final_scope_review_v0_1_terminal_analysis.json"
+      ],
+      "claim_id": "ESG-RR-001-C06",
+      "claim_type": "historical_follow_up_context",
+      "contradictions": [
+        "The paired acceptance point estimate favored treatment and no baseline-only matched pair occurred.",
+        "Corrective rounds decreased slightly at the task-cluster point estimate."
+      ],
+      "evidence_class": "project_local_exploratory_terminal_partial_experiment",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "A later materially different final-scope-review treatment ended with 24 of 32 admissible cells, eight missing cells, five complete task clusters, and five prospectively frozen retirement gates: no accepted-outcome mechanism, increased search, increased cached context, increased wall or work, and structural-proxy-only apparent reductions.",
+      "expiry_revalidation_status": {
+        "status": "historical_result_supported_candidate_retired",
+        "trigger": "No rerun or extension is permitted; later evidence must be recorded separately."
+      },
+      "forbidden_broader_interpretations": [
+        "The later treatment improved quality.",
+        "The later treatment preserved quality.",
+        "The later treatment replicated C-short.",
+        "The two intervention results may be pooled.",
+        "The partial execution established superiority, equivalence, or non-inferiority."
+      ],
+      "important_limitations": [
+        "Terminal partial schedule with eight missing cells.",
+        "Five complete task/repository clusters.",
+        "Owner-local ledger and opaque task commitments limit public independent provenance verification.",
+        "No evidence-backed optional removal or simplification in jointly accepted pairs."
+      ],
+      "mechanism_status": "no_positive_accepted_outcome_mechanism_established",
+      "n_independent_units": 5,
+      "outcome_definition": "Prospectively frozen any-gate retirement rule applied after quality-first exploratory analysis.",
+      "point_estimate": {
+        "acceptance_treatment_minus_baseline": 0.1,
+        "fired_retirement_gates": 5
+      },
+      "project_or_external": "project_experiment",
+      "repetitions_runs": {
+        "admissible_cells": 24,
+        "complete_matched_repetitions": 10,
+        "frozen_cells": 32,
+        "missing_cells": 8
+      },
+      "status": "exploratory_terminal_partial",
+      "task_repository_scope": "Five complete and two incomplete observed task/repository clusters from the frozen Evidence-Conditioned Final Scope Review v0.1 exploratory allocation.",
+      "uncertainty_interval": {
+        "acceptance_difference_95_percentile": [
+          0.0,
+          0.3
+        ],
+        "method": "Exact nonparametric task bootstrap over five complete task/repository clusters."
+      }
+    },
+    {
+      "agent_model_runtime": null,
+      "canonical_artifacts": [
+        "docs/EVIDENCE_POLICY.md",
+        "docs/CODING_AGENT_EVIDENCE_REVIEW.md",
+        "docs/PROJECT_THESIS_REASSESSMENT.md"
+      ],
+      "claim_id": "ESG-RR-001-C07",
+      "claim_type": "research_interpretation",
+      "contradictions": [
+        "Lower work can still be beneficial when accepted outcomes and quality guardrails are preserved.",
+        "Necessary investigation and verification can legitimately increase work."
+      ],
+      "evidence_class": "cross_source_research_interpretation_and_project_policy",
+      "evaluation_date": "2026-08-29",
+      "exact_wording": "Raw token, file, or LOC reduction is not sufficient evidence of coding-agent efficiency; work must be interpreted per correct or accepted outcome with quality guardrails.",
+      "expiry_revalidation_status": {
+        "status": "current_research_principle",
+        "trigger": "Reassess if a validated outcome-independent efficiency measure is established."
+      },
+      "forbidden_broader_interpretations": [
+        "Tokens, files, or LOC never matter.",
+        "Large context is always better.",
+        "AI agents should never use large context.",
+        "Every longer accepted trajectory is efficient."
+      ],
+      "important_limitations": [
+        "This is an evidence-grounded interpretation and measurement policy, not one experiment's causal effect.",
+        "No universal aggregate efficiency score is validated."
+      ],
+      "mechanism_status": "not_applicable",
+      "n_independent_units": null,
+      "outcome_definition": "Measurement principle requiring accepted/correct outcome and quality context before interpreting resource proxies.",
+      "point_estimate": null,
+      "project_or_external": "research_interpretation",
+      "repetitions_runs": null,
+      "status": "interpretation_not_empirical_effect",
+      "task_repository_scope": "Project-wide evidence policy; not a population estimate.",
+      "uncertainty_interval": null
+    }
+  ],
+  "evidence_cutoff": "2026-08-29",
+  "forbidden_phrases": [
+    "minimality prompts make coding agents worse",
+    "Scope Guard saves tokens",
+    "coding agents waste X% of their tokens",
+    "we proved overengineering can be prevented",
+    "our tool detects wasted work",
+    "no quality loss",
+    "quality preserved",
+    "AI agents should never use large context"
+  ],
+  "ledger_id": "ESG-RR-001-CLAIMS",
+  "report_id": "ESG-RR-001",
+  "schema_name": "engineering-scope-guard.public-research-claim-ledger",
+  "schema_version": 1,
+  "status": "canonical_publication_claim_scope",
+  "version": "0.1"
+}

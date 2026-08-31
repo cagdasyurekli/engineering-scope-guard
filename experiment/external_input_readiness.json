@@ -1,0 +1,106 @@
+{
+  "schema_name": "engineering-scope-guard.external-input-readiness",
+  "schema_version": 1,
+  "as_of": "2026-08-27",
+  "prior_bounded_conclusion_preserved": "NO-GO",
+  "selected_source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "license": "MIT for dataset/evaluator; underlying repositories retain their own licenses",
+    "selection_basis": "fresh real issue provenance, executable official evaluator, reproducible task images, current multi-language supply, metadata-only selection, and lower contamination risk than older fixed sets"
+  },
+  "supply": {
+    "source_rows": 1077,
+    "source_eligible_distinct_tasks": 634,
+    "source_eligible_repositories": 223,
+    "pilot_tasks": 12,
+    "confirmatory_reserve_tasks": 538,
+    "pilot_repository_holdouts": 84,
+    "currently_runnable_tasks_on_host": 0,
+    "repetitions_count_as_distinct_supply": false
+  },
+  "partition": {
+    "path": "experiment/external_task_partition.json",
+    "allocation_sha256": "1de066a17c4810b042b59edb8ea717775cf5a04c5dba0150c87613535d05c71b",
+    "confirmatory_reserve_ids_sha256": "71c0879b77374370873613daf8856a5c7b507977d911576d00d495f4af70e08a",
+    "pilot_and_reserve_task_ids_disjoint": true,
+    "pilot_and_reserve_repositories_disjoint": true,
+    "confirmatory_ids_or_bodies_emitted": false,
+    "development_task_overlap": 0
+  },
+  "smoke": {
+    "path": "experiment/external_smoke_receipt.json",
+    "status": "failed-preflight",
+    "subject_invoked": false,
+    "evaluator_invoked": false,
+    "failure_class": "infrastructure-pre-subject-failure",
+    "policy_efficacy_evidence": false
+  },
+  "usage_and_billing": {
+    "codex_exec_provider_reported_fields": [
+      "input_tokens",
+      "cached_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens"
+    ],
+    "codex_exec_not_observed": [
+      "cache_write_tokens",
+      "provider_billed_cost",
+      "currency",
+      "backend_model_snapshot"
+    ],
+    "calculated_fields_allowed": [
+      "fresh_input_tokens = input_tokens - cached_input_tokens",
+      "API-list-price estimate labeled as calculated and not provider billed"
+    ],
+    "minimum_pilot_efficiency_reporting": "report provider token components separately by run and paired task; do not collapse them into invented billed cost",
+    "future_cache_procedure": "use fresh per-cell Codex state, ephemeral sessions, counterbalanced arm order, timestamps, and separate cached/fresh components; invalidate cost claims if provider-side cache writes or billed cost remain unobserved"
+  },
+  "review": {
+    "independent_experienced_reviewers": 0,
+    "deterministic_evaluator_sufficient_for_bounded_exploratory_pilot": true,
+    "permitted_future_claims": [
+      "task-specific F2P/P2P outcomes",
+      "supplied build/test outcomes",
+      "classified completion/failure",
+      "provider-reported token components",
+      "deterministic structural diagnostics and exploratory variance"
+    ],
+    "prohibited_future_claims": [
+      "broad maintainability or code-quality improvement/preservation",
+      "architectural appropriateness",
+      "human acceptability",
+      "objective overengineering classification",
+      "equivalence or non-inferiority",
+      "downstream maintenance or lifecycle savings"
+    ]
+  },
+  "contingent_budget": {
+    "distinct_tasks": 12,
+    "arms": 2,
+    "repetitions_per_task_arm": 2,
+    "planned_subject_runs": 48,
+    "infrastructure_only_replacements": 8,
+    "maximum_subject_invocations": 56,
+    "gold_evaluator_preflights": 36,
+    "execution_mode": "sequential single-worker until measured otherwise",
+    "documented_compute_floor": "4 CPUs and 16 GB RAM per evaluator instance; selected tasks must be resource-preflighted because some C++ tasks may require 50 GB RAM",
+    "selected_smoke_image_compressed_gb": 0.807,
+    "pilot_storage_estimate": "unavailable until all 12 image manifests and unpacked sizes are measured",
+    "provider_spend": "unavailable until a representative fixed-subject smoke succeeds; API list-price arithmetic is not provider billing"
+  },
+  "gates": {
+    "defensible_external_source": "pass",
+    "enough_eligible_opaque_tasks": "pass-source-fail-current-host",
+    "disjoint_reproducible_partitions": "pass",
+    "official_evaluator_end_to_end": "fail",
+    "fixed_codex_subject_end_to_end": "fail-not-invoked",
+    "usage_cache_interpretability": "partial",
+    "isolation_procedure": "contingent-on-container-adapter",
+    "run_budget_feasible": "fail-unmeasured-runtime-and-storage",
+    "reviewer_claim_limits": "pass"
+  },
+  "pilot_authorized": false,
+  "bounded_conclusion": "REDESIGN REQUIRED"
+}

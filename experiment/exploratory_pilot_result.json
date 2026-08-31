@@ -1,0 +1,101 @@
+{
+  "schema_name": "engineering-scope-guard.exploratory-pilot-result",
+  "schema_version": 1,
+  "recorded_at": "2026-08-28T11:04:25Z",
+  "status": "stopped_partial_attempt",
+  "recommendation": "REDESIGN REQUIRED",
+  "starting_commit": "104f82ce2e35ed04e1e0f8acecf648e045d2bb52",
+  "contract": {
+    "canonical_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+    "raw_file_sha256": "91bca22dde1d157a3d298c25fcda90ceba8c95b56a9a5e3b48e8e21402112f41"
+  },
+  "successor_authorization": {
+    "canonical_sha256": "c81664e2a245d80657fa30112383aee34bd919424a9950ce4c7ba0e9ff450889",
+    "raw_file_sha256": "e723d57d89674731abf957ea875bba586fe262398f0fa2a0664de2f343af37df",
+    "batch_id": "pilot-v1.0-successor-1"
+  },
+  "schedule": {
+    "scheduled_cells": 48,
+    "successor_cells_started": 1,
+    "successor_attempts_finished": 0,
+    "valid_completed_cells": 0,
+    "unstarted_cells": 47,
+    "policy_comparisons": 0,
+    "stopped_at_cell": "slot-04-baseline-rep-1",
+    "stopped_at_trajectory_attempt": 2
+  },
+  "accounting": {
+    "infrastructure_reruns_consumed_at_successor_start": 1,
+    "infrastructure_reruns_remaining_globally": 7,
+    "post_freeze_task_slot_replacements": 0,
+    "historical_pre_treatment_task_slot_replacements": 4
+  },
+  "invocations": {
+    "successor_subject_processes": 1,
+    "successor_completed_subject_turns": 1,
+    "successor_evaluator_processes": 1,
+    "corrective_rounds": 0
+  },
+  "partial_attempt": {
+    "first_successor_attempt_to_reach_subject_and_evaluator": true,
+    "ledger_status": "attempt_started_without_attempt_finished",
+    "next_legal_action": "resolve_partial",
+    "state_disposition": "recoverable_undecided_not_reset_or_terminally_rewritten",
+    "experimental_retry_consumed_beyond_attempt_2": false,
+    "provider_infrastructure_failure_observed": false,
+    "prediction_patch_bytes": 0,
+    "prediction_patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluator_report_present": false,
+    "evaluator_results_present": true,
+    "evaluator_results_sha256": "d2fd4cbc121c65339bfe6455d39151588ce7e8a6501974629f782723935582c0",
+    "evaluator_results": {
+      "submitted": 1,
+      "empty_patch": 1,
+      "success": 0,
+      "failure": 0,
+      "error": 0,
+      "incomplete": 0
+    },
+    "official_resolved_outcome": "unavailable"
+  },
+  "usage": {
+    "classification": "observed_invalid_partial_attempt_only",
+    "input_tokens": 916296,
+    "cached_input_tokens": 841984,
+    "reasoning_output_tokens": 1884,
+    "output_tokens": 4948,
+    "total_tokens": "unavailable_in_frozen_runner",
+    "provider_billed_amount": "unavailable",
+    "currency": "unavailable",
+    "cache_write_tokens": "unavailable",
+    "backend_model_snapshot": "unavailable"
+  },
+  "stop_evidence": {
+    "exception_type": "TypeError",
+    "exception_message": "'str' object is not callable",
+    "production_prepare_ended_at_shape": "string",
+    "core_receipt_ended_at_expectation": "callable",
+    "prior_qualification_limitation": "exact live runtime type of ended_at was not validated",
+    "credential_material_removed": true,
+    "new_authorization_required_by_state_machine": true
+  },
+  "durable_local_evidence": {
+    "predecessor_state_root": ".local/pilot-runner",
+    "predecessor_ledger": ".local/pilot-runner/pilot-ledger.jsonl",
+    "predecessor_ledger_sha256": "0cf33d60006cc689b4664b309a94cbe8de1914e5dc2c86306cf603c44ca6a019",
+    "predecessor_terminal_event_sha256": "f1868900f9aea206913fe594ceb53a3ffcab21fa72bf254afd3637ef2de73046",
+    "successor_state_root": ".local/pilot-successor-runner",
+    "successor_ledger": ".local/pilot-successor-runner/pilot-successor-ledger.jsonl",
+    "successor_ledger_sha256": "dac4d77481549c03fb5fc8c266964f33dcec0b32bade96a6a5c0561756b2fe15",
+    "successor_ledger_events": 8,
+    "successor_last_event_sha256": "c03a76515a7a8702304e4e874c1a93b53f1795b4bb8104f8cd498c70608562a1",
+    "successor_terminal_event_present": false,
+    "successor_execute_marker_present": true,
+    "raw_trace_sha256": "719340c2720b6d9af76875019be38875489b24c6203fd7bac37fa0495a6a9778"
+  },
+  "analysis": {
+    "arm_effects_estimable": false,
+    "reason": "No valid Pilot cell completed and no arm comparison exists.",
+    "claims_supported": []
+  }
+}

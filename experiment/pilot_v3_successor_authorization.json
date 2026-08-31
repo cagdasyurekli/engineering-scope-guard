@@ -1,0 +1,99 @@
+{
+  "accounting": {
+    "budgets_increased_or_reset": false,
+    "infrastructure_rerun_allowance": 4,
+    "infrastructure_reruns_consumed_at_successor_start": 0,
+    "infrastructure_reruns_remaining_at_successor_start": 4,
+    "maximum_attempts_per_cell": 2,
+    "operator_interruption_allowance": 2,
+    "operator_interruptions_consumed_at_successor_start": 0,
+    "operator_interruptions_remaining_at_successor_start": 2,
+    "successor_lineage_authorization_is_not_a_retry_allowance": true
+  },
+  "authorization_sha256": "a0e82151c38e4643fd5e8e74541409a65d919fcdbc555b75c42442c0801c4c69",
+  "authorization_version": "pilot-v3-successor-v1.0",
+  "decision": "ADAPTER REPAIR AND SUCCESSOR QUALIFIED \u2014 LIVE EXECUTION REQUIRES SEPARATE AUTHORIZATION",
+  "forbidden": [
+    "modify_or_reopen_predecessor_ledger",
+    "relabel_position_1_attempt_1",
+    "launch_position_1_attempt_3",
+    "repeat_completed_successor_cells",
+    "change_contract_pool_schedule_treatment_model_reasoning_evaluator_timeout_or_analysis",
+    "increase_or_reset_retry_or_operator_budgets",
+    "inspect_interim_arm_effects",
+    "expose_confirmatory_task_bodies",
+    "execute_without_separate_authorization"
+  ],
+  "original": {
+    "contract_canonical_sha256": "ad7cd1522114b8512be20f9c5a73268e1071d9138eba7bacb6ea8d54a902aca3",
+    "contract_file_sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "contract_path": "experiment/pilot_v3_execution_contract.json",
+    "pool_file_sha256": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "pool_path": "experiment/pilot_v3_pool.json",
+    "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+    "schedule_file_sha256": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "schedule_path": "experiment/pilot_v3_schedule.json",
+    "schedule_sha256": "9defe1ea2e376640284b53f618647aa54cff6e279dcb55d2137ff652ece80764",
+    "terminal_result_file_sha256": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855",
+    "terminal_result_path": "experiment/pilot_v3_terminal_result.json",
+    "unchanged": true
+  },
+  "predecessor": {
+    "admissible_observations": 0,
+    "failed_attempt": 1,
+    "failed_cell_id": "v3-slot-04-short-rep-1",
+    "failed_position": 1,
+    "interim_arm_comparisons": 0,
+    "ledger_events": 9,
+    "ledger_file_sha256": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+    "official_evaluator_processes_started": 0,
+    "original_ledger_immutable": true,
+    "subject_processes_completed": 1,
+    "terminal_event_sha256": "5193864cf4acf0fbdc4e08778fafa22ded459e26839823967a64f1a2c1e01997"
+  },
+  "recorded_at": "2026-08-28T22:59:15.922802+00:00",
+  "repair": {
+    "files": [
+      {
+        "path": "src/engineering_scope_guard/pilot_runner.py",
+        "sha256": "8acf18130d01679c56c2b3041f3885c86f339001408dc6ac42eead97523710a8"
+      },
+      {
+        "path": "scripts/pilot_runner.py",
+        "sha256": "2cb90c2513d2731bf17196c9c6882232d4ba2426a3dab906fedc0476beaddcb6"
+      }
+    ],
+    "sha256": "5487ac79122586ec6716891f2ccd15652b95d1dd67315d7c42010a2c1b2bf81d"
+  },
+  "schema_name": "engineering-scope-guard.pilot-v3-successor-authorization",
+  "schema_version": 1,
+  "scientific_basis": {
+    "admissible_observations_before_successor": 0,
+    "failure_class": "outcome-independent harness/schema incompatibility",
+    "interim_arm_effect_analysis_performed": false,
+    "new_randomization": false,
+    "official_evaluator_outcome_produced": false,
+    "subject_exposure_preserved": true
+  },
+  "status": "frozen-qualified-execution-not-authorized",
+  "successor": {
+    "completed_cells_repeat_after_restart_permitted": false,
+    "execution_authorized": false,
+    "fresh_isolation_required": true,
+    "position_1_attempt_1": "immutable predecessor exposure; no evaluator disposition",
+    "position_1_attempt_3_permitted": false,
+    "positions_2_through_32": "exact frozen identities and order; start at attempt 1",
+    "separate_ledger_required": true,
+    "starting_cell": {
+      "actual_task_id": "influxdata__telegraf-18686",
+      "arm": "short",
+      "cell_id": "v3-slot-04-short-rep-1",
+      "position": 1,
+      "repetition": 1,
+      "requested_task_slot": 4
+    },
+    "starting_schedule_position": 1,
+    "starting_trajectory_attempt": 2,
+    "successor_id": "pilot-v3.0-successor-1"
+  }
+}

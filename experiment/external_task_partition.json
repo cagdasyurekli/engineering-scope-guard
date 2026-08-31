@@ -1,0 +1,280 @@
+{
+  "development_exclusions": {
+    "overlap_with_source": 0,
+    "registered_ids": [
+      "dev-guard-01",
+      "dev-irreducible-01",
+      "dev-reuse-01",
+      "dev-shared-01"
+    ]
+  },
+  "eligibility": {
+    "eligible_by_language": {
+      "c": 76,
+      "cpp": 117,
+      "cs": 106,
+      "go": 67,
+      "java": 102,
+      "js": 30,
+      "rust": 115,
+      "ts": 21
+    },
+    "eligible_distinct_tasks": 634,
+    "eligible_ids_sha256": "a51aab24428176bb6ce9490e7eeb3f419e030f0ba393a3e6dc9b471f6b27859e",
+    "eligible_repositories": 223,
+    "exclusions_by_first_reason": {
+      "missing_pass_to_pass": 22,
+      "not_newer_than_subject_knowledge_cutoff": 421
+    },
+    "required_fields": [
+      "FAIL_TO_PASS",
+      "PASS_TO_PASS",
+      "created_at",
+      "docker_image",
+      "instance_id",
+      "language",
+      "rebuild_cmds",
+      "repo",
+      "test_cmds"
+    ],
+    "selection_uses_task_bodies_or_outcomes": false,
+    "subject_knowledge_cutoff_exclusive": "2026-02-16T23:59:59+00:00",
+    "version": "swe-bench-live-multilang-v1"
+  },
+  "partition": {
+    "algorithm": "sha256(seed NUL source_revision NUL instance_id)",
+    "allocation_sha256": "1de066a17c4810b042b59edb8ea717775cf5a04c5dba0150c87613535d05c71b",
+    "confirmatory_reserve_count": 538,
+    "confirmatory_reserve_ids_sha256": "71c0879b77374370873613daf8856a5c7b507977d911576d00d495f4af70e08a",
+    "confirmatory_reserve_repositories": 211,
+    "pilot_and_reserve_repositories_disjoint": true,
+    "pilot_and_reserve_task_ids_disjoint": true,
+    "pilot_count": 12,
+    "pilot_language_quotas": {
+      "c": 1,
+      "cpp": 2,
+      "cs": 2,
+      "go": 1,
+      "java": 2,
+      "js": 1,
+      "rust": 2,
+      "ts": 1
+    },
+    "pilot_repository_count": 12,
+    "pilot_repository_holdout_count": 84,
+    "pilot_tasks": [
+      {
+        "created_at": "2026-05-29T22:33:44Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257",
+        "fail_to_pass_count": 1,
+        "instance_id": "BYVoid__OpenCC-1257",
+        "language": "cpp",
+        "pass_to_pass_count": 123,
+        "rank_commitment": "021f043c15d666aef1077861c205734469fd76efa291059174c70a89c7ef8e42",
+        "rebuild_cmds": [
+          "cmake --build build --parallel"
+        ],
+        "repo": "BYVoid/OpenCC",
+        "test_cmds": [
+          "rm -rf reports/gtest; mkdir -p reports/gtest; GTEST_OUTPUT=json:/testbed/reports/gtest/ ctest --test-dir build -V"
+        ]
+      },
+      {
+        "created_at": "2026-03-20T10:33:51Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.gitoxidelabs_1776_gitoxide-2476",
+        "fail_to_pass_count": 3,
+        "instance_id": "GitoxideLabs__gitoxide-2476",
+        "language": "rust",
+        "pass_to_pass_count": 3181,
+        "rank_commitment": "022aec08b6e433326b3806ca69e852b012c71a32251950550123654bd1183913",
+        "rebuild_cmds": [
+          "cd /testbed ; cargo fetch ; cargo build --workspace"
+        ],
+        "repo": "GitoxideLabs/gitoxide",
+        "test_cmds": [
+          "cd /testbed && rm -rf reports && mkdir -p reports && cargo test --workspace --no-fail-fast -- --nocapture 2>&1 | tee reports/test-output.log"
+        ]
+      },
+      {
+        "created_at": "2026-04-04T21:19:35Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.mudblazor_1776_mudblazor-12974",
+        "fail_to_pass_count": 7,
+        "instance_id": "MudBlazor__MudBlazor-12974",
+        "language": "cs",
+        "pass_to_pass_count": 5283,
+        "rank_commitment": "02d558fe528576e533ea2ca1d4098b6156fd487e8c979a71f42bfa8f5cddf95a",
+        "rebuild_cmds": [
+          "dotnet restore src/MudBlazor.UnitTests/MudBlazor.UnitTests.csproj ; dotnet build src/MudBlazor.UnitTests/MudBlazor.UnitTests.csproj --no-restore"
+        ],
+        "repo": "MudBlazor/MudBlazor",
+        "test_cmds": [
+          "mkdir -p /testbed/TestResults ; dotnet test src/MudBlazor.UnitTests/MudBlazor.UnitTests.csproj --logger \"junit;LogFilePath=/testbed/TestResults/MudBlazor.UnitTests.xml\" ; dotnet test src/MudBlazor.UnitTests.Docs/MudBlazor.UnitTests.Docs.csproj --logger \"junit;LogFilePath=/testbed/TestResults/MudBlazor.UnitTests.Docs.xml\" ; dotnet test src/MudBlazor.UnitTests.Analyzers/MudBlazor.UnitTests.Analyzers.csproj --logger \"junit;LogFilePath=/testbed/TestResults/MudBlazor.UnitTests.Analyzers.xml\""
+        ]
+      },
+      {
+        "created_at": "2026-06-22T17:06:24Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.colbymchenry_1776_codegraph-951",
+        "fail_to_pass_count": 24,
+        "instance_id": "colbymchenry__codegraph-951",
+        "language": "c",
+        "pass_to_pass_count": 1631,
+        "rank_commitment": "01726192991dd6944abcfd791b15d9e065af64df90bea3154c85a901354617c0",
+        "rebuild_cmds": [
+          "npm install; npm run build"
+        ],
+        "repo": "colbymchenry/codegraph",
+        "test_cmds": [
+          "cd /testbed && npx vitest run --reporter=json --outputFile=vitest-results.json"
+        ]
+      },
+      {
+        "created_at": "2026-06-02T20:01:35Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.dragonflydb_1776_dragonfly-7493",
+        "fail_to_pass_count": 1,
+        "instance_id": "dragonflydb__dragonfly-7493",
+        "language": "cpp",
+        "pass_to_pass_count": 4564,
+        "rank_commitment": "02b5057c79eb49e20523e52f2bc39e64c365df569ad45180acc53fa9ce0a923a",
+        "rebuild_cmds": [
+          "cmake --build /testbed/build --target src/all --parallel 2"
+        ],
+        "repo": "dragonflydb/dragonfly",
+        "test_cmds": [
+          "rm -f /testbed/test-output.log; a=FLAGS_; a+=force_; a+=epoll; printf -v \"$a\" %s true; export \"$a\"; b=FLAGS_; b+=fiber_; b+=safety_; b+=margin; printf -v \"$b\" %s 4096; export \"$b\"; ctest --test-dir /testbed/build -V -L DFLY --timeout 1200 2>&1 | tee /testbed/test-output.log"
+        ]
+      },
+      {
+        "created_at": "2026-07-19T21:30:03Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.floci-io_1776_floci-1908",
+        "fail_to_pass_count": 5,
+        "instance_id": "floci-io__floci-1908",
+        "language": "java",
+        "pass_to_pass_count": 7714,
+        "rank_commitment": "025845579a4e46c29de77b1dcaf4410bbc65c5e9321f0a41d2bf79a1276cbe69",
+        "rebuild_cmds": [
+          "./mvnw package -DskipTests -B"
+        ],
+        "repo": "floci-io/floci",
+        "test_cmds": [
+          "cd /testbed; rm -f target/surefire-reports/TEST-*.xml target/test-results.xml; ./mvnw test -B; perl -0777 -e 'use strict; use warnings; my @f=sort glob(\"target/surefire-reports/TEST-*.xml\"); my @r; for my $f (@f) { open my $h,\"<\",$f or die \"$f: $!\"; local $/; my $x=<$h>; while ($x =~ m{<testcase\\b([^>]*?)(?:/>|>(.*?)</testcase>)}sg) { my ($a,$b)=($1,defined($2)?$2:\"\"); my ($c)=$a =~ /\\bclassname=\"([^\"]*)\"/; my ($n)=$a =~ /\\bname=\"([^\"]*)\"/; $c=\"//\" if !defined $c; $n=\"//\" if !defined $n; my $s=$b =~ /<skipped(?:\\s|>)/ ? \"skip\" : $b =~ /<(?:failure|error)(?:\\s|>)/ ? \"fail\" : \"pass\"; push @r,qq{<testcase name=\"$c#$n\" status=\"$s\"/>}; }} open my $o,\">\",\"target/test-results.xml\" or die $!; print $o qq{<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<test-results tests=\"}.scalar(@r).qq{\">\\n},join(\"\\n\",@r),qq{\\n</test-results>\\n};'"
+        ]
+      },
+      {
+        "created_at": "2026-03-27T14:46:12Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.gui-cs_1776_terminal.gui-4860",
+        "fail_to_pass_count": 2,
+        "instance_id": "gui-cs__Terminal.Gui-4860",
+        "language": "cs",
+        "pass_to_pass_count": 14998,
+        "rank_commitment": "04dd668343b25293f0b4a75f41bb612163bb483b9b0751bca31e293a427b1c4c",
+        "rebuild_cmds": [
+          "dotnet restore ; dotnet build --no-restore"
+        ],
+        "repo": "gui-cs/Terminal.Gui",
+        "test_cmds": [
+          "DisableRealDriverIO=1 dotnet test --project Tests/UnitTestsParallelizable --no-build --verbosity normal --results-directory TestResults -- --output Detailed --no-progress --report-xunit --report-xunit-filename unit-tests-parallelizable.xml ; DisableRealDriverIO=1 dotnet test --project Tests/UnitTests.NonParallelizable --no-build --verbosity normal --results-directory TestResults -- --output Detailed --no-progress --report-xunit --report-xunit-filename unit-tests-nonparallelizable.xml ; DisableRealDriverIO=1 dotnet test --project Tests/IntegrationTests --no-build --verbosity normal --results-directory TestResults -- --output Detailed --no-progress --report-xunit --report-xunit-filename integration-tests.xml"
+        ]
+      },
+      {
+        "created_at": "2026-03-27T23:54:31Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.iofficeai_1776_aionui-1818",
+        "fail_to_pass_count": 18,
+        "instance_id": "iOfficeAI__AionUi-1818",
+        "language": "ts",
+        "pass_to_pass_count": 1742,
+        "rank_commitment": "0075389a60ba4d5217e464bb7a75686881d088c9e805cea9d155f4ecdb3ee177",
+        "rebuild_cmds": [
+          "npm install ; npm run package"
+        ],
+        "repo": "iOfficeAI/AionUi",
+        "test_cmds": [
+          "cd /testbed && env -u npm_config_cache -u NPM_CONFIG_CACHE ./node_modules/.bin/vitest run --reporter=json > vitest-results.json"
+        ]
+      },
+      {
+        "created_at": "2026-04-05T09:52:43Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.kubernetes-sigs_1776_controller-runtime-3494",
+        "fail_to_pass_count": 1,
+        "instance_id": "kubernetes-sigs__controller-runtime-3494",
+        "language": "go",
+        "pass_to_pass_count": 197,
+        "rank_commitment": "021a8c6d4ea07d931935775402be124e6d9d2a10743a822a2072fc3c8c74817a",
+        "rebuild_cmds": [
+          "GOTOOLCHAIN=auto go mod download ; GOTOOLCHAIN=auto go build ./..."
+        ],
+        "repo": "kubernetes-sigs/controller-runtime",
+        "test_cmds": [
+          "cd /testbed && mkdir -p reports && KUBEBUILDER_ASSETS=\"$(/tmp/cr-tools/setup-envtest use -p path 1.32.0)\" GOTOOLCHAIN=auto go test -v -json ./... > reports/go-test.json ; (cd tools/setup-envtest && GOTOOLCHAIN=auto go test -v -json ./... > /testbed/reports/go-test-setup-envtest.json)"
+        ]
+      },
+      {
+        "created_at": "2026-03-12T08:07:04Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.mc1arke_1776_sonarqube-community-branch-plugin-1221",
+        "fail_to_pass_count": 373,
+        "instance_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "language": "java",
+        "pass_to_pass_count": 1,
+        "rank_commitment": "052e1778bcbfc007f0aa3660689f4595de888e666c7b11ee95ea7676e0742777",
+        "rebuild_cmds": [
+          "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 ./gradlew assemble"
+        ],
+        "repo": "mc1arke/sonarqube-community-branch-plugin",
+        "test_cmds": [
+          "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 ./gradlew test --rerun-tasks --info"
+        ]
+      },
+      {
+        "created_at": "2026-06-28T02:33:06Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.open-gsd_1776_gsd-core-1799",
+        "fail_to_pass_count": 106,
+        "instance_id": "open-gsd__gsd-core-1799",
+        "language": "js",
+        "pass_to_pass_count": 17618,
+        "rank_commitment": "18aaeb296c6c2e619ca390adaca1c5fb9810aba627260192f5ed8f9ffa1b45a6",
+        "rebuild_cmds": [
+          "npm install --ignore-scripts ; npm run build"
+        ],
+        "repo": "open-gsd/gsd-core",
+        "test_cmds": [
+          "cd /testbed ; npm test 2>&1 | tee test-output.log"
+        ]
+      },
+      {
+        "created_at": "2026-07-16T00:33:57Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.rust-lang_1776_rust-analyzer-22827",
+        "fail_to_pass_count": 3,
+        "instance_id": "rust-lang__rust-analyzer-22827",
+        "language": "rust",
+        "pass_to_pass_count": 8130,
+        "rank_commitment": "01f015b71d37ff97439761c3dc1711acb72b9191b1d9e7c28da8cdde61cf8c08",
+        "rebuild_cmds": [
+          "cargo build"
+        ],
+        "repo": "rust-lang/rust-analyzer",
+        "test_cmds": [
+          "cd /testbed ; RUN_SLOW_TESTS=1 cargo +stable test --no-fail-fast -- --nocapture 2>&1 | tee test-output.log"
+        ]
+      }
+    ],
+    "reserve_ids_or_bodies_emitted": false,
+    "seed": "engineering-scope-guard-pilot-v1-2026-08-27",
+    "smoke_candidate": {
+      "docker_image": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257",
+      "fail_to_pass_count": 1,
+      "instance_id": "BYVoid__OpenCC-1257",
+      "language": "cpp",
+      "pass_to_pass_count": 123,
+      "repo": "BYVoid/OpenCC",
+      "selection_rule": "minimum F2P plus P2P count, then hash rank",
+      "selection_uses_task_bodies_or_outcomes": false
+    }
+  },
+  "schema_name": "engineering-scope-guard.external-task-partition",
+  "schema_version": 1,
+  "source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "metadata_projection_sha256": "c99f5eba30f067bc31678b156a4aaadd5299050b8856c2552eba8328d18248b1",
+    "revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "row_count": 1077
+  }
+}

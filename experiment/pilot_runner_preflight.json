@@ -1,0 +1,61 @@
+{
+  "codex_version": "codex-cli 0.150.1",
+  "contract_file_sha256": "91bca22dde1d157a3d298c25fcda90ceba8c95b56a9a5e3b48e8e21402112f41",
+  "contract_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+  "contract_tracked_unchanged": true,
+  "dataset_files_sha256": {
+    "c-00000-of-00001.parquet": "30c0b8cb9e7140e05a4e539f20be0c325be597cbba4bf35e232355987ddddd0c",
+    "cpp-00000-of-00001.parquet": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+    "cs-00000-of-00001.parquet": "29ffe16d0b2cd802e753262b8b0d7fe3f2bb1b489396da238146e79f37937c1f",
+    "go-00000-of-00001.parquet": "76d2b5dff0f3fac8303d30fa85495539e487d25974ad7c21cd21a545cb4756e2",
+    "java-00000-of-00001.parquet": "00387685808c71d21ada175335304b1c118859453afadd58ea21a00b0d568ee8",
+    "js-00000-of-00001.parquet": "bc6ec49ffaf9db97840d55eba6954fae8f5fb0fb071cf49e187f36ffadd55a7a",
+    "rust-00000-of-00001.parquet": "02ac78e2c51a84eb174ac393bb07b77478f1f96cf260af18835a711dd8074ebc",
+    "ts-00000-of-00001.parquet": "7e23783e27230c9cfab1035690035c25523043d6af635bc78da3fd2010c32714"
+  },
+  "docker_environment": {
+    "configured_cpus": 6,
+    "configured_memory_mib": 16384,
+    "configured_swap_mib": 2048,
+    "engine_architecture": "linux/arm64",
+    "engine_reported_cpus": 6,
+    "engine_usable_memory_bytes": 16746352640,
+    "engine_version": "29.7.2",
+    "requested_platform": "linux/amd64"
+  },
+  "evaluator_interface": {
+    "prediction_mapping": "{instance_id: {model_patch: git diff}}",
+    "source_sha256": "dabb0be957547f8bb030c5e53ff60c70ac24cbdbaa011a377cd9242acbcdd703",
+    "structured_report": "<output>/<instance_id>/report.json",
+    "structured_results": "<output>/results.json"
+  },
+  "evaluator_invocations": 0,
+  "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+  "execute_marker_present": false,
+  "final_pool_sha256": "611693dc971177e76b5d7b45eb58f8dffd7c4821bf12b0dc6c540b6d580973fa",
+  "ledger_present": false,
+  "next_legal_action": null,
+  "pilot_cells_executed": 0,
+  "policy_comparisons_executed": 0,
+  "qualified_image_ids": {
+    "BYVoid__OpenCC-1257": "sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1",
+    "MudBlazor__MudBlazor-12974": "sha256:f0c7dae1c586f09a79e3b84ed7a588776e2f6b21fe9118ababd205a5669f227a",
+    "caddyserver__caddy-7567": "sha256:97e93641e98207b200c4d7294e98408ce74bf787b865628b4d32106f9bc1017f",
+    "dragonflydb__dragonfly-7493": "sha256:bedb3c4d2bb1fc4dad405da6eb05f8425b1f9cf5a3e64df5267e82ac7a255807",
+    "floci-io__floci-1908": "sha256:1bd0dd51712534bf4b7e85c7dd1ad163816fdc29ab5d5d34f7d4e6838a93a576",
+    "gui-cs__Terminal.Gui-4860": "sha256:d9bacf28ad5029ccdefa39dbc37cbe894ce4fe9b62e5d02cfd563d886affd6c0",
+    "iOfficeAI__AionUi-1818": "sha256:75e8911e3728b4254973b76554993a44d25490e462fefc3e44f9f81dfa22f0a9",
+    "lakehq__sail-2284": "sha256:0d4346eb47474a6e52eb96e93dd6a1b0d4377777ea3a76b6c78f34fe692a12c6",
+    "mc1arke__sonarqube-community-branch-plugin-1221": "sha256:fc12231c4c1265e64fa333c64a9b76d53dd6cfa85254cfaac13499cccee35b03",
+    "rust-lang__rust-analyzer-22827": "sha256:1b914fbd3c630374232df12cafd1c660c1605e6cfb9b5e4867ca1aa3f0a5b7ae",
+    "thlorenz__doctoc-329": "sha256:c2bcd85de2ed9d9bd321965794e730718b5a68d45f4999250714bd401093e5af",
+    "xroche__httrack-408": "sha256:5fc4373118a703567b207be7a7d852cad6726c7f4e589c0e857a102687522a1b"
+  },
+  "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+  "schedule_sha256": "ab92971b4309ecb6a7ccdd18c97358a2db4ba3342261c6831f8d6b0ace04aa2e",
+  "schema_name": "engineering-scope-guard.pilot-runner-preflight",
+  "schema_version": 1,
+  "short_policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+  "status": "pass",
+  "subject_invocations": 0
+}

@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "path": "docs/reports/ESG-RR-001.md",
+      "role": "clean-canonical-identity ESG-RR-001 version 0.6 report bytes",
+      "sha256": "39c350cc45c424019828fc263b34fc23be352b66fdd9ef40527d91bc7c7f8e74"
+    },
+    {
+      "path": "docs/CLAIMS_CHANGELOG.md",
+      "role": "visible report correction and privacy-sanitation record",
+      "sha256": "81dad9e54ab1f37898a1943c21bbfa402adf869ef54e64f39d3d120af9205d21"
+    },
+    {
+      "path": "experiment/arms/short.txt",
+      "role": "exact C-short v0.1 treatment bytes",
+      "sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6"
+    },
+    {
+      "path": "experiment/pilot_v3_execution_contract.json",
+      "role": "frozen Pilot-v3 execution contract",
+      "sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660"
+    },
+    {
+      "path": "experiment/pilot_v3_pool.json",
+      "role": "frozen public task and repository pool",
+      "sha256": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b"
+    },
+    {
+      "path": "experiment/pilot_v3_schedule.json",
+      "role": "frozen paired schedule",
+      "sha256": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671"
+    },
+    {
+      "path": "experiment/pilot_v3_successor_authorization.json",
+      "role": "successor lineage and retry accounting",
+      "sha256": "6a58d87d303f8cfe98922fa034a6bc826ca4f1fa40b55ed1303e0545262c4d3f"
+    },
+    {
+      "path": "experiment/pilot_v3_successor_terminal_result.json",
+      "role": "body-free terminal result",
+      "sha256": "20c8354adc0a80bd90bbf3e2eeed21d2d3e3eb3d42eeddc3091ae1e50501c14f"
+    },
+    {
+      "path": "experiment/pilot_v3_c_short_mechanism_diagnostic.json",
+      "role": "body-safe cell and task diagnostic",
+      "sha256": "3b47973b2f758cdfd38f29212570ce5adfb3d5ea68c66dc20867e92e4637a14f"
+    },
+    {
+      "path": "docs/PUBLIC_RESEARCH_CLAIM_LEDGER_V0_1.json",
+      "role": "canonical publication claim boundary",
+      "sha256": "9fc57757c8fd5bac337eff30961196e5e14c5300237a296c7c5a4cf0815be847"
+    }
+  ],
+  "correction_date": "2026-08-31",
+  "evidence_cutoff": "2026-08-29",
+  "report_id": "ESG-RR-001",
+  "schema_name": "engineering-scope-guard.public-research-manifest",
+  "schema_version": 1,
+  "version": "0.6"
+}

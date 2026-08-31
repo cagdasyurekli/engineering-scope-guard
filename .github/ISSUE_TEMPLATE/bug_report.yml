@@ -1,0 +1,77 @@
+name: Bug report
+description: Report a reproducible defect in implemented behavior
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a defect. Do not include credentials, private source code, proprietary prompts, or sensitive raw traces.
+        Security vulnerabilities must not be reported in a public issue.
+
+  - type: input
+    id: version
+    attributes:
+      label: Engineering Scope Guard version
+      description: Provide a release, commit SHA, or branch name.
+      placeholder: commit abc1234
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the operating system, Python version, and exact Codex version when relevant.
+      placeholder: macOS 15, Python 3.12, Codex 0.x
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest safe fixture or steps that reproduce the defect.
+      placeholder: |
+        1. Run ...
+        2. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: coverage_health
+    attributes:
+      label: Coverage or doctor output
+      description: Paste sanitized health output when the defect involves Codex event coverage. Remove sensitive paths and content first.
+      render: shell
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add only information needed to understand the defect.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, private source, proprietary prompts, and sensitive trace content.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

@@ -1,0 +1,2301 @@
+{
+  "billing": {
+    "currency": "unavailable",
+    "inference_performed": false,
+    "provider_billed_amount": "unavailable"
+  },
+  "body_safe": true,
+  "interpretation": "post-hoc exploratory diagnostics; not causal or confirmatory evidence",
+  "leave_one_task_out": [
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.116409,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.048831,
+      "input_tokens_short_over_baseline_ratio": 1.112052,
+      "omitted_public_task_id": "timescale__timescaledb-9955",
+      "short_minus_baseline_acceptance_percentage_points": -16.666667,
+      "wall_seconds_short_over_baseline_ratio": 1.387297
+    },
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.273295,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.177573,
+      "input_tokens_short_over_baseline_ratio": 1.267197,
+      "omitted_public_task_id": "Azure__azure-sdk-for-net-58482",
+      "short_minus_baseline_acceptance_percentage_points": -25.0,
+      "wall_seconds_short_over_baseline_ratio": 1.365712
+    },
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.216736,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.139632,
+      "input_tokens_short_over_baseline_ratio": 1.211993,
+      "omitted_public_task_id": "influxdata__telegraf-18686",
+      "short_minus_baseline_acceptance_percentage_points": -8.333333,
+      "wall_seconds_short_over_baseline_ratio": 1.305731
+    },
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.274224,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.120871,
+      "input_tokens_short_over_baseline_ratio": 1.263424,
+      "omitted_public_task_id": "checkstyle__checkstyle-19487",
+      "short_minus_baseline_acceptance_percentage_points": -16.666667,
+      "wall_seconds_short_over_baseline_ratio": 1.319315
+    },
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.237321,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.141455,
+      "input_tokens_short_over_baseline_ratio": 1.231506,
+      "omitted_public_task_id": "GladysAssistant__Gladys-2504",
+      "short_minus_baseline_acceptance_percentage_points": 0.0,
+      "wall_seconds_short_over_baseline_ratio": 1.184821
+    },
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.284132,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.19867,
+      "input_tokens_short_over_baseline_ratio": 1.278811,
+      "omitted_public_task_id": "gleam-lang__gleam-5982",
+      "short_minus_baseline_acceptance_percentage_points": -16.666667,
+      "wall_seconds_short_over_baseline_ratio": 1.372269
+    },
+    {
+      "cached_input_tokens_short_over_baseline_ratio": 1.194606,
+      "calculated_fresh_input_tokens_short_over_baseline_ratio": 1.092583,
+      "input_tokens_short_over_baseline_ratio": 1.188182,
+      "omitted_public_task_id": "ether__etherpad-7445",
+      "short_minus_baseline_acceptance_percentage_points": -16.666667,
+      "wall_seconds_short_over_baseline_ratio": 1.332603
+    }
+  ],
+  "leave_one_task_out_ranges": {
+    "acceptance_difference_percentage_points": {
+      "maximum": 0.0,
+      "minimum": -25.0
+    },
+    "input_token_ratio": {
+      "maximum": 1.278811,
+      "minimum": 1.112052
+    },
+    "wall_time_ratio": {
+      "maximum": 1.387297,
+      "minimum": 1.184821
+    }
+  },
+  "outcome_class_decomposition": {
+    "baseline_only_accepted": {
+      "cached_input_tokens_mean_short_minus_baseline": 91733.333333,
+      "calculated_fresh_input_tokens_mean_short_minus_baseline": 4407.0,
+      "command_executions_mean_short_minus_baseline": 0.666667,
+      "input_tokens_mean_short_minus_baseline": 96140.333333,
+      "pairs": 3,
+      "subject_turns_mean_short_minus_baseline": 1.0,
+      "wall_seconds_mean_short_minus_baseline": 920.272431
+    },
+    "both_accepted": {
+      "cached_input_tokens_mean_short_minus_baseline": 144213.333333,
+      "calculated_fresh_input_tokens_mean_short_minus_baseline": 9968.333333,
+      "command_executions_mean_short_minus_baseline": -1.333333,
+      "input_tokens_mean_short_minus_baseline": 154181.666667,
+      "pairs": 3,
+      "subject_turns_mean_short_minus_baseline": 0.0,
+      "wall_seconds_mean_short_minus_baseline": -33.218635
+    },
+    "both_failed": {
+      "cached_input_tokens_mean_short_minus_baseline": 353060.571429,
+      "calculated_fresh_input_tokens_mean_short_minus_baseline": 13139.285714,
+      "command_executions_mean_short_minus_baseline": 1.428571,
+      "input_tokens_mean_short_minus_baseline": 366199.857143,
+      "pairs": 7,
+      "subject_turns_mean_short_minus_baseline": 0.0,
+      "wall_seconds_mean_short_minus_baseline": 90.030119
+    },
+    "short_only_accepted": {
+      "cached_input_tokens_mean_short_minus_baseline": 276224.0,
+      "calculated_fresh_input_tokens_mean_short_minus_baseline": 614.0,
+      "command_executions_mean_short_minus_baseline": 5.0,
+      "input_tokens_mean_short_minus_baseline": 276838.0,
+      "pairs": 1,
+      "subject_turns_mean_short_minus_baseline": 0.0,
+      "wall_seconds_mean_short_minus_baseline": 85.650397
+    }
+  },
+  "reconciliation": {
+    "admissible_receipts": 31,
+    "complete_task_clusters": 7,
+    "excluded_incomplete_task_slots": [
+      2
+    ],
+    "fresh_input_equals_input_minus_cached_input": true,
+    "persisted_terminal_result_reproduced_byte_for_byte": true,
+    "receipt_assignments_match_frozen_schedule": true,
+    "usage_round_sums_match_receipts": true,
+    "validated_successor_ledger_events": 288
+  },
+  "schema_name": "engineering-scope-guard.pilot-v3-c-short-mechanism-diagnostic",
+  "schema_version": 1,
+  "source_evidence": {
+    "c_short_v0_1_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "contract_sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "pool_sha256": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "schedule_sha256": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "successor_ledger_sha256": "1b4156c8b3e6c20dbc590bd1e892df5e874c0b7207788dd75d09e97cdbbe1225",
+    "terminal_result_sha256": "20c8354adc0a80bd90bbf3e2eeed21d2d3e3eb3d42eeddc3091ae1e50501c14f"
+  },
+  "tasks": [
+    {
+      "cells": [
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-01-baseline-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            2,
+            2
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 1,
+              "passed": 200
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 4,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 77,
+            "lines_deleted": 6
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 23,
+            "failed_command_executions": 2,
+            "failed_verification_commands": 0,
+            "file_changes": 4,
+            "read_search_commands": 49,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1763840,
+            "calculated_fresh_input_tokens": 124534,
+            "input_tokens": 1888374,
+            "output_tokens": 11658,
+            "reasoning_output_tokens": 5585
+          },
+          "wall_seconds": 1015.170426
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-01-short-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            2,
+            2
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 1,
+              "passed": 200
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 3,
+          "prediction_patch_structure": {
+            "files_changed": 4,
+            "lines_added": 128,
+            "lines_deleted": 28
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 7,
+            "command_executions": 37,
+            "failed_command_executions": 3,
+            "failed_verification_commands": 0,
+            "file_changes": 5,
+            "read_search_commands": 89,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 3949568,
+            "calculated_fresh_input_tokens": 230240,
+            "input_tokens": 4179808,
+            "output_tokens": 18427,
+            "reasoning_output_tokens": 7830
+          },
+          "wall_seconds": 1179.647426
+        },
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-01-baseline-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            3,
+            3
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 2,
+              "passed": 199
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 21,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 90,
+            "lines_deleted": 4
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 7,
+            "command_executions": 26,
+            "failed_command_executions": 1,
+            "failed_verification_commands": 0,
+            "file_changes": 4,
+            "read_search_commands": 56,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 2258688,
+            "calculated_fresh_input_tokens": 135145,
+            "input_tokens": 2393833,
+            "output_tokens": 13313,
+            "reasoning_output_tokens": 5251
+          },
+          "wall_seconds": 1048.191021
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-01-short-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            3,
+            3
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 2,
+              "passed": 199
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 22,
+          "prediction_patch_structure": {
+            "files_changed": 4,
+            "lines_added": 77,
+            "lines_deleted": 8
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 8,
+            "command_executions": 28,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 6,
+            "read_search_commands": 72,
+            "verification_commands": 0,
+            "web_searches": 1
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 2238976,
+            "calculated_fresh_input_tokens": 127881,
+            "input_tokens": 2366857,
+            "output_tokens": 14777,
+            "reasoning_output_tokens": 6364
+          },
+          "wall_seconds": 1051.334907
+        }
+      ],
+      "public_task_id": "timescale__timescaledb-9955",
+      "repetition_pair_classifications": [
+        {
+          "classification": "both_failed",
+          "repetition": 1
+        },
+        {
+          "classification": "both_failed",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 1
+    },
+    {
+      "cells": [
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-03-baseline-rep-1",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "unavailable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 1
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1519
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 12,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 17,
+            "lines_deleted": 8
+          },
+          "repetition": 1,
+          "subject_turns": 1,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 15,
+            "failed_command_executions": 5,
+            "failed_verification_commands": 0,
+            "file_changes": 2,
+            "read_search_commands": 46,
+            "verification_commands": 0,
+            "web_searches": 3
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1058304,
+            "calculated_fresh_input_tokens": 72556,
+            "input_tokens": 1130860,
+            "output_tokens": 7829,
+            "reasoning_output_tokens": 3232
+          },
+          "wall_seconds": 397.344408
+        },
+        {
+          "accepted": true,
+          "arm": "short",
+          "cell_id": "v3-slot-03-short-rep-1",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1518
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 11,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 16,
+            "lines_deleted": 10
+          },
+          "repetition": 1,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 5,
+            "command_executions": 20,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 3,
+            "read_search_commands": 33,
+            "verification_commands": 0,
+            "web_searches": 4
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1334528,
+            "calculated_fresh_input_tokens": 73170,
+            "input_tokens": 1407698,
+            "output_tokens": 6875,
+            "reasoning_output_tokens": 1227
+          },
+          "wall_seconds": 482.994805
+        },
+        {
+          "accepted": true,
+          "arm": "baseline",
+          "cell_id": "v3-slot-03-baseline-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1519
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 23,
+          "prediction_patch_structure": {
+            "files_changed": 5,
+            "lines_added": 77,
+            "lines_deleted": 12
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 5,
+            "command_executions": 20,
+            "failed_command_executions": 3,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 46,
+            "verification_commands": 0,
+            "web_searches": 2
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1296384,
+            "calculated_fresh_input_tokens": 83235,
+            "input_tokens": 1379619,
+            "output_tokens": 8129,
+            "reasoning_output_tokens": 2272
+          },
+          "wall_seconds": 505.578672
+        },
+        {
+          "accepted": true,
+          "arm": "short",
+          "cell_id": "v3-slot-03-short-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1519
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 24,
+          "prediction_patch_structure": {
+            "files_changed": 1,
+            "lines_added": 15,
+            "lines_deleted": 9
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 5,
+            "command_executions": 18,
+            "failed_command_executions": 2,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 36,
+            "verification_commands": 0,
+            "web_searches": 3
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 992512,
+            "calculated_fresh_input_tokens": 64346,
+            "input_tokens": 1056858,
+            "output_tokens": 5349,
+            "reasoning_output_tokens": 1211
+          },
+          "wall_seconds": 342.02921
+        }
+      ],
+      "public_task_id": "Azure__azure-sdk-for-net-58482",
+      "repetition_pair_classifications": [
+        {
+          "classification": "short_only_accepted",
+          "repetition": 1
+        },
+        {
+          "classification": "both_accepted",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 3
+    },
+    {
+      "cells": [
+        {
+          "accepted": true,
+          "arm": "baseline",
+          "cell_id": "v3-slot-04-baseline-rep-1",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 3
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 9433
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 2,
+          "prediction_patch_structure": {
+            "files_changed": 4,
+            "lines_added": 24,
+            "lines_deleted": 3
+          },
+          "repetition": 1,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 6,
+            "failed_command_executions": 2,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 7,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 153600,
+            "calculated_fresh_input_tokens": 23944,
+            "input_tokens": 177544,
+            "output_tokens": 2115,
+            "reasoning_output_tokens": 361
+          },
+          "wall_seconds": 810.973691
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-04-short-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            5,
+            3
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 3,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 9433
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 1,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 29,
+            "lines_deleted": 0
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 11,
+            "failed_command_executions": 1,
+            "failed_verification_commands": 0,
+            "file_changes": 2,
+            "read_search_commands": 19,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 2,
+          "usage": {
+            "cached_input_tokens": 344320,
+            "calculated_fresh_input_tokens": 31194,
+            "input_tokens": 375514,
+            "output_tokens": 3882,
+            "reasoning_output_tokens": 1269
+          },
+          "wall_seconds": 1686.434562
+        },
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-04-baseline-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            3,
+            3
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 3,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 9433
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 29,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 19,
+            "lines_deleted": 3
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 5,
+            "command_executions": 7,
+            "failed_command_executions": 1,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 13,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 252416,
+            "calculated_fresh_input_tokens": 35900,
+            "input_tokens": 288316,
+            "output_tokens": 3352,
+            "reasoning_output_tokens": 1378
+          },
+          "wall_seconds": 1494.470463
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-04-short-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            3,
+            3
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 3,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 9433
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 30,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 24,
+            "lines_deleted": 0
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 5,
+            "command_executions": 9,
+            "failed_command_executions": 1,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 11,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 332544,
+            "calculated_fresh_input_tokens": 29880,
+            "input_tokens": 362424,
+            "output_tokens": 4340,
+            "reasoning_output_tokens": 1785
+          },
+          "wall_seconds": 1536.547153
+        }
+      ],
+      "public_task_id": "influxdata__telegraf-18686",
+      "repetition_pair_classifications": [
+        {
+          "classification": "baseline_only_accepted",
+          "repetition": 1
+        },
+        {
+          "classification": "both_failed",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 4
+    },
+    {
+      "cells": [
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-05-baseline-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            2,
+            2
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 1,
+              "passed": 5915
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 13,
+          "prediction_patch_structure": {
+            "files_changed": 7,
+            "lines_added": 210,
+            "lines_deleted": 197
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 7,
+            "command_executions": 24,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 7,
+            "read_search_commands": 40,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1788416,
+            "calculated_fresh_input_tokens": 94578,
+            "input_tokens": 1882994,
+            "output_tokens": 17881,
+            "reasoning_output_tokens": 5126
+          },
+          "wall_seconds": 944.368874
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-05-short-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            3,
+            3
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 2,
+              "passed": 5914
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 14,
+          "prediction_patch_structure": {
+            "files_changed": 7,
+            "lines_added": 228,
+            "lines_deleted": 199
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 9,
+            "command_executions": 25,
+            "failed_command_executions": 3,
+            "failed_verification_commands": 0,
+            "file_changes": 3,
+            "read_search_commands": 43,
+            "verification_commands": 0,
+            "web_searches": 2
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 2113280,
+            "calculated_fresh_input_tokens": 115379,
+            "input_tokens": 2228659,
+            "output_tokens": 17023,
+            "reasoning_output_tokens": 5060
+          },
+          "wall_seconds": 885.87956
+        },
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-05-baseline-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "unavailable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 0
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 26,
+          "prediction_patch_structure": {
+            "files_changed": 9,
+            "lines_added": 442,
+            "lines_deleted": 11
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 31,
+            "failed_command_executions": 3,
+            "failed_verification_commands": 0,
+            "file_changes": 9,
+            "read_search_commands": 65,
+            "verification_commands": 0,
+            "web_searches": 2
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 2534400,
+            "calculated_fresh_input_tokens": 111955,
+            "input_tokens": 2646355,
+            "output_tokens": 16921,
+            "reasoning_output_tokens": 5290
+          },
+          "wall_seconds": 432.42262
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-05-short-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            8,
+            8
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 1
+            },
+            "pass_to_pass": {
+              "failed": 8,
+              "passed": 5908
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 25,
+          "prediction_patch_structure": {
+            "files_changed": 12,
+            "lines_added": 354,
+            "lines_deleted": 425
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 27,
+            "failed_command_executions": 7,
+            "failed_verification_commands": 0,
+            "file_changes": 5,
+            "read_search_commands": 30,
+            "verification_commands": 0,
+            "web_searches": 3
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 2709760,
+            "calculated_fresh_input_tokens": 128184,
+            "input_tokens": 2837944,
+            "output_tokens": 19663,
+            "reasoning_output_tokens": 3632
+          },
+          "wall_seconds": 1002.645212
+        }
+      ],
+      "public_task_id": "checkstyle__checkstyle-19487",
+      "repetition_pair_classifications": [
+        {
+          "classification": "both_failed",
+          "repetition": 1
+        },
+        {
+          "classification": "both_failed",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 5
+    },
+    {
+      "cells": [
+        {
+          "accepted": true,
+          "arm": "baseline",
+          "cell_id": "v3-slot-06-baseline-rep-1",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 3386
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 8,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 20,
+            "lines_deleted": 1
+          },
+          "repetition": 1,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 12,
+            "failed_command_executions": 1,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 12,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 480768,
+            "calculated_fresh_input_tokens": 55278,
+            "input_tokens": 536046,
+            "output_tokens": 3294,
+            "reasoning_output_tokens": 496
+          },
+          "wall_seconds": 1150.15748
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-06-short-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            1,
+            1
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 1
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 3386
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 7,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 19,
+            "lines_deleted": 0
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 7,
+            "failed_command_executions": 2,
+            "failed_verification_commands": 0,
+            "file_changes": 2,
+            "read_search_commands": 17,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 446208,
+            "calculated_fresh_input_tokens": 48197,
+            "input_tokens": 494405,
+            "output_tokens": 3280,
+            "reasoning_output_tokens": 664
+          },
+          "wall_seconds": 2237.680599
+        },
+        {
+          "accepted": true,
+          "arm": "baseline",
+          "cell_id": "v3-slot-06-baseline-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 3386
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 27,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 20,
+            "lines_deleted": 1
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 10,
+            "failed_command_executions": 2,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 16,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 414464,
+            "calculated_fresh_input_tokens": 50491,
+            "input_tokens": 464955,
+            "output_tokens": 2982,
+            "reasoning_output_tokens": 588
+          },
+          "wall_seconds": 1128.994895
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-06-short-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            1,
+            1
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 1
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 3386
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 28,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 19,
+            "lines_deleted": 0
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 12,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 23,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 533504,
+            "calculated_fresh_input_tokens": 63543,
+            "input_tokens": 597047,
+            "output_tokens": 3735,
+            "reasoning_output_tokens": 825
+          },
+          "wall_seconds": 1926.828199
+        }
+      ],
+      "public_task_id": "GladysAssistant__Gladys-2504",
+      "repetition_pair_classifications": [
+        {
+          "classification": "baseline_only_accepted",
+          "repetition": 1
+        },
+        {
+          "classification": "baseline_only_accepted",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 6
+    },
+    {
+      "cells": [
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-07-baseline-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            8,
+            8
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 3,
+              "passed": 1
+            },
+            "pass_to_pass": {
+              "failed": 5,
+              "passed": 3601
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 6,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 22,
+            "lines_deleted": 4
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 23,
+            "failed_command_executions": 2,
+            "failed_verification_commands": 0,
+            "file_changes": 2,
+            "read_search_commands": 36,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1151232,
+            "calculated_fresh_input_tokens": 73988,
+            "input_tokens": 1225220,
+            "output_tokens": 9944,
+            "reasoning_output_tokens": 4907
+          },
+          "wall_seconds": 552.359991
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-07-short-rep-1",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            1,
+            1
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 3
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 3606
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 5,
+          "prediction_patch_structure": {
+            "files_changed": 4,
+            "lines_added": 41,
+            "lines_deleted": 4
+          },
+          "repetition": 1,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 18,
+            "failed_command_executions": 3,
+            "failed_verification_commands": 1,
+            "file_changes": 2,
+            "read_search_commands": 51,
+            "verification_commands": 1,
+            "web_searches": 1
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 882688,
+            "calculated_fresh_input_tokens": 62940,
+            "input_tokens": 945628,
+            "output_tokens": 9197,
+            "reasoning_output_tokens": 3726
+          },
+          "wall_seconds": 545.033725
+        },
+        {
+          "accepted": false,
+          "arm": "baseline",
+          "cell_id": "v3-slot-07-baseline-rep-2",
+          "corrective_round_used": true,
+          "evaluator_invocations": 2,
+          "failing_check_counts_by_round": [
+            1,
+            1
+          ],
+          "feedback_status": "available",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 1,
+              "passed": 3
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 3606
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 19,
+          "prediction_patch_structure": {
+            "files_changed": 4,
+            "lines_added": 46,
+            "lines_deleted": 3
+          },
+          "repetition": 2,
+          "subject_turns": 2,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 6,
+            "command_executions": 18,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 2,
+            "read_search_commands": 45,
+            "verification_commands": 0,
+            "web_searches": 2
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 819200,
+            "calculated_fresh_input_tokens": 77236,
+            "input_tokens": 896436,
+            "output_tokens": 8682,
+            "reasoning_output_tokens": 4176
+          },
+          "wall_seconds": 481.192233
+        },
+        {
+          "accepted": false,
+          "arm": "short",
+          "cell_id": "v3-slot-07-short-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "unavailable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 0
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 0
+            }
+          },
+          "official_evaluator_disposition": "failure",
+          "position": 20,
+          "prediction_patch_structure": {
+            "files_changed": 3,
+            "lines_added": 30,
+            "lines_deleted": 4
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "evaluator_test_failure",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 18,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 1,
+            "file_changes": 2,
+            "read_search_commands": 43,
+            "verification_commands": 1,
+            "web_searches": 2
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 812800,
+            "calculated_fresh_input_tokens": 50807,
+            "input_tokens": 863607,
+            "output_tokens": 6807,
+            "reasoning_output_tokens": 2301
+          },
+          "wall_seconds": 397.298475
+        }
+      ],
+      "public_task_id": "gleam-lang__gleam-5982",
+      "repetition_pair_classifications": [
+        {
+          "classification": "both_failed",
+          "repetition": 1
+        },
+        {
+          "classification": "both_failed",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 7
+    },
+    {
+      "cells": [
+        {
+          "accepted": true,
+          "arm": "baseline",
+          "cell_id": "v3-slot-08-baseline-rep-1",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1091
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 10,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 29,
+            "lines_deleted": 7
+          },
+          "repetition": 1,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 18,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 47,
+            "verification_commands": 0,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 607232,
+            "calculated_fresh_input_tokens": 44218,
+            "input_tokens": 651450,
+            "output_tokens": 4860,
+            "reasoning_output_tokens": 1323
+          },
+          "wall_seconds": 203.841987
+        },
+        {
+          "accepted": true,
+          "arm": "short",
+          "cell_id": "v3-slot-08-short-rep-1",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1091
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 9,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 25,
+            "lines_deleted": 7
+          },
+          "repetition": 1,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 5,
+            "command_executions": 12,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 27,
+            "verification_commands": 1,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 428544,
+            "calculated_fresh_input_tokens": 41457,
+            "input_tokens": 470001,
+            "output_tokens": 3500,
+            "reasoning_output_tokens": 728
+          },
+          "wall_seconds": 177.197706
+        },
+        {
+          "accepted": true,
+          "arm": "baseline",
+          "cell_id": "v3-slot-08-baseline-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1092
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 17,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 23,
+            "lines_deleted": 7
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 16,
+            "failed_command_executions": 6,
+            "failed_verification_commands": 0,
+            "file_changes": 1,
+            "read_search_commands": 34,
+            "verification_commands": 1,
+            "web_searches": 0
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 520704,
+            "calculated_fresh_input_tokens": 39924,
+            "input_tokens": 560628,
+            "output_tokens": 4230,
+            "reasoning_output_tokens": 928
+          },
+          "wall_seconds": 184.972428
+        },
+        {
+          "accepted": true,
+          "arm": "short",
+          "cell_id": "v3-slot-08-short-rep-2",
+          "corrective_round_used": false,
+          "evaluator_invocations": 1,
+          "failing_check_counts_by_round": [
+            0
+          ],
+          "feedback_status": "not_applicable",
+          "official_evaluator_check_counts": {
+            "fail_to_pass": {
+              "failed": 0,
+              "passed": 2
+            },
+            "pass_to_pass": {
+              "failed": 0,
+              "passed": 1090
+            }
+          },
+          "official_evaluator_disposition": "success",
+          "position": 18,
+          "prediction_patch_structure": {
+            "files_changed": 2,
+            "lines_added": 84,
+            "lines_deleted": 13
+          },
+          "repetition": 2,
+          "subject_turns": 1,
+          "termination": "accepted_completed",
+          "trace_completed_item_counts": {
+            "agent_messages": 4,
+            "command_executions": 20,
+            "failed_command_executions": 4,
+            "failed_verification_commands": 0,
+            "file_changes": 2,
+            "read_search_commands": 40,
+            "verification_commands": 0,
+            "web_searches": 6
+          },
+          "trajectory_attempt": 1,
+          "usage": {
+            "cached_input_tokens": 1435904,
+            "calculated_fresh_input_tokens": 91479,
+            "input_tokens": 1527383,
+            "output_tokens": 7736,
+            "reasoning_output_tokens": 2162
+          },
+          "wall_seconds": 275.510265
+        }
+      ],
+      "public_task_id": "ether__etherpad-7445",
+      "repetition_pair_classifications": [
+        {
+          "classification": "both_accepted",
+          "repetition": 1
+        },
+        {
+          "classification": "both_accepted",
+          "repetition": 2
+        }
+      ],
+      "task_slot": 8
+    }
+  ],
+  "turn_normalized_usage": {
+    "arm_totals": {
+      "baseline": {
+        "cached_input_tokens": 15099648,
+        "calculated_fresh_input_tokens": 1022982,
+        "input_tokens": 16122630,
+        "output_tokens": 115190,
+        "reasoning_output_tokens": 40913,
+        "subject_turns": 20
+      },
+      "short": {
+        "cached_input_tokens": 18555136,
+        "calculated_fresh_input_tokens": 1158697,
+        "input_tokens": 19713833,
+        "output_tokens": 124591,
+        "reasoning_output_tokens": 38784,
+        "subject_turns": 23
+      }
+    },
+    "input_difference_decomposition": {
+      "cached_input_tokens": 3455488,
+      "cached_share": 0.962209,
+      "calculated_fresh_input_tokens": 135715,
+      "calculated_fresh_share": 0.037791,
+      "total_input_tokens": 3591203
+    },
+    "per_subject_turn": {
+      "cached_input_tokens": {
+        "baseline": 754982.4,
+        "short": 806745.043478,
+        "short_over_baseline_ratio": 1.068561
+      },
+      "calculated_fresh_input_tokens": {
+        "baseline": 51149.1,
+        "short": 50378.130435,
+        "short_over_baseline_ratio": 0.984927
+      },
+      "input_tokens": {
+        "baseline": 806131.5,
+        "short": 857123.173913,
+        "short_over_baseline_ratio": 1.063255
+      },
+      "output_tokens": {
+        "baseline": 5759.5,
+        "short": 5417.0,
+        "short_over_baseline_ratio": 0.940533
+      },
+      "reasoning_output_tokens": {
+        "baseline": 2045.65,
+        "short": 1686.26087,
+        "short_over_baseline_ratio": 0.824315
+      }
+    }
+  },
+  "work_amplification_decomposition": {
+    "agent_messages": {
+      "baseline_task_mean": 5.0,
+      "short_minus_baseline": 0.857143,
+      "short_over_baseline_ratio": 1.171429,
+      "short_task_mean": 5.857143,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 2.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 2.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -1.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 0.5
+        }
+      ]
+    },
+    "cached_input_tokens": {
+      "baseline_task_mean": 1078546.285714,
+      "short_minus_baseline": 246820.571429,
+      "short_over_baseline_ratio": 1.228846,
+      "short_task_mean": 1325366.857143,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 1083008.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -13824.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 135424.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 250112.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 42240.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -137472.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 368256.0
+        }
+      ]
+    },
+    "calculated_fresh_input_tokens": {
+      "baseline_task_mean": 73070.142857,
+      "short_minus_baseline": 9693.928571,
+      "short_over_baseline_ratio": 1.132666,
+      "short_task_mean": 82764.071429,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 49221.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -9137.5
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 615.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 18515.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 2985.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -18738.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 24397.0
+        }
+      ]
+    },
+    "command_executions": {
+      "baseline_task_mean": 17.785714,
+      "short_minus_baseline": 0.928571,
+      "short_over_baseline_ratio": 1.052209,
+      "short_task_mean": 18.714286,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 8.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 1.5
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 3.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": -1.5
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": -1.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -2.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": -1.0
+        }
+      ]
+    },
+    "evaluator_invocations": {
+      "baseline_task_mean": 1.428571,
+      "short_minus_baseline": 0.214286,
+      "short_over_baseline_ratio": 1.15,
+      "short_task_mean": 1.642857,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -0.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 0.0
+        }
+      ]
+    },
+    "failed_command_executions": {
+      "baseline_task_mean": 2.857143,
+      "short_minus_baseline": 0.428571,
+      "short_over_baseline_ratio": 1.15,
+      "short_task_mean": 3.285714,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 2.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -1.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": -0.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 1.5
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 1.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": -1.0
+        }
+      ]
+    },
+    "failed_verification_commands": {
+      "baseline_task_mean": 0.0,
+      "short_minus_baseline": 0.142857,
+      "short_task_mean": 0.142857,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 0.0
+        }
+      ]
+    },
+    "file_changes": {
+      "baseline_task_mean": 2.642857,
+      "short_minus_baseline": -0.071429,
+      "short_over_baseline_ratio": 0.972973,
+      "short_task_mean": 2.571429,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 1.5
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": -4.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 0.5
+        }
+      ]
+    },
+    "input_tokens": {
+      "baseline_task_mean": 1151616.428571,
+      "short_minus_baseline": 256514.5,
+      "short_over_baseline_ratio": 1.222743,
+      "short_task_mean": 1408130.928571,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 1132229.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -22961.5
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 136039.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 268627.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 45225.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -156210.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 392653.0
+        }
+      ]
+    },
+    "output_tokens": {
+      "baseline_task_mean": 8227.857143,
+      "short_minus_baseline": 671.5,
+      "short_over_baseline_ratio": 1.081613,
+      "short_task_mean": 8899.357143,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 4116.5
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -1867.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 1377.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 942.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 369.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -1311.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 1073.0
+        }
+      ]
+    },
+    "read_search_commands": {
+      "baseline_task_mean": 36.571429,
+      "short_minus_baseline": 1.571429,
+      "short_over_baseline_ratio": 1.042969,
+      "short_task_mean": 38.142857,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 28.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -11.5
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 5.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": -16.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 6.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": 6.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": -7.0
+        }
+      ]
+    },
+    "reasoning_output_tokens": {
+      "baseline_task_mean": 2922.357143,
+      "short_minus_baseline": -152.071429,
+      "short_over_baseline_ratio": 0.947963,
+      "short_task_mean": 2770.285714,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 1679.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -1533.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 657.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": -862.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 202.5
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -1528.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 319.5
+        }
+      ]
+    },
+    "subject_turns": {
+      "baseline_task_mean": 1.428571,
+      "short_minus_baseline": 0.214286,
+      "short_over_baseline_ratio": 1.15,
+      "short_task_mean": 1.642857,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -0.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 0.0
+        }
+      ]
+    },
+    "verification_commands": {
+      "baseline_task_mean": 0.071429,
+      "short_minus_baseline": 0.142857,
+      "short_over_baseline_ratio": 3.0,
+      "short_task_mean": 0.214286,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 0.0
+        }
+      ]
+    },
+    "wall_seconds": {
+      "baseline_task_mean": 739.288514,
+      "short_minus_baseline": 241.215901,
+      "short_over_baseline_ratio": 1.326281,
+      "short_task_mean": 980.504415,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 83.810443
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": -38.949532
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 458.76878
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 255.866639
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 942.678211
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": -45.610012
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 31.946778
+        }
+      ]
+    },
+    "web_searches": {
+      "baseline_task_mean": 0.642857,
+      "short_minus_baseline": 0.928571,
+      "short_over_baseline_ratio": 2.444444,
+      "short_task_mean": 1.571429,
+      "task_differences": [
+        {
+          "public_task_id": "timescale__timescaledb-9955",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "Azure__azure-sdk-for-net-58482",
+          "short_minus_baseline": 1.0
+        },
+        {
+          "public_task_id": "influxdata__telegraf-18686",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "checkstyle__checkstyle-19487",
+          "short_minus_baseline": 1.5
+        },
+        {
+          "public_task_id": "GladysAssistant__Gladys-2504",
+          "short_minus_baseline": 0.0
+        },
+        {
+          "public_task_id": "gleam-lang__gleam-5982",
+          "short_minus_baseline": 0.5
+        },
+        {
+          "public_task_id": "ether__etherpad-7445",
+          "short_minus_baseline": 3.0
+        }
+      ]
+    }
+  }
+}

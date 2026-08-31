@@ -1,0 +1,169 @@
+{
+  "cases": [
+    {
+      "name": "success",
+      "report": {
+        "instance_id": "fixture-instance",
+        "resolved": true,
+        "PASS_TO_PASS": {"success": ["test_regression"], "failure": []},
+        "FAIL_TO_PASS": {"success": ["test_fix"], "failure": []}
+      },
+      "results": {
+        "submitted": 1,
+        "submitted_ids": ["fixture-instance"],
+        "empty_patch": 0,
+        "empty_patch_ids": [],
+        "success": 1,
+        "success_ids": ["fixture-instance"],
+        "failure": 0,
+        "failure_ids": [],
+        "error": 0,
+        "error_ids": [],
+        "incomplete": 0,
+        "incomplete_ids": []
+      },
+      "expected": {
+        "disposition": "success",
+        "resolved": true,
+        "failing_checks": [],
+        "feedback_status": "not_applicable",
+        "measurement_complete": true
+      }
+    },
+    {
+      "name": "failure_with_named_check",
+      "report": {
+        "instance_id": "fixture-instance",
+        "resolved": false,
+        "PASS_TO_PASS": {"success": [], "failure": ["test_regression"]},
+        "FAIL_TO_PASS": {"success": [], "failure": ["test_fix"]}
+      },
+      "results": {
+        "submitted": 1,
+        "submitted_ids": ["fixture-instance"],
+        "empty_patch": 0,
+        "empty_patch_ids": [],
+        "success": 0,
+        "success_ids": [],
+        "failure": 1,
+        "failure_ids": ["fixture-instance"],
+        "error": 0,
+        "error_ids": [],
+        "incomplete": 0,
+        "incomplete_ids": []
+      },
+      "expected": {
+        "disposition": "failure",
+        "resolved": false,
+        "failing_checks": ["test_fix", "test_regression"],
+        "feedback_status": "available",
+        "measurement_complete": true
+      }
+    },
+    {
+      "name": "failure_without_named_check",
+      "report": {
+        "instance_id": "fixture-instance",
+        "resolved": false,
+        "PASS_TO_PASS": {"success": ["test_regression"], "failure": []},
+        "FAIL_TO_PASS": {"success": [], "failure": []}
+      },
+      "results": {
+        "submitted": 1,
+        "submitted_ids": ["fixture-instance"],
+        "empty_patch": 0,
+        "empty_patch_ids": [],
+        "success": 0,
+        "success_ids": [],
+        "failure": 1,
+        "failure_ids": ["fixture-instance"],
+        "error": 0,
+        "error_ids": [],
+        "incomplete": 0,
+        "incomplete_ids": []
+      },
+      "expected": {
+        "disposition": "failure",
+        "resolved": false,
+        "failing_checks": [],
+        "feedback_status": "unavailable",
+        "measurement_complete": true
+      }
+    },
+    {
+      "name": "error",
+      "report": {},
+      "results": {
+        "submitted": 1,
+        "submitted_ids": ["fixture-instance"],
+        "empty_patch": 0,
+        "empty_patch_ids": [],
+        "success": 0,
+        "success_ids": [],
+        "failure": 0,
+        "failure_ids": [],
+        "error": 1,
+        "error_ids": ["fixture-instance"],
+        "incomplete": 0,
+        "incomplete_ids": []
+      },
+      "expected": {
+        "disposition": "error",
+        "resolved": null,
+        "failing_checks": [],
+        "feedback_status": "not_applicable",
+        "measurement_complete": false
+      }
+    },
+    {
+      "name": "incomplete",
+      "report": {},
+      "results": {
+        "submitted": 1,
+        "submitted_ids": ["fixture-instance"],
+        "empty_patch": 0,
+        "empty_patch_ids": [],
+        "success": 0,
+        "success_ids": [],
+        "failure": 0,
+        "failure_ids": [],
+        "error": 0,
+        "error_ids": [],
+        "incomplete": 1,
+        "incomplete_ids": ["fixture-instance"]
+      },
+      "expected": {
+        "disposition": "incomplete",
+        "resolved": null,
+        "failing_checks": [],
+        "feedback_status": "not_applicable",
+        "measurement_complete": false
+      }
+    },
+    {
+      "name": "empty_patch",
+      "report": {},
+      "results": {
+        "submitted": 1,
+        "submitted_ids": ["fixture-instance"],
+        "empty_patch": 1,
+        "empty_patch_ids": ["fixture-instance"],
+        "success": 0,
+        "success_ids": [],
+        "failure": 0,
+        "failure_ids": [],
+        "error": 0,
+        "error_ids": [],
+        "incomplete": 0,
+        "incomplete_ids": []
+      },
+      "expected": {
+        "disposition": "empty_patch",
+        "resolved": null,
+        "failing_checks": [],
+        "feedback_status": "not_applicable",
+        "measurement_complete": true
+      }
+    }
+  ]
+}

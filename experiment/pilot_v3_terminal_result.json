@@ -1,0 +1,94 @@
+{
+  "analysis": {
+    "acceptance_success_reported": false,
+    "arm_effect_analysis_performed": false,
+    "cost_work_analysis_performed": false,
+    "effect_sizes_or_uncertainty_reported": false,
+    "interim_baseline_vs_short_comparisons": 0,
+    "policy_efficacy_estimable": false,
+    "reason": "The frozen batch stopped with zero admissible cells and zero task-level pairs; no experimental effect analysis is defined from this state."
+  },
+  "attempt": {
+    "cell_id": "v3-slot-04-short-rep-1",
+    "credential_removed": true,
+    "evaluator_finished_checkpoints": 0,
+    "evaluator_invocation_boundaries": 1,
+    "evaluator_processes_started": 0,
+    "receipt_committed": false,
+    "subject_processes_completed": 1,
+    "subject_provider_infrastructure_failure": false,
+    "subject_timed_out": false,
+    "trajectory_attempt": 1,
+    "usage": {
+      "cached_input_tokens": 129280,
+      "input_tokens": 158476,
+      "output_tokens": 1846,
+      "reasoning_output_tokens": 344
+    }
+  },
+  "contract": {
+    "canonical_sha256": "ad7cd1522114b8512be20f9c5a73268e1071d9138eba7bacb6ea8d54a902aca3",
+    "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+    "raw_file_sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "schedule_sha256": "9defe1ea2e376640284b53f618647aa54cff6e279dcb55d2137ff652ece80764",
+    "version": "pilot-v3.0"
+  },
+  "failure": {
+    "batch_stop_classification": "durable_evidence_incomplete",
+    "exception_type": "KeyError",
+    "frozen_artifacts_changed": false,
+    "harness_repaired_or_rerun": false,
+    "missing_contract_key": "timeout_seconds_per_trajectory_attempt",
+    "official_evaluator_disposition_available": false,
+    "official_evaluator_process_started": false,
+    "root_cause": "The qualified Pilot-v3 trajectory schema freezes timeout_seconds_per_attempt, while the reused live evaluator adapter reads timeout_seconds_per_trajectory_attempt before launching the official evaluator process.",
+    "scheduler_terminal_action": "record_batch_stop"
+  },
+  "ledger": {
+    "event_counts": {
+      "attempt_started": 1,
+      "batch_stopped": 1,
+      "contract_frozen": 1,
+      "credential_cleanup_verified": 1,
+      "evaluator_invoked": 1,
+      "isolation_verified": 1,
+      "pool_frozen": 1,
+      "schedule_frozen": 1,
+      "subject_terminated": 1
+    },
+    "events": 9,
+    "first_event_sha256": "8e0fe04762cff482ee18eda44c3e4e3a346ac5ea5c53f45759588db31f5daf08",
+    "last_event_sha256": "5193864cf4acf0fbdc4e08778fafa22ded459e26839823967a64f1a2c1e01997",
+    "last_event_type": "batch_stopped",
+    "modified_for_terminal_reporting": false,
+    "sha256": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0"
+  },
+  "preflight": {
+    "contract_sha256": "ad7cd1522114b8512be20f9c5a73268e1071d9138eba7bacb6ea8d54a902aca3",
+    "passed_before_first_attempt": true,
+    "status": "pass"
+  },
+  "recorded_at": "2026-08-28T22:40:55Z",
+  "retry_accounting": {
+    "infrastructure_reruns_consumed": 0,
+    "infrastructure_reruns_frozen": 4,
+    "infrastructure_reruns_remaining": 4,
+    "operator_interruptions_consumed": 0,
+    "operator_interruptions_frozen": 2,
+    "operator_interruptions_remaining": 2,
+    "third_attempts": 0
+  },
+  "schedule": {
+    "admissible_completed_cells": 0,
+    "cells_started": 1,
+    "invalid_partial_attempts": 1,
+    "post_freeze_task_replacements": 0,
+    "scheduled_cells": 32,
+    "unstarted_cells": 31
+  },
+  "schema_name": "engineering-scope-guard.pilot-v3-terminal-result",
+  "schema_version": 1,
+  "status": "batch_stopped_durable_evidence_incomplete",
+  "terminal_decision": "PILOT-V3 EXECUTION STOPPED — DURABLE EVALUATOR EVIDENCE INCOMPLETE",
+  "visual_omission_reason": "There are zero admissible cells and zero task-level pairs, so an effect chart would imply experimental evidence that does not exist."
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_assessment": {
+    "basis_excludes_policy_outcomes": true,
+    "gold_qualification_runs": 3,
+    "gold_qualification_runs_successful": 3,
+    "official_disposition_semantics_defined": true,
+    "result": "retain_for_future_exploratory_design_only_after_fresh_contract_predeclaration",
+    "stack": "SWE-bench-Live/MultiLang official evaluator"
+  },
+  "decision": "MEASUREMENT BOUNDARY QUALIFIED — FRESH PILOT DESIGN PERMITTED",
+  "frozen_pilot_v2": {
+    "admissible_observations": 8,
+    "arm_effect_analysis_performed": false,
+    "efficacy_conclusions": 0,
+    "execution_permanently_closed": true,
+    "position_9_classification": "malformed_incomplete_measurement",
+    "positions_10_through_44": "unstarted",
+    "terminal_state": "batch_stopped"
+  },
+  "immutability": {
+    "continuation_authorization_sha256": "ec0dff562818e3cbf62897a4ac494b4a942dd164976ba86f702ea786d2450887",
+    "continuation_ledger_sha256": "fea701b42726d73e673af02f5bd50fd6431b3ee605d88b15f9c1ea7e0050d9fd",
+    "continuation_terminal_event_sha256": "912c8e06dcf3bd8dcd1a0806b0d2b1dc36bc594d53d4e064217d67f698f634eb",
+    "execution_contract_sha256": "4c1019f74becb059f0f1c8440d3fb676ff4595904e57cd79fd69770d6543d53c",
+    "predecessor_ledger_sha256": "a998efd2c7e1783607c3494b3a38baca174e3760066f34125288f685012344b5",
+    "strict_preflight_sha256": "9b9d09e2e58d74050720f8d9b664cdbb71a524a6af3f2e4968d0d1fb5604a6c3"
+  },
+  "position_9_preserved_evidence": {
+    "command_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command_stdout_sha256": "f75ab23e49de2783ee4dd7d49cb5e2ca417162fd766409c8e19d7eb658bc1739",
+    "expected_fail_to_pass_checks": 373,
+    "expected_fail_to_pass_names_sha256": "59c7de78b0d4921e9629770d73fa641e7b417ab163e720bf2e706dfbd4fe782e",
+    "expected_pass_to_pass_checks": 1,
+    "official_evaluator_exit_status": 0,
+    "official_evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "official_evaluator_source_sha256": "dabb0be957547f8bb030c5e53ff60c70ac24cbdbaa011a377cd9242acbcdd703",
+    "official_failure_ids": 1,
+    "official_incomplete_ids": 0,
+    "official_error_ids": 0,
+    "official_resolved": false,
+    "post_patch_log_sha256": "2f559c5e743a991b18e60ac25f62356341a6e105a8538c3ea9c0f771b9de3374",
+    "report_sha256": "db69aebaf563cb0ae6bff96d9b3c0709589370d846409d1f5703bee14f634cce",
+    "reported_failing_checks": 0,
+    "reported_fail_to_pass_successes": 0,
+    "reported_pass_to_pass_successes": 1,
+    "results_sha256": "21bfd9c9ed9f68a4de85a9d12deaed3e9b97893cfd5bb474650977ec14e873ce",
+    "status_sha256": "8c41a164345ce188b20c490bca70330c7655c12144044cc58a34d044a180bf83"
+  },
+  "prospective_boundary": {
+    "adapter_fields": [
+      "official_disposition",
+      "feedback_status"
+    ],
+    "fail_closed_on_contradictory_or_non_unique_disposition": true,
+    "future_contract_requirement": "predeclare terminal handling when official_disposition is failure and feedback_status is unavailable",
+    "official_terminal_shapes": [
+      "success",
+      "failure",
+      "error",
+      "incomplete",
+      "empty_patch"
+    ],
+    "position_9_fixture_result": {
+      "feedback_status": "unavailable",
+      "measurement_complete": true,
+      "official_disposition": "failure",
+      "resolved": false
+    },
+    "retrospective_reclassification_permitted": false
+  },
+  "recorded_at": "2026-08-28T21:11:12Z",
+  "reproduction_boundary": {
+    "existing_position_9_artifacts_only": true,
+    "new_evaluator_observations": 0,
+    "new_pilot_cells": 0,
+    "new_subject_invocations": 0,
+    "policy_comparisons": 0
+  },
+  "schema_name": "engineering-scope-guard.pilot-v2-measurement-boundary-qualification",
+  "schema_version": 1,
+  "triage": {
+    "classification": "adapter_parser_defect",
+    "explanation": "The official evaluator emitted a unique failure disposition and a resolved false report, but the adapter discarded the aggregate disposition and the frozen runner treated unavailable corrective check names as incomplete measurement.",
+    "rejected_explanations": {
+      "evaluator_benchmark_incomplete_measurement": "The preserved results uniquely classify the instance as failure with zero error and incomplete entries; three prior gold runs also completed successfully.",
+      "other_measurement_boundary_defect": "No distinct additional defect is required to explain the stop.",
+      "valid_evaluator_semantic_only": "The no-check failure shape is legitimate, but the batch stop arose from the adapter and runner contract failing to preserve that distinction."
+    }
+  }
+}

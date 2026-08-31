@@ -1,0 +1,127 @@
+{
+  "confirmatory_reserve_commitment_sha256": "05624992aee92836b04bdf0b76ad18690e152ced8f21bc9b807efbefc2b52af8",
+  "confirmatory_reserve_exposed": false,
+  "contract_sha256": "2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "decision": "EXECUTION INTERFACE QUALIFIED — PROCEEDING UNDER EXISTING LIVE AUTHORIZATION",
+  "design_sha256": "f04806f449ca2e2f2cd92b33fc9df94c5577abd6605fd89d8571cc205559fb27",
+  "dry_run_cells": 32,
+  "evaluator_calls": 0,
+  "experimental_observations": 0,
+  "freeze_sha256": "9a5ec3b084e83a6659e4981caa632520404b4019230ee84af1aceea8eec4e154",
+  "live_execution_confirmation": "execute-evidence-conditioned-final-scope-review-execution-v0.1:2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "live_execution_invoked": false,
+  "qualification_check_count": 26,
+  "qualification_checks": {
+    "baseline_receives_no_treatment": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "canonical_evaluator_timeout_semantics": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "complete_zero_live_dry_run_all_32_cells": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "completed_cell_reconstruction_prevents_repetition": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "confirmatory_identities_and_bodies_remain_inaccessible": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "contradictory_malformed_evidence_stops_batch": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "credential_cleanup_on_all_boundaries": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "durable_evaluator_checkpoint_precedes_receipt": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "error_incomplete_use_only_attempt_invalid_handling": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "evaluator_disposition_separate_from_feedback_availability": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "every_cell_begins_at_attempt_1": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "exact_arm_assignment_and_repetition_ordering": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "four_infrastructure_retry_units": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "maximum_two_attempts_per_cell": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "no_treatment_exposure_before_activation": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "no_treatment_leakage_into_baseline": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "operator_interruption_cannot_be_relabelled_infrastructure": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "planned_between_cell_pause_consumes_no_restart": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "receipt_fails_closed_without_required_evidence": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "restart_resume_derive_only_from_durable_ledger": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "strict_preflight_all_frozen_identities": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "treatment_receives_exact_bytes_through_late_stage_delivery": {
+      "proof": "contract+preflight+dry-run",
+      "status": "pass"
+    },
+    "two_operator_interruption_units": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "unavailable_named_feedback_is_negative_without_correction": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "valid_negative_outcomes_cannot_rerun": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    },
+    "wrong_execution_confirmation_is_inert": {
+      "proof": "deterministic fault-injection test",
+      "status": "pass"
+    }
+  },
+  "schedule_sha256": "fdcb43f4f568f08912bbcb775c6cd4398e2406e822579288e5f83257dc02848e",
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-execution-qualification",
+  "schema_version": 1,
+  "stabilized_main_preflight_required_before_live_execution": true,
+  "status": "pass",
+  "subject_calls": 0,
+  "treatment_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb"
+}

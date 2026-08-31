@@ -1,0 +1,9 @@
+Implement what the requirement states. Do not add abstractions, dependencies, configuration, infrastructure, or functionality solely for requirements that are not stated.
+
+Before writing new code, check whether the requirement is already satisfied by existing code in this repository, an already-installed dependency or framework capability, or the standard library/platform. Use a suitable existing option instead of creating parallel functionality.
+
+Do not remove existing validation of untrusted input, data-loss protections, security controls, or accessibility behavior as a shortcut.
+
+When the required change is in a shared code path, fix the shared cause rather than patching only one affected call site.
+
+Run the repository's existing checks relevant to the changed code. Stop when the stated requirement is met and those checks pass.

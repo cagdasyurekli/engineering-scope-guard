@@ -1,0 +1,40 @@
+{
+  "schema_name": "engineering-scope-guard.development-task-registry",
+  "schema_version": 1,
+  "registered_at": "2026-08-27",
+  "interpretation": "exploratory-development-only-never-pilot-or-confirmatory",
+  "tasks": [
+    {
+      "task_id": "dev-reuse-01",
+      "mechanism": "reuse-existing-local-helper",
+      "wave": 1,
+      "source_fingerprint": "fa6eab17876d85403da892f00482d8f5ec90af9ec9d6ce695f413bcd14dd5d52",
+      "task_sha256": "04b502b104af9809d9bacc0834919b28da25660d3e4390580c94eec966add236",
+      "evaluator_fingerprint": "8a7fb603caf7691a5f2e2d78a10f7f03a243a2663e2f9170b14ecdca4551daf8"
+    },
+    {
+      "task_id": "dev-irreducible-01",
+      "mechanism": "irreducible-new-shared-behavior",
+      "wave": 1,
+      "source_fingerprint": "ca616d60f0d8be8164757558c3125ac76e707f574bb0693782aa83596ccb4bf5",
+      "task_sha256": "63b9d382d3d4e55083ef2c6470f9c944c8f617505e4e719cd8b44197d743ee5d",
+      "evaluator_fingerprint": "2bd247e0a91dc245383f439c9e09e855c41e5b228982e1fb6cb112ff22c0f611"
+    },
+    {
+      "task_id": "dev-guard-01",
+      "mechanism": "retain-path-traversal-guard",
+      "wave": 2,
+      "source_fingerprint": "7784984fc012475455a724665fc1faecb42fc5dd573ec1ca5c2d7355177bc12a",
+      "task_sha256": "c8b62bee4bd78395047791b3223fa74996ab5311b2871b97b179a25ec0c1a384",
+      "evaluator_fingerprint": "0646e0a8973e1aea7c891c23e9c44a75e915835a3fafee31fe594f617642cd4b"
+    },
+    {
+      "task_id": "dev-shared-01",
+      "mechanism": "repair-shared-cause",
+      "wave": 2,
+      "source_fingerprint": "bf6a533b7408a23d5a807e3d85094673c84c963455090a362ee09dc3486bd63d",
+      "task_sha256": "0dd80e1f0c2ddc213c7ffc21c59ee25d586d92a312a37339e7b263a113854a54",
+      "evaluator_fingerprint": "0c9a843b6135383ea39f9484b7a6807bec40be2726c9d671ea946756d868b795"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: >-
+  For the published research result, please cite the report in
+  preferred-citation. Cite the repository itself only when referring to its
+  software or repository artifacts.
+type: software
+title: "Engineering Scope Guard"
+authors:
+  - family-names: "Yürekli"
+    given-names: "Çağdaş"
+repository-code: "https://github.com/cagdasyurekli/engineering-scope-guard"
+url: "https://github.com/cagdasyurekli/engineering-scope-guard"
+license: MIT
+keywords:
+  - coding agents
+  - software engineering
+  - research software
+  - agent evaluation
+preferred-citation:
+  type: report
+  title: "An Exploratory Test of a Minimality Prompt in Coding Agents"
+  authors:
+    - family-names: "Yürekli"
+      given-names: "Çağdaş"
+  collection-title: "Engineering Scope Guard Research Reports"
+  collection-type: "Research report series"
+  number: "ESG-RR-001"
+  version: "0.6"
+  date-published: 2026-08-31
+  year: 2026
+  license: MIT
+  url: "https://github.com/cagdasyurekli/engineering-scope-guard/blob/esg-rr-001-v0.6/docs/reports/ESG-RR-001.md"

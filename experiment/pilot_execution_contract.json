@@ -1,0 +1,725 @@
+{
+  "arms": {
+    "baseline_intervention": null,
+    "ids": [
+      "baseline",
+      "short"
+    ],
+    "short_policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "short_policy_version": "C-short v0.1"
+  },
+  "contract_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+  "contract_version": "pilot-v1.0",
+  "failure_taxonomy": {
+    "experimental_outcomes": [
+      "accepted_completed",
+      "agent_subject_failure",
+      "evaluator_test_failure",
+      "trajectory_timeout"
+    ],
+    "post_outcome_reclassification_permitted": false,
+    "same_cell_infrastructure_rerun": [
+      "local_docker_runtime_infrastructure_failure",
+      "provider_api_infrastructure_failure"
+    ],
+    "stop_batch": [
+      "harness_failure",
+      "isolation_contract_violation",
+      "malformed_incomplete_measurement"
+    ]
+  },
+  "final_pool": {
+    "canonicalization": "slot-order; sorted-key compact JSON; trailing LF",
+    "final_pool_sha256": "611693dc971177e76b5d7b45eb58f8dffd7c4821bf12b0dc6c540b6d580973fa",
+    "slots": [
+      {
+        "actual_task_id": "BYVoid__OpenCC-1257",
+        "language": "cpp",
+        "original_task_id": "BYVoid__OpenCC-1257",
+        "repo": "BYVoid/OpenCC",
+        "slot": 1,
+        "task_snapshot_sha256": "613c848f5487db8cd12780dbb978603c85800be1dd79fc7bd512039cad97a0cf"
+      },
+      {
+        "actual_task_id": "lakehq__sail-2284",
+        "language": "rust",
+        "original_task_id": "GitoxideLabs__gitoxide-2476",
+        "repo": "lakehq/sail",
+        "slot": 2,
+        "task_snapshot_sha256": "c69a7122b4266b9e770b76b2b879669931abd70f131193df648c9e0d45ded33c"
+      },
+      {
+        "actual_task_id": "MudBlazor__MudBlazor-12974",
+        "language": "cs",
+        "original_task_id": "MudBlazor__MudBlazor-12974",
+        "repo": "MudBlazor/MudBlazor",
+        "slot": 3,
+        "task_snapshot_sha256": "b109458fa3ac801a0a3541e263608c671d1412010e8925970f7386fc25351f26"
+      },
+      {
+        "actual_task_id": "xroche__httrack-408",
+        "language": "c",
+        "original_task_id": "colbymchenry__codegraph-951",
+        "repo": "xroche/httrack",
+        "slot": 4,
+        "task_snapshot_sha256": "182a9f387cb1860e5185dbbfc273f4e681fecf2ba7a84888093c9baca8db2214"
+      },
+      {
+        "actual_task_id": "dragonflydb__dragonfly-7493",
+        "language": "cpp",
+        "original_task_id": "dragonflydb__dragonfly-7493",
+        "repo": "dragonflydb/dragonfly",
+        "slot": 5,
+        "task_snapshot_sha256": "202582dbd13fcee384fe3a76692da5a54eeaeb30bb12fcf1a8a4a12323f391c3"
+      },
+      {
+        "actual_task_id": "floci-io__floci-1908",
+        "language": "java",
+        "original_task_id": "floci-io__floci-1908",
+        "repo": "floci-io/floci",
+        "slot": 6,
+        "task_snapshot_sha256": "20b530ff0e4e7c4ce93cface5e6690673178c67f2ec6e0fab6286d36ab7ae5e3"
+      },
+      {
+        "actual_task_id": "gui-cs__Terminal.Gui-4860",
+        "language": "cs",
+        "original_task_id": "gui-cs__Terminal.Gui-4860",
+        "repo": "gui-cs/Terminal.Gui",
+        "slot": 7,
+        "task_snapshot_sha256": "62fcd036d2aec736b2b8dae000b242351402af81c60b2e6c60f21dd67d27a70f"
+      },
+      {
+        "actual_task_id": "iOfficeAI__AionUi-1818",
+        "language": "ts",
+        "original_task_id": "iOfficeAI__AionUi-1818",
+        "repo": "iOfficeAI/AionUi",
+        "slot": 8,
+        "task_snapshot_sha256": "5322c9462cf324be09e3aded4c8dbc0654a302eb4c48e0014304d23b4e559a09"
+      },
+      {
+        "actual_task_id": "caddyserver__caddy-7567",
+        "language": "go",
+        "original_task_id": "kubernetes-sigs__controller-runtime-3494",
+        "repo": "caddyserver/caddy",
+        "slot": 9,
+        "task_snapshot_sha256": "efd6766f6581bfeb8b1ac03bbecbdf9e429e0942ff0e70ea158118eec2f648cc"
+      },
+      {
+        "actual_task_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "language": "java",
+        "original_task_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "repo": "mc1arke/sonarqube-community-branch-plugin",
+        "slot": 10,
+        "task_snapshot_sha256": "36771d2ba1efd196358bd89bb46e7b836dc28219f40ece9912d051d1f5ffe91f"
+      },
+      {
+        "actual_task_id": "thlorenz__doctoc-329",
+        "language": "js",
+        "original_task_id": "open-gsd__gsd-core-1799",
+        "repo": "thlorenz/doctoc",
+        "slot": 11,
+        "task_snapshot_sha256": "2bafdbaeafbb86eb944ca84dde8c92aaadbcedeed98106fbb577d52cce950a00"
+      },
+      {
+        "actual_task_id": "rust-lang__rust-analyzer-22827",
+        "language": "rust",
+        "original_task_id": "rust-lang__rust-analyzer-22827",
+        "repo": "rust-lang/rust-analyzer",
+        "slot": 12,
+        "task_snapshot_sha256": "62d9deda0be18a85192c770ee76f0cb9d46089f83cf7801537ca5c35c3945797"
+      }
+    ],
+    "task_slot_replacement_budget": {
+      "allowance": 8,
+      "audit_events": [
+        {
+          "actual_task_id": "lakehq__sail-2284",
+          "event": "task_slot_replaced",
+          "original_task_id": "GitoxideLabs__gitoxide-2476",
+          "reason": "unstable/invalid-on-host",
+          "reserve_rank_commitment": "04d4659ce5785cdde9ec3439544d38b5f070886cfcd2e2675d6f41a1023cf3a4"
+        },
+        {
+          "actual_task_id": "xroche__httrack-408",
+          "event": "task_slot_replaced",
+          "original_task_id": "colbymchenry__codegraph-951",
+          "reason": "invalid-classify-separately",
+          "reserve_rank_commitment": "03d9cc992a1696f8d77ab775f3df0508dbe47be1f9e0b4684fb6113acd705070"
+        },
+        {
+          "actual_task_id": "caddyserver__caddy-7567",
+          "event": "task_slot_replaced",
+          "original_task_id": "kubernetes-sigs__controller-runtime-3494",
+          "reason": "unstable/invalid-on-host",
+          "reserve_rank_commitment": "023f73de81cf07f7a5524784b27d13e27f8d8fbd976ab3aed4b43526d6f40676"
+        },
+        {
+          "actual_task_id": "thlorenz__doctoc-329",
+          "event": "task_slot_replaced",
+          "original_task_id": "open-gsd__gsd-core-1799",
+          "reason": "invalid-classify-separately",
+          "reserve_rank_commitment": "27ed5fb153ae0a57a872b5cf02ab5b87913537748f037d6f3ea7807a6b086363"
+        }
+      ],
+      "consumed": 4,
+      "finalized_before_schedule": true,
+      "later_change_requires_new_contract": true,
+      "remaining": 4,
+      "remaining_authority_after_finalization": 0,
+      "unit": "pre-treatment Pilot task slot"
+    }
+  },
+  "isolation": {
+    "controlled": [
+      "fresh repository copy per cell and attempt",
+      "distinct conversation/session and Codex home per cell and attempt",
+      "distinct raw/derived experiment output per cell and attempt",
+      "baseline has no intervention; short receives only frozen policy bytes",
+      "no state root may be reused by another cell or attempt"
+    ],
+    "observed_per_attempt": [
+      "repository start fingerprint",
+      "Codex home identity digest",
+      "raw and derived output identity digests",
+      "intervention digest or null",
+      "available provider cached-input token count"
+    ],
+    "provider_unknowns_are_limitations": true,
+    "unavailable": [
+      "provider-side cache isolation guarantee",
+      "cache-write tokens",
+      "backend model snapshot",
+      "provider-billed amount and currency"
+    ]
+  },
+  "ledger": {
+    "append_only_in_meaning": true,
+    "event_types": [
+      "contract_frozen",
+      "task_slot_replaced",
+      "schedule_frozen",
+      "attempt_started",
+      "attempt_finished",
+      "infrastructure_rerun_authorized",
+      "deviation",
+      "batch_stopped"
+    ],
+    "format": "JSONL hash chain",
+    "raw_task_prompt_or_source_content_permitted": false
+  },
+  "pilot_authorized_by_manifest": false,
+  "pilot_policy_comparison_runs": 0,
+  "platform": {
+    "configured_cpus": 6,
+    "configured_memory_mib": 16384,
+    "configured_swap_mib": 2048,
+    "engine_architecture": "linux/arm64",
+    "engine_reported_cpus": 6,
+    "engine_usable_memory_bytes": 16746352640,
+    "engine_version": "29.7.2",
+    "requested_platform": "linux/amd64"
+  },
+  "qualification": {
+    "fixtures_or_no_op_only": true,
+    "pilot_cells_executed": 0,
+    "policy_comparisons_executed": 0
+  },
+  "receipt_required_fields": [
+    "cell_id",
+    "contract_sha256",
+    "final_pool_sha256",
+    "schedule_sha256",
+    "requested_task_slot",
+    "actual_task_id",
+    "task_snapshot_sha256",
+    "arm",
+    "repetition",
+    "trajectory_attempt",
+    "subject",
+    "started_at",
+    "ended_at",
+    "termination",
+    "evaluator_result",
+    "usage",
+    "usage_complete",
+    "isolation_roots",
+    "intervention_sha256",
+    "source_and_evaluator",
+    "platform",
+    "trajectory_contract",
+    "isolation_contract",
+    "usage_contract",
+    "admissible_under_contract",
+    "deviations"
+  ],
+  "schedule": {
+    "algorithm": "sha256-ranked repetition blocks with per-slot arm interleaving",
+    "arms": [
+      "baseline",
+      "short"
+    ],
+    "cells": [
+      {
+        "actual_task_id": "xroche__httrack-408",
+        "arm": "baseline",
+        "cell_id": "slot-04-baseline-rep-1",
+        "position": 1,
+        "repetition": 1,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "xroche__httrack-408",
+        "arm": "short",
+        "cell_id": "slot-04-short-rep-1",
+        "position": 2,
+        "repetition": 1,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "floci-io__floci-1908",
+        "arm": "short",
+        "cell_id": "slot-06-short-rep-1",
+        "position": 3,
+        "repetition": 1,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "floci-io__floci-1908",
+        "arm": "baseline",
+        "cell_id": "slot-06-baseline-rep-1",
+        "position": 4,
+        "repetition": 1,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "MudBlazor__MudBlazor-12974",
+        "arm": "short",
+        "cell_id": "slot-03-short-rep-1",
+        "position": 5,
+        "repetition": 1,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "MudBlazor__MudBlazor-12974",
+        "arm": "baseline",
+        "cell_id": "slot-03-baseline-rep-1",
+        "position": 6,
+        "repetition": 1,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "rust-lang__rust-analyzer-22827",
+        "arm": "short",
+        "cell_id": "slot-12-short-rep-1",
+        "position": 7,
+        "repetition": 1,
+        "requested_task_slot": 12
+      },
+      {
+        "actual_task_id": "rust-lang__rust-analyzer-22827",
+        "arm": "baseline",
+        "cell_id": "slot-12-baseline-rep-1",
+        "position": 8,
+        "repetition": 1,
+        "requested_task_slot": 12
+      },
+      {
+        "actual_task_id": "iOfficeAI__AionUi-1818",
+        "arm": "baseline",
+        "cell_id": "slot-08-baseline-rep-1",
+        "position": 9,
+        "repetition": 1,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "iOfficeAI__AionUi-1818",
+        "arm": "short",
+        "cell_id": "slot-08-short-rep-1",
+        "position": 10,
+        "repetition": 1,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "arm": "short",
+        "cell_id": "slot-10-short-rep-1",
+        "position": 11,
+        "repetition": 1,
+        "requested_task_slot": 10
+      },
+      {
+        "actual_task_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "arm": "baseline",
+        "cell_id": "slot-10-baseline-rep-1",
+        "position": 12,
+        "repetition": 1,
+        "requested_task_slot": 10
+      },
+      {
+        "actual_task_id": "dragonflydb__dragonfly-7493",
+        "arm": "baseline",
+        "cell_id": "slot-05-baseline-rep-1",
+        "position": 13,
+        "repetition": 1,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "dragonflydb__dragonfly-7493",
+        "arm": "short",
+        "cell_id": "slot-05-short-rep-1",
+        "position": 14,
+        "repetition": 1,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "BYVoid__OpenCC-1257",
+        "arm": "short",
+        "cell_id": "slot-01-short-rep-1",
+        "position": 15,
+        "repetition": 1,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "BYVoid__OpenCC-1257",
+        "arm": "baseline",
+        "cell_id": "slot-01-baseline-rep-1",
+        "position": 16,
+        "repetition": 1,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "lakehq__sail-2284",
+        "arm": "short",
+        "cell_id": "slot-02-short-rep-1",
+        "position": 17,
+        "repetition": 1,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "lakehq__sail-2284",
+        "arm": "baseline",
+        "cell_id": "slot-02-baseline-rep-1",
+        "position": 18,
+        "repetition": 1,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "gui-cs__Terminal.Gui-4860",
+        "arm": "short",
+        "cell_id": "slot-07-short-rep-1",
+        "position": 19,
+        "repetition": 1,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "gui-cs__Terminal.Gui-4860",
+        "arm": "baseline",
+        "cell_id": "slot-07-baseline-rep-1",
+        "position": 20,
+        "repetition": 1,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "thlorenz__doctoc-329",
+        "arm": "short",
+        "cell_id": "slot-11-short-rep-1",
+        "position": 21,
+        "repetition": 1,
+        "requested_task_slot": 11
+      },
+      {
+        "actual_task_id": "thlorenz__doctoc-329",
+        "arm": "baseline",
+        "cell_id": "slot-11-baseline-rep-1",
+        "position": 22,
+        "repetition": 1,
+        "requested_task_slot": 11
+      },
+      {
+        "actual_task_id": "caddyserver__caddy-7567",
+        "arm": "baseline",
+        "cell_id": "slot-09-baseline-rep-1",
+        "position": 23,
+        "repetition": 1,
+        "requested_task_slot": 9
+      },
+      {
+        "actual_task_id": "caddyserver__caddy-7567",
+        "arm": "short",
+        "cell_id": "slot-09-short-rep-1",
+        "position": 24,
+        "repetition": 1,
+        "requested_task_slot": 9
+      },
+      {
+        "actual_task_id": "thlorenz__doctoc-329",
+        "arm": "short",
+        "cell_id": "slot-11-short-rep-2",
+        "position": 25,
+        "repetition": 2,
+        "requested_task_slot": 11
+      },
+      {
+        "actual_task_id": "thlorenz__doctoc-329",
+        "arm": "baseline",
+        "cell_id": "slot-11-baseline-rep-2",
+        "position": 26,
+        "repetition": 2,
+        "requested_task_slot": 11
+      },
+      {
+        "actual_task_id": "gui-cs__Terminal.Gui-4860",
+        "arm": "short",
+        "cell_id": "slot-07-short-rep-2",
+        "position": 27,
+        "repetition": 2,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "gui-cs__Terminal.Gui-4860",
+        "arm": "baseline",
+        "cell_id": "slot-07-baseline-rep-2",
+        "position": 28,
+        "repetition": 2,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "iOfficeAI__AionUi-1818",
+        "arm": "short",
+        "cell_id": "slot-08-short-rep-2",
+        "position": 29,
+        "repetition": 2,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "iOfficeAI__AionUi-1818",
+        "arm": "baseline",
+        "cell_id": "slot-08-baseline-rep-2",
+        "position": 30,
+        "repetition": 2,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "caddyserver__caddy-7567",
+        "arm": "short",
+        "cell_id": "slot-09-short-rep-2",
+        "position": 31,
+        "repetition": 2,
+        "requested_task_slot": 9
+      },
+      {
+        "actual_task_id": "caddyserver__caddy-7567",
+        "arm": "baseline",
+        "cell_id": "slot-09-baseline-rep-2",
+        "position": 32,
+        "repetition": 2,
+        "requested_task_slot": 9
+      },
+      {
+        "actual_task_id": "rust-lang__rust-analyzer-22827",
+        "arm": "short",
+        "cell_id": "slot-12-short-rep-2",
+        "position": 33,
+        "repetition": 2,
+        "requested_task_slot": 12
+      },
+      {
+        "actual_task_id": "rust-lang__rust-analyzer-22827",
+        "arm": "baseline",
+        "cell_id": "slot-12-baseline-rep-2",
+        "position": 34,
+        "repetition": 2,
+        "requested_task_slot": 12
+      },
+      {
+        "actual_task_id": "lakehq__sail-2284",
+        "arm": "baseline",
+        "cell_id": "slot-02-baseline-rep-2",
+        "position": 35,
+        "repetition": 2,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "lakehq__sail-2284",
+        "arm": "short",
+        "cell_id": "slot-02-short-rep-2",
+        "position": 36,
+        "repetition": 2,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "dragonflydb__dragonfly-7493",
+        "arm": "short",
+        "cell_id": "slot-05-short-rep-2",
+        "position": 37,
+        "repetition": 2,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "dragonflydb__dragonfly-7493",
+        "arm": "baseline",
+        "cell_id": "slot-05-baseline-rep-2",
+        "position": 38,
+        "repetition": 2,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "floci-io__floci-1908",
+        "arm": "baseline",
+        "cell_id": "slot-06-baseline-rep-2",
+        "position": 39,
+        "repetition": 2,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "floci-io__floci-1908",
+        "arm": "short",
+        "cell_id": "slot-06-short-rep-2",
+        "position": 40,
+        "repetition": 2,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "arm": "baseline",
+        "cell_id": "slot-10-baseline-rep-2",
+        "position": 41,
+        "repetition": 2,
+        "requested_task_slot": 10
+      },
+      {
+        "actual_task_id": "mc1arke__sonarqube-community-branch-plugin-1221",
+        "arm": "short",
+        "cell_id": "slot-10-short-rep-2",
+        "position": 42,
+        "repetition": 2,
+        "requested_task_slot": 10
+      },
+      {
+        "actual_task_id": "BYVoid__OpenCC-1257",
+        "arm": "short",
+        "cell_id": "slot-01-short-rep-2",
+        "position": 43,
+        "repetition": 2,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "BYVoid__OpenCC-1257",
+        "arm": "baseline",
+        "cell_id": "slot-01-baseline-rep-2",
+        "position": 44,
+        "repetition": 2,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "MudBlazor__MudBlazor-12974",
+        "arm": "baseline",
+        "cell_id": "slot-03-baseline-rep-2",
+        "position": 45,
+        "repetition": 2,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "MudBlazor__MudBlazor-12974",
+        "arm": "short",
+        "cell_id": "slot-03-short-rep-2",
+        "position": 46,
+        "repetition": 2,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "xroche__httrack-408",
+        "arm": "baseline",
+        "cell_id": "slot-04-baseline-rep-2",
+        "position": 47,
+        "repetition": 2,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "xroche__httrack-408",
+        "arm": "short",
+        "cell_id": "slot-04-short-rep-2",
+        "position": 48,
+        "repetition": 2,
+        "requested_task_slot": 4
+      }
+    ],
+    "contract_version": "pilot-v1.0",
+    "final_pool_sha256": "611693dc971177e76b5d7b45eb58f8dffd7c4821bf12b0dc6c540b6d580973fa",
+    "manual_edits_permitted": false,
+    "repetitions_per_task_arm": 2,
+    "schedule_sha256": "ab92971b4309ecb6a7ccdd18c97358a2db4ba3342261c6831f8d6b0ace04aa2e",
+    "seed": "engineering-scope-guard-pilot-order-v1-2026-08-28"
+  },
+  "schema_name": "engineering-scope-guard.pilot-execution-contract",
+  "schema_version": 1,
+  "source_and_evaluator": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "evaluator_identity": "SWE-bench-Live/MultiLang official evaluator",
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "workers": 1
+  },
+  "status": "frozen-qualified-not-executed",
+  "subject": {
+    "codex_version": "0.150.1",
+    "configuration_change_during_trajectory_permitted": false,
+    "hooks": [],
+    "mcp_servers": [],
+    "model": "gpt-5.6-terra",
+    "network_or_browser_tools": [],
+    "permissions": "automatic approval review with workspace-write sandbox",
+    "plugins": [],
+    "reasoning_effort": "medium",
+    "required_agent_tools": [
+      "repository shell/exec",
+      "repository file editing/apply-patch"
+    ],
+    "user_config_loaded": false,
+    "user_rules_loaded": false
+  },
+  "trajectory": {
+    "corrective_feedback": "failing check names only, once, identically across arms",
+    "corrective_round": 1,
+    "corrective_trigger": "initial evaluator_test_failure only",
+    "end_conditions": [
+      "accepted_completed",
+      "second evaluator result",
+      "agent_subject_failure",
+      "trajectory_timeout",
+      "infrastructure-invalid attempt",
+      "batch-stop failure"
+    ],
+    "initial_round": 0,
+    "maximum_corrective_rounds": 1,
+    "maximum_turns": 2,
+    "session_rule": "fresh per cell; retain only within one trajectory attempt",
+    "timeout_seconds_per_trajectory_attempt": 1800,
+    "timeout_seconds_per_turn": 900
+  },
+  "trajectory_infrastructure_rerun_budget": {
+    "allowance": 8,
+    "failed_attempt_retained": true,
+    "initial_consumed": 0,
+    "maximum_attempts_per_cell": 2,
+    "task_or_arm_change_permitted": false,
+    "unit": "invalid execution attempt for the same task x arm x repetition cell"
+  },
+  "usage": {
+    "calculated_cost_must_be_labeled_not_provider_reported": true,
+    "required_derived_field": "total_tokens",
+    "required_provider_reported_fields": [
+      "input_tokens",
+      "cached_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens"
+    ],
+    "unavailable_fields": [
+      "cache_write_tokens",
+      "provider_billed_amount",
+      "currency",
+      "backend_model_snapshot"
+    ]
+  }
+}

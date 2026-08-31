@@ -1,0 +1,60 @@
+name: Evidence or methodology concern
+description: Report a problem with a claim, protocol, measurement, or interpretation
+title: "[Evidence]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project treats evidence quality as a product requirement. Please identify the exact material at issue and provide reproducible, non-sensitive evidence where possible.
+
+  - type: dropdown
+    id: evidence_class
+    attributes:
+      label: Material type
+      options:
+        - Development result
+        - Exploratory result
+        - Confirmatory result
+        - Protocol or method
+        - Public claim or documentation
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Exact location
+      description: Link to the claim, file and section, commit, report, or result being questioned.
+      placeholder: docs/EVIDENCE_POLICY.md section 4
+    validations:
+      required: true
+
+  - type: textarea
+    id: concern
+    attributes:
+      label: Concern
+      description: Explain the suspected error, unsupported inference, ambiguity, or reproducibility problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Provide citations, a minimal reproduction, or derived data that can be shared safely.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential impact
+      description: State which conclusion, protocol decision, or public wording may need reconsideration.
+
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Disclosure check
+      options:
+        - label: I did not include secrets, private source, proprietary prompts, or re-identifiable trace data.
+          required: true

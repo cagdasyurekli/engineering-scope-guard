@@ -1,0 +1,91 @@
+{
+  "decision": "DATASET BRIDGE QUALIFIED \u2014 GO TO ONE FINAL LIVE CANARY",
+  "environment_fingerprint": {
+    "canonical_interpreter": {
+      "path_is_symlink": true,
+      "pyarrow_available": true,
+      "pyarrow_version": "25.0.1",
+      "python_version": "3.12.13",
+      "virtual_environment_active": true
+    },
+    "cwd": "repository-root",
+    "dataset_access": "one pinned local parquet split via pyarrow; no network or Hugging Face cache API",
+    "dataset_file": "cpp-00000-of-00001.parquet",
+    "dataset_file_sha256": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "failed_wrapper_pythonpath": "src",
+    "legacy_resolved_interpreter": {
+      "pyarrow_available": false,
+      "pyarrow_version": null,
+      "python_version": "3.12.13",
+      "same_path_as_canonical": false,
+      "virtual_environment_active": false
+    },
+    "successful_lookup_pythonpath": "unset",
+    "task_id_matching": "exact string equality; no normalization"
+  },
+  "matrix": {
+    "exact_failed_canary_interpreter_path": {
+      "error_code": "missing_pyarrow",
+      "exit_code": 1,
+      "metadata_sha256": null
+    },
+    "exact_successful_read_only_lookup_path": {
+      "error_code": null,
+      "exit_code": 0,
+      "metadata_sha256": "0a83c09240ba5ae16c9d50c922e419146ed9202a5388b018803f226ba1d61d5d"
+    },
+    "fresh_process_after_prior_success": {
+      "metadata_sha256": "0a83c09240ba5ae16c9d50c922e419146ed9202a5388b018803f226ba1d61d5d",
+      "status": "pass"
+    },
+    "fresh_process_resolution": {
+      "metadata_sha256": "0a83c09240ba5ae16c9d50c922e419146ed9202a5388b018803f226ba1d61d5d",
+      "status": "pass"
+    },
+    "repeated_resolution_same_process": {
+      "exit_code": 0,
+      "identical": true,
+      "metadata_sha256": "0a83c09240ba5ae16c9d50c922e419146ed9202a5388b018803f226ba1d61d5d",
+      "resolutions": 2
+    }
+  },
+  "preserved_observations": {
+    "failed_one_shot": {
+      "child_stderr_preserved_at_time": false,
+      "command_shape": "PYTHONPATH=src <evaluator-venv-python> scripts/pilot_v2.py run-canary",
+      "exit_code": 1,
+      "visible_error": "dataset bridge failed for the exact task"
+    },
+    "later_read_only_lookup": {
+      "command_shape": "<evaluator-venv-python> scripts/pilot_dataset_bridge.py <pinned-local-dataset> cpp <exact-task> resolve",
+      "exit_code": 0,
+      "metadata_sha256": "0a83c09240ba5ae16c9d50c922e419146ed9202a5388b018803f226ba1d61d5d"
+    }
+  },
+  "prohibited_activity": {
+    "codex_invocations": 0,
+    "credential_copies": 0,
+    "evaluator_invocations": 0,
+    "live_canary_invocations": 0,
+    "pilot_ledger_or_receipt_writes": 0,
+    "pilot_v2_freezes": 0
+  },
+  "repair": {
+    "canonical_path_helper": "scripts.pilot_runner.canonical_evaluator_python",
+    "canonical_resolver": "scripts.pilot_runner.resolve_dataset_task",
+    "symlinks_dereferenced": false
+  },
+  "root_cause": {
+    "cache_network_or_warm_state_required": false,
+    "classification": "deterministic implementation defect",
+    "explanation": "The failed wrapper dereferenced .venv/bin/python with Path.resolve(). The resulting base interpreter did not activate the evaluator virtual environment and could not import pyarrow. The later lookup invoked the virtual-environment symlink directly and therefore succeeded."
+  },
+  "schema_name": "engineering-scope-guard.dataset-bridge-qualification",
+  "schema_version": 1,
+  "status": "pass",
+  "task": {
+    "instance_id": "BYVoid__OpenCC-1096",
+    "language": "cpp"
+  }
+}

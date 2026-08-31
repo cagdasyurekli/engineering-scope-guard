@@ -1,0 +1,103 @@
+{
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-mechanism-annotations",
+  "schema_version": 1,
+  "contract_sha256": "2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "cells": {
+    "exploratory-block-01-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-02-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-03-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-04-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-05-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-06-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-07-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-08-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-09-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-10-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-11-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    },
+    "exploratory-block-12-treatment": {
+      "necessary_correctness_suppression": false,
+      "evidence_supported_optional_removal_or_simplification": false,
+      "apparent_pre_activation_behavioral_effect": false,
+      "c_short_equivalent_behavior": false,
+      "broad_proof_of_minimality_search": false,
+      "evidence_references": []
+    }
+  }
+}

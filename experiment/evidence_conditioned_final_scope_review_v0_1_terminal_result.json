@@ -1,0 +1,83 @@
+{
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-terminal-result",
+  "schema_version": 1,
+  "status": "terminal_partial_schedule_analyzable",
+  "termination": "infrastructure_rerun_allowance_exhausted",
+  "recorded_at": "2026-08-29T19:12:04.729901+00:00",
+  "decision": "CANDIDATE RETIRED — EXPLORATORY EVIDENCE ONLY",
+  "contract_sha256": "2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "schedule": {
+    "frozen_cells": 32,
+    "admissible_cells": 24,
+    "missing_cells": 8,
+    "complete_task_clusters": 5,
+    "incomplete_task_clusters": 2,
+    "attempts_started": 26,
+    "infrastructure_invalid_attempts": 2,
+    "terminal_cell_id": "exploratory-block-13-baseline",
+    "attempt_3_permitted": false
+  },
+  "retry_accounting": {
+    "infrastructure_rerun_allowance": 4,
+    "infrastructure_reruns_consumed": 1,
+    "operator_interruption_allowance": 2,
+    "operator_interruptions_consumed": 0,
+    "same_cell_attempt_limit": 2
+  },
+  "outcomes": {
+    "accepted_completed": 12,
+    "evaluator_test_failure": 12,
+    "local_docker_runtime_infrastructure_failure": 2
+  },
+  "ledger": {
+    "events": 247,
+    "event_counts": {
+      "attempt_started": 26,
+      "batch_stopped": 1,
+      "contract_frozen": 1,
+      "credential_cleanup_verified": 26,
+      "evaluator_finished": 38,
+      "evaluator_invoked": 38,
+      "infrastructure_rerun_authorized": 1,
+      "isolation_verified": 26,
+      "pool_frozen": 1,
+      "receipt_committed": 26,
+      "schedule_frozen": 1,
+      "subject_terminated": 50,
+      "treatment_activation_started": 12
+    },
+    "last_event_sha256": "8b5a2b18bcdccd771d8390b6a70b6b40e780e2f54929043445acb60cb1bae2e6",
+    "sha256": "dded31ad9aefd87642fa4d7d48d16ea8de46058d3fec99b06db472473f6d4cfd",
+    "tracked": false,
+    "preserved_locally": true
+  },
+  "analysis": {
+    "terminal_action": "batch_stopped",
+    "complete_task_clusters": 5,
+    "marginal_admissible_cells_per_arm": 12,
+    "imputation_performed": false,
+    "fired_retirement_gates": [
+      "no_accepted_outcome_mechanism",
+      "search_increase",
+      "cached_context_increase",
+      "wall_or_work_increase",
+      "structural_proxy_only"
+    ],
+    "bounded_disposition": "candidate_retired"
+  },
+  "claims": {
+    "exploratory_only": true,
+    "confirmatory_execution_authorized": false,
+    "confirmatory_claim": false,
+    "equivalence_or_noninferiority_claim": false,
+    "monetary_savings_claim": false,
+    "full_schedule_completion_claim": false
+  },
+  "immutable_evidence_sha256": {
+    "experiment/evidence_conditioned_final_scope_review_v0_1_execution_contract.json": "12a444c6d3e4eb1c2791d01c0d97a55e47fd096a397d7211172f9566d925e824",
+    "experiment/evidence_conditioned_final_scope_review_v0_1_exploratory_design.json": "f04806f449ca2e2f2cd92b33fc9df94c5577abd6605fd89d8571cc205559fb27",
+    "experiment/evidence_conditioned_final_scope_review_v0_1_exploratory_freeze.json": "9a5ec3b084e83a6659e4981caa632520404b4019230ee84af1aceea8eec4e154",
+    "experiment/evidence_conditioned_final_scope_review_v0_1_mechanism_annotations.json": "183a8a5e41fe4546dbf129946d051d33da8c48531592536a5e7d4dd2a26e971c",
+    "experiment/evidence_conditioned_final_scope_review_v0_1_terminal_analysis.json": "1b560e7552ef781d92666412ebbee2035f06b0843c880fbc6bd957ce42690e66"
+  }
+}

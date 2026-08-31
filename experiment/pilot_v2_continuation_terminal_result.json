@@ -1,0 +1,55 @@
+{
+  "analysis": {
+    "admissible": false,
+    "arm_effect_analysis_performed": false,
+    "interim_baseline_vs_short_comparisons": 0,
+    "reason": "terminal batch stop after malformed_incomplete_measurement with an incomplete frozen schedule"
+  },
+  "continuation": {
+    "admissible_attempts": 2,
+    "attempts_finished": 3,
+    "events": 8,
+    "infrastructure_reruns_consumed": 0,
+    "ledger_file_sha256": "fea701b42726d73e673af02f5bd50fd6431b3ee605d88b15f9c1ea7e0050d9fd",
+    "terminal_event_sha256": "912c8e06dcf3bd8dcd1a0806b0d2b1dc36bc594d53d4e064217d67f698f634eb"
+  },
+  "decision": "PILOT-V2 CONTINUATION STOPPED — MALFORMED INCOMPLETE MEASUREMENT; EXPLORATORY ANALYSIS INADMISSIBLE",
+  "frozen_evidence": {
+    "authorization_file_sha256": "ec0dff562818e3cbf62897a4ac494b4a942dd164976ba86f702ea786d2450887",
+    "contract_file_sha256": "4c1019f74becb059f0f1c8440d3fb676ff4595904e57cd79fd69770d6543d53c",
+    "predecessor_ledger_file_sha256": "a998efd2c7e1783607c3494b3a38baca174e3760066f34125288f685012344b5",
+    "strict_preflight_file_sha256": "9b9d09e2e58d74050720f8d9b664cdbb71a524a6af3f2e4968d0d1fb5604a6c3"
+  },
+  "observations": {
+    "admissible_cells_overall": 8,
+    "continuation_terminations": [
+      "evaluator_test_failure",
+      "evaluator_test_failure",
+      "malformed_incomplete_measurement"
+    ],
+    "invalid_continuation_attempts": 1,
+    "operator_restart_units_remaining": 0,
+    "positions_10_through_44_unstarted": true,
+    "predecessor_positions_preserved": [1, 2, 3, 4, 5, 6]
+  },
+  "schema_name": "engineering-scope-guard.pilot-v2-continuation-terminal-result",
+  "schema_version": 1,
+  "status": "batch_stopped",
+  "terminal": {
+    "cell_id": "v2-slot-09-baseline-rep-1",
+    "recorded_at": "2026-08-28T20:30:32.165662+00:00",
+    "termination": "malformed_incomplete_measurement",
+    "trajectory_attempt": 1
+  },
+  "usage": {
+    "billed_cost": null,
+    "billed_cost_status": "unavailable",
+    "cached_input_tokens": 1791232,
+    "fresh_input_tokens_calculated": 216874,
+    "input_tokens": 2008106,
+    "output_tokens": 16971,
+    "reasoning_output_tokens": 3650,
+    "total_tokens": 2025077,
+    "usage_complete_for_finished_attempts": true
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "allowed_actions": [
+    "review"
+  ],
+  "current_decision": {
+    "decision": "EXPERIMENT INVALID / TERMINATED",
+    "evidence_commit": null,
+    "evidence_commit_semantics": "omitted_to_avoid_self_reference",
+    "goal": "Evaluator-Stable Reasoning-Effort Exploratory Experiment"
+  },
+  "evidence": [
+    {
+      "path": "docs/CURRENT_GOAL.md",
+      "role": "terminal goal and stop boundary",
+      "sha256": "8b9820d3db7f681505277ae27610be4eb883351bd39e1a14fa2700d7944be0be"
+    },
+    {
+      "path": "docs/GOAL_HISTORY.md",
+      "role": "terminal goal history",
+      "sha256": "294920cbb33301da986034ae5bded49be6d8453953f9914c88916febc741c13c"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "role": "D-069 qualification and terminal disposition",
+      "sha256": "4e795b4670854dbbee81305f5551507ce2f2bac60e925ac0b902932f7ab01bcc"
+    },
+    {
+      "path": "docs/EVALUATOR_STABLE_REASONING_EFFORT_TERMINAL_REPORT.md",
+      "role": "public-safe terminal report",
+      "sha256": "c845dff3726f29c00f396fb9e173fc9e3185ae4b3e30bac2bc65e906112f9404"
+    },
+    {
+      "path": "experiment/evaluator_stable_reasoning_effort_qualification_summary.json",
+      "role": "public-safe terminal qualification summary",
+      "sha256": "6e2f9a0dfd77b494f9999e0f7bf8f1a4b5b629c0aca2e741f2080ab2fbc4efed"
+    },
+    {
+      "path": "experiment/evaluator_stable_reasoning_effort_terminal_result.json",
+      "role": "public-safe terminal result",
+      "sha256": "c33511e0d062ff961d49981b46842290ecbaeb2bc331c7399ce5dc449422828f"
+    }
+  ],
+  "experimental_state": {
+    "boundaries": {
+      "next_authority_boundary": "authorize_private_canonical_branch_push",
+      "publication_authorized": false,
+      "raw_private_material_tracked": false,
+      "repository_private": true,
+      "visibility_change_authorized": false
+    },
+    "execution": {
+      "admissible_cells": 0,
+      "alternates_activated": 0,
+      "canary_subject_invocation_starts": 0,
+      "completed_cells": 0,
+      "evaluator_invocation_starts": 0,
+      "experiment_started": false,
+      "experiment_subject_invocation_starts": 0,
+      "missing_cells": 0,
+      "schedule_cells": 0,
+      "stage_1_status": "not_applicable",
+      "total_subject_invocation_starts": 0
+    },
+    "public_artifacts": {
+      "analysis": null,
+      "contract": null,
+      "qualification_summary": {
+        "path": "experiment/evaluator_stable_reasoning_effort_qualification_summary.json",
+        "sha256": "6e2f9a0dfd77b494f9999e0f7bf8f1a4b5b629c0aca2e741f2080ab2fbc4efed"
+      },
+      "terminal_envelope": null,
+      "terminal_report": {
+        "path": "docs/EVALUATOR_STABLE_REASONING_EFFORT_TERMINAL_REPORT.md",
+        "sha256": "c845dff3726f29c00f396fb9e173fc9e3185ae4b3e30bac2bc65e906112f9404"
+      },
+      "terminal_result": {
+        "path": "experiment/evaluator_stable_reasoning_effort_terminal_result.json",
+        "sha256": "c33511e0d062ff961d49981b46842290ecbaeb2bc331c7399ce5dc449422828f"
+      }
+    },
+    "qualification": {
+      "attempted_candidates": 20,
+      "gold_failures": 0,
+      "infrastructure_failures": 3,
+      "minimum_gate_passed": true,
+      "qualified_independent_clusters": 16,
+      "validation_failures": 1
+    },
+    "schema_version": "evaluator-stable-reasoning-effort-v1",
+    "terminal": {
+      "disposition": "EXPERIMENT INVALID / TERMINATED",
+      "esg_rr_002_candidate_decision": "not_applicable",
+      "path": "pre_subject_integrity_stop"
+    }
+  },
+  "forbidden_actions": [
+    "run_exploratory_experiment",
+    "run_confirmatory_experiment",
+    "select_or_freeze_exploratory_tasks",
+    "change_experimental_treatment",
+    "expose_held_out_task_bodies",
+    "increase_retry_budgets",
+    "reset_or_relabel_experimental_evidence"
+  ],
+  "git": {
+    "base_branch": "main",
+    "branch": null,
+    "head_sha": null,
+    "head_sha_semantics": "omitted_to_avoid_self_reference",
+    "pr_number": null,
+    "pr_url": null
+  },
+  "goal": {
+    "completed_at": "2026-08-31T12:24:28Z",
+    "decision": "EXPERIMENT INVALID / TERMINATED BEFORE CONTRACT FREEZE",
+    "name": "Evaluator-Stable Reasoning-Effort Exploratory Experiment",
+    "status": "complete"
+  },
+  "next_action": {
+    "authorization": "not_authorized",
+    "kind": "review",
+    "reason": "Review branch-derived CI, CodeQL, and publication gates; no new live research is authorized.",
+    "requires_explicit_user_authorization": false,
+    "safe_without_explicit_authorization": true
+  },
+  "notes": [
+    "Qualification reached 16 independent clusters from 20 attempted candidates.",
+    "Exact runtime identity drifted before experimental population and contract freeze.",
+    "No canary, subject, evaluator, outcome, contract, envelope, or analysis exists."
+  ],
+  "repository": "cagdasyurekli/engineering-scope-guard",
+  "schema_version": "1",
+  "verification": {
+    "ci_required": true,
+    "ci_status": "derive_from_branch",
+    "codeql_required": true,
+    "codeql_status": "derive_from_branch",
+    "tests_passed": 513
+  }
+}

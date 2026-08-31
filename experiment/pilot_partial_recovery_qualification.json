@@ -1,0 +1,203 @@
+{
+  "decision": "STOP PILOT",
+  "evaluator": {
+    "invocation_identity": {
+      "expected_from_frozen_contract": true,
+      "observed_durable_command_record": false
+    },
+    "observed_result_class": "empty_patch",
+    "official_results_present": true,
+    "per_instance_report_present": false,
+    "process_exit_status": {
+      "reason": "the completed process exit status was held only in memory",
+      "status": "unavailable"
+    },
+    "resolved": null,
+    "structured_result_complete": false,
+    "uniquely_bound_to_attempt_task": true
+  },
+  "expected_state": {
+    "additional_reruns_consumed": 0,
+    "conditional_next_cell_after_hypothetical_valid_finalization": "slot-04-short-rep-1",
+    "infrastructure_reruns_consumed": 1,
+    "ledger_events_to_append": [],
+    "next_scheduled_cell": null,
+    "resulting_status": "resolve_partial"
+  },
+  "experimental_activity": {
+    "pilot_evaluator_invocations": 0,
+    "pilot_retries": 0,
+    "pilot_subject_invocations": 0,
+    "policy_comparisons": 0,
+    "receipts_created": 0,
+    "successor_batches_created": 0,
+    "successor_ledger_mutations": 0,
+    "task_replacements": 0,
+    "valid_completed_cells": 0
+  },
+  "identity": {
+    "authorization_file_sha256": "e723d57d89674731abf957ea875bba586fe262398f0fa2a0664de2f343af37df",
+    "authorization_sha256": "c81664e2a245d80657fa30112383aee34bd919424a9950ce4c7ba0e9ff450889",
+    "cell_id": "slot-04-baseline-rep-1",
+    "contract_file_sha256": "91bca22dde1d157a3d298c25fcda90ceba8c95b56a9a5e3b48e8e21402112f41",
+    "contract_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+    "predecessor": {
+      "events": 9,
+      "file_sha256": "0cf33d60006cc689b4664b309a94cbe8de1914e5dc2c86306cf603c44ca6a019",
+      "terminal_event_sha256": "f1868900f9aea206913fe594ceb53a3ffcab21fa72bf254afd3637ef2de73046"
+    },
+    "successor_ledger_events": 8,
+    "successor_ledger_file_sha256": "dac4d77481549c03fb5fc8c266964f33dcec0b32bade96a6a5c0561756b2fe15",
+    "successor_terminal_event_sha256": "c03a76515a7a8702304e4e874c1a93b53f1795b4bb8104f8cd498c70608562a1",
+    "trajectory_attempt": 2
+  },
+  "missing_or_ambiguous": [
+    "official_evaluator_invocation_identity",
+    "structured_evaluator_result",
+    "receipt_started_at",
+    "receipt_ended_at",
+    "failure_termination_metadata"
+  ],
+  "non_pilot_end_to_end_canary": {
+    "reason": "no separately authorized non-Pilot subject-to-receipt canary exists",
+    "run": false
+  },
+  "prediction": {
+    "patch_bytes": 0,
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prediction_matches_preserved_patch": true,
+    "prediction_patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "task_identity_bound": true
+  },
+  "recovery": {
+    "existing_same_attempt_valid_finalization_transition": false,
+    "legal": false,
+    "normalized_receipt": null,
+    "reason": "required authoritative evidence is missing",
+    "recoverable": false
+  },
+  "required_evidence": {
+    "arm_task_cell_attempt_identity": true,
+    "authoritative_pre_subject_baseline": true,
+    "complete_authorized_usage": true,
+    "contract_digest": true,
+    "failure_termination_metadata": false,
+    "generated_patch_identity": true,
+    "ledger_lineage_inputs": true,
+    "official_evaluator_invocation_identity": false,
+    "receipt_ended_at": false,
+    "receipt_started_at": false,
+    "structured_evaluator_result": false,
+    "subject_identity_configuration": true,
+    "subject_terminal_state": true,
+    "successor_authorization_digest": true
+  },
+  "rerun": {
+    "current_attempt": 2,
+    "legal": false,
+    "maximum_attempts_per_cell": 2,
+    "reason": "same cell has exhausted its frozen attempt allowance",
+    "would_be_attempt": 3
+  },
+  "root_cause": {
+    "additional_usage_boundary": "provider reports components while total_tokens is derived",
+    "boundary": "LiveBackend.prepare result to core receipt construction",
+    "core_previous_expectation": "zero-argument callable",
+    "ended_at_observed_runtime_type": "str"
+  },
+  "schema_name": "engineering-scope-guard.pilot-partial-recovery-qualification",
+  "schema_version": 1,
+  "source_artifacts": {
+    "evaluator_report": {
+      "bytes": null,
+      "exists": false,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/raw/evaluator-round-0/xroche__httrack-408/report.json",
+      "sha256": null
+    },
+    "evaluator_results": {
+      "bytes": 278,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/raw/evaluator-round-0/results.json",
+      "sha256": "d2fd4cbc121c65339bfe6455d39151588ce7e8a6501974629f782723935582c0"
+    },
+    "evaluator_stderr": {
+      "bytes": 0,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/raw/evaluator-round-0/command.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluator_stdout": {
+      "bytes": 266,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/raw/evaluator-round-0/command.stdout",
+      "sha256": "30fb817f8c656df228cf977a22bebbd7fd2daf0efce30b5fb28d35c677c90da0"
+    },
+    "post_subject_index": {
+      "bytes": 42633,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/derived/subject.index",
+      "sha256": "6bcd26e4a137f734d21d79f7305a37d6304fa8935630b3ca65e6874de373e483"
+    },
+    "pre_subject_baseline": {
+      "bytes": 43352,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/derived/pre-subject.index",
+      "sha256": "d8b4b6f3806b39e8292864f9c033ba103e0c107414e9c2bb02797147662187aa"
+    },
+    "prediction_json": {
+      "bytes": 57,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/derived/prediction.json",
+      "sha256": "6eb20dd62482d0198c6046295c592b668e193bdad05cf060b312dc642cf3055e"
+    },
+    "prediction_patch": {
+      "bytes": 0,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/derived/prediction.patch",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "subject_trace": {
+      "bytes": 203023,
+      "exists": true,
+      "path": ".local/pilot-successor-runner/attempts/slot-04-baseline-rep-1/attempt-2/raw/codex-round-0.jsonl",
+      "sha256": "719340c2720b6d9af76875019be38875489b24c6203fd7bac37fa0495a6a9778"
+    }
+  },
+  "status": "fail_closed",
+  "subject": {
+    "completed_turns": 1,
+    "session_identity_sha256": "df44ddcad565683147f91478e1c2c5c2f9fc409b4495ceb8765528c4c803b154",
+    "terminal_event": "turn.completed",
+    "usage": {
+      "cached_input_tokens": 841984,
+      "input_tokens": 916296,
+      "output_tokens": 4948,
+      "reasoning_output_tokens": 1884,
+      "total_tokens": 921244
+    },
+    "usage_complete": true,
+    "usage_provenance": {
+      "derived": {
+        "total_tokens": "input_tokens + output_tokens"
+      },
+      "provider_reported": [
+        "input_tokens",
+        "cached_input_tokens",
+        "output_tokens",
+        "reasoning_output_tokens"
+      ]
+    }
+  },
+  "timing": {
+    "attempt_started_at": "2026-08-28T11:00:28.093368+00:00",
+    "filesystem_times_used_as_receipt_evidence": false,
+    "receipt_ended_at": {
+      "reason": "prepared ended_at was not durably recorded",
+      "status": "unavailable"
+    },
+    "receipt_started_at": {
+      "reason": "prepared started_at was not durably recorded",
+      "status": "unavailable"
+    }
+  }
+}

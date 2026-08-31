@@ -1,0 +1,6 @@
+{
+  "name": "scope-guard-fixture",
+  "dependencies": {
+    "existing": "1.0.0"
+  }
+}

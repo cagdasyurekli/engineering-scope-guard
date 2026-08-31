@@ -1,0 +1,245 @@
+{
+  "schema_name": "engineering-scope-guard.pilot-execution-readiness",
+  "schema_version": 1,
+  "as_of": "2026-08-28",
+  "status": "complete",
+  "evidence_class": "decision-only-no-pilot-runs",
+  "pilot_authorized": false,
+  "pilot_policy_comparison_runs": 0,
+  "decision": "REDESIGN REQUIRED",
+  "arms": {
+    "ids": [
+      "baseline",
+      "short"
+    ],
+    "short_policy_version": "C-short v0.1",
+    "short_policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "d_v0_1_excluded": true,
+    "policy_bytes_changed": false
+  },
+  "task_source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "eligibility_version": "swe-bench-live-multilang-v1",
+    "source_rows": 1077,
+    "eligible_tasks": 634,
+    "eligible_repositories": 223,
+    "eligible_ids_sha256": "a51aab24428176bb6ce9490e7eeb3f419e030f0ba393a3e6dc9b471f6b27859e",
+    "selection_uses_task_bodies_or_outcomes": false
+  },
+  "partition": {
+    "seed": "engineering-scope-guard-pilot-v1-2026-08-27",
+    "allocation_sha256": "1de066a17c4810b042b59edb8ea717775cf5a04c5dba0150c87613535d05c71b",
+    "original_pilot_tasks": 12,
+    "original_pilot_repositories": 12,
+    "original_reserve_tasks": 538,
+    "original_reserve_repositories": 211,
+    "original_reserve_ids_sha256": "71c0879b77374370873613daf8856a5c7b507977d911576d00d495f4af70e08a",
+    "final_qualified_pool_tasks": 12,
+    "final_qualified_pool_repositories": 12,
+    "qualification_task_replacements": 4,
+    "effective_reserve_tasks": 499,
+    "effective_reserve_repositories": 207,
+    "effective_reserve_ids_sha256": "609b0dfba0a27dbd535f3db67375d84a454c7ad98b7fdd03cf501fdd16958930",
+    "reserve_ids_or_bodies_emitted": false,
+    "confirmatory_task_bodies_inspected": false,
+    "opacity_limit": "Non-emission and non-inspection are evidenced; public source, seed, and algorithm do not provide cryptographic secrecy or independent custody."
+  },
+  "host_and_evaluator": {
+    "fixed_cpus": 6,
+    "fixed_memory_mib": 16384,
+    "platform": "linux/amd64",
+    "workers": 1,
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "official_images_modified_or_rebuilt": false,
+    "recorded_gold_attempts": 48,
+    "final_pool_all_pass_three_of_three": true,
+    "oom_or_resource_failures": 0,
+    "timeouts": 0,
+    "scope_limit": "Gold qualification supports local F2P/P2P/rebuild/test operability, not subject solvability, broad quality, or policy effect."
+  },
+  "fixed_subject": {
+    "codex_version": "0.150.1",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "permissions": "automatic approval review with workspace-write sandbox",
+    "maximum_turns_per_trajectory": 2,
+    "timeout_seconds_per_turn": 900,
+    "timeout_seconds_per_trajectory": 1800,
+    "corrective_rounds": 1,
+    "live_single_condition_trajectory_complete": true,
+    "session_persistence": "fresh session retained only within one trajectory for the corrective turn; never shared across tasks, arms, or repetitions",
+    "exact_backend_model_snapshot": "unavailable"
+  },
+  "usage_and_billing": {
+    "observed_provider_fields": [
+      "input_tokens",
+      "cached_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens"
+    ],
+    "fresh_input_may_be_calculated_and_labeled": true,
+    "cache_write_tokens": "unavailable",
+    "provider_billed_amount_and_currency": "unavailable",
+    "provider_cache_namespace_separation": "unproved",
+    "narrow_interpretation": "Report token components separately with acceptance, turns, and time; retain missingness; do not claim billed-cost savings or cache-price changes as less agent work."
+  },
+  "review_and_claims": {
+    "confirmed_independent_experienced_reviewers": 0,
+    "deterministic_evaluators_sufficient_for_narrow_feasibility_questions": true,
+    "permitted": [
+      "exact F2P/P2P/rebuild/test outcomes",
+      "acceptance discordance and classified failures",
+      "provider-reported token components",
+      "structural diagnostics",
+      "exploratory task-clustered variance"
+    ],
+    "prohibited": [
+      "maintainability or overall code quality preserved or improved",
+      "architectural appropriateness or human acceptability",
+      "quality equivalence or non-inferiority",
+      "objective overengineering classification",
+      "downstream maintenance, lifecycle, or future-work savings",
+      "product or policy efficacy"
+    ]
+  },
+  "methodological_parameters": {
+    "pilot_requires_mcid": false,
+    "pilot_requires_non_inferiority_margin": false,
+    "mcid": "unresolved-until-freeze",
+    "quality_margin": "unresolved-until-freeze",
+    "confirmatory_estimand_and_sample_size": "unresolved-until-freeze",
+    "arbitrary_values_inherited": false
+  },
+  "budgets": {
+    "planned_subject_trajectories": 48,
+    "planned_subject_turn_ceiling": 96,
+    "pilot_run_level_infrastructure_reserve_recorded": 8,
+    "recorded_absolute_subject_trajectory_ceiling": 56,
+    "host_qualification_task_slot_replacement_allowance": 8,
+    "host_qualification_task_slot_replacements_consumed": 4,
+    "host_qualification_task_slot_replacements_unused": 4,
+    "units_reconciled": false,
+    "ambiguity": "The historical Pilot reserve is denominated in subject trajectories, while host qualification consumed task-slot substitutions from another allowance also numbered eight. Durable authority does not explicitly prove whether they are separate budgets or how one affects the other."
+  },
+  "gate_matrix": [
+    {
+      "id": "arm_design",
+      "status": "satisfied",
+      "evidence": [
+        "docs/PILOT_READINESS.md",
+        "docs/EVALUATION_PROTOCOL.md",
+        "experiment/arms/short.txt"
+      ]
+    },
+    {
+      "id": "source_eligibility_partition",
+      "status": "satisfied-with-procedural-opacity-limit",
+      "evidence": [
+        "docs/EXTERNAL_INPUT_READINESS.md",
+        "experiment/external_task_partition.json"
+      ]
+    },
+    {
+      "id": "qualified_task_pool_and_evaluator",
+      "status": "satisfied-for-deterministic-gates",
+      "evidence": [
+        "docs/PILOT_HOST_QUALIFICATION.md",
+        "experiment/pilot_host_qualification.json"
+      ]
+    },
+    {
+      "id": "fixed_subject_and_session_persistence",
+      "status": "satisfied-for-one-live-single-condition-trajectory",
+      "evidence": [
+        "docs/EVALUATOR_RUNTIME_READINESS.md",
+        "experiment/evaluator_runtime_readiness.json"
+      ]
+    },
+    {
+      "id": "token_observability",
+      "status": "satisfied-for-component-reporting",
+      "evidence": [
+        "docs/EXTERNAL_INPUT_READINESS.md",
+        "experiment/evaluator_runtime_readiness.json"
+      ]
+    },
+    {
+      "id": "provider_cache_and_billing",
+      "status": "compatible-limitation",
+      "evidence": [
+        "docs/EXTERNAL_INPUT_READINESS.md"
+      ]
+    },
+    {
+      "id": "reviewer_capacity_and_claim_boundary",
+      "status": "compatible-limitation-for-narrow-pilot",
+      "evidence": [
+        "docs/EXTERNAL_INPUT_READINESS.md",
+        "docs/OPEN_QUESTIONS.md"
+      ]
+    },
+    {
+      "id": "mcid_quality_margin",
+      "status": "deferred-to-freeze",
+      "evidence": [
+        "docs/PILOT_READINESS.md",
+        "docs/EVALUATION_PROTOCOL.md"
+      ]
+    },
+    {
+      "id": "batch_harness_enforcement",
+      "status": "blocker",
+      "evidence": [
+        "src/engineering_scope_guard/experiment.py",
+        "scripts/run_development_pool.py",
+        "experiment/pilot_readiness.json"
+      ]
+    },
+    {
+      "id": "v1_run_order_binding",
+      "status": "blocker",
+      "evidence": [
+        "docs/PILOT_READINESS.md",
+        "experiment/external_task_partition.json"
+      ]
+    },
+    {
+      "id": "replacement_budget_units",
+      "status": "blocker",
+      "evidence": [
+        "docs/PILOT_READINESS.md",
+        "experiment/pilot_host_qualification.json"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "id": "batch_harness_enforcement",
+      "detail": "Repository code does not enforce the frozen allowlisted environment, required tool/feature receipt, trajectory-local corrective resume, process-group timeout cleanup, and full failure/missingness ledger for Pilot cells. Local envelope canaries and one live trajectory do not prove the batch harness."
+    },
+    {
+      "id": "v1_run_order_binding",
+      "detail": "The historical order formula is bound to the superseded v0.1 mechanism-strata seed; no durable artifact binds it to the v1 external allocation, final replacement-linked pool, and effective reserve."
+    },
+    {
+      "id": "replacement_budget_units",
+      "detail": "Task-slot substitutions used for host qualification and trajectory-level Pilot infrastructure reruns use different units, but durable authority does not explicitly separate or debit their two allowances."
+    }
+  ],
+  "audited_source_sha256": {
+    "src/engineering_scope_guard/experiment.py": "0a2fd96f17ada631c3bef87a1396a472e7980b8d3dec53d364f7812c62d142fc",
+    "scripts/run_development_pool.py": "364788e280d1891de4302e886b75c1abdbcf6c1dbd0de6dec72847d4520941c8",
+    "experiment/arms/short.txt": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "experiment/external_task_partition.json": "51e150bdd53a19e1f47c57cec2015de8b85a8d599295cfc8cbdba6e1cbafa496",
+    "experiment/evaluator_runtime_readiness.json": "f76015a2a290afa58c7461dbf59ec25f61c320fc799a4eaf42dcc1f161dbfca6",
+    "experiment/pilot_host_qualification.json": "887efca3065bbba51a30b3e1c79c40cae91515b72205993778dfc59722724e0f"
+  },
+  "proposed_next_goal": {
+    "name": "Pilot Harness and Reserve Contract Qualification",
+    "status": "proposed-not-active",
+    "execute_now": false,
+    "objective": "Implement and qualify the smallest deterministic Pilot batch harness and prospectively freeze the v1 final-pool order plus non-overlapping replacement-budget units, using dry-run and non-comparative canaries only; prove per-cell isolation, frozen tool/environment receipts, trajectory-local correction, process-group timeout cleanup, failure/missingness retention, and pre-first-comparison drift stops without running baseline versus C-short."
+  }
+}

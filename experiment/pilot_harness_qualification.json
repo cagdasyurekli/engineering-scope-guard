@@ -1,0 +1,56 @@
+{
+  "schema_name": "engineering-scope-guard.pilot-harness-qualification",
+  "schema_version": 1,
+  "status": "complete",
+  "as_of": "2026-08-28",
+  "decision": "GO TO EXPLORATORY PILOT",
+  "previous_decision_preserved": "REDESIGN REQUIRED",
+  "pilot_goal_active": false,
+  "pilot_cells_executed": 0,
+  "policy_comparisons_executed": 0,
+  "blockers": {
+    "batch_harness_enforcement": "resolved",
+    "final_pool_schedule_binding": "resolved",
+    "distinct_budget_units": "resolved"
+  },
+  "contract": {
+    "path": "experiment/pilot_execution_contract.json",
+    "version": "pilot-v1.0",
+    "contract_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+    "final_pool_sha256": "611693dc971177e76b5d7b45eb58f8dffd7c4821bf12b0dc6c540b6d580973fa",
+    "schedule_sha256": "ab92971b4309ecb6a7ccdd18c97358a2db4ba3342261c6831f8d6b0ace04aa2e",
+    "scheduled_cells": 48
+  },
+  "budgets": {
+    "task_slot_replacement": {"allowance": 8, "consumed": 4, "remaining": 4, "finalized": true},
+    "trajectory_infrastructure_rerun": {"allowance": 8, "consumed": 0, "remaining": 8, "maximum_per_cell": 1}
+  },
+  "qualification": {
+    "fixtures_or_no_op_only": true,
+    "contract_mismatch_rejected": true,
+    "arm_contamination_rejected": true,
+    "state_root_reuse_rejected": true,
+    "schedule_byte_reproducible": true,
+    "pool_change_changes_commitment": true,
+    "budget_units_mechanically_distinct": true,
+    "failed_attempt_history_preserved": true,
+    "failure_taxonomy_frozen": true,
+    "unresolved_treatment_or_admissibility_ambiguity": false
+  },
+  "preserved_boundaries": {
+    "arms": ["baseline", "short"],
+    "d_v0_1_excluded": true,
+    "independent_experienced_reviewers": 0,
+    "provider_billed_amount_and_currency": "unavailable",
+    "provider_cache_isolation_guarantee": "unavailable",
+    "mcid": "unresolved",
+    "quality_margin": "unresolved",
+    "broad_claims_prohibited": true
+  },
+  "proposed_pilot_goal": {
+    "name": "Exploratory Pilot Execution",
+    "status": "proposed-not-active",
+    "execute_now": false,
+    "objective": "Execute exactly the 48 scheduled Exploratory Pilot cells in the frozen pilot-v1.0 manifest, enforcing preflight, isolation, corrective-round, timeout, failure/admissibility, usage, and append-only ledger rules; permit at most eight predefined same-cell infrastructure reruns and one rerun per cell; stop the batch on integrity failures; report only permitted exploratory deterministic feasibility and variance evidence; preserve zero-reviewer, provider-cost/cache, MCID, quality-margin, and broad-claims limitations; do not alter the pool, schedule, arms, policy, model, reasoning, or contract."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "codex_version": "codex-cli 0.151.0",
+  "confirmatory_reserve_commitment_sha256": "05624992aee92836b04bdf0b76ad18690e152ced8f21bc9b807efbefc2b52af8",
+  "container_manifests_sha256": {
+    "starryzhang/sweb.eval.x86_64.apache_1776_paimon-8536": "c6a23d42293bf69534d80e98111fadeb65906370cd5292b7b7bfb5339317fc71",
+    "starryzhang/sweb.eval.x86_64.centrifugal_1776_centrifugo-1129": "0b6a18b5a182fbff9b2a84f33bbc0a13bfb7ecea5bf9f3fd7a57cc361d7cf065",
+    "starryzhang/sweb.eval.x86_64.fluent_1776_fluent-bit-11677": "08f9a2576fc823a3b0531f9135c5f924bf4ab8d35384083f50af206e08d814bd",
+    "starryzhang/sweb.eval.x86_64.j-f-liu_1776_lopdf-481": "cf8fb1fbe7f03b5cb9864ab3135edc8f7973a1b74830f6f67605105b5aa19b01",
+    "starryzhang/sweb.eval.x86_64.jasperfx_1776_wolverine-3426": "67941f78a83719a4b6c02127f9ec1beac131c6ccde1c390f04c72c229e6aa1b7",
+    "starryzhang/sweb.eval.x86_64.open-source-parsers_1776_jsoncpp-1693": "17677e0906d94ffbea1fa7b2c0fd73387d3caf8bab9a9c45364e9846d3a5558b",
+    "starryzhang/sweb.eval.x86_64.qwenlm_1776_qwen-code-3310": "5ef1116a270c50cb8ccf4a9fcaae051b4ee766401c584b990cce9dc899d24859",
+    "starryzhang/sweb.eval.x86_64.sveltejs_1776_svelte-18039": "e1300744c65c83b3e4675c75e860cab67c5a79b5212fd79f4ec08c676200a00a"
+  },
+  "contract_file_sha256": "12a444c6d3e4eb1c2791d01c0d97a55e47fd096a397d7211172f9566d925e824",
+  "contract_sha256": "2360d79d32ca9df8f84767fec43b77cd4df0498a4134393a8d2cdbb403ff834b",
+  "contract_tracked_head_exact": true,
+  "credential_bridge": {
+    "copied_artifacts": [
+      "auth.json"
+    ],
+    "credential_artifact": "auth.json",
+    "login_method": "chatgpt",
+    "normal_codex_state_shared": false,
+    "source_permissions": "0600",
+    "storage": "file"
+  },
+  "dataset_files_sha256": {
+    "c-00000-of-00001.parquet": "30c0b8cb9e7140e05a4e539f20be0c325be597cbba4bf35e232355987ddddd0c",
+    "cpp-00000-of-00001.parquet": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+    "cs-00000-of-00001.parquet": "29ffe16d0b2cd802e753262b8b0d7fe3f2bb1b489396da238146e79f37937c1f",
+    "go-00000-of-00001.parquet": "76d2b5dff0f3fac8303d30fa85495539e487d25974ad7c21cd21a545cb4756e2",
+    "java-00000-of-00001.parquet": "00387685808c71d21ada175335304b1c118859453afadd58ea21a00b0d568ee8",
+    "js-00000-of-00001.parquet": "bc6ec49ffaf9db97840d55eba6954fae8f5fb0fb071cf49e187f36ffadd55a7a",
+    "rust-00000-of-00001.parquet": "02ac78e2c51a84eb174ac393bb07b77478f1f96cf260af18835a711dd8074ebc",
+    "ts-00000-of-00001.parquet": "7e23783e27230c9cfab1035690035c25523043d6af635bc78da3fd2010c32714"
+  },
+  "design_sha256": "f04806f449ca2e2f2cd92b33fc9df94c5577abd6605fd89d8571cc205559fb27",
+  "docker_environment": {
+    "configured_cpus": 6,
+    "configured_memory_mib": 16384,
+    "configured_swap_mib": 2048,
+    "engine_architecture": "linux/arm64",
+    "engine_reported_cpus": 6,
+    "engine_usable_memory_bytes": 16746352640,
+    "engine_version": "29.7.2",
+    "requested_platform": "linux/amd64"
+  },
+  "evaluator_interface": {
+    "prediction_mapping": "{instance_id: {model_patch: git diff}}",
+    "source_sha256": "dabb0be957547f8bb030c5e53ff60c70ac24cbdbaa011a377cd9242acbcdd703",
+    "structured_report": "<output>/<instance_id>/report.json",
+    "structured_results": "<output>/results.json"
+  },
+  "evaluator_invocations": 0,
+  "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+  "freeze_sha256": "9a5ec3b084e83a6659e4981caa632520404b4019230ee84af1aceea8eec4e154",
+  "ledger_events": 0,
+  "live_state_mutation": false,
+  "model": "gpt-5.6-terra",
+  "pool_sha256": "956d9609c137e710af83fdfa5376a307d39ac3a90d5171256a5847db409b8651",
+  "reasoning_effort": "medium",
+  "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+  "resolved_exploratory_task_count": 8,
+  "schedule_sha256": "fdcb43f4f568f08912bbcb775c6cd4398e2406e822579288e5f83257dc02848e",
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-runtime-preflight",
+  "schema_version": 1,
+  "stale_trajectory_credentials": 0,
+  "status": "pass",
+  "subject_invocations": 0,
+  "treatment_sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb"
+}

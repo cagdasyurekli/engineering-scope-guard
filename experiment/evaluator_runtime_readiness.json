@@ -1,0 +1,133 @@
+{
+  "schema_name": "engineering-scope-guard.evaluator-runtime-readiness",
+  "schema_version": 1,
+  "as_of": "2026-08-27",
+  "pilot_authorized": false,
+  "host": {
+    "operating_system": "macOS 26.6.2 (25G83)",
+    "architecture": "arm64",
+    "logical_cpus": 10,
+    "physical_cpus": 10,
+    "memory_bytes": 25769803776
+  },
+  "docker": {
+    "desktop_version": "4.88.1 (237512)",
+    "client_version": "29.7.2",
+    "engine_version": "29.7.2",
+    "engine_architecture": "linux/arm64",
+    "configured_cpus": 6,
+    "configured_memory_mib": 16384,
+    "configured_swap_mib": 2048,
+    "virtualization_backend": "apple-virtualization-framework",
+    "rosetta_exposed_to_vm": true,
+    "rosetta_binfmt_registered": true
+  },
+  "amd64_canary": {
+    "image": "alpine:3.20",
+    "requested_platform": "linux/amd64",
+    "reported_architecture": "x86_64",
+    "cold_exit_code": 0,
+    "cold_wall_seconds": 5.44,
+    "warm_exit_codes": [0, 0, 0],
+    "warm_wall_seconds": [0.20, 0.23, 0.21],
+    "warnings_or_errors": []
+  },
+  "source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "instance_id": "BYVoid__OpenCC-1257"
+  },
+  "official_image": {
+    "name": "starryzhang/sweb.eval.x86_64.byvoid_1776_opencc-1257:latest",
+    "digest": "sha256:d86060b6f3692127dfe46cc8c7a5cf930f7c1a679297535b9562c637229cc0e1",
+    "config_digest": "sha256:fc1669e959225dbbd54c011985098c17a624d3669891bbcdcfee834d8cd35795",
+    "os": "linux",
+    "architecture": "amd64",
+    "compressed_layer_bytes": 807365846,
+    "local_image_size_bytes": 807388055,
+    "startup_reported_architecture": "x86_64",
+    "startup_exit_code": 0,
+    "startup_wall_seconds": 1.34
+  },
+  "gold_evaluator": {
+    "workers": 1,
+    "runs": [
+      {"exit_code": 0, "resolved": true, "wall_seconds": 143.38},
+      {"exit_code": 0, "resolved": true, "wall_seconds": 91.32},
+      {"exit_code": 0, "resolved": true, "wall_seconds": 92.98}
+    ],
+    "reproducible": true,
+    "architecture_or_emulation_warnings": [],
+    "mechanical_pre_container_failure_retained": "launch.core missing until exact pinned submodule was initialized"
+  },
+  "fixed_subject": {
+    "codex_version": "0.150.1",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repository_head": "dc5aaf19d85aaa0cfea59942cdf9366851bc2cf2",
+    "prompt_sha256": "28bd01f4addff9eab1cb90fb8524309f4375f03adf99bdef2fe22047361ed091",
+    "initial_attempt_retained": {
+      "initial_subject_exit_code": 0,
+      "initial_evaluator_resolved": false,
+      "corrective_resume_exit_code": 1,
+      "failure_class": "harness-session-persistence-failure",
+      "failure": "no rollout found for ephemeral thread"
+    },
+    "infrastructure_replacements_consumed": 1,
+    "replacement": {
+      "trajectory_complete": true,
+      "turns": 2,
+      "initial_subject_exit_code": 0,
+      "initial_subject_wall_seconds": 163.997,
+      "initial_evaluator_exit_code": 0,
+      "initial_evaluator_resolved": false,
+      "initial_evaluator_wall_seconds": 88.27,
+      "corrective_feedback": "one failing check name only",
+      "corrective_subject_exit_code": 0,
+      "corrective_subject_wall_seconds": 55.657,
+      "final_evaluator_exit_code": 0,
+      "final_evaluator_resolved": false,
+      "final_evaluator_wall_seconds": 87.99,
+      "patch_sha256": "004380474fc8b281d1ae03a0a6763614b8ccd18aa8816e4bac9455cfb5125ed8",
+      "patch_bytes": 1831,
+      "modified_tracked_files": 4,
+      "loc_added": 17,
+      "loc_deleted": 0
+    },
+    "usage": {
+      "input_tokens": 1144995,
+      "cached_input_tokens": 1076480,
+      "calculated_fresh_input_tokens": 68515,
+      "reasoning_output_tokens": 4720,
+      "output_tokens": 9855,
+      "cache_write_tokens": "unavailable",
+      "provider_billed_cost": "unavailable",
+      "currency": "unavailable",
+      "backend_model_snapshot": "unavailable",
+      "calculated_cost_estimate": "not calculated"
+    },
+    "policy_efficacy_evidence": false
+  },
+  "pilot_budget": {
+    "frozen_tasks": 12,
+    "planned_subject_runs": 48,
+    "gold_preflights": 36,
+    "all_images_locatable": true,
+    "manifest_compressed_layer_bytes_without_cross_image_deduplication": 35603008328,
+    "minimum_image_compressed_layer_bytes": 807365846,
+    "maximum_image_compressed_layer_bytes": 8948806277,
+    "host_free_disk_gib": 766,
+    "measured_gold_valid_tasks": 1,
+    "unmeasured_gold_valid_tasks": 11,
+    "functional_compatibility": "pass for the allocated OpenCC smoke task",
+    "practical_runtime": "pass for OpenCC; unsupported for the complete heterogeneous frame",
+    "memory_pressure": "OpenCC did not approach the limit in point samples; the host is at the 16 GB upstream floor and remaining tasks are unmeasured",
+    "storage": "registry manifests fit raw host capacity, but unpacked and deduplicated total is unmeasured",
+    "expected_total_pilot_wall_clock": "unavailable without extrapolating one task across heterogeneous tasks",
+    "operationally_feasible": false
+  },
+  "bounded_conclusion": "REDESIGN REQUIRED",
+  "conclusion_text": "Runtime works partially, but architecture, resource, or performance constraints require a pre-Pilot methodological or execution-environment change."
+}

@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"<redacted>"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"<redacted-message-1-id>","type":"agent_message","text":"EXEC_MESSAGE_REDACTED"}}
+{"type":"item.started","item":{"id":"<redacted-command-id>","type":"command_execution","command":"canary-command PRIVATE_ARGUMENT_REDACTED","aggregated_output":"EXEC_OUTPUT_REDACTED","status":"in_progress","exit_code":null}}
+{"type":"item.completed","item":{"id":"<redacted-command-id>","type":"command_execution","command":"canary-command PRIVATE_ARGUMENT_REDACTED","aggregated_output":"EXEC_OUTPUT_REDACTED","status":"completed","exit_code":0}}
+{"type":"item.started","item":{"id":"<redacted-change-id>","type":"file_change","changes":[{"path":"canary.txt","kind":"add"}],"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"<redacted-change-id>","type":"file_change","changes":[{"path":"canary.txt","kind":"add"}],"status":"completed"}}
+{"type":"item.completed","item":{"id":"<redacted-message-2-id>","type":"agent_message","text":"EXEC_MESSAGE_REDACTED"}}
+{"type":"turn.completed","usage":{}}

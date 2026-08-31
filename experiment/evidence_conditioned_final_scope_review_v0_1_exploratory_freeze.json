@@ -1,0 +1,699 @@
+{
+  "authority": {
+    "execution_authorized": false,
+    "execution_ledger_created": false,
+    "experimental_evaluator_calls": 0,
+    "experimental_observations": 0,
+    "experimental_subject_calls": 0,
+    "manual_or_adaptive_reordering_authorized": false,
+    "post_freeze_replacement_authority": false
+  },
+  "confirmatory_reserve": {
+    "commitment_algorithm": "domain-separated SHA-256 rank over remaining opaque identities, then canonical commitment",
+    "commitment_domain": "engineering-scope-guard-evidence-conditioned-final-scope-review-v0.1-confirmatory-reserve",
+    "commitment_sha256": "05624992aee92836b04bdf0b76ad18690e152ced8f21bc9b807efbefc2b52af8",
+    "remaining_ids_or_bodies_emitted": false,
+    "remaining_repository_count": 191,
+    "remaining_task_count": 434,
+    "repository_disjoint_from_exploratory": true,
+    "selected_repository_tasks_remaining": 0
+  },
+  "decision": "EXPLORATORY TASK AND SCHEDULE FREEZE QUALIFIED — EXECUTION REQUIRES SEPARATE AUTHORIZATION",
+  "design": {
+    "path": "experiment/evidence_conditioned_final_scope_review_v0_1_exploratory_design.json",
+    "sha256": "f04806f449ca2e2f2cd92b33fc9df94c5577abd6605fd89d8571cc205559fb27",
+    "version": "evidence-conditioned-final-scope-review-exploratory-v0.1"
+  },
+  "eligibility": {
+    "historical_exposure_excluded_by_repository": true,
+    "metadata_fields": [
+      "FAIL_TO_PASS",
+      "PASS_TO_PASS",
+      "created_at",
+      "docker_image",
+      "instance_id",
+      "language",
+      "rebuild_cmds",
+      "repo",
+      "test_cmds"
+    ],
+    "pinned_container_and_evaluator_commands_required": true,
+    "reconstructed_reserve_count": 462,
+    "reconstructed_reserve_repositories": 199,
+    "starting_reserve_commitment_sha256": "4e8137ee3a23571546f1fec4831b26fd3d0a93a4bbdf70d90088284c87a05605",
+    "starting_reserve_commitment_verified": true,
+    "task_bodies_or_outcomes_used": false
+  },
+  "freeze_version": "evidence-conditioned-final-scope-review-exploratory-freeze-v0.1",
+  "schedule": {
+    "algorithm": "frozen SHA-256 counterbalanced contiguous task-repetition blocks",
+    "arms": [
+      "baseline",
+      "treatment"
+    ],
+    "block_count": 16,
+    "blocks": [
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-01-baseline",
+          "exploratory-block-01-treatment"
+        ],
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "position": 1,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-02-treatment",
+          "exploratory-block-02-baseline"
+        ],
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "position": 2,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-03-treatment",
+          "exploratory-block-03-baseline"
+        ],
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "position": 3,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-04-treatment",
+          "exploratory-block-04-baseline"
+        ],
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "position": 4,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-05-baseline",
+          "exploratory-block-05-treatment"
+        ],
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "position": 5,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-06-baseline",
+          "exploratory-block-06-treatment"
+        ],
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "position": 6,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-07-treatment",
+          "exploratory-block-07-baseline"
+        ],
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "position": 7,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-08-baseline",
+          "exploratory-block-08-treatment"
+        ],
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "position": 8,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-09-treatment",
+          "exploratory-block-09-baseline"
+        ],
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "position": 9,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-10-baseline",
+          "exploratory-block-10-treatment"
+        ],
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "position": 10,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-11-treatment",
+          "exploratory-block-11-baseline"
+        ],
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "position": 11,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-12-baseline",
+          "exploratory-block-12-treatment"
+        ],
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "position": 12,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-13-baseline",
+          "exploratory-block-13-treatment"
+        ],
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "position": 13,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-14-treatment",
+          "exploratory-block-14-baseline"
+        ],
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "position": 14,
+        "repetition": 2
+      },
+      {
+        "arms": [
+          "baseline",
+          "treatment"
+        ],
+        "cell_ids": [
+          "exploratory-block-15-baseline",
+          "exploratory-block-15-treatment"
+        ],
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "position": 15,
+        "repetition": 1
+      },
+      {
+        "arms": [
+          "treatment",
+          "baseline"
+        ],
+        "cell_ids": [
+          "exploratory-block-16-treatment",
+          "exploratory-block-16-baseline"
+        ],
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "position": 16,
+        "repetition": 2
+      }
+    ],
+    "cell_count": 32,
+    "cells": [
+      {
+        "arm": "baseline",
+        "block_position": 1,
+        "cell_id": "exploratory-block-01-baseline",
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "position": 1,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 1,
+        "cell_id": "exploratory-block-01-treatment",
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "position": 2,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 2,
+        "cell_id": "exploratory-block-02-treatment",
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "position": 3,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 2,
+        "cell_id": "exploratory-block-02-baseline",
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "position": 4,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 3,
+        "cell_id": "exploratory-block-03-treatment",
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "position": 5,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 3,
+        "cell_id": "exploratory-block-03-baseline",
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "position": 6,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 4,
+        "cell_id": "exploratory-block-04-treatment",
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "position": 7,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 4,
+        "cell_id": "exploratory-block-04-baseline",
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "position": 8,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 5,
+        "cell_id": "exploratory-block-05-baseline",
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "position": 9,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 5,
+        "cell_id": "exploratory-block-05-treatment",
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "position": 10,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 6,
+        "cell_id": "exploratory-block-06-baseline",
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "position": 11,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 6,
+        "cell_id": "exploratory-block-06-treatment",
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "position": 12,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 7,
+        "cell_id": "exploratory-block-07-treatment",
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "position": 13,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 7,
+        "cell_id": "exploratory-block-07-baseline",
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "position": 14,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 8,
+        "cell_id": "exploratory-block-08-baseline",
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "position": 15,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 8,
+        "cell_id": "exploratory-block-08-treatment",
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "position": 16,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 9,
+        "cell_id": "exploratory-block-09-treatment",
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "position": 17,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 9,
+        "cell_id": "exploratory-block-09-baseline",
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "position": 18,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 10,
+        "cell_id": "exploratory-block-10-baseline",
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "position": 19,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 10,
+        "cell_id": "exploratory-block-10-treatment",
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "position": 20,
+        "repetition": 2
+      },
+      {
+        "arm": "treatment",
+        "block_position": 11,
+        "cell_id": "exploratory-block-11-treatment",
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "position": 21,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 11,
+        "cell_id": "exploratory-block-11-baseline",
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "position": 22,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 12,
+        "cell_id": "exploratory-block-12-baseline",
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "position": 23,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 12,
+        "cell_id": "exploratory-block-12-treatment",
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "position": 24,
+        "repetition": 1
+      },
+      {
+        "arm": "baseline",
+        "block_position": 13,
+        "cell_id": "exploratory-block-13-baseline",
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "position": 25,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 13,
+        "cell_id": "exploratory-block-13-treatment",
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "position": 26,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 14,
+        "cell_id": "exploratory-block-14-treatment",
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "position": 27,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 14,
+        "cell_id": "exploratory-block-14-baseline",
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "position": 28,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 15,
+        "cell_id": "exploratory-block-15-baseline",
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "position": 29,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 15,
+        "cell_id": "exploratory-block-15-treatment",
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "position": 30,
+        "repetition": 1
+      },
+      {
+        "arm": "treatment",
+        "block_position": 16,
+        "cell_id": "exploratory-block-16-treatment",
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "position": 31,
+        "repetition": 2
+      },
+      {
+        "arm": "baseline",
+        "block_position": 16,
+        "cell_id": "exploratory-block-16-baseline",
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "position": 32,
+        "repetition": 2
+      }
+    ],
+    "repetitions_per_task_arm": 2,
+    "schedule_seed": "engineering-scope-guard-evidence-conditioned-final-scope-review-v0.1-order",
+    "schedule_sha256": "fdcb43f4f568f08912bbcb775c6cd4398e2406e822579288e5f83257dc02848e"
+  },
+  "schema_name": "engineering-scope-guard.evidence-conditioned-final-scope-review-exploratory-freeze",
+  "schema_version": 1,
+  "selection": {
+    "algorithm": "SHA256(selection_seed NUL source_revision NUL language NUL opaque_instance_identity); identity-only tie-break; first unused repository",
+    "exploratory_pool_commitment_domain": "engineering-scope-guard-evidence-conditioned-final-scope-review-v0.1-exploratory-pool",
+    "exploratory_pool_commitment_sha256": "956d9609c137e710af83fdfa5376a307d39ac3a90d5171256a5847db409b8651",
+    "language_order": [
+      "c",
+      "cpp",
+      "cs",
+      "go",
+      "java",
+      "js",
+      "rust",
+      "ts"
+    ],
+    "post_freeze_replacement_allowance": 0,
+    "selected": [
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.fluent_1776_fluent-bit-11677",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "08f9a2576fc823a3b0531f9135c5f924bf4ab8d35384083f50af206e08d814bd",
+        "created_at": "2026-04-06T08:47:42Z",
+        "fail_to_pass_count": 1,
+        "language": "c",
+        "opaque_instance_identity": "fluent__fluent-bit-11677",
+        "opaque_task_commitment": "319a561f09a1aaccf896db9720bdc8d2c4159be5bb0ec38b8b5e9dd5af8fa801",
+        "pass_to_pass_count": 119,
+        "rebuild_commands_available": true,
+        "repository_identity": "fluent/fluent-bit",
+        "selection_rank_sha256": "04b978ee572537ec59c9fa7657a690a6199f226ea7ffa4e76427711c0235fe87",
+        "slot": 1,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.open-source-parsers_1776_jsoncpp-1693",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "17677e0906d94ffbea1fa7b2c0fd73387d3caf8bab9a9c45364e9846d3a5558b",
+        "created_at": "2026-06-16T21:21:03Z",
+        "fail_to_pass_count": 1,
+        "language": "cpp",
+        "opaque_instance_identity": "open-source-parsers__jsoncpp-1693",
+        "opaque_task_commitment": "70d11bfa81aaa1f05f8f6bec9704bad26219c0d6f5c0010c01689f057b6eaa07",
+        "pass_to_pass_count": 292,
+        "rebuild_commands_available": true,
+        "repository_identity": "open-source-parsers/jsoncpp",
+        "selection_rank_sha256": "0569b8a36a89e12a3f780369d864cffbfe64caa60b3251bb101937981b9458fb",
+        "slot": 2,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.jasperfx_1776_wolverine-3426",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "67941f78a83719a4b6c02127f9ec1beac131c6ccde1c390f04c72c229e6aa1b7",
+        "created_at": "2026-07-14T11:51:39Z",
+        "fail_to_pass_count": 106,
+        "language": "cs",
+        "opaque_instance_identity": "JasperFx__wolverine-3426",
+        "opaque_task_commitment": "bf682bf031ae1b3d01e7b541a634eb2a9f0a652dab9064781bb26003b426f7db",
+        "pass_to_pass_count": 1811,
+        "rebuild_commands_available": true,
+        "repository_identity": "JasperFx/wolverine",
+        "selection_rank_sha256": "05c6ac74272d0f7d770ac654edf37445f36ab3657144ddd674015fad143f7b34",
+        "slot": 3,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.centrifugal_1776_centrifugo-1129",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "0b6a18b5a182fbff9b2a84f33bbc0a13bfb7ecea5bf9f3fd7a57cc361d7cf065",
+        "created_at": "2026-04-09T18:38:00Z",
+        "fail_to_pass_count": 84,
+        "language": "go",
+        "opaque_instance_identity": "centrifugal__centrifugo-1129",
+        "opaque_task_commitment": "cc6e234bfe76dca16569a7e1af5719ebe4561d46de4919607f6d721e9a35fbfe",
+        "pass_to_pass_count": 560,
+        "rebuild_commands_available": true,
+        "repository_identity": "centrifugal/centrifugo",
+        "selection_rank_sha256": "00c5c80f6ab952ae08692e61f50d6523cf029f70841b2585eaf99f92294ff659",
+        "slot": 4,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.apache_1776_paimon-8536",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "c6a23d42293bf69534d80e98111fadeb65906370cd5292b7b7bfb5339317fc71",
+        "created_at": "2026-07-10T01:54:29Z",
+        "fail_to_pass_count": 1,
+        "language": "java",
+        "opaque_instance_identity": "apache__paimon-8536",
+        "opaque_task_commitment": "9b8d8a463c521079a980ba934fe409f1815cb9d3aa81aa24c0e30f17b53b7bce",
+        "pass_to_pass_count": 1722,
+        "rebuild_commands_available": true,
+        "repository_identity": "apache/paimon",
+        "selection_rank_sha256": "0087b250371662b5090ee6bf0d069eb4443ed1134ede7372471aa9a47419d404",
+        "slot": 5,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.sveltejs_1776_svelte-18039",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "e1300744c65c83b3e4675c75e860cab67c5a79b5212fd79f4ec08c676200a00a",
+        "created_at": "2026-03-31T21:06:12Z",
+        "fail_to_pass_count": 4,
+        "language": "js",
+        "opaque_instance_identity": "sveltejs__svelte-18039",
+        "opaque_task_commitment": "243e98ed73d1af0288177abd00be36f9edac6ff2ba76eac5304ccc51481f9d6c",
+        "pass_to_pass_count": 7451,
+        "rebuild_commands_available": true,
+        "repository_identity": "sveltejs/svelte",
+        "selection_rank_sha256": "04aef7e83ac5c869c2df00483180af7b5e76695e4f36d8afe11939bd129430fc",
+        "slot": 6,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.j-f-liu_1776_lopdf-481",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "cf8fb1fbe7f03b5cb9864ab3135edc8f7973a1b74830f6f67605105b5aa19b01",
+        "created_at": "2026-03-19T07:13:45Z",
+        "fail_to_pass_count": 93,
+        "language": "rust",
+        "opaque_instance_identity": "J-F-Liu__lopdf-481",
+        "opaque_task_commitment": "b9993906a35ff6d2840f544547abfa17be07e8a419ac2b0333a20bd9f6db00f5",
+        "pass_to_pass_count": 127,
+        "rebuild_commands_available": true,
+        "repository_identity": "J-F-Liu/lopdf",
+        "selection_rank_sha256": "021d98e89c4ccb042a39e15f9b008aeb2e7e120ebb79c0265de1ad4ec014307a",
+        "slot": 7,
+        "test_commands_available": true
+      },
+      {
+        "container_image_identity": "starryzhang/sweb.eval.x86_64.qwenlm_1776_qwen-code-3310",
+        "container_registry_manifest_available": true,
+        "container_registry_manifest_sha256": "5ef1116a270c50cb8ccf4a9fcaae051b4ee766401c584b990cce9dc899d24859",
+        "created_at": "2026-04-16T01:00:42Z",
+        "fail_to_pass_count": 4,
+        "language": "ts",
+        "opaque_instance_identity": "QwenLM__qwen-code-3310",
+        "opaque_task_commitment": "4962cef8795e0bcdc8497be7816dd43235df0ed08e610288b84e56577d03e6a0",
+        "pass_to_pass_count": 19976,
+        "rebuild_commands_available": true,
+        "repository_identity": "QwenLM/qwen-code",
+        "selection_rank_sha256": "0a1a6ddaae606e2742837f39ccaeb6b6a3095cb314e7e47ff2573ac92de82627",
+        "slot": 8,
+        "test_commands_available": true
+      }
+    ],
+    "selected_repository_count": 8,
+    "selected_task_count": 8,
+    "selection_seed": "engineering-scope-guard-evidence-conditioned-final-scope-review-v0.1-selection"
+  },
+  "source": {
+    "dataset": "SWE-bench-Live/MultiLang",
+    "dataset_snapshot_files_sha256": {
+      "c-00000-of-00001.parquet": "30c0b8cb9e7140e05a4e539f20be0c325be597cbba4bf35e232355987ddddd0c",
+      "cpp-00000-of-00001.parquet": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+      "cs-00000-of-00001.parquet": "29ffe16d0b2cd802e753262b8b0d7fe3f2bb1b489396da238146e79f37937c1f",
+      "go-00000-of-00001.parquet": "76d2b5dff0f3fac8303d30fa85495539e487d25974ad7c21cd21a545cb4756e2",
+      "java-00000-of-00001.parquet": "00387685808c71d21ada175335304b1c118859453afadd58ea21a00b0d568ee8",
+      "js-00000-of-00001.parquet": "bc6ec49ffaf9db97840d55eba6954fae8f5fb0fb071cf49e187f36ffadd55a7a",
+      "rust-00000-of-00001.parquet": "02ac78e2c51a84eb174ac393bb07b77478f1f96cf260af18835a711dd8074ebc",
+      "ts-00000-of-00001.parquet": "7e23783e27230c9cfab1035690035c25523043d6af635bc78da3fd2010c32714"
+    },
+    "revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85"
+  },
+  "status": "frozen-qualified-execution-not-authorized",
+  "treatment": {
+    "path": "experiment/arms/evidence_conditioned_final_scope_review_v0_1.txt",
+    "sha256": "d9ac9e18716428e9cd6d038388b01ec668ade47df8bac014658897752166b8cb",
+    "version": "v0.1"
+  }
+}

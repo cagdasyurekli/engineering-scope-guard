@@ -1,0 +1,603 @@
+{
+  "analysis": {
+    "acceptance_reported_separately_from_cost_and_work": true,
+    "broad_quality_or_maintainability_claim_permitted": false,
+    "equivalence_or_non_inferiority_claim_permitted": false,
+    "exploratory_only": true,
+    "intention_to_treat": "timeouts and experimental failures remain assigned to their frozen arm; infrastructure-invalid attempts follow only frozen rerun rules",
+    "null_and_adverse_results_retained": true,
+    "per_language_efficacy_claims_permitted": false,
+    "repetitions_correlated_within_task": true,
+    "uncertainty": "task-level resampling",
+    "unit": "paired task-level comparison",
+    "universal_mcid_or_margin_frozen": false
+  },
+  "arms": {
+    "baseline_intervention": null,
+    "ids": [
+      "baseline",
+      "short"
+    ],
+    "other_arms_permitted": false,
+    "short_policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "short_policy_version": "C-short v0.1",
+    "treatment_change_requires_new_experiment_version": true
+  },
+  "attempt_accounting": {
+    "all_categories_share_per_cell_maximum": true,
+    "allowances_are_separate": true,
+    "capacity_never_increased_after_outcome_review": true,
+    "exhaustion": "hash-chain batch_stopped and preserve; no further launch",
+    "infrastructure_rerun_allowance": 4,
+    "maximum_attempts_per_cell": 2,
+    "operator_allowance_justification": "two batch-level restarts provide bounded resilience to external operator interruption across 32 cells without changing experimental retry capacity",
+    "operator_interruption_allowance": 2
+  },
+  "contract_sha256": "ad7cd1522114b8512be20f9c5a73268e1071d9138eba7bacb6ea8d54a902aca3",
+  "contract_version": "pilot-v3.0",
+  "durable_evidence": {
+    "completed_cells_never_repeated": true,
+    "format": "fsync JSONL SHA-256 hash chain",
+    "required_before_scheduler_transition": [
+      "attempt_started",
+      "subject termination",
+      "evaluator invocation and exit",
+      "official disposition",
+      "feedback availability",
+      "per-instance report identity",
+      "timestamps",
+      "usage components",
+      "isolation identities",
+      "termination metadata",
+      "receipt and admissibility decision"
+    ],
+    "restart_source": "durable evidence only; no in-memory cursor"
+  },
+  "environment": {
+    "basis": "all frozen version/resource identities match the qualified Pilot-v2 infrastructure; selected image materialization is qualified separately",
+    "codex_version": "0.150.1",
+    "dataset": "SWE-bench-Live/MultiLang",
+    "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+    "docker": {
+      "configured_cpus": 6,
+      "configured_memory_mib": 16384,
+      "configured_swap_mib": 2048,
+      "engine_architecture": "linux/arm64",
+      "engine_reported_cpus": 6,
+      "engine_usable_memory_bytes": 16746352640,
+      "engine_version": "29.7.2",
+      "requested_platform": "linux/amd64"
+    },
+    "hooks": [],
+    "material_change_from_qualified_v2": false,
+    "mcp_servers": [],
+    "model": "gpt-5.6-terra",
+    "network_or_browser_tools": [],
+    "new_live_canary_required_before_execution": false,
+    "official_evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "permissions": "automatic approval review with workspace-write sandbox",
+    "plugins": [],
+    "reasoning_effort": "medium",
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "required_agent_tools": [
+      "repository shell/exec",
+      "repository file editing/apply-patch"
+    ],
+    "user_config_loaded": false,
+    "user_rules_loaded": false,
+    "workers": 1
+  },
+  "failure_taxonomy": {
+    "attempt_invalid_infrastructure": [
+      "local_docker_runtime_infrastructure_failure",
+      "official_evaluator_error",
+      "official_evaluator_incomplete",
+      "provider_api_infrastructure_failure"
+    ],
+    "experimental_outcomes": [
+      "accepted_completed",
+      "agent_subject_failure",
+      "empty_patch_failure",
+      "evaluator_test_failure",
+      "trajectory_timeout"
+    ],
+    "mandatory_batch_stop": [
+      "durable_evidence_incomplete",
+      "harness_failure",
+      "isolation_contract_violation",
+      "malformed_inconsistent_measurement"
+    ],
+    "post_outcome_reclassification_permitted": false
+  },
+  "historical_boundary": {
+    "measurement_boundary_decision": "MEASUREMENT BOUNDARY QUALIFIED \u2014 FRESH PILOT DESIGN PERMITTED",
+    "pilot_v1_and_v2_efficacy_evidence_reused": false,
+    "pilot_v2_observations_used_for_selection_or_sizing": 0,
+    "pilot_v2_permanently_closed": true
+  },
+  "isolation": {
+    "fresh_per_cell_and_attempt": [
+      "repository/worktree",
+      "Codex home",
+      "conversation/session",
+      "credential copy",
+      "raw output root",
+      "derived evidence root",
+      "evaluator writable output root"
+    ],
+    "identities_recorded_and_verified": true,
+    "inheritance_between_cells_or_attempts_permitted": false,
+    "only_immutable_qualified_dependencies_reusable": [
+      "pinned evaluator source checkout",
+      "pinned dataset snapshot"
+    ]
+  },
+  "live_execution_authorized": false,
+  "official_evaluator": {
+    "contradictory_multiple_or_structurally_inconsistent": "malformed_inconsistent_measurement mandatory batch stop",
+    "disposition_and_feedback_are_separate": true,
+    "empty_patch": "empty_patch_failure experimental outcome",
+    "error": "official_evaluator_error attempt-invalid infrastructure condition",
+    "failure": "evaluator_test_failure experimental outcome",
+    "feedback_statuses": [
+      "available",
+      "unavailable",
+      "not_applicable"
+    ],
+    "incomplete": "official_evaluator_incomplete attempt-invalid infrastructure condition",
+    "success": "accepted_completed experimental outcome",
+    "valid_terminal_dispositions": [
+      "success",
+      "failure",
+      "error",
+      "incomplete",
+      "empty_patch"
+    ]
+  },
+  "operator_pause": {
+    "mid_attempt": "cause recorded contemporaneously before outcome review; immutable interrupted attempt; next attempt number and fresh isolation only",
+    "operator_and_infrastructure_accounting_separate": true,
+    "planned": "between cells before the next attempt_started; consumes no allowance",
+    "restart_decision_may_depend_on_interim_arm_effect": false
+  },
+  "pool": {
+    "confirmatory_reserve": {
+      "ids_or_bodies_emitted": false,
+      "opaque_ids_commitment_sha256": "4e8137ee3a23571546f1fec4831b26fd3d0a93a4bbdf70d90088284c87a05605",
+      "pilot_and_reserve_repositories_disjoint": true,
+      "pilot_v3_repositories_excluded": 8,
+      "pre_v3_count": 499,
+      "pre_v3_repositories": 207,
+      "remaining_count": 462,
+      "remaining_repositories": 199,
+      "tasks_removed_by_repository_exclusion": 37
+    },
+    "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+    "schema_name": "engineering-scope-guard.pilot-v3-pool",
+    "schema_version": 1,
+    "selection": {
+      "algorithm": "one task per language by SHA-256 rank; repository-distinct",
+      "historical_repositories_sha256": "375b5b419cc7cf0ee3734a7f40b25a5152ae906dc7421387d5d6c72c14020b00",
+      "historical_task_ids_sha256": "4dccd96ff3793ad283e3214bf813dbd21b02330a451a598c2bf786247a94a130",
+      "post_freeze_replacement_allowance": 0,
+      "seed": "engineering-scope-guard-pilot-v3-pool-2026-08-28",
+      "selected_from_pre_v3_opaque_reserve": true,
+      "selection_fields": [
+        "FAIL_TO_PASS",
+        "PASS_TO_PASS",
+        "created_at",
+        "docker_image",
+        "instance_id",
+        "language",
+        "rebuild_cmds",
+        "repo",
+        "test_cmds"
+      ],
+      "source_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+      "task_bodies_or_prior_outcomes_used": false
+    },
+    "slots": [
+      {
+        "actual_task_id": "timescale__timescaledb-9955",
+        "created_at": "2026-06-02T20:47:06Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.timescale_1776_timescaledb-9955",
+        "fail_to_pass_count": 76,
+        "language": "c",
+        "pass_to_pass_count": 201,
+        "repo": "timescale/timescaledb",
+        "selection_rank_commitment": "01d0f5a8c0c7ef49b1b064b7ef93ca1dd038672b80c325df4b8056c7b2cc56f6",
+        "slot": 1,
+        "task_snapshot_sha256": "4f709697afa9ece978028e7e2c9afe47ec56ce4ed96788f91cbc8c6aea075a15"
+      },
+      {
+        "actual_task_id": "shader-slang__slang-10768",
+        "created_at": "2026-04-08T19:03:46Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.shader-slang_1776_slang-10768",
+        "fail_to_pass_count": 2,
+        "language": "cpp",
+        "pass_to_pass_count": 4507,
+        "repo": "shader-slang/slang",
+        "selection_rank_commitment": "00519d89a76eaae4d2657994f99d0e17f3d8c33b3171517b57f899569cf6b731",
+        "slot": 2,
+        "task_snapshot_sha256": "3f6b8749f657504f64ab3d52e52f30615995ab6832b0e357f75e7346753afaac"
+      },
+      {
+        "actual_task_id": "Azure__azure-sdk-for-net-58482",
+        "created_at": "2026-04-22T05:59:21Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.azure_1776_azure-sdk-for-net-58482",
+        "fail_to_pass_count": 2,
+        "language": "cs",
+        "pass_to_pass_count": 1519,
+        "repo": "Azure/azure-sdk-for-net",
+        "selection_rank_commitment": "0463bffc0fc31c0597d75df918666020496e29ec75d34683940d981b7b3ae01e",
+        "slot": 3,
+        "task_snapshot_sha256": "bc8317137778c80f333858a98e27d22032496ef90ff45a2b1853757c7bf0b590"
+      },
+      {
+        "actual_task_id": "influxdata__telegraf-18686",
+        "created_at": "2026-04-09T16:25:25Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.influxdata_1776_telegraf-18686",
+        "fail_to_pass_count": 3,
+        "language": "go",
+        "pass_to_pass_count": 9433,
+        "repo": "influxdata/telegraf",
+        "selection_rank_commitment": "07ca0f46fbee29656c3ebd5e383ec00908bd0d6ff917a7c77eac41fb8e7faa3a",
+        "slot": 4,
+        "task_snapshot_sha256": "725f719e0a4a0ce5c049d8fce4c3635acbaada7d0a104f63940780486fd14934"
+      },
+      {
+        "actual_task_id": "checkstyle__checkstyle-19487",
+        "created_at": "2026-03-27T20:06:36Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.checkstyle_1776_checkstyle-19487",
+        "fail_to_pass_count": 1,
+        "language": "java",
+        "pass_to_pass_count": 5916,
+        "repo": "checkstyle/checkstyle",
+        "selection_rank_commitment": "010f1b6c438e413b4b026375d0526740415a613116c2eac2d2c8212b4c04d051",
+        "slot": 5,
+        "task_snapshot_sha256": "a5a4d761e31fff3356d3ad7edc49e5653e47b15d674f1793c51827c7b7f77a15"
+      },
+      {
+        "actual_task_id": "GladysAssistant__Gladys-2504",
+        "created_at": "2026-03-23T14:32:01Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.gladysassistant_1776_gladys-2504",
+        "fail_to_pass_count": 2,
+        "language": "js",
+        "pass_to_pass_count": 3386,
+        "repo": "GladysAssistant/Gladys",
+        "selection_rank_commitment": "01b1f32770f822e524b32da2d3d0b1276281ebe6f2f6fc8118d375542090fbca",
+        "slot": 6,
+        "task_snapshot_sha256": "1623ba291ff27860ca64e772971f4fab5d028d2eb326e42e4a9a17971f829a0f"
+      },
+      {
+        "actual_task_id": "gleam-lang__gleam-5982",
+        "created_at": "2026-07-16T14:14:10Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.gleam-lang_1776_gleam-5982",
+        "fail_to_pass_count": 2497,
+        "language": "rust",
+        "pass_to_pass_count": 3606,
+        "repo": "gleam-lang/gleam",
+        "selection_rank_commitment": "00e046b7347e559bf105842b6d5dff5160592d1094a9f8a33c12a01beff6ce96",
+        "slot": 7,
+        "task_snapshot_sha256": "7742a6fc29806caa2210df9ca1f87a263b8ae18c04f7b213b893a3e0d8718b70"
+      },
+      {
+        "actual_task_id": "ether__etherpad-7445",
+        "created_at": "2026-04-04T00:13:07Z",
+        "docker_image": "starryzhang/sweb.eval.x86_64.ether_1776_etherpad-7445",
+        "fail_to_pass_count": 2,
+        "language": "ts",
+        "pass_to_pass_count": 1092,
+        "repo": "ether/etherpad",
+        "selection_rank_commitment": "16600db4ee76cc6bbddbfa1361c244e7c287bbee3c40dd86d9398d392c197c07",
+        "slot": 8,
+        "task_snapshot_sha256": "6d7f85719adc8f444c7a1ca56b97f652f0b39450ffb2db3f8ed284cbda8f4d70"
+      }
+    ]
+  },
+  "qualification": {
+    "execution_requires_separate_user_authorization": true,
+    "experimental_observations": 0,
+    "pilot_v3_cells_executed": 0,
+    "pilot_v3_evaluator_calls": 0,
+    "pilot_v3_subject_calls": 0,
+    "zero_provider_only": true
+  },
+  "schedule": {
+    "algorithm": "SHA-256-ranked repetition blocks with per-task arm counterbalancing",
+    "arms": [
+      "baseline",
+      "short"
+    ],
+    "cells": [
+      {
+        "actual_task_id": "influxdata__telegraf-18686",
+        "arm": "short",
+        "cell_id": "v3-slot-04-short-rep-1",
+        "position": 1,
+        "repetition": 1,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "influxdata__telegraf-18686",
+        "arm": "baseline",
+        "cell_id": "v3-slot-04-baseline-rep-1",
+        "position": 2,
+        "repetition": 1,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "timescale__timescaledb-9955",
+        "arm": "short",
+        "cell_id": "v3-slot-01-short-rep-1",
+        "position": 3,
+        "repetition": 1,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "timescale__timescaledb-9955",
+        "arm": "baseline",
+        "cell_id": "v3-slot-01-baseline-rep-1",
+        "position": 4,
+        "repetition": 1,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "gleam-lang__gleam-5982",
+        "arm": "short",
+        "cell_id": "v3-slot-07-short-rep-1",
+        "position": 5,
+        "repetition": 1,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "gleam-lang__gleam-5982",
+        "arm": "baseline",
+        "cell_id": "v3-slot-07-baseline-rep-1",
+        "position": 6,
+        "repetition": 1,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "GladysAssistant__Gladys-2504",
+        "arm": "short",
+        "cell_id": "v3-slot-06-short-rep-1",
+        "position": 7,
+        "repetition": 1,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "GladysAssistant__Gladys-2504",
+        "arm": "baseline",
+        "cell_id": "v3-slot-06-baseline-rep-1",
+        "position": 8,
+        "repetition": 1,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "ether__etherpad-7445",
+        "arm": "short",
+        "cell_id": "v3-slot-08-short-rep-1",
+        "position": 9,
+        "repetition": 1,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "ether__etherpad-7445",
+        "arm": "baseline",
+        "cell_id": "v3-slot-08-baseline-rep-1",
+        "position": 10,
+        "repetition": 1,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "Azure__azure-sdk-for-net-58482",
+        "arm": "short",
+        "cell_id": "v3-slot-03-short-rep-1",
+        "position": 11,
+        "repetition": 1,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "Azure__azure-sdk-for-net-58482",
+        "arm": "baseline",
+        "cell_id": "v3-slot-03-baseline-rep-1",
+        "position": 12,
+        "repetition": 1,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "checkstyle__checkstyle-19487",
+        "arm": "baseline",
+        "cell_id": "v3-slot-05-baseline-rep-1",
+        "position": 13,
+        "repetition": 1,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "checkstyle__checkstyle-19487",
+        "arm": "short",
+        "cell_id": "v3-slot-05-short-rep-1",
+        "position": 14,
+        "repetition": 1,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "shader-slang__slang-10768",
+        "arm": "short",
+        "cell_id": "v3-slot-02-short-rep-1",
+        "position": 15,
+        "repetition": 1,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "shader-slang__slang-10768",
+        "arm": "baseline",
+        "cell_id": "v3-slot-02-baseline-rep-1",
+        "position": 16,
+        "repetition": 1,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "ether__etherpad-7445",
+        "arm": "baseline",
+        "cell_id": "v3-slot-08-baseline-rep-2",
+        "position": 17,
+        "repetition": 2,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "ether__etherpad-7445",
+        "arm": "short",
+        "cell_id": "v3-slot-08-short-rep-2",
+        "position": 18,
+        "repetition": 2,
+        "requested_task_slot": 8
+      },
+      {
+        "actual_task_id": "gleam-lang__gleam-5982",
+        "arm": "baseline",
+        "cell_id": "v3-slot-07-baseline-rep-2",
+        "position": 19,
+        "repetition": 2,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "gleam-lang__gleam-5982",
+        "arm": "short",
+        "cell_id": "v3-slot-07-short-rep-2",
+        "position": 20,
+        "repetition": 2,
+        "requested_task_slot": 7
+      },
+      {
+        "actual_task_id": "timescale__timescaledb-9955",
+        "arm": "baseline",
+        "cell_id": "v3-slot-01-baseline-rep-2",
+        "position": 21,
+        "repetition": 2,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "timescale__timescaledb-9955",
+        "arm": "short",
+        "cell_id": "v3-slot-01-short-rep-2",
+        "position": 22,
+        "repetition": 2,
+        "requested_task_slot": 1
+      },
+      {
+        "actual_task_id": "Azure__azure-sdk-for-net-58482",
+        "arm": "baseline",
+        "cell_id": "v3-slot-03-baseline-rep-2",
+        "position": 23,
+        "repetition": 2,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "Azure__azure-sdk-for-net-58482",
+        "arm": "short",
+        "cell_id": "v3-slot-03-short-rep-2",
+        "position": 24,
+        "repetition": 2,
+        "requested_task_slot": 3
+      },
+      {
+        "actual_task_id": "checkstyle__checkstyle-19487",
+        "arm": "short",
+        "cell_id": "v3-slot-05-short-rep-2",
+        "position": 25,
+        "repetition": 2,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "checkstyle__checkstyle-19487",
+        "arm": "baseline",
+        "cell_id": "v3-slot-05-baseline-rep-2",
+        "position": 26,
+        "repetition": 2,
+        "requested_task_slot": 5
+      },
+      {
+        "actual_task_id": "GladysAssistant__Gladys-2504",
+        "arm": "baseline",
+        "cell_id": "v3-slot-06-baseline-rep-2",
+        "position": 27,
+        "repetition": 2,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "GladysAssistant__Gladys-2504",
+        "arm": "short",
+        "cell_id": "v3-slot-06-short-rep-2",
+        "position": 28,
+        "repetition": 2,
+        "requested_task_slot": 6
+      },
+      {
+        "actual_task_id": "influxdata__telegraf-18686",
+        "arm": "baseline",
+        "cell_id": "v3-slot-04-baseline-rep-2",
+        "position": 29,
+        "repetition": 2,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "influxdata__telegraf-18686",
+        "arm": "short",
+        "cell_id": "v3-slot-04-short-rep-2",
+        "position": 30,
+        "repetition": 2,
+        "requested_task_slot": 4
+      },
+      {
+        "actual_task_id": "shader-slang__slang-10768",
+        "arm": "short",
+        "cell_id": "v3-slot-02-short-rep-2",
+        "position": 31,
+        "repetition": 2,
+        "requested_task_slot": 2
+      },
+      {
+        "actual_task_id": "shader-slang__slang-10768",
+        "arm": "baseline",
+        "cell_id": "v3-slot-02-baseline-rep-2",
+        "position": 32,
+        "repetition": 2,
+        "requested_task_slot": 2
+      }
+    ],
+    "contract_version": "pilot-v3.0",
+    "manual_edits_permitted": false,
+    "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+    "repetitions_per_task_arm": 2,
+    "schedule_sha256": "9defe1ea2e376640284b53f618647aa54cff6e279dcb55d2137ff652ece80764",
+    "schema_name": "engineering-scope-guard.pilot-v3-schedule",
+    "schema_version": 1,
+    "seed": "engineering-scope-guard-pilot-v3-order-2026-08-28"
+  },
+  "schema_name": "engineering-scope-guard.pilot-v3-execution-contract",
+  "schema_version": 1,
+  "status": "frozen-qualified-live-execution-not-authorized",
+  "trajectory": {
+    "accepted_failure_timeout_or_empty_patch_rerun_permitted": false,
+    "failure_with_feedback_available": "provide only named failing checks and permit the single corrective round",
+    "failure_with_feedback_unavailable": "retain evaluator_test_failure; provide no invented feedback; terminate without corrective round",
+    "initial_round": 0,
+    "maximum_corrective_rounds": 1,
+    "maximum_turns": 2,
+    "timeout_seconds_per_attempt": 1800,
+    "timeout_seconds_per_turn": 900
+  },
+  "usage": {
+    "calculated_fresh_input": "input_tokens - cached_input_tokens",
+    "list_price_inference_permitted": false,
+    "provider_billed_amount_and_currency_required_for_billing_claim": true,
+    "provider_reported_components": [
+      "input_tokens",
+      "cached_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens"
+    ]
+  }
+}

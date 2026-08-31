@@ -1,0 +1,97 @@
+{
+  "authorization_sha256": "a0e82151c38e4643fd5e8e74541409a65d919fcdbc555b75c42442c0801c4c69",
+  "contract_file_sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+  "evaluator_invocations": 0,
+  "execute_marker_present": false,
+  "infrastructure_rerun_allowance": 4,
+  "infrastructure_reruns_consumed": 0,
+  "next_legal_action": "launch",
+  "next_position": 1,
+  "next_trajectory_attempt": 2,
+  "operator_interruption_allowance": 2,
+  "operator_interruptions_consumed": 0,
+  "pool_file_sha256": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+  "predecessor_ledger_file_sha256": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+  "qualified_runtime_preflight": {
+    "codex_version": "codex-cli 0.150.1",
+    "contract_file_sha256": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "contract_sha256": "ad7cd1522114b8512be20f9c5a73268e1071d9138eba7bacb6ea8d54a902aca3",
+    "contract_tracked_unchanged": true,
+    "credential_bridge": {
+      "copied_artifacts": [
+        "auth.json"
+      ],
+      "credential_artifact": "auth.json",
+      "login_method": "chatgpt",
+      "normal_codex_state_shared": false,
+      "source_permissions": "0600",
+      "storage": "file"
+    },
+    "dataset_files_sha256": {
+      "c-00000-of-00001.parquet": "30c0b8cb9e7140e05a4e539f20be0c325be597cbba4bf35e232355987ddddd0c",
+      "cpp-00000-of-00001.parquet": "8448db887817b63e4c0c284ca99de1ccda15023f48e5b2234a4084466e0768ae",
+      "cs-00000-of-00001.parquet": "29ffe16d0b2cd802e753262b8b0d7fe3f2bb1b489396da238146e79f37937c1f",
+      "go-00000-of-00001.parquet": "76d2b5dff0f3fac8303d30fa85495539e487d25974ad7c21cd21a545cb4756e2",
+      "java-00000-of-00001.parquet": "00387685808c71d21ada175335304b1c118859453afadd58ea21a00b0d568ee8",
+      "js-00000-of-00001.parquet": "bc6ec49ffaf9db97840d55eba6954fae8f5fb0fb071cf49e187f36ffadd55a7a",
+      "rust-00000-of-00001.parquet": "02ac78e2c51a84eb174ac393bb07b77478f1f96cf260af18835a711dd8074ebc",
+      "ts-00000-of-00001.parquet": "7e23783e27230c9cfab1035690035c25523043d6af635bc78da3fd2010c32714"
+    },
+    "docker_environment": {
+      "configured_cpus": 6,
+      "configured_memory_mib": 16384,
+      "configured_swap_mib": 2048,
+      "engine_architecture": "linux/arm64",
+      "engine_reported_cpus": 6,
+      "engine_usable_memory_bytes": 16746352640,
+      "engine_version": "29.7.2",
+      "requested_platform": "linux/amd64"
+    },
+    "evaluator_interface": {
+      "prediction_mapping": "{instance_id: {model_patch: git diff}}",
+      "source_sha256": "dabb0be957547f8bb030c5e53ff60c70ac24cbdbaa011a377cd9242acbcdd703",
+      "structured_report": "<output>/<instance_id>/report.json",
+      "structured_results": "<output>/results.json"
+    },
+    "evaluator_invocations": 0,
+    "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+    "pool_sha256": "9aab6d8d0d18c107d7a9d533e4e3052ea06993bd94436ec1fd72666c301a00f4",
+    "qualified_image_ids": {
+      "Azure__azure-sdk-for-net-58482": "sha256:d251c881db0b711d0090340153b9f00482b3f381adf33945e2d94627d4cdffb9",
+      "GladysAssistant__Gladys-2504": "sha256:7ce9170dfbc256fe67fee4c2efb4ea3d87956076f0b6d298fe01560b7a6751e0",
+      "checkstyle__checkstyle-19487": "sha256:7c5413a53dba9b542f2092b53e3460cc96e5f433ac9a465e534ce0fc644c8ae1",
+      "ether__etherpad-7445": "sha256:22835ebeeda4c7c46ff74bdafc750f9a793177ce5404b181508087da32aa12ff",
+      "gleam-lang__gleam-5982": "sha256:2278368f484e8b0e69204152d442127fc3c26f46d8e021e4ad707eb317f6a49b",
+      "influxdata__telegraf-18686": "sha256:1d4d5a58c3bd905b2a5899100e51ccded4def7a3a68a6390896070f974b9c3a7",
+      "shader-slang__slang-10768": "sha256:1616b6be5c34cba71286ac56dffe9c1fed0725cd6d6134808ac3a9734db244e8",
+      "timescale__timescaledb-9955": "sha256:4bcaff00987399887a2b46468ed2bdf2c102618a5424da96ba0fa76860f613bd"
+    },
+    "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+    "resolved_problem_statement_sha256": {
+      "Azure__azure-sdk-for-net-58482": "6a3e24d3aae0590b5cfc2aa89811a5d13ea2b4175cc9fe6fae687f51c1157ca0",
+      "GladysAssistant__Gladys-2504": "31e5c6691e8944f5e85d942f53dcc61420ed8f714b1fce9a72e4eab3a4f20b5f",
+      "checkstyle__checkstyle-19487": "9e0652f08dd9c5a289135781a436cdb91e274ca9050bc6ac605178cdf6265aff",
+      "ether__etherpad-7445": "31bb61b39281846e4a31749fbebcca34a63d07b92556e662b22f5d9645303584",
+      "gleam-lang__gleam-5982": "8c0f6b1a605e794a4e3a2b353fcb32ee855fabe4d7f87d6529756f69eec6d9d8",
+      "influxdata__telegraf-18686": "c5e61d9dc82a5f8098718858bf24ff1ce92459191160104182c24a3a8624f3c5",
+      "shader-slang__slang-10768": "de0b93f0454024b4b52df10c15441f95b09aa999ca26327358f98caa505500d7",
+      "timescale__timescaledb-9955": "0c0401665fadeae8592af0c1bb2823ced2c3feccb5baf211a989d37bafc547d0"
+    },
+    "schedule_sha256": "9defe1ea2e376640284b53f618647aa54cff6e279dcb55d2137ff652ece80764",
+    "schema_name": "engineering-scope-guard.pilot-v3-runtime-preflight",
+    "schema_version": 1,
+    "short_policy_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "stale_trajectory_credentials": 0,
+    "status": "pass",
+    "subject_invocations": 0
+  },
+  "schedule_file_sha256": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+  "schema_name": "engineering-scope-guard.pilot-v3-successor-execution-preflight",
+  "schema_version": 1,
+  "stale_trajectory_credentials": 0,
+  "status": "pass",
+  "subject_invocations": 0,
+  "successor_events": 1,
+  "successor_ledger_file_sha256": "41303a6a5c86ae39784238d4d8b29440823d8b9ed80707d42e20b261453285c7",
+  "terminal_result_file_sha256": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+}

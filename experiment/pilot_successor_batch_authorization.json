@@ -1,0 +1,86 @@
+{
+  "amendment_class": "post-freeze pre-outcome infrastructure protocol amendment",
+  "authorization_sha256": "c81664e2a245d80657fa30112383aee34bd919424a9950ce4c7ba0e9ff450889",
+  "authorization_version": "pilot-successor-v1.0",
+  "experimental_contract_unchanged": true,
+  "failure_accounting": {
+    "existing_rerun_allowance": 8,
+    "new_retry_capacity_added": 0,
+    "predecessor_recorded_failure_preserved": "malformed_incomplete_measurement",
+    "predecessor_reruns_recorded": 0,
+    "qualified_underlying_cause": "provider_api_infrastructure_failure",
+    "reruns_consumed_at_successor_start": 1,
+    "reruns_remaining_at_successor_start": 7,
+    "successor_cell_1_consumes_existing_rerun_units": 1,
+    "successor_cell_1_trajectory_attempt": 2,
+    "successor_cells_2_through_48_trajectory_attempt": 1,
+    "underlying_cause_evidence_sha256": "fe58cafc80706c750c3c9c36e853be855c45d56727040677ca4cac6946cba06d"
+  },
+  "original_contract": {
+    "baseline_policy_sha256": "c082fd267e9c5ce6ff2347b922179a59e2e771c70100065ecb58c9e89c2a18f8",
+    "c_short_sha256": "c526058fa715dd605307938ddcdb7834668d70ee629dbb2fedc50284376527f6",
+    "c_short_version": "C-short v0.1",
+    "contract_sha256": "1ec191306215936c4f17bd0805d0a4619e0530a4d79c91c0240212b26226ead0",
+    "contract_version": "pilot-v1.0",
+    "evaluator_configuration": {
+      "dataset": "SWE-bench-Live/MultiLang",
+      "dataset_revision": "62dc0745c40f067fc366ae3eb1a26136e5928f85",
+      "evaluator_identity": "SWE-bench-Live/MultiLang official evaluator",
+      "evaluator_revision": "bc09878a5d192d0804dbd647dc6e650372fcb0ac",
+      "repolaunch_revision": "c4b623d930f3728e5338664bb634021b98492cbf",
+      "workers": 1
+    },
+    "evaluator_configuration_sha256": "7568902abb95f167ab51ab7f1418cb311167e1e86722c9a0695c1b480fb29876",
+    "schedule_sha256": "ab92971b4309ecb6a7ccdd18c97358a2db4ba3342261c6831f8d6b0ace04aa2e",
+    "subject_configuration": {
+      "codex_version": "0.150.1",
+      "configuration_change_during_trajectory_permitted": false,
+      "hooks": [],
+      "mcp_servers": [],
+      "model": "gpt-5.6-terra",
+      "network_or_browser_tools": [],
+      "permissions": "automatic approval review with workspace-write sandbox",
+      "plugins": [],
+      "reasoning_effort": "medium",
+      "required_agent_tools": [
+        "repository shell/exec",
+        "repository file editing/apply-patch"
+      ],
+      "user_config_loaded": false,
+      "user_rules_loaded": false
+    },
+    "subject_configuration_sha256": "e9a55565ee5c28686f6593e176c5b9492105d3b26d7c3cb5d1a33ad4617fb386",
+    "task_pool_sha256": "611693dc971177e76b5d7b45eb58f8dffd7c4821bf12b0dc6c540b6d580973fa"
+  },
+  "predecessor": {
+    "attempts_launched": 1,
+    "batch_id": "pilot-v1.0-predecessor-1",
+    "evaluator_runs": 0,
+    "failed_cell_id": "slot-04-baseline-rep-1",
+    "infrastructure_reruns_recorded": 0,
+    "policy_comparisons": 0,
+    "recorded_attempt_termination": "malformed_incomplete_measurement",
+    "terminal_event_sha256": "f1868900f9aea206913fe594ceb53a3ffcab21fa72bf254afd3637ef2de73046",
+    "terminal_state": "batch_stopped",
+    "terminal_stop_termination": "malformed_incomplete_measurement",
+    "valid_completed_cells": 0
+  },
+  "schema_name": "engineering-scope-guard.pilot-successor-batch-authorization",
+  "schema_version": 1,
+  "successor": {
+    "batch_id": "pilot-v1.0-successor-1",
+    "exact_original_schedule": true,
+    "new_randomization": false,
+    "restart_reason": "post-freeze pre-outcome infrastructure protocol amendment after an authentication failure prevented successful subject execution",
+    "starting_cell": {
+      "actual_task_id": "xroche__httrack-408",
+      "arm": "baseline",
+      "cell_id": "slot-04-baseline-rep-1",
+      "position": 1,
+      "repetition": 1,
+      "requested_task_slot": 4
+    },
+    "starting_schedule_position": 1
+  },
+  "treatment_or_analysis_semantics_changed": false
+}

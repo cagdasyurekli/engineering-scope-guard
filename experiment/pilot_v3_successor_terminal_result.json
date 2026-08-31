@@ -1,0 +1,298 @@
+{
+  "analysis": {
+    "acceptance_diagnostics": {
+      "complete_repetition_pairs": 14,
+      "discordance": {
+        "baseline_only_accepted": 3,
+        "both_accepted": 3,
+        "both_failed": 7,
+        "short_only_accepted": 1
+      },
+      "tasks_with_between_repetition_acceptance_instability": {
+        "baseline": 2,
+        "short": 0
+      }
+    },
+    "analysis_population": {
+      "admissible_cells": 31,
+      "complete_paired_cells": 28,
+      "complete_task_clusters": 7,
+      "excluded_incomplete_task_slots": [
+        2
+      ],
+      "rule": "primary paired estimates use tasks with both frozen repetitions in both arms; all admissible cells remain in marginal summaries"
+    },
+    "marginal_acceptance": {
+      "baseline": {
+        "accepted": 6,
+        "cells": 15,
+        "rate": 0.4
+      },
+      "short": {
+        "accepted": 4,
+        "cells": 16,
+        "rate": 0.25
+      }
+    },
+    "marginal_work": {
+      "cached_input_tokens": {
+        "baseline": {
+          "cells": 15,
+          "mean": 1073664.0,
+          "median": 1005312.0
+        },
+        "short": {
+          "cells": 16,
+          "mean": 1468800.0,
+          "median": 1163520.0
+        }
+      },
+      "calculated_fresh_input_tokens": {
+        "baseline": {
+          "cells": 15,
+          "mean": 73734.466667,
+          "median": 73988.0
+        },
+        "short": {
+          "cells": 16,
+          "mean": 86028.75,
+          "median": 68758.0
+        }
+      },
+      "input_tokens": {
+        "baseline": {
+          "cells": 15,
+          "mean": 1147398.466667,
+          "median": 1088347.0
+        },
+        "short": {
+          "cells": 16,
+          "mean": 1554828.75,
+          "median": 1232278.0
+        }
+      },
+      "output_tokens": {
+        "baseline": {
+          "cells": 15,
+          "mean": 8263.866667,
+          "median": 8129.0
+        },
+        "short": {
+          "cells": 16,
+          "mean": 9437.1875,
+          "median": 7305.5
+        }
+      },
+      "reasoning_output_tokens": {
+        "baseline": {
+          "cells": 15,
+          "mean": 2945.8,
+          "median": 3232.0
+        },
+        "short": {
+          "cells": 16,
+          "mean": 2968.0,
+          "median": 2231.5
+        }
+      },
+      "wall_seconds": {
+        "baseline": {
+          "cells": 15,
+          "mean": 803.216196,
+          "median": 810.973691
+        },
+        "short": {
+          "cells": 16,
+          "mean": 1038.791706,
+          "median": 1026.990059
+        }
+      }
+    },
+    "paired_acceptance": {
+      "baseline_task_mean": 0.428571,
+      "baseline_task_median": 0.5,
+      "difference_95_percentile_interval_percentage_points": {
+        "lower": -50.0,
+        "upper": 14.2857
+      },
+      "short_minus_baseline_percentage_points": -14.2857,
+      "short_task_mean": 0.285714,
+      "short_task_median": 0.0
+    },
+    "paired_work": {
+      "cached_input_tokens": {
+        "baseline_task_mean": 1078546.285714,
+        "baseline_task_median": 985216.0,
+        "difference_95_percentile_interval": {
+          "lower": 16603.428571,
+          "upper": 555757.714286
+        },
+        "ratio_95_percentile_interval": {
+          "lower": 1.01754,
+          "upper": 1.459247
+        },
+        "short_minus_baseline": 246820.571429,
+        "short_over_baseline_ratio": 1.228846,
+        "short_task_mean": 1325366.857143,
+        "short_task_median": 932224.0
+      },
+      "calculated_fresh_input_tokens": {
+        "baseline_task_mean": 73070.142857,
+        "baseline_task_median": 75612.0,
+        "difference_95_percentile_interval": {
+          "lower": -5143.857143,
+          "upper": 26007.5
+        },
+        "ratio_95_percentile_interval": {
+          "lower": 0.921839,
+          "upper": 1.31585
+        },
+        "short_minus_baseline": 9693.928571,
+        "short_over_baseline_ratio": 1.132666,
+        "short_task_mean": 82764.071429,
+        "short_task_median": 66468.0
+      },
+      "input_tokens": {
+        "baseline_task_mean": 1151616.428571,
+        "baseline_task_median": 1060828.0,
+        "difference_95_percentile_interval": {
+          "lower": 11760.642857,
+          "upper": 581572.571429
+        },
+        "ratio_95_percentile_interval": {
+          "lower": 1.011998,
+          "upper": 1.448256
+        },
+        "short_minus_baseline": 256514.5,
+        "short_over_baseline_ratio": 1.222743,
+        "short_task_mean": 1408130.928571,
+        "short_task_median": 998692.0
+      },
+      "output_tokens": {
+        "baseline_task_mean": 8227.857143,
+        "baseline_task_median": 7979.0,
+        "difference_95_percentile_interval": {
+          "lower": -603.285714,
+          "upper": 2032.857143
+        },
+        "ratio_95_percentile_interval": {
+          "lower": 0.919758,
+          "upper": 1.255768
+        },
+        "short_minus_baseline": 671.5,
+        "short_over_baseline_ratio": 1.081613,
+        "short_task_mean": 8899.357143,
+        "short_task_median": 6112.0
+      },
+      "reasoning_output_tokens": {
+        "baseline_task_mean": 2922.357143,
+        "baseline_task_median": 2752.0,
+        "difference_95_percentile_interval": {
+          "lower": -969.285714,
+          "upper": 669.785714
+        },
+        "ratio_95_percentile_interval": {
+          "lower": 0.690558,
+          "upper": 1.237675
+        },
+        "short_minus_baseline": -152.071429,
+        "short_over_baseline_ratio": 0.947963,
+        "short_task_mean": 2770.285714,
+        "short_task_median": 1527.0
+      },
+      "wall_seconds": {
+        "baseline_task_mean": 739.288514,
+        "baseline_task_median": 688.395747,
+        "difference_95_percentile_interval": {
+          "lower": 28.929253,
+          "upper": 511.552926
+        },
+        "ratio_95_percentile_interval": {
+          "lower": 1.05211,
+          "upper": 1.574845
+        },
+        "short_minus_baseline": 241.215901,
+        "short_over_baseline_ratio": 1.326281,
+        "short_task_mean": 980.504415,
+        "short_task_median": 944.262386
+      }
+    },
+    "uncertainty": {
+      "draws_per_resample": 7,
+      "interval": "nearest-rank 2.5th and 97.5th percentiles",
+      "method": "exact nonparametric task bootstrap with replacement",
+      "ordered_resamples": 823543,
+      "resampled_unit": "complete task cluster"
+    }
+  },
+  "billing": {
+    "currency": "unavailable",
+    "inference_performed": false,
+    "provider_billed_amount": "unavailable"
+  },
+  "claims": {
+    "confirmatory_execution_authorized": false,
+    "equivalence_or_noninferiority_supported": false,
+    "exploratory_only": true,
+    "maintainability_or_downstream_work_supported": false,
+    "per_language_effect_supported": false,
+    "provider_billing_claim_supported": false,
+    "quality_preservation_supported": false
+  },
+  "decision": "PILOT-V3 SUCCESSOR TERMINAL \u2014 EXPLORATORY EVIDENCE ONLY",
+  "immutable_evidence_sha256": {
+    "experiment/pilot_v3_execution_contract.json": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "experiment/pilot_v3_pool.json": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "experiment/pilot_v3_schedule.json": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "experiment/pilot_v3_successor_authorization.json": "6a58d87d303f8cfe98922fa034a6bc826ca4f1fa40b55ed1303e0545262c4d3f",
+    "experiment/pilot_v3_terminal_result.json": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+  },
+  "ledger": {
+    "event_counts": {
+      "attempt_started": 33,
+      "batch_stopped": 1,
+      "credential_cleanup_verified": 33,
+      "evaluator_finished": 51,
+      "evaluator_invoked": 51,
+      "infrastructure_rerun_authorized": 1,
+      "isolation_verified": 33,
+      "pilot_v3_successor_genesis": 1,
+      "receipt_committed": 33,
+      "subject_terminated": 51
+    },
+    "events": 288,
+    "last_event_sha256": "73e1530ed99235ca2e7af5787c8850d24261cbecf22de433022bec84c97f7f90",
+    "sha256": "1b4156c8b3e6c20dbc590bd1e892df5e874c0b7207788dd75d09e97cdbbe1225"
+  },
+  "outcomes": {
+    "accepted_completed": 10,
+    "evaluator_test_failure": 21,
+    "local_docker_runtime_infrastructure_failure": 2
+  },
+  "recorded_at": "2026-08-29T08:49:24.501367+00:00",
+  "repair_or_fallback": {
+    "pilot_v4_created": false,
+    "reason": "both invalid attempts produced complete coherent receipts and the frozen state machine enforced its attempt limit; no outcome-independent harness defect was found"
+  },
+  "retry_accounting": {
+    "infrastructure_rerun_allowance": 4,
+    "infrastructure_reruns_consumed": 1,
+    "operator_interruption_allowance": 2,
+    "operator_interruptions_consumed": 0,
+    "position_32_attempt_3_permitted": false
+  },
+  "schedule": {
+    "admissible_cells": 31,
+    "attempts_started": 33,
+    "complete_task_clusters": 7,
+    "frozen_cells": 32,
+    "infrastructure_invalid_attempts": 2,
+    "missing_cell_id": "v3-slot-02-baseline-rep-2",
+    "missing_cells": 1,
+    "missing_position": 32
+  },
+  "schema_name": "engineering-scope-guard.pilot-v3-successor-terminal-result",
+  "schema_version": 1,
+  "status": "terminal_partial_schedule_analyzable",
+  "termination": "attempt_limit_exhausted"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"redacted","type":"agent_message","text":"CANARY_OK"}}
+{"type":"turn.completed","usage":{}}

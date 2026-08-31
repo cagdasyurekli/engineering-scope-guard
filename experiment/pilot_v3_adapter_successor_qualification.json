@@ -1,0 +1,75 @@
+{
+  "authorization_sha256": "a0e82151c38e4643fd5e8e74541409a65d919fcdbc555b75c42442c0801c4c69",
+  "checks": {
+    "canonical_attempt_timeout_at_launch_boundary": 1800,
+    "completed_successor_cells_never_repeat": true,
+    "credential_cleanup_guaranteed_by_finally": true,
+    "durable_checkpoints_ordered_before_aggregation": true,
+    "former_key_error_boundary_passed_by_deterministic_mock": true,
+    "frozen_contract_accepted_without_mutation": true,
+    "interim_arm_comparisons": 0,
+    "live_evaluator_calls": 0,
+    "live_subject_calls": 0,
+    "official_disposition_and_feedback_semantics_unchanged": true,
+    "original_artifact_and_ledger_bytes_unchanged": true,
+    "pilot_cells_executed": 0,
+    "position_1_attempt_1_preserved": true,
+    "position_1_attempt_3_forbidden": true,
+    "position_1_starts_only_at_attempt_2": true,
+    "positions_2_through_32_start_at_attempt_1": true,
+    "receipt_requires_durable_evaluator_evidence": true,
+    "restart_and_resume_are_ledger_derived": true,
+    "retry_and_operator_budgets_unchanged": true,
+    "unsupported_timeout_shapes_fail_closed": true
+  },
+  "decision": "ADAPTER REPAIR AND SUCCESSOR QUALIFIED \u2014 LIVE EXECUTION REQUIRES SEPARATE AUTHORIZATION",
+  "immutable_sha256_after": {
+    ".local/pilot-v3-runner/pilot-v3-ledger.jsonl": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+    "experiment/pilot_v3_execution_contract.json": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "experiment/pilot_v3_pool.json": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "experiment/pilot_v3_schedule.json": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "experiment/pilot_v3_terminal_result.json": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+  },
+  "immutable_sha256_before": {
+    ".local/pilot-v3-runner/pilot-v3-ledger.jsonl": "e0a03c6b7ddb6f33ee4d79473dea4536383c750b1b580a23e9c9d5de7b316ea0",
+    "experiment/pilot_v3_execution_contract.json": "5847552b71edddc7504fd7147dfcaff6fa859e120cb1bf8476a9c4ca227ef660",
+    "experiment/pilot_v3_pool.json": "9b4409c7ee2e88ea037a18d939a8e4652787dcc8a3f3e979a8a9ad62e574b01b",
+    "experiment/pilot_v3_schedule.json": "7068e11295530704e27fc772cc02869a11bd501c4dedafffe74a9ea2176c4671",
+    "experiment/pilot_v3_terminal_result.json": "3b28a276474e131e1edb7bd7fc9277c277127ab7e9c1119793bc2fd2a5fee855"
+  },
+  "live_execution_authorized": false,
+  "next_action": {
+    "action": "launch",
+    "cell_id": "v3-slot-04-short-rep-1",
+    "position": 1,
+    "trajectory_attempt": 2
+  },
+  "recorded_at": "2026-08-28T22:59:15.922802+00:00",
+  "repair": {
+    "files": [
+      {
+        "path": "src/engineering_scope_guard/pilot_runner.py",
+        "sha256": "8acf18130d01679c56c2b3041f3885c86f339001408dc6ac42eead97523710a8"
+      },
+      {
+        "path": "scripts/pilot_runner.py",
+        "sha256": "2cb90c2513d2731bf17196c9c6882232d4ba2426a3dab906fedc0476beaddcb6"
+      }
+    ],
+    "sha256": "5487ac79122586ec6716891f2ccd15652b95d1dd67315d7c42010a2c1b2bf81d"
+  },
+  "schema_name": "engineering-scope-guard.pilot-v3-adapter-successor-qualification",
+  "schema_version": 1,
+  "status": "pass",
+  "successor_ledger": {
+    "events": 1,
+    "genesis_event_sha256": "891d3e96ae697ac4f1b3275381c1e98954e5ac4ea0bb921f2e79f01a9345d391",
+    "path": ".local/pilot-v3-successor/pilot-v3-successor-ledger.jsonl",
+    "separate_from_predecessor": true,
+    "sha256": "41303a6a5c86ae39784238d4d8b29440823d8b9ed80707d42e20b261453285c7"
+  },
+  "verification_commands": [
+    "PYTHONPATH=src python3 -m unittest tests.test_pilot_v3_adapter tests.test_pilot_v3_successor tests.test_pilot_v3 tests.test_pilot_runner",
+    "PYTHONPATH=src python3 scripts/pilot_v3_successor.py validate"
+  ]
+}

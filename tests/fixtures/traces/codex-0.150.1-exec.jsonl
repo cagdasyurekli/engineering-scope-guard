@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"fixture-thread"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"cmd-1","type":"command_execution","command":"python -m unittest discover -s tests","status":"in_progress"}}
+{"type":"item.completed","item":{"id":"cmd-1","type":"command_execution","command":"python -m unittest discover -s tests","status":"completed","exit_code":0}}
+{"type":"item.completed","item":{"id":"change-1","type":"file_change","status":"completed"}}
+{"type":"item.completed","item":{"id":"message-1","type":"agent_message","text":"Sanitized fixture content."}}
+{"type":"turn.completed","usage":{"input_tokens":10,"cached_input_tokens":0,"output_tokens":5,"reasoning_output_tokens":0}}

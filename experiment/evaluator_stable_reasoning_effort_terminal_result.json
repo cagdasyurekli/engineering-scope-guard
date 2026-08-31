@@ -1,0 +1,98 @@
+{
+  "artifacts": {
+    "analysis": null,
+    "contract": null,
+    "qualification_summary": {
+      "byte_sha256": "6e2f9a0dfd77b494f9999e0f7bf8f1a4b5b629c0aca2e741f2080ab2fbc4efed"
+    },
+    "terminal_envelope": null
+  },
+  "claim_boundaries": {
+    "billing_claim_permitted": false,
+    "equivalence_or_noninferiority_claim_permitted": false,
+    "exploratory_only": true,
+    "merge_authorized": false,
+    "publication_authorized": false,
+    "pull_request_authorized": false,
+    "repository_visibility_change_authorized": false
+  },
+  "esg_rr_002_candidate_gate": {
+    "basis": "no experiment completed because exact runtime identity drifted before contract freeze",
+    "candidate_justified": false,
+    "criteria": null,
+    "criteria_version": "esg-rr-002-contract-policy-evaluation-v1",
+    "decision": "not_applicable",
+    "policy_sha256": null,
+    "status": "not_applicable"
+  },
+  "experiment": {
+    "admissible_cells": 0,
+    "alternates_activated": 0,
+    "attempt_records": 0,
+    "batch_stop_classification": "runtime_identity_mismatch_before_contract_freeze",
+    "evaluator_invocation_starts": 0,
+    "frozen_alternate_clusters": 0,
+    "frozen_cells": 0,
+    "frozen_primary_clusters": 0,
+    "missing_cells": 0,
+    "observed_cells": 0,
+    "runtime": {
+      "codex_version": "codex-cli 0.151.0",
+      "model": "gpt-5.6-sol",
+      "supported_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ]
+    },
+    "started": false,
+    "subject_invocation_start_cap": 56,
+    "subject_start_accounting": {
+      "canary_subject_invocation_starts": 0,
+      "experiment_subject_invocation_starts": 0,
+      "total_subject_invocation_starts": 0
+    },
+    "terminal_status": "pre_subject_integrity_stop"
+  },
+  "falsification_sha256": null,
+  "integrity_stop": {
+    "classification": "runtime_identity_mismatch_before_contract_freeze",
+    "contract_frozen": false,
+    "model_catalog_identity_match": false,
+    "observed_model_catalog_sha256": "c853ebbb886e321f687a5438cdd00853f8adc0e231115cbc958f6c4e62784692",
+    "observed_runtime_identity_sha256": "e98067f8d365ddc56119ad714c62ab6a684aad5cf45167546c3b1ceb35cd43ec",
+    "private_stop_receipt_sha256": "efee004179382317b1fd9625dea95bcbe0225558043699211630b9fa60bcf57e",
+    "qualification_model_catalog_sha256": "526b8ea958d1d277e2bc6cdc41a4abe137fd1fdd8c2c0545d589bf4d09c08434",
+    "qualification_runtime_identity_sha256": "6b195b4c3e92832568695a59e2e20d890bb0ab8cdd7fd44fd088ecbcebe92405",
+    "reason": "exact_qualified_model_catalog_identity_unavailable",
+    "stage": "pre_contract_freeze",
+    "stop_condition": "scientific_protocol_integrity_compromised",
+    "subject_outcome_exposed": false
+  },
+  "next_boundary": "authorize_private_canonical_branch_push",
+  "primary_outcome": null,
+  "qualification": {
+    "alternate_cluster_count": 4,
+    "attempted_candidates": 20,
+    "gold_failures": 0,
+    "infrastructure_failures": 3,
+    "minimum_gate_passed": true,
+    "primary_cluster_count": 12,
+    "private_receipt_state_sha256": "b38c1ee00113a96e32dca81f0e202c084976a96e738549e0f78b8b46fc7726a8",
+    "qualified_independent_clusters": 16,
+    "status": "stable_pool_ready",
+    "subject_invocation_starts": 0,
+    "summary_sha256": "6e2f9a0dfd77b494f9999e0f7bf8f1a4b5b629c0aca2e741f2080ab2fbc4efed",
+    "validation_failures": 1
+  },
+  "schema_name": "engineering-scope-guard.evaluator-stable-reasoning-effort-terminal",
+  "schema_version": 1,
+  "scientific_disposition": "EXPERIMENT INVALID / TERMINATED",
+  "terminal_disposition": "EXPERIMENT INVALID / TERMINATED",
+  "terminal_path": "pre_subject_integrity_stop",
+  "terminal_result_sha256": "150881d10332e17e81300669489bbd2e62547bbfcb15feb3e8c3259dda64956e",
+  "work_sha256": null
+}

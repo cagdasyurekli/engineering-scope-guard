@@ -1,0 +1,55 @@
+{
+  "activity": {
+    "confirmatory_task_bodies_exposed": 0,
+    "evaluator_invocations": 0,
+    "interim_arm_effect_analyses": 0,
+    "pilot_cells_executed": 0,
+    "policy_comparisons_executed": 0,
+    "subject_invocations": 0
+  },
+  "checks": {
+    "attempt_3_rejected_for_position_7": true,
+    "authorization_contract_and_ledger_drift_rejected": true,
+    "completed_continuation_cells_not_repeated_after_restart": true,
+    "credential_cleanup_fault_injection_passed": true,
+    "durable_ledger_drives_resume": true,
+    "existing_infrastructure_rerun_allowance_unchanged": true,
+    "frozen_stop_and_failure_semantics_enforced": true,
+    "operator_restart_accounting_exhausted": true,
+    "positions_1_through_6_not_executable": true,
+    "positions_8_through_44_begin_at_attempt_1": true,
+    "receipt_checkpoint_precedes_terminal_aggregation": true,
+    "restart_position_7_uses_attempt_2": true,
+    "schedule_and_task_identities_unchanged": true,
+    "strict_continuation_preflight_passed": true
+  },
+  "decision": "CONTINUATION EXECUTION INTERFACE QUALIFIED — LIVE EXECUTION REQUIRES SEPARATE AUTHORIZATION",
+  "frozen_inputs": {
+    "authorization_file_sha256": "ec0dff562818e3cbf62897a4ac494b4a942dd164976ba86f702ea786d2450887",
+    "authorization_sha256": "c2f7e3be7401a174bc304afb1b7ffb17fb3b22f1e2b65972dfb619a1252da0eb",
+    "continuation_genesis_ledger_sha256": "182ce981af6b8044bcd92ba7fc199d245f0dcae3ae5260dfbac5b2975922cc69",
+    "contract_file_sha256": "4c1019f74becb059f0f1c8440d3fb676ff4595904e57cd79fd69770d6543d53c",
+    "predecessor_ledger_sha256": "a998efd2c7e1783607c3494b3a38baca174e3760066f34125288f685012344b5",
+    "terminal_result_file_sha256": "4107ade41c245209e3c60c50016ab4cf99d54203300207f2924815667c330e60"
+  },
+  "qualification": {
+    "complete_dry_run_positions": 38,
+    "focused_tests_passed": 16,
+    "full_repository_tests_passed": 171,
+    "infrastructure_rerun_allowance": 8,
+    "infrastructure_reruns_consumed": 0,
+    "operator_restart_units_remaining": 0,
+    "position_7_trajectory_attempt": 2,
+    "positions_8_through_44_trajectory_attempt": 1,
+    "provider_or_evaluator_execution_permitted": false
+  },
+  "receipts": {
+    "dry_run_path": "experiment/pilot_v2_continuation_execution_dry_run.json",
+    "dry_run_sha256": "854d42bfa4a55d5b931ae1281543351d70b1c9ece92d5428721582e68105de35",
+    "preflight_path": "experiment/pilot_v2_continuation_execution_preflight.json",
+    "preflight_sha256": "9b9d09e2e58d74050720f8d9b664cdbb71a524a6af3f2e4968d0d1fb5604a6c3"
+  },
+  "schema_name": "engineering-scope-guard.pilot-v2-continuation-execution-interface-qualification",
+  "schema_version": 1,
+  "status": "pass"
+}
