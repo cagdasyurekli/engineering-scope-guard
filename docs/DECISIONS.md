@@ -2418,3 +2418,79 @@ host-valid tasks, replacement accounting, frozen identities, resource facts,
 terminal decisions, and all ESG-RR-001 scientific identities remain unchanged.
 This is privacy sanitation of non-outcome raw material, not a reinterpretation
 or scientific correction.
+
+---
+
+## D-073 — Prospectively lock runtime and campaign time for one new reasoning-effort experiment
+
+**Decision:** Authorize one new exploratory LOW-versus-MEDIUM experiment only
+after all readiness gates in `docs/CURRENT_GOAL.md` pass. The preferred design
+is ten independent task/repository clusters, two arms, and two repetitions (40
+cells), with four prequalified alternates and an absolute 48-subject-attempt
+ceiling. Sample size, schedule, treatment, retry rules, outcome, analysis,
+missingness, falsification, and stop rules must be frozen before cell 1.
+
+**Prior-pool reuse:** The D-069 16-cluster qualification may be reused because
+no subject model attempted any candidate and selection was prospectively
+outcome-blind, but only after the sealed private receipt, all completed-stage
+artifact hashes, evaluator/task-source revisions, repository independence, and
+zero-subject accounting are revalidated. Reuse is infrastructure evidence, not
+an experimental result.
+
+**Runtime boundary:** Every subject cell must use one experiment-local,
+read-only Codex executable bundle and one frozen observable model catalog. A
+machine-readable receipt binds the executable/package digest, version, model,
+native efforts, explicit config/tool surface, relevant environment, and
+sandbox. A sentinel runs before each cell. Any observable drift stops before
+launch as `RUNTIME IDENTITY DRIFT — EXPERIMENT INTERRUPTED`; provider-side
+changes not exposed by the product remain an explicit limitation.
+
+**Campaign-clock boundary:** Azure task timestamps and retry counters remain
+diagnostic only. The hard campaign duration is derived exclusively from
+persisted completed monotonic-segment elapsed time plus the current process's
+`time.monotonic_ns()` segment. Restart creates a new segment and resumes from
+the last durable elapsed checkpoint; it never compares process-local monotonic
+origins or resets time after requeue.
+
+**Claims and publication:** Acceptance is primary. Repetitions are not
+independent tasks. Work is interpreted relative to accepted outcomes and must
+retain failures. ESG-RR-002 is optional and requires adequate admissible data,
+valid evaluation, protocol integrity, useful uncertainty, and a meaningful
+contribution. GitHub-native publication is authorized only for such a package;
+all external/social distribution remains unauthorized.
+
+**Status:** Active prospective decision. No subject attempt has started.
+
+---
+
+## D-074 — Terminate the runtime-locked experiment before freeze
+
+**Decision:** Abandon this authorized program at its pre-contract runtime-
+stability gate. The maximum two contentless process launches were consumed;
+both exited locally with code 2 before JSONL, provider, or tool events because
+the frozen invocation combined mutually exclusive `--approve-for-me` and
+`--sandbox` options. Do not reclassify either launch as model-performance
+evidence, do not run a third launch, and do not start a subject or evaluator.
+
+**Reason:** The option conflict is mechanically understood, but the prospective
+protocol imposed an absolute two-launch soak maximum. Repairing the invocation
+and launching again would exceed that frozen allowance. The readiness gate is
+therefore unsatisfied even though the binary and catalog sentinels themselves
+remained stable.
+
+**Scientific boundary:** LOW versus MEDIUM remains unanswered. There are zero
+frozen cells, zero subject starts, zero evaluator starts, and no acceptance or
+work contrast. ESG-RR-002 is not justified and no research Release is created.
+
+**Infrastructure boundary:** Preserve the campaign-clock correction and its
+deterministic tests. The synthetic Azure validation is infrastructure evidence
+only. Its task-runtime cost is an estimate, not a billing claim, and terminal
+state requires a fresh zero-compute readback. Correct the reusable public
+command helper by removing the redundant explicit sandbox option and cover the
+conflict with a regression test, but do not execute the repaired command under
+this program.
+
+**Authorization boundary:** The current authorization permits public-safe
+terminal persistence and merge, but not any third stability launch, retry,
+successor experiment, or external distribution. Any such work requires a new
+explicit program authorization.

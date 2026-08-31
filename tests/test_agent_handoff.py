@@ -29,11 +29,11 @@ class AgentHandoffTests(unittest.TestCase):
         self.assertLessEqual(HANDOFF.stat().st_size, MAX_HANDOFF_BYTES)
         self.assertEqual(
             value["current_decision"]["decision"],
-            "EXPERIMENT INVALID / TERMINATED",
+            "EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED",
         )
         self.assertEqual(
             value["goal"]["decision"],
-            "EXPERIMENT INVALID / TERMINATED BEFORE CONTRACT FREEZE",
+            "EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED",
         )
         state = value["experimental_state"]
         self.assertEqual(state["terminal"]["path"], "pre_subject_integrity_stop")
@@ -43,13 +43,13 @@ class AgentHandoffTests(unittest.TestCase):
         self.assertEqual(state["execution"]["total_subject_invocation_starts"], 0)
         self.assertEqual(state["execution"]["evaluator_invocation_starts"], 0)
         self.assertIn(value["next_action"]["kind"], value["allowed_actions"])
-        self.assertFalse(value["next_action"]["requires_explicit_user_authorization"])
-        self.assertEqual(value["next_action"]["authorization"], "not_authorized")
-        self.assertEqual(value["next_action"]["kind"], "review")
-        self.assertTrue(value["next_action"]["safe_without_explicit_authorization"])
-        self.assertEqual(value["verification"]["ci_status"], "derive_from_branch")
+        self.assertTrue(value["next_action"]["requires_explicit_user_authorization"])
+        self.assertEqual(value["next_action"]["authorization"], "explicit_current_request")
+        self.assertIn(value["next_action"]["kind"], {"persist_and_merge", "merge_if_green"})
+        self.assertFalse(value["next_action"]["safe_without_explicit_authorization"])
+        self.assertIn(value["verification"]["ci_status"], {"pending_pr", "derive_from_pr"})
         self.assertTrue(value["verification"]["codeql_required"])
-        self.assertEqual(value["verification"]["codeql_status"], "derive_from_branch")
+        self.assertIn(value["verification"]["codeql_status"], {"pending_pr", "derive_from_pr"})
         self.assertNotIn("run_authorized_goal", value["allowed_actions"])
         self.assertIn("run_exploratory_experiment", value["forbidden_actions"])
         self.assertIn("run_confirmatory_experiment", value["forbidden_actions"])
@@ -217,10 +217,8 @@ class AgentHandoffTests(unittest.TestCase):
         validate_handoff(value, ROOT)
 
         value = self.value()
-        value["git"]["pr_number"] = 1
-        value["git"]["pr_url"] = (
-            "https://github.com/cagdasyurekli/engineering-scope-guard/pull/1"
-        )
+        value["verification"]["ci_status"] = "pending_pr"
+        value["verification"]["codeql_status"] = "pending_pr"
         with self.assertRaisesRegex(HandoffValidationError, "despite PR metadata"):
             validate_handoff(value, ROOT)
 

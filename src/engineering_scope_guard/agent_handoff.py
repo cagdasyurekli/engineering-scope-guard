@@ -11,6 +11,10 @@ from typing import Any
 
 SCHEMA_VERSION = "1"
 REASONING_EFFORT_STATE_VERSION = "evaluator-stable-reasoning-effort-v1"
+RUNTIME_LOCKED_STATE_VERSION = "runtime-locked-reasoning-effort-v1"
+REASONING_EFFORT_STATE_VERSIONS = frozenset(
+    {REASONING_EFFORT_STATE_VERSION, RUNTIME_LOCKED_STATE_VERSION}
+)
 MAX_HANDOFF_BYTES = 5 * 1024
 GOAL_STATUSES = frozenset({"complete", "blocked", "abandoned"})
 ACTION_KINDS = frozenset(
@@ -190,6 +194,11 @@ TERMINAL_ARTIFACT_PATHS = {
     "terminal_envelope": "experiment/reasoning_effort_v2_terminal_envelope.json",
     "analysis": "experiment/reasoning_effort_v2_analysis.json",
 }
+RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS = {
+    **TERMINAL_ARTIFACT_PATHS,
+    "terminal_result": "experiment/runtime_locked_reasoning_effort_terminal_result.json",
+    "terminal_report": "docs/RUNTIME_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
+}
 
 
 class HandoffValidationError(ValueError):
@@ -362,8 +371,9 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
             "boundaries",
         },
     )
-    if state["schema_version"] != REASONING_EFFORT_STATE_VERSION:
+    if state["schema_version"] not in REASONING_EFFORT_STATE_VERSIONS:
         raise HandoffValidationError("experimental_state.schema_version is unsupported")
+    runtime_locked = state["schema_version"] == RUNTIME_LOCKED_STATE_VERSION
     qualification = _object(
         state["qualification"],
         "experimental_state.qualification",
@@ -422,7 +432,7 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     if (
         canary not in (0, 1)
         or total != canary + experiment
-        or total > 56
+        or total > (48 if runtime_locked else 56)
         or execution["experiment_started"] is not (experiment > 0)
         or execution["evaluator_invocation_starts"] > experiment
         or execution["admissible_cells"] > execution["completed_cells"]
@@ -431,7 +441,7 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
         or execution["missing_cells"]
         != execution["schedule_cells"] - execution["completed_cells"]
     ):
-        raise HandoffValidationError("experimental execution counts are inconsistent or exceed 56")
+        raise HandoffValidationError("experimental execution counts are inconsistent or exceed its cap")
     if execution["stage_1_status"] not in STAGE_1_STATES:
         raise HandoffValidationError("experimental stage-1 status is unsupported")
 
@@ -455,17 +465,21 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     }:
         raise HandoffValidationError("ESG-RR-002 candidate decision is unsupported")
 
+    artifact_paths = (
+        RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS if runtime_locked
+        else TERMINAL_ARTIFACT_PATHS
+    )
     artifacts = _object(
         state["public_artifacts"],
         "experimental_state.public_artifacts",
-        set(TERMINAL_ARTIFACT_PATHS),
+        set(artifact_paths),
     )
     for name in ("qualification_summary", "terminal_result", "terminal_report"):
         _artifact_reference(
             root,
             artifacts[name],
             f"experimental_state.public_artifacts.{name}",
-            TERMINAL_ARTIFACT_PATHS[name],
+            artifact_paths[name],
         )
     experiment_artifact_names = ("contract", "terminal_envelope", "analysis")
     common_only = terminal["path"] != "experiment_terminal"
@@ -480,7 +494,7 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
                 root,
                 artifacts[name],
                 f"experimental_state.public_artifacts.{name}",
-                TERMINAL_ARTIFACT_PATHS[name],
+                artifact_paths[name],
             )
 
     boundaries = _object(
@@ -494,13 +508,17 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
             "next_authority_boundary",
         },
     )
-    if boundaries != {
+    expected_boundaries = {
         "raw_private_material_tracked": False,
-        "repository_private": True,
-        "publication_authorized": False,
+        "repository_private": not runtime_locked,
+        "publication_authorized": runtime_locked,
         "visibility_change_authorized": False,
-        "next_authority_boundary": "authorize_private_canonical_branch_push",
-    }:
+        "next_authority_boundary": (
+            "authorize_a_separate_successor_program_before_any_retry_or_new_experiment"
+            if runtime_locked else "authorize_private_canonical_branch_push"
+        ),
+    }
+    if boundaries != expected_boundaries:
         raise HandoffValidationError("experimental privacy/publication boundary drifted")
 
     insufficient_disposition = (
@@ -561,7 +579,7 @@ def validate_handoff(value: Any, root: Path) -> dict[str, Any]:
         isinstance(value, dict)
         and isinstance(value.get("experimental_state"), dict)
         and value["experimental_state"].get("schema_version")
-        == REASONING_EFFORT_STATE_VERSION
+        in REASONING_EFFORT_STATE_VERSIONS
     ):
         _reasoning_effort_value_privacy_scan(value)
     _privacy_scan(value)
