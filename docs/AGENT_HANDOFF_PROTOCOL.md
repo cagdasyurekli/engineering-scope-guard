@@ -64,6 +64,12 @@ For every completed, blocked, abandoned, or otherwise terminal goal:
 The handoff points to authoritative artifacts; it never replaces them. There is
 only one current handoff file. Do not create one JSON file per goal.
 
+Reasoning-effort handoffs use a versioned experimental-state profile. The
+original evaluator-stable profile preserves its private-repository publication
+boundary. The runtime-locked profile records the public canonical repository,
+the 48-attempt cap, its current terminal artifact paths, and the separately
+authorized public PR workflow without retroactively changing the predecessor.
+
 ## Action vocabulary
 
 `next_action.kind` uses only:

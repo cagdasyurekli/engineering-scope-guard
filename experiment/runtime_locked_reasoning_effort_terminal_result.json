@@ -1,0 +1,91 @@
+{
+  "azure_validation": {
+    "actual_billed_or_credit_value_usd": null,
+    "campaign_receipt_sha256": "234e3b15b90a165bd78516aa31dfa89011f4547fae20e721a50893c7f84480ac",
+    "campaign_uuid": "8db76ff9-4a0e-4d48-8e07-54a03ed63b29",
+    "conservative_cumulative_upper_bound_usd": 0.35,
+    "evaluation_jobs": 0,
+    "estimated_task_runtime_cost_usd": 0.000133,
+    "jobs_after_cleanup": 0,
+    "nodes_after_cleanup": 0,
+    "pools_after_cleanup": 0,
+    "qualification_jobs": 0,
+    "retries": 0,
+    "synthetic_jobs": 1,
+    "synthetic_tasks_completed": 1,
+    "task_receipt_sha256": "c50bc2603d30923f77967d67b7de2da918b7cf75cd9c46e0bee10c7119164e9d",
+    "task_runtime_seconds": 11.712765,
+    "task_runtime_vm_hours": 0.003254,
+    "terminal_zero_compute_verified_at": "2026-08-31T21:12:25Z",
+    "timing_test_scenarios_passed": 11,
+    "worker_classes": [
+      "Standard_A1_v2"
+    ]
+  },
+  "claim_boundaries": {
+    "billing_claim_permitted": false,
+    "equivalence_or_noninferiority_claim_permitted": false,
+    "exploratory_outcome_exists": false,
+    "esg_rr_002_justified": false,
+    "release_justified": false
+  },
+  "experiment": {
+    "admissible_cells": 0,
+    "alternates_activated": 0,
+    "attempt_records": 0,
+    "contract_frozen": false,
+    "evaluator_invocation_starts": 0,
+    "frozen_cells": 0,
+    "frozen_primary_clusters": 0,
+    "missing_cells": 0,
+    "observed_cells": 0,
+    "started": false,
+    "subject_invocation_start_cap": 48,
+    "subject_invocation_starts": 0
+  },
+  "integrity_stop": {
+    "classification": "runtime_stability_configuration_gate_exhausted",
+    "contentless_process_launches": 2,
+    "contentless_provider_events": 0,
+    "contentless_tool_events": 0,
+    "failure": "the frozen command combined mutually exclusive --approve-for-me and --sandbox options",
+    "first_launch_effort": "low",
+    "first_launch_return_code": 2,
+    "first_runtime_receipt_sha256": "d95ac7f76fa9103e141a1d2af5c4042084c3f0c1a2606523b53662f81741971f",
+    "runtime_state_file_sha256": "e58016e80f0178d98f9238460edc7590654c4f694eb2cc66a59696eb1b7f84cc",
+    "second_launch_effort": "medium",
+    "second_launch_return_code": 2,
+    "second_runtime_receipt_sha256": "a7587947a716be14852289bed028472af8da30a33cda8fb2689b25bf526123c1",
+    "stage": "pre_contract_freeze",
+    "stderr_sha256": "42d4eeb1d04c7232c5075ef6d4cf2674c374a37b96c9d2c4499cfcc19ef166ae",
+    "subject_outcome_exposed": false
+  },
+  "next_boundary": "authorize_a_separate_successor_program_before_any_retry_or_new_experiment",
+  "primary_outcome": null,
+  "qualification": {
+    "attempted_candidates": 20,
+    "gold_failures": 0,
+    "infrastructure_failures": 3,
+    "minimum_gate_passed": true,
+    "qualified_independent_clusters": 16,
+    "selection_was_outcome_blind": true,
+    "subject_invocation_starts": 0,
+    "validation_failures": 1
+  },
+  "runtime": {
+    "codex_binary_sha256": "98491713ffb196061003ee148636e743997cc31d76144ba7c53462269896891d",
+    "codex_version": "codex-cli 0.151.0",
+    "model": "gpt-5.6-sol",
+    "model_catalog_sha256": "3788659eb7319473fb07c93cc55ebfce50a18962c8d743fcd5cb645af93880cb",
+    "native_efforts_confirmed_in_catalog": [
+      "low",
+      "medium"
+    ],
+    "provider_identity_limitation": "provider-side model changes not exposed by the Codex runtime cannot be frozen or detected"
+  },
+  "schema_name": "engineering-scope-guard.runtime-locked-reasoning-effort-terminal",
+  "schema_version": 1,
+  "scientific_disposition": "EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED",
+  "terminal_path": "pre_subject_integrity_stop",
+  "terminal_result_sha256": "242c40cf59daff665305e1ba0a503e79b295e3f746a4887c661858748b61b5ac"
+}

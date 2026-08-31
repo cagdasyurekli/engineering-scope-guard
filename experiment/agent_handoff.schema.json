@@ -453,16 +453,19 @@
           "additionalProperties": false,
           "properties": {
             "next_authority_boundary": {
-              "const": "authorize_private_canonical_branch_push"
+              "enum": [
+                "authorize_private_canonical_branch_push",
+                "authorize_a_separate_successor_program_before_any_retry_or_new_experiment"
+              ]
             },
             "publication_authorized": {
-              "const": false
+              "type": "boolean"
             },
             "raw_private_material_tracked": {
               "const": false
             },
             "repository_private": {
-              "const": true
+              "type": "boolean"
             },
             "visibility_change_authorized": {
               "const": false
@@ -487,7 +490,10 @@
           "$ref": "#/$defs/reasoning_effort_qualification"
         },
         "schema_version": {
-          "const": "evaluator-stable-reasoning-effort-v1"
+          "enum": [
+            "evaluator-stable-reasoning-effort-v1",
+            "runtime-locked-reasoning-effort-v1"
+          ]
         },
         "terminal": {
           "$ref": "#/$defs/reasoning_effort_terminal"

@@ -1570,3 +1570,38 @@ evidence for Codex 0.150.1, not efficacy evidence or experiment authorization.
 - `docs/evidence/codex-0.150.1-exec-command-file-change-canary.md`
 - `docs/evidence/codex-0.150.1-hook-emission-canary-2026-08-27.md`
 - `docs/evidence/codex-0.150.1-v0-capability-coverage-synthesis-2026-08-27.md`
+# Runtime-Locked Reasoning-Effort Exploratory Experiment
+
+**Status:** abandoned
+
+**Completed:** 2026-08-31
+
+### Goal
+
+Compare native LOW and MEDIUM reasoning effort under one fixed observable Codex
+runtime, but only after all prospective infrastructure and scientific gates
+passed.
+
+### Terminal evidence
+
+- Revalidated the public canonical root and 16-cluster outcome-blind prior
+  qualification with zero prior subject starts.
+- Corrected Azure campaign timing to use persisted monotonic segments and
+  passed eleven fake-clock scenarios plus one synthetic Azure task.
+- Pinned Codex 0.151.0 and the observable gpt-5.6-sol model catalog locally.
+- Both allowed contentless process launches failed before provider execution
+  because the command combined mutually exclusive approval and sandbox flags.
+- Froze no contract or population and started zero subject/evaluator cells.
+
+### Decision
+
+**EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED.** LOW versus MEDIUM
+remains unanswered; ESG-RR-002 is not justified. Any retry or successor
+experiment requires a separate explicit authorization.
+
+### Evidence
+
+- `docs/RUNTIME_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md`
+- `experiment/runtime_locked_reasoning_effort_terminal_result.json`
+
+---
