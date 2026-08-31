@@ -1,6 +1,6 @@
 {
   "allowed_actions": [
-    "persist_and_merge"
+    "merge_if_green"
   ],
   "current_decision": {
     "decision": "EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED",
@@ -36,7 +36,7 @@
     },
     {
       "path": "experiment/runtime_locked_reasoning_effort_terminal_result.json",
-      "role": "public-safe machine-readable terminal result",
+      "role": "terminal result",
       "sha256": "10b093f813252f24288f413f33f1870a07d124aa2b8f2e58196ae71fb2f73ab5"
     }
   ],
@@ -107,8 +107,8 @@
     "branch": "codex/runtime-locked-reasoning-effort-2026-08-31",
     "head_sha": null,
     "head_sha_semantics": "omitted_to_avoid_self_reference",
-    "pr_number": null,
-    "pr_url": null
+    "pr_number": 1,
+    "pr_url": "https://github.com/cagdasyurekli/engineering-scope-guard/pull/1"
   },
   "goal": {
     "completed_at": "2026-08-31T20:51:09Z",
@@ -118,13 +118,12 @@
   },
   "next_action": {
     "authorization": "explicit_current_request",
-    "kind": "persist_and_merge",
-    "reason": "Persist terminal evidence through the authorized protected PR workflow.",
+    "kind": "merge_if_green",
+    "reason": "Squash-merge PR 1 only after every required CI and CodeQL check passes.",
     "requires_explicit_user_authorization": true,
     "safe_without_explicit_authorization": false
   },
   "notes": [
-    "The outcome-blind qualification remains reusable but no task population was frozen.",
     "Both contentless processes failed locally before provider or tool events.",
     "LOW versus MEDIUM remains unanswered; ESG-RR-002 is not justified."
   ],
@@ -132,9 +131,9 @@
   "schema_version": "1",
   "verification": {
     "ci_required": true,
-    "ci_status": "pending_pr",
+    "ci_status": "derive_from_pr",
     "codeql_required": true,
-    "codeql_status": "pending_pr",
+    "codeql_status": "derive_from_pr",
     "tests_passed": 537
   }
 }

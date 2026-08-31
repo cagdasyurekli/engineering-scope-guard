@@ -217,10 +217,8 @@ class AgentHandoffTests(unittest.TestCase):
         validate_handoff(value, ROOT)
 
         value = self.value()
-        value["git"]["pr_number"] = 1
-        value["git"]["pr_url"] = (
-            "https://github.com/cagdasyurekli/engineering-scope-guard/pull/1"
-        )
+        value["verification"]["ci_status"] = "pending_pr"
+        value["verification"]["codeql_status"] = "pending_pr"
         with self.assertRaisesRegex(HandoffValidationError, "despite PR metadata"):
             validate_handoff(value, ROOT)
 
