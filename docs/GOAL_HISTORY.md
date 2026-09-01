@@ -1649,3 +1649,45 @@ explicit authorization.
 - `experiment/reasoning_effort_v2_analysis.json`
 
 ---
+
+# Evaluator-Environment-Locked Reasoning-Effort Experiment
+
+**Status:** abandoned
+
+**Completed:** 2026-09-01
+
+### Goal
+
+Establish a canonical evaluator-environment identity and run one LOW-versus-
+MEDIUM exploratory experiment only if all prospective readiness gates passed.
+
+### Terminal evidence
+
+- Identified the predecessor drift as the complete installed Python
+  distribution set; its aggregate-only historical receipt cannot recover a
+  memberwise package diff.
+- Locked evaluator source, immutable images, resolved packages/toolchains,
+  runner configuration, and legitimate task-specific inputs as E1-E5.
+- Reproduced one semantic environment identity on two fresh workers and passed
+  one frozen alternate gold preflight with zero remaining task containers.
+- Revalidated 16 outcome-blind independent clusters, the corrected monotonic
+  clock, Codex 0.151.0, gpt-5.6-sol, and treatment-only LOW/MEDIUM profiles.
+- Thirteen of fifteen readiness gates passed. Available subject quota was below
+  the prospective threshold, and the separate Azure reserve still occupied its
+  reserved capacity.
+- Froze no subject contract or schedule and started zero subject or evaluator
+  invocations. No experiment-owned Azure compute was created.
+
+### Decision
+
+**EXPERIMENT INVALID / TERMINATED.** The explicit pre-subject stop conditions
+were reached, so the program cannot be resumed under this authorization.
+LOW versus MEDIUM remains unanswered and ESG-RR-002 is not justified. Any
+successor requires a new explicit authorization.
+
+### Evidence
+
+- `docs/EVALUATOR_ENVIRONMENT_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md`
+- `experiment/evaluator_environment_locked_reasoning_effort_terminal_result.json`
+
+---

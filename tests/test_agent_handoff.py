@@ -36,15 +36,15 @@ class AgentHandoffTests(unittest.TestCase):
             "EXPERIMENT INVALID / TERMINATED",
         )
         state = value["experimental_state"]
-        self.assertEqual(state["terminal"]["path"], "experiment_terminal")
+        self.assertEqual(state["terminal"]["path"], "pre_subject_integrity_stop")
         self.assertTrue(state["qualification"]["minimum_gate_passed"])
         self.assertEqual(state["qualification"]["qualified_independent_clusters"], 16)
         self.assertFalse(state["execution"]["experiment_started"])
         self.assertEqual(state["execution"]["total_subject_invocation_starts"], 0)
         self.assertEqual(state["execution"]["evaluator_invocation_starts"], 0)
-        self.assertEqual(state["execution"]["schedule_cells"], 40)
-        self.assertEqual(state["execution"]["completed_cells"], 1)
-        self.assertEqual(state["execution"]["missing_cells"], 39)
+        self.assertEqual(state["execution"]["schedule_cells"], 0)
+        self.assertEqual(state["execution"]["completed_cells"], 0)
+        self.assertEqual(state["execution"]["missing_cells"], 0)
         self.assertIn(value["next_action"]["kind"], value["allowed_actions"])
         self.assertTrue(value["next_action"]["requires_explicit_user_authorization"])
         self.assertEqual(value["next_action"]["authorization"], "explicit_current_request")
@@ -78,6 +78,10 @@ class AgentHandoffTests(unittest.TestCase):
         self.assertEqual(schema["properties"]["schema_version"]["const"], "1")
         self.assertFalse(schema["additionalProperties"])
         self.assertFalse(schema["properties"]["goal"]["additionalProperties"])
+        versions = schema["$defs"]["reasoning_effort_experimental_state"][
+            "properties"
+        ]["schema_version"]["enum"]
+        self.assertIn("evaluator-environment-locked-reasoning-effort-v1", versions)
 
     def test_missing_goal_identity_is_rejected(self) -> None:
         value = self.value()

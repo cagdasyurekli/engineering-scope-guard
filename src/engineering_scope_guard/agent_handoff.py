@@ -13,11 +13,13 @@ SCHEMA_VERSION = "1"
 REASONING_EFFORT_STATE_VERSION = "evaluator-stable-reasoning-effort-v1"
 RUNTIME_LOCKED_STATE_VERSION = "runtime-locked-reasoning-effort-v1"
 LAUNCH_SURFACE_LOCKED_STATE_VERSION = "launch-surface-locked-reasoning-effort-v1"
+ENVIRONMENT_LOCKED_STATE_VERSION = "evaluator-environment-locked-reasoning-effort-v1"
 REASONING_EFFORT_STATE_VERSIONS = frozenset(
     {
         REASONING_EFFORT_STATE_VERSION,
         RUNTIME_LOCKED_STATE_VERSION,
         LAUNCH_SURFACE_LOCKED_STATE_VERSION,
+        ENVIRONMENT_LOCKED_STATE_VERSION,
     }
 )
 MAX_HANDOFF_BYTES = 5 * 1024
@@ -210,6 +212,15 @@ LAUNCH_SURFACE_LOCKED_TERMINAL_ARTIFACT_PATHS = {
         "docs/LAUNCH_SURFACE_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md"
     ),
 }
+ENVIRONMENT_LOCKED_TERMINAL_ARTIFACT_PATHS = {
+    **TERMINAL_ARTIFACT_PATHS,
+    "terminal_result": (
+        "experiment/evaluator_environment_locked_reasoning_effort_terminal_result.json"
+    ),
+    "terminal_report": (
+        "docs/EVALUATOR_ENVIRONMENT_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md"
+    ),
+}
 
 
 class HandoffValidationError(ValueError):
@@ -388,7 +399,8 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     launch_surface_locked = (
         state["schema_version"] == LAUNCH_SURFACE_LOCKED_STATE_VERSION
     )
-    public_locked = runtime_locked or launch_surface_locked
+    environment_locked = state["schema_version"] == ENVIRONMENT_LOCKED_STATE_VERSION
+    public_locked = runtime_locked or launch_surface_locked or environment_locked
     qualification = _object(
         state["qualification"],
         "experimental_state.qualification",
@@ -480,15 +492,14 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     }:
         raise HandoffValidationError("ESG-RR-002 candidate decision is unsupported")
 
-    artifact_paths = (
-        RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS
-        if runtime_locked
-        else (
-            LAUNCH_SURFACE_LOCKED_TERMINAL_ARTIFACT_PATHS
-            if launch_surface_locked
-            else TERMINAL_ARTIFACT_PATHS
-        )
-    )
+    if runtime_locked:
+        artifact_paths = RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS
+    elif launch_surface_locked:
+        artifact_paths = LAUNCH_SURFACE_LOCKED_TERMINAL_ARTIFACT_PATHS
+    elif environment_locked:
+        artifact_paths = ENVIRONMENT_LOCKED_TERMINAL_ARTIFACT_PATHS
+    else:
+        artifact_paths = TERMINAL_ARTIFACT_PATHS
     artifacts = _object(
         state["public_artifacts"],
         "experimental_state.public_artifacts",
@@ -562,13 +573,17 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
             execution[field] == 0
             for field in set(execution) - {"experiment_started", "stage_1_status"}
         )
+        expected_candidate_decision = (
+            "not_justified" if environment_locked else "not_applicable"
+        )
         if (
             qualification["minimum_gate_passed"] is not True
             or execution["experiment_started"] is not False
             or not zero_execution
             or execution["stage_1_status"] != "not_applicable"
             or terminal["disposition"] != "EXPERIMENT INVALID / TERMINATED"
-            or terminal["esg_rr_002_candidate_decision"] != "not_applicable"
+            or terminal["esg_rr_002_candidate_decision"]
+            != expected_candidate_decision
         ):
             raise HandoffValidationError(
                 "pre-subject integrity-stop state is contradictory"

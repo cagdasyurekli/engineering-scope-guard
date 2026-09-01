@@ -493,7 +493,8 @@
           "enum": [
           "evaluator-stable-reasoning-effort-v1",
           "runtime-locked-reasoning-effort-v1",
-          "launch-surface-locked-reasoning-effort-v1"
+          "launch-surface-locked-reasoning-effort-v1",
+          "evaluator-environment-locked-reasoning-effort-v1"
           ]
         },
         "terminal": {
@@ -804,7 +805,10 @@
               "const": "EXPERIMENT INVALID / TERMINATED"
             },
             "esg_rr_002_candidate_decision": {
-              "const": "not_applicable"
+              "enum": [
+                "not_applicable",
+                "not_justified"
+              ]
             }
           }
         }

@@ -1,0 +1,79 @@
+{
+  "claim_boundaries": {
+    "billing_claim_permitted": false,
+    "equivalence_or_noninferiority_claim_permitted": false,
+    "exploratory_only": true,
+    "merge_authorized": true,
+    "publication_authorized": false,
+    "pull_request_authorized": true,
+    "repository_visibility_change_authorized": false
+  },
+  "esg_rr_002_candidate_gate": {
+    "candidate_justified": false,
+    "decision": "not_justified",
+    "reason": "zero admissible treatment cells"
+  },
+  "evaluator_environment": {
+    "fresh_worker_count": 2,
+    "global_environment_sha256": "25eecaafadc6f41fc795bc007f715f41f7851488e4173810ecb8a174765249bf",
+    "gold_preflight_tasks": 1,
+    "immutable_evaluator_image_digest": "sha256:2454b7c257514e74c40d8b4fa6d959f86ac0d193cd3d1d4472dad804ddaa4514",
+    "package_lock_sha256": "ef243c72a7c33af13453c51dc18fc197e35f90681b0cba81c001de083e2f228c",
+    "predecessor_frozen_package_set_sha256": "82d6d5440801cfe448ba268f3e2e6cb64fbfcdba44d1b24ebd8a106c1379773e",
+    "predecessor_observed_package_set_sha256": "38b429379d977a6ef791c9d1d48f66f711f2c333102d42e03e699f6d063c642a",
+    "reproducible": true
+  },
+  "experiment": {
+    "admissible_cells": 0,
+    "alternates_activated": 0,
+    "attempt_records": 0,
+    "evaluator_invocation_starts": 0,
+    "frozen_alternate_clusters": 0,
+    "frozen_cells": 0,
+    "frozen_primary_clusters": 0,
+    "planned_cells_before_readiness": 40,
+    "started": false,
+    "subject_invocation_start_cap_if_frozen": 48,
+    "subject_invocation_starts": 0,
+    "terminal_status": "invalid_terminated"
+  },
+  "qualification": {
+    "alternate_cluster_count": 4,
+    "primary_qualified_cluster_count": 12,
+    "qualified_independent_clusters": 16,
+    "status": "stable_pool_ready",
+    "subject_invocation_starts": 0
+  },
+  "readiness": {
+    "failed_gates": [
+      "sufficient_subject_quota",
+      "no_azure_reserve_contention"
+    ],
+    "passed_gate_count": 13,
+    "readiness_sha256": "2a0f72d3d60da8fbc6786f56d806e29ec2d265167b5e080f481c67856401b3e5",
+    "status": "blocked",
+    "subject_freeze_authorized": false,
+    "total_gate_count": 15
+  },
+  "runtime": {
+    "codex_version": "codex-cli 0.151.0",
+    "contentless_provider_launches": 0,
+    "low_profile_sha256": "c80a425aa2b3d1cd4c5a1a17275254dfc71786a9df5800440d2354a0024afaeb",
+    "medium_profile_sha256": "db8d0af59ad3627e43faea60a128c9ef080b271ce7fc52bf457878659b24cfa4",
+    "model": "gpt-5.6-sol",
+    "runtime_identity": "595f2050d34c767f20bc6ecab9696095e0e892ab6496d416ac4d4d79ed8990ba"
+  },
+  "schema_name": "engineering-scope-guard.evaluator-environment-locked-reasoning-effort-terminal",
+  "schema_version": 1,
+  "scientific_disposition": "EXPERIMENT INVALID / TERMINATED",
+  "terminal_path": "pre_subject_readiness_stop",
+  "terminal_timestamp": "2026-09-01T09:33:14Z",
+  "zero_compute": {
+    "experiment_active_nodes": 0,
+    "experiment_jobs": 0,
+    "experiment_pools": 0,
+    "known_compute_cost_usd": 0,
+    "reserve_modified": false,
+    "reserve_outcomes_inspected": false
+  }
+}

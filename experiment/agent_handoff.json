@@ -1,33 +1,33 @@
 {
   "allowed_actions": [
-    "merge_if_green"
+    "persist_and_merge"
   ],
   "current_decision": {
     "decision": "EXPERIMENT INVALID / TERMINATED",
     "evidence_commit": null,
     "evidence_commit_semantics": "omitted_to_avoid_self_reference",
-    "goal": "Launch-Surface-Locked Reasoning-Effort Experiment"
+    "goal": "Evaluator-Environment-Locked Reasoning-Effort Experiment"
   },
   "evidence": [
     {
       "path": "docs/CURRENT_GOAL.md",
       "role": "terminal goal state",
-      "sha256": "9d1a73e2729fbff62f73f46aed49ff00cffb2fe92410f7595e77758dfdb09ce7"
+      "sha256": "d4471eacc924ff4fd70909dda2808f25a27242f7a12402c7363d5473b3640f69"
     },
     {
       "path": "docs/GOAL_HISTORY.md",
       "role": "terminal history",
-      "sha256": "725acfe9be8da615a582da19b1d68249f3c8da8485e052af7356f7524274934e"
+      "sha256": "ca547685036939fb30aead0fe137198e6a94ab54a6fe348ae93c77cda6162484"
     },
     {
       "path": "docs/DECISIONS.md",
-      "role": "successor protocol and terminal decision",
-      "sha256": "4dc52855c7235118f1db7d961bb93736dc9e3840081b7319d192b7914c704104"
+      "role": "environment lock and terminal decision",
+      "sha256": "e41337aecc777d2582c237feafd372b3cb7a708ce91d1407c29e387e92b48ad5"
     },
     {
-      "path": "docs/LAUNCH_SURFACE_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
+      "path": "docs/EVALUATOR_ENVIRONMENT_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
       "role": "public-safe terminal report",
-      "sha256": "7043967874d856fb23ae0ce7dcc988087d1c939884a89bd05cd19fb1d49c88a0"
+      "sha256": "18f2c985e97288281b10e223d9e084c7e38673b801d79542f9532a637d5bc509"
     }
   ],
   "experimental_state": {
@@ -42,39 +42,30 @@
       "admissible_cells": 0,
       "alternates_activated": 0,
       "canary_subject_invocation_starts": 0,
-      "completed_cells": 1,
+      "completed_cells": 0,
       "evaluator_invocation_starts": 0,
       "experiment_started": false,
       "experiment_subject_invocation_starts": 0,
-      "missing_cells": 39,
-      "schedule_cells": 40,
-      "stage_1_status": "failed",
+      "missing_cells": 0,
+      "schedule_cells": 0,
+      "stage_1_status": "not_applicable",
       "total_subject_invocation_starts": 0
     },
     "public_artifacts": {
-      "analysis": {
-        "path": "experiment/reasoning_effort_v2_analysis.json",
-        "sha256": "75b5774ba560ffd9117e23501ec38db6cddd71e9306baebdab238560a024eea7"
-      },
-      "contract": {
-        "path": "experiment/reasoning_effort_v2_contract.json",
-        "sha256": "d95dbe1279bdae49a25e1da5c0db968939a019fbf88f85d4680d9c8b05b7df73"
-      },
+      "analysis": null,
+      "contract": null,
       "qualification_summary": {
         "path": "experiment/evaluator_stable_reasoning_effort_qualification_summary.json",
         "sha256": "6e2f9a0dfd77b494f9999e0f7bf8f1a4b5b629c0aca2e741f2080ab2fbc4efed"
       },
-      "terminal_envelope": {
-        "path": "experiment/reasoning_effort_v2_terminal_envelope.json",
-        "sha256": "04bc247ee098b0a489953b89873a9a97d75f7b419267da063ee5e59ee100274e"
-      },
+      "terminal_envelope": null,
       "terminal_report": {
-        "path": "docs/LAUNCH_SURFACE_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
-        "sha256": "7043967874d856fb23ae0ce7dcc988087d1c939884a89bd05cd19fb1d49c88a0"
+        "path": "docs/EVALUATOR_ENVIRONMENT_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
+        "sha256": "18f2c985e97288281b10e223d9e084c7e38673b801d79542f9532a637d5bc509"
       },
       "terminal_result": {
-        "path": "experiment/evaluator_stable_reasoning_effort_terminal_result.json",
-        "sha256": "75ad4de69e0e0d39faecc1273df2746254045e837f231c82c7c19f14341b0ffd"
+        "path": "experiment/evaluator_environment_locked_reasoning_effort_terminal_result.json",
+        "sha256": "0ded600488ce2ac3e9eee206ef360d558be8d8aec049ea3ec381dd0c5ca368ba"
       }
     },
     "qualification": {
@@ -85,11 +76,11 @@
       "qualified_independent_clusters": 16,
       "validation_failures": 1
     },
-    "schema_version": "launch-surface-locked-reasoning-effort-v1",
+    "schema_version": "evaluator-environment-locked-reasoning-effort-v1",
     "terminal": {
       "disposition": "EXPERIMENT INVALID / TERMINATED",
       "esg_rr_002_candidate_decision": "not_justified",
-      "path": "experiment_terminal"
+      "path": "pre_subject_integrity_stop"
     }
   },
   "forbidden_actions": [
@@ -103,36 +94,35 @@
   ],
   "git": {
     "base_branch": "main",
-    "branch": "codex/launch-surface-locked-reasoning-effort-2026-09-01",
+    "branch": "codex/evaluator-environment-locked-reasoning-effort-2026-09-01",
     "head_sha": null,
     "head_sha_semantics": "omitted_to_avoid_self_reference",
-    "pr_number": 2,
-    "pr_url": "https://github.com/cagdasyurekli/engineering-scope-guard/pull/2"
+    "pr_number": null,
+    "pr_url": null
   },
   "goal": {
-    "completed_at": "2026-09-01T00:20:18Z",
+    "completed_at": "2026-09-01T09:33:14Z",
     "decision": "EXPERIMENT INVALID / TERMINATED",
-    "name": "Launch-Surface-Locked Reasoning-Effort Experiment",
+    "name": "Evaluator-Environment-Locked Reasoning-Effort Experiment",
     "status": "abandoned"
   },
   "next_action": {
     "authorization": "explicit_current_request",
-    "kind": "merge_if_green",
-    "reason": "Squash-merge PR 2 only after every required CI and CodeQL check passes; do not start another experiment.",
+    "kind": "persist_and_merge",
+    "reason": "Publish the public-safe terminal record through the authorized PR and squash merge; do not start another experiment.",
     "requires_explicit_user_authorization": true,
     "safe_without_explicit_authorization": false
   },
   "notes": [
-    "Cell 1 stopped before subject launch on evaluator package-set identity drift.",
-    "Zero subject/evaluator starts; Azure terminal compute was zero."
+    "13/15 gates passed; quota and reserve gates failed. Zero starts and experiment compute."
   ],
   "repository": "cagdasyurekli/engineering-scope-guard",
   "schema_version": "1",
   "verification": {
     "ci_required": true,
-    "ci_status": "derive_from_pr",
+    "ci_status": "pending_pr",
     "codeql_required": true,
-    "codeql_status": "derive_from_pr",
-    "tests_passed": 566
+    "codeql_status": "pending_pr",
+    "tests_passed": 588
   }
 }
