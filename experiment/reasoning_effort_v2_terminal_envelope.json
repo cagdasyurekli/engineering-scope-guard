@@ -1,0 +1,229 @@
+{
+  "batch_stop_classification": "runtime_or_source_identity_drift",
+  "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+  "effective_assignments": [
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 1,
+      "repository_commitment_sha256": "86e7e5b30d656b075b90774c54592207b7a4fce8db8cdbf1936dcb29ba75e784",
+      "task_commitment_sha256": "86e7e5b30d656b075b90774c54592207b7a4fce8db8cdbf1936dcb29ba75e784"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 2,
+      "repository_commitment_sha256": "0aa1a30cfc31c3c62974d30468a7a2afd35c0ad9576350572f9287d12127e5dc",
+      "task_commitment_sha256": "0aa1a30cfc31c3c62974d30468a7a2afd35c0ad9576350572f9287d12127e5dc"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 3,
+      "repository_commitment_sha256": "7327c88a85b8776b3243315e4f927181e80ccfaa1f3eaf5d34e9c5c9c69eba76",
+      "task_commitment_sha256": "7327c88a85b8776b3243315e4f927181e80ccfaa1f3eaf5d34e9c5c9c69eba76"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 4,
+      "repository_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40",
+      "task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 5,
+      "repository_commitment_sha256": "31008c2b58d084e39c91278897f1c431fbf8844b21a3644d20897b8f4065228e",
+      "task_commitment_sha256": "31008c2b58d084e39c91278897f1c431fbf8844b21a3644d20897b8f4065228e"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 6,
+      "repository_commitment_sha256": "37bdc9d5e063452714aeb0952ffb6c1a6bc970e53985e43259b9f8daee6fce92",
+      "task_commitment_sha256": "37bdc9d5e063452714aeb0952ffb6c1a6bc970e53985e43259b9f8daee6fce92"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 7,
+      "repository_commitment_sha256": "1abc58a645b6210a89f446ba459114bbc2cf1a52df3ee6049a9d333fa35f66f0",
+      "task_commitment_sha256": "1abc58a645b6210a89f446ba459114bbc2cf1a52df3ee6049a9d333fa35f66f0"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 8,
+      "repository_commitment_sha256": "349641e55a7d69cbf84c01bb214ba6b641c0f65a7a2c9badcd9bcb065f4c7e61",
+      "task_commitment_sha256": "349641e55a7d69cbf84c01bb214ba6b641c0f65a7a2c9badcd9bcb065f4c7e61"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 9,
+      "repository_commitment_sha256": "bca667f97590a979753ab42d499e2185cf942fc66b1590b015e8d27e4b5c2872",
+      "task_commitment_sha256": "bca667f97590a979753ab42d499e2185cf942fc66b1590b015e8d27e4b5c2872"
+    },
+    {
+      "alternate_activated": false,
+      "alternate_ordinal": null,
+      "population_slot": 10,
+      "repository_commitment_sha256": "084dd5c39917577a601230900a409c8e1755949f667184f45cdd6a783b557e2c",
+      "task_commitment_sha256": "084dd5c39917577a601230900a409c8e1755949f667184f45cdd6a783b557e2c"
+    }
+  ],
+  "envelope_sha256": "6ba71e97b9a3cc58b576d47c6c67997bc68353fb4a0d268a144be7accd65701b",
+  "evaluator_identity": "758a9cc1490706cfd296ea6358cc9c5ef007dd56b85646996af0a44889701992",
+  "image_pool_identity": "fb13d8c97bd1403864d1b8cc7b73fcd8102efc781e89ab1411af18e53a5df588",
+  "ledger_binding": {
+    "event_count": 4,
+    "head_event_sha256": "bf71070864d9fbfcb69a316c07888912be548cb99f86951a036e1b5553221873",
+    "schema_name": "engineering-scope-guard.reasoning-effort-v2-ledger",
+    "schema_version": 1
+  },
+  "live_seal_sha256": "1dd49528e39cdecdbba6d626225822e3c48b57b61c696f60e90f5cf7763b64f2",
+  "private_pool_sha256": "0456bda2c743eff1b302f5bbe642e35fdface21c6e2a498e55eb2434a8d7277f",
+  "protocol_valid": false,
+  "qualification_receipt_sha256": "b38c1ee00113a96e32dca81f0e202c084976a96e738549e0f78b8b46fc7726a8",
+  "receipt_projections": [
+    {
+      "analysis_record": {
+        "cache_write_input_tokens": null,
+        "cached_input_tokens": null,
+        "cell_id": "effort-v2-slot-04-low-rep-1",
+        "correction_turns": null,
+        "evaluator_anomalies": [
+          "prelaunch_source_runtime_drift"
+        ],
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null,
+        "search_actions": null,
+        "termination": "runtime_or_source_identity_drift",
+        "timed_out": false,
+        "tool_actions": null,
+        "turns": null,
+        "wall_seconds": null
+      },
+      "attempt": 1,
+      "cell_id": "effort-v2-slot-04-low-rep-1",
+      "classification": "runtime_or_source_identity_drift",
+      "command_sha256": null,
+      "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+      "effective_task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40",
+      "evaluator_artifact": {
+        "anomaly_codes": [
+          "prelaunch_source_runtime_drift"
+        ],
+        "attempt": 1,
+        "cell_id": "effort-v2-slot-04-low-rep-1",
+        "container_identity_sha256": null,
+        "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+        "disposition": "not_run",
+        "effective_task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40",
+        "evaluator_command_sha256": null,
+        "evaluator_identity": "758a9cc1490706cfd296ea6358cc9c5ef007dd56b85646996af0a44889701992",
+        "evaluator_stderr_sha256": null,
+        "evaluator_stdout_sha256": null,
+        "invocation_started": false,
+        "ownership_token_sha256": null,
+        "process_identity_sha256": null,
+        "receipt_sha256": "7e87491fe45bcef31f61cef14541cd53cf4b2870f38a2fd11bb143ec027d31bf",
+        "report_sha256": null,
+        "results_sha256": null,
+        "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+        "schema_name": "engineering-scope-guard.reasoning-effort-v2-evaluator-artifact",
+        "schema_version": 1
+      },
+      "evaluator_receipt_sha256": "1454d5aa85c799ff4c06fdbb3e0fdfa993ce7f602c7146f52f74e6b1df252046",
+      "execution_artifact": {
+        "attempt": 1,
+        "cell_id": "effort-v2-slot-04-low-rep-1",
+        "cleanup_receipt_sha256": "2ed40b6715ca013932fd5c5dc2aa7d6b012190bd34be35bd75fa6dacb3a2aca4",
+        "command_sha256": null,
+        "container_identity_sha256": null,
+        "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+        "effective_task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40",
+        "ownership_token_sha256": null,
+        "patch_sha256": null,
+        "prediction_sha256": null,
+        "process_identity_sha256": null,
+        "receipt_sha256": "c977a1c8b661efaba71b7459fd54c1a2d46e4608864903056625907123eef27e",
+        "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+        "schema_name": "engineering-scope-guard.reasoning-effort-v2-execution-artifact",
+        "schema_version": 1,
+        "status": "runtime_or_source_identity_drift",
+        "subject_exit_code": null,
+        "subject_invocation_started": false,
+        "subject_stderr_sha256": null,
+        "subject_stdout_sha256": null,
+        "timed_out": false
+      },
+      "execution_receipt_sha256": "c11362a2d73d7e1f04878eaaae0b8fe1671a681698a784ab6b1abac586ed67e8",
+      "measurement_artifact": {
+        "attempt": 1,
+        "cache_write_input_tokens": null,
+        "cached_input_tokens": null,
+        "cell_id": "effort-v2-slot-04-low-rep-1",
+        "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+        "correction_turns": null,
+        "effective_task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40",
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null,
+        "receipt_sha256": "d91d2d86a7be7ab34eb8bca910fbaaf92272da9b3f33ec8156b17ee0fa733e3f",
+        "record_completeness": "absent",
+        "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+        "schema_name": "engineering-scope-guard.reasoning-effort-v2-measurement-artifact",
+        "schema_version": 1,
+        "search_actions": null,
+        "tool_actions": null,
+        "turns": null,
+        "wall_seconds": null
+      },
+      "measurement_receipt_sha256": "a56b7a13eee76b5d3c67fdebf4b486ac8308bbcfdea36b028aab265debc23a53",
+      "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+      "schema_name": "engineering-scope-guard.reasoning-effort-v2-terminal-receipt",
+      "schema_version": 1,
+      "subject_invocation_started": false,
+      "terminal_receipt_sha256": "4298fc563266e13f8e65b1f16b92a72490db81bbbb504d6fb48644faf1718ef6"
+    }
+  ],
+  "receipt_set_sha256": "db51b0b288fbb73d25d7a0c3475484dcd7de7230f5d552bdde1c9fba00ce3302",
+  "records": [
+    {
+      "attempt": 1,
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "cell_id": "effort-v2-slot-04-low-rep-1",
+      "correction_turns": null,
+      "effective_task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40",
+      "evaluator_anomalies": [
+        "prelaunch_source_runtime_drift"
+      ],
+      "evaluator_receipt_sha256": "1454d5aa85c799ff4c06fdbb3e0fdfa993ce7f602c7146f52f74e6b1df252046",
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "search_actions": null,
+      "terminal_receipt_sha256": "4298fc563266e13f8e65b1f16b92a72490db81bbbb504d6fb48644faf1718ef6",
+      "termination": "runtime_or_source_identity_drift",
+      "timed_out": false,
+      "tool_actions": null,
+      "turns": null,
+      "wall_seconds": null
+    }
+  ],
+  "repository_commitment_source": "task_commitment_sha256_under_frozen_global_repository_uniqueness",
+  "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+  "schema_name": "engineering-scope-guard.reasoning-effort-v2-analysis-envelope",
+  "schema_version": 1,
+  "stage_1_audit_sha256": null,
+  "subject_start_accounting": {
+    "canary_subject_invocation_starts": 0,
+    "experiment_subject_invocation_starts": 0,
+    "total_subject_invocation_starts": 0
+  },
+  "terminal_status": "invalid_terminated"
+}

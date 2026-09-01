@@ -66,6 +66,9 @@ EXPERIMENT_PATHS = (CONTRACT_PATH, TERMINAL_ENVELOPE_PATH, ANALYSIS_PATH)
 TERMINAL_PATHS = frozenset(
     {"insufficient_population", "pre_subject_integrity_stop", "experiment_terminal"}
 )
+NEXT_BOUNDARIES = frozenset(
+    {"authorize_private_canonical_branch_push", "authorize_second_experiment"}
+)
 EXPERIMENT_DISPOSITIONS = frozenset(
     {
         "LOW FAVORED",
@@ -491,9 +494,9 @@ def _experiment_projection(
     )
     pool = contract["source"]["private_pool"]
     _require(
-        pool["primary_count"] == summary["primary_cluster_count"]
-        and pool["alternate_count"] == summary["alternate_cluster_count"],
-        "experiment contract population counts differ from qualification",
+        10 <= pool["primary_count"] <= summary["primary_cluster_count"]
+        and 0 <= pool["alternate_count"] <= summary["alternate_cluster_count"],
+        "experiment contract population exceeds or falls outside qualification",
     )
     receipts = safe_envelope["receipt_projections"]
     subject_start_accounting = deepcopy(safe_envelope["subject_start_accounting"])
@@ -506,7 +509,7 @@ def _experiment_projection(
     )
     cap = contract["attempt_accounting"]["maximum_subject_invocation_starts"]
     _require(
-        subject_start_accounting["total_subject_invocation_starts"] <= cap == 56,
+        subject_start_accounting["total_subject_invocation_starts"] <= cap <= 56,
         "derived experimental subject starts exceed or drift from the frozen cap",
     )
     population = recomputed["analysis_population"]
@@ -784,7 +787,9 @@ def validate_terminal_result(result: dict[str, Any]) -> None:
         "terminal runtime or invocation accounting is malformed",
     )
     _require(
-        experiment["subject_invocation_start_cap"] == 56
+        experiment["frozen_cells"]
+        <= experiment["subject_invocation_start_cap"]
+        <= 56
         and all(type(value) is int and value >= 0 for value in subject_starts.values())
         and subject_starts["canary_subject_invocation_starts"] in {0, 1}
         and subject_starts["total_subject_invocation_starts"]
@@ -940,19 +945,26 @@ def validate_terminal_result(result: dict[str, Any]) -> None:
             or result["scientific_disposition"] == "EXPERIMENT INVALID / TERMINATED",
             "zero-start experiment terminal must be protocol-invalid",
         )
+    claims = result["claim_boundaries"]
     _require(
-        result["claim_boundaries"]
+        set(claims)
         == {
-            "exploratory_only": True,
-            "equivalence_or_noninferiority_claim_permitted": False,
-            "billing_claim_permitted": False,
-            "publication_authorized": False,
-            "pull_request_authorized": False,
-            "merge_authorized": False,
-            "repository_visibility_change_authorized": False,
+            "exploratory_only",
+            "equivalence_or_noninferiority_claim_permitted",
+            "billing_claim_permitted",
+            "publication_authorized",
+            "pull_request_authorized",
+            "merge_authorized",
+            "repository_visibility_change_authorized",
         }
-        and result["next_boundary"]
-        == "authorize_private_canonical_branch_push",
+        and claims["exploratory_only"] is True
+        and claims["equivalence_or_noninferiority_claim_permitted"] is False
+        and claims["billing_claim_permitted"] is False
+        and claims["publication_authorized"] is False
+        and type(claims["pull_request_authorized"]) is bool
+        and claims["merge_authorized"] is claims["pull_request_authorized"]
+        and claims["repository_visibility_change_authorized"] is False
+        and result["next_boundary"] in NEXT_BOUNDARIES,
         "terminal claim or next-action boundary drifted",
     )
     _public_safety_scan(result)
@@ -1142,6 +1154,10 @@ def render_terminal_report(
             ]
         )
     gate = result["esg_rr_002_candidate_gate"]
+    repository_workflow_authorized = result["claim_boundaries"][
+        "pull_request_authorized"
+    ]
+    next_boundary = result["next_boundary"]
     lines.extend(
         [
             "",
@@ -1151,8 +1167,8 @@ def render_terminal_report(
             f"- ESG-RR-002 candidate: **{gate['decision']}**",
             f"- Basis: {gate['basis']}",
             "- This is exploratory evidence and authorizes neither equivalence, "
-            "noninferiority, billing, publication, pull request, merge, nor repository "
-            "visibility claims or actions.",
+            "noninferiority, billing, ESG-RR-002 publication, nor repository visibility "
+            "claims or actions.",
             "",
             "## Repository",
             "",
@@ -1160,16 +1176,25 @@ def render_terminal_report(
             "terminal handoff after local Git stabilization.",
             "- Raw task, patch, trace, evaluator, and qualification working material is "
             "excluded from tracked artifacts.",
-            "- Publication, pull request, merge, and repository visibility remain "
-            "separately blocked by authorization.",
+            (
+                "- The terminal-record pull request and merge are separately authorized; "
+                "ESG-RR-002 publication and release are not justified."
+                if repository_workflow_authorized
+                else "- Publication, pull request, merge, and repository visibility remain "
+                "separately blocked by authorization."
+            ),
             "",
             "## Next boundary",
             "",
             "Exactly one action requires user authorization:",
             "",
-            f"> {result['next_boundary']}",
+            f"> {next_boundary}",
             "",
-            "Do not start another experiment, publish, or make the repository public.",
+            (
+                "Do not start another experiment."
+                if next_boundary == "authorize_second_experiment"
+                else "Do not start another experiment, publish, or make the repository public."
+            ),
             "",
             f"Terminal result SHA-256: `{result['terminal_result_sha256']}`",
             "",
@@ -1188,10 +1213,17 @@ def build_terminal_package(
     terminal_envelope: dict[str, Any] | None = None,
     analysis: dict[str, Any] | None = None,
     integrity_stop: dict[str, Any] | None = None,
+    repository_workflow_authorized: bool = False,
+    next_boundary: str = "authorize_private_canonical_branch_push",
 ) -> dict[Path, bytes]:
     """Build, but do not persist, one deterministic public-safe terminal package."""
 
     _require(terminal_path in TERMINAL_PATHS, "unknown terminal path")
+    _require(
+        type(repository_workflow_authorized) is bool
+        and next_boundary in NEXT_BOUNDARIES,
+        "terminal repository authority or next boundary is invalid",
+    )
     receipt = deepcopy(qualification_receipt)
     summary, qualification = _qualification_projection(receipt)
     runtime = _safe_runtime_projection(receipt)
@@ -1295,11 +1327,11 @@ def build_terminal_package(
             "equivalence_or_noninferiority_claim_permitted": False,
             "billing_claim_permitted": False,
             "publication_authorized": False,
-            "pull_request_authorized": False,
-            "merge_authorized": False,
+            "pull_request_authorized": repository_workflow_authorized,
+            "merge_authorized": repository_workflow_authorized,
             "repository_visibility_change_authorized": False,
         },
-        "next_boundary": "authorize_private_canonical_branch_push",
+        "next_boundary": next_boundary,
     }
     result = {**body, "terminal_result_sha256": digest(body)}
     validate_terminal_result(result)

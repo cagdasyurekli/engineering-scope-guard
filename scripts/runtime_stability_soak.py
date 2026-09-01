@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run one of at most two contentless frozen-runtime launches."""
+"""Run one of at most four contentless pinned-runtime diagnostics."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ def main() -> int:
     parser.add_argument("--state", type=Path, required=True)
     parser.add_argument("--effort", choices=("low", "medium"), required=True)
     parser.add_argument("--repair-from-receipt", type=Path)
+    parser.add_argument("--launch-contract", type=Path, required=True)
     args = parser.parse_args()
     predecessor = (
         json.loads(args.repair_from_receipt.read_text())
@@ -24,6 +25,7 @@ def main() -> int:
     result = run_contentless_launch(
         json.loads(args.receipt.read_text()), state_path=args.state, effort=args.effort,
         repair_from_receipt=predecessor,
+        launch_contract=json.loads(args.launch_contract.read_text()),
     )
     print(json.dumps(result, sort_keys=True))
     return 0

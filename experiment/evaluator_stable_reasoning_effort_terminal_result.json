@@ -1,44 +1,61 @@
 {
   "artifacts": {
-    "analysis": null,
-    "contract": null,
+    "analysis": {
+      "byte_sha256": "75b5774ba560ffd9117e23501ec38db6cddd71e9306baebdab238560a024eea7"
+    },
+    "contract": {
+      "byte_sha256": "d95dbe1279bdae49a25e1da5c0db968939a019fbf88f85d4680d9c8b05b7df73"
+    },
     "qualification_summary": {
       "byte_sha256": "6e2f9a0dfd77b494f9999e0f7bf8f1a4b5b629c0aca2e741f2080ab2fbc4efed"
     },
-    "terminal_envelope": null
+    "terminal_envelope": {
+      "byte_sha256": "04bc247ee098b0a489953b89873a9a97d75f7b419267da063ee5e59ee100274e"
+    }
   },
   "claim_boundaries": {
     "billing_claim_permitted": false,
     "equivalence_or_noninferiority_claim_permitted": false,
     "exploratory_only": true,
-    "merge_authorized": false,
+    "merge_authorized": true,
     "publication_authorized": false,
-    "pull_request_authorized": false,
+    "pull_request_authorized": true,
     "repository_visibility_change_authorized": false
   },
   "esg_rr_002_candidate_gate": {
-    "basis": "no experiment completed because exact runtime identity drifted before contract freeze",
+    "basis": "one or more contract-bound ESG-RR-002 publication-candidate criteria failed",
     "candidate_justified": false,
-    "criteria": null,
+    "criteria": {
+      "disposition_permitted": false,
+      "evaluator_valid": false,
+      "independence_adequate": false,
+      "materially_adds_to_existing_evidence": false,
+      "methodological_integrity": false,
+      "significance_or_equivalence_test_not_used": true,
+      "sufficient_admissible_data": false,
+      "uncertainty_informative": false,
+      "usefulness_threshold_met": false
+    },
     "criteria_version": "esg-rr-002-contract-policy-evaluation-v1",
-    "decision": "not_applicable",
-    "policy_sha256": null,
-    "status": "not_applicable"
+    "decision": "not_justified",
+    "policy_sha256": "6798eb5d89a1ff66ab92611149d1e0594a85a06d724992afe8add10fc3045865",
+    "status": "evaluated"
   },
   "experiment": {
     "admissible_cells": 0,
     "alternates_activated": 0,
-    "attempt_records": 0,
-    "batch_stop_classification": "runtime_identity_mismatch_before_contract_freeze",
+    "attempt_records": 1,
+    "batch_stop_classification": "runtime_or_source_identity_drift",
     "evaluator_invocation_starts": 0,
-    "frozen_alternate_clusters": 0,
-    "frozen_cells": 0,
-    "frozen_primary_clusters": 0,
-    "missing_cells": 0,
-    "observed_cells": 0,
+    "frozen_alternate_clusters": 4,
+    "frozen_cells": 40,
+    "frozen_primary_clusters": 10,
+    "missing_cells": 39,
+    "observed_cells": 1,
     "runtime": {
       "codex_version": "codex-cli 0.151.0",
       "model": "gpt-5.6-sol",
+      "runtime_identity": "595f2050d34c767f20bc6ecab9696095e0e892ab6496d416ac4d4d79ed8990ba",
       "supported_reasoning_efforts": [
         "low",
         "medium",
@@ -46,34 +63,35 @@
         "xhigh",
         "max",
         "ultra"
-      ]
+      ],
+      "tool_configuration_identity": "f1e3439677cb2b9148ea7988349cc3860f51df3e57990c1a47ae9bba0d487358"
     },
     "started": false,
-    "subject_invocation_start_cap": 56,
+    "subject_invocation_start_cap": 48,
     "subject_start_accounting": {
       "canary_subject_invocation_starts": 0,
       "experiment_subject_invocation_starts": 0,
       "total_subject_invocation_starts": 0
     },
-    "terminal_status": "pre_subject_integrity_stop"
+    "terminal_status": "invalid_terminated"
   },
-  "falsification_sha256": null,
-  "integrity_stop": {
-    "classification": "runtime_identity_mismatch_before_contract_freeze",
-    "contract_frozen": false,
-    "model_catalog_identity_match": false,
-    "observed_model_catalog_sha256": "c853ebbb886e321f687a5438cdd00853f8adc0e231115cbc958f6c4e62784692",
-    "observed_runtime_identity_sha256": "e98067f8d365ddc56119ad714c62ab6a684aad5cf45167546c3b1ceb35cd43ec",
-    "private_stop_receipt_sha256": "efee004179382317b1fd9625dea95bcbe0225558043699211630b9fa60bcf57e",
-    "qualification_model_catalog_sha256": "526b8ea958d1d277e2bc6cdc41a4abe137fd1fdd8c2c0545d589bf4d09c08434",
-    "qualification_runtime_identity_sha256": "6b195b4c3e92832568695a59e2e20d890bb0ab8cdd7fd44fd088ecbcebe92405",
-    "reason": "exact_qualified_model_catalog_identity_unavailable",
-    "stage": "pre_contract_freeze",
-    "stop_condition": "scientific_protocol_integrity_compromised",
-    "subject_outcome_exposed": false
+  "falsification_sha256": "9aa7d47c772da6b3bc94b656ac1171963a5dae287a9566ad6e5f84cf5682c4f1",
+  "integrity_stop": null,
+  "next_boundary": "authorize_second_experiment",
+  "primary_outcome": {
+    "discordant_repetitions": 0,
+    "low": {
+      "accepted": 0,
+      "admissible_cells": 0,
+      "rate": null
+    },
+    "medium": {
+      "accepted": 0,
+      "admissible_cells": 0,
+      "rate": null
+    },
+    "paired_repository_clusters": null
   },
-  "next_boundary": "authorize_private_canonical_branch_push",
-  "primary_outcome": null,
   "qualification": {
     "alternate_cluster_count": 4,
     "attempted_candidates": 20,
@@ -92,7 +110,7 @@
   "schema_version": 1,
   "scientific_disposition": "EXPERIMENT INVALID / TERMINATED",
   "terminal_disposition": "EXPERIMENT INVALID / TERMINATED",
-  "terminal_path": "pre_subject_integrity_stop",
-  "terminal_result_sha256": "150881d10332e17e81300669489bbd2e62547bbfcb15feb3e8c3259dda64956e",
-  "work_sha256": null
+  "terminal_path": "experiment_terminal",
+  "terminal_result_sha256": "351479145fd166c3f33fa1948fb97ae8a3ef3d7987b22e40da3be5efe53df045",
+  "work_sha256": "c53c063417fc83c02da64bfdc7a2f6b68777bb5f3951a4dc74ba9fadb9e568f3"
 }

@@ -1,0 +1,927 @@
+{
+  "alternate_activation": {
+    "activation_authorizes_attempt_2_not_attempt_3": true,
+    "activation_resets_global_capacity": false,
+    "maximum_activations": 4,
+    "maximum_activations_per_population_slot": 1,
+    "queue_order": "frozen alternate ordinal ascending",
+    "requires_attempt_1_terminal_infrastructure_invalid": true,
+    "requires_matching_durable_evidence_sha256": true,
+    "requires_zero_completed_cells_for_population_slot": true,
+    "subject_outcome_or_direction_may_trigger_activation": false
+  },
+  "analysis_policy": {
+    "bootstrap": {
+      "resamples": 10000,
+      "seed": "engineering-scope-guard-reasoning-effort-v2-cluster-bootstrap"
+    },
+    "disposition_policy": {
+      "favored_interval_rule": "cluster bootstrap interval strictly excludes zero",
+      "missing_or_inadmissible": "INCONCLUSIVE",
+      "no_material_abs_point_max": 0.1,
+      "no_material_interval_lower_min": -0.25,
+      "no_material_interval_upper_max": 0.25,
+      "precedence": [
+        "EXPERIMENT INVALID / TERMINATED",
+        "LOW FAVORED",
+        "MEDIUM FAVORED",
+        "WORK DIFFERENCE WITHOUT ACCEPTANCE EVIDENCE",
+        "NO MATERIAL EXPLORATORY DIFFERENCE DETECTED",
+        "INCONCLUSIVE"
+      ],
+      "work_metric": "fresh_input_tokens"
+    },
+    "schema_version": 1,
+    "termination_taxonomy": {
+      "accepted": "accepted_completed",
+      "admissible_failures": [
+        "evaluator_test_failure",
+        "empty_patch_failure",
+        "agent_subject_failure",
+        "trajectory_timeout"
+      ],
+      "inadmissible": [
+        "provider_api_infrastructure_failure",
+        "local_docker_runtime_infrastructure_failure",
+        "official_evaluator_error",
+        "official_evaluator_incomplete",
+        "task_repository_or_container_unavailable",
+        "task_evaluator_infrastructure_unavailable",
+        "frozen_task_binding_corrupt",
+        "harness_failure",
+        "isolation_contract_violation",
+        "malformed_inconsistent_measurement",
+        "durable_evidence_incomplete",
+        "runtime_or_source_identity_drift",
+        "stage_1_audit_failed"
+      ],
+      "timeout": "trajectory_timeout"
+    },
+    "work_policy": {
+      "accepted_conditional_denominator": "accepted admissible cells with complete work measurements",
+      "accepted_conditional_is_descriptive_post_outcome_subset": true,
+      "float_fields": [
+        "wall_seconds"
+      ],
+      "fresh_input_formula": "input_tokens - cached_input_tokens - cache_write_input_tokens",
+      "integer_fields": [
+        "input_tokens",
+        "cached_input_tokens",
+        "cache_write_input_tokens",
+        "output_tokens",
+        "reasoning_output_tokens",
+        "turns",
+        "tool_actions",
+        "search_actions",
+        "correction_turns"
+      ],
+      "record_completeness": "all declared work fields present or all absent"
+    }
+  },
+  "attempt_accounting": {
+    "attempt_2_requires_frozen_infrastructure_authorization": true,
+    "attempt_3_permitted": false,
+    "capacity_unit": "subject_invocation_started",
+    "completed_cells_never_repeat": true,
+    "maximum_attempts_per_cell": 2,
+    "maximum_contentless_canary_subject_invocation_starts": 0,
+    "maximum_subject_invocation_starts": 48,
+    "never_started_mandatory_cells_retain_first_start_capacity": true,
+    "qualification_subject_invocation_starts": 0
+  },
+  "claim_boundaries": {
+    "billing_claim_permitted": false,
+    "causal_mechanism_claim_permitted": false,
+    "equivalence_or_noninferiority_permitted": false,
+    "exploratory_only": true,
+    "optimization_interpretation": "unnecessary work conditional on accepted outcome",
+    "per_language_claim_permitted": false
+  },
+  "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+  "contract_version": "reasoning-effort-v2.0",
+  "design": {
+    "alternate_task_count": 4,
+    "cell_count": 40,
+    "deterministic_population_and_order": true,
+    "primary_task_count": 10,
+    "repetitions_per_task_arm": 2,
+    "repository_distinct_across_primary_and_alternates": true,
+    "repository_uniqueness_is_stricter_than_minimum_protocol": true
+  },
+  "esg_rr_002_gate_policy": {
+    "candidate_justified_requires_materially_adds": true,
+    "complete_mandatory_schedule_required": true,
+    "evaluator_validity_required_for_every_admissible_record": true,
+    "materially_adds_derivation": "prior_gap_and_direct_addition_match AND protocol_integrity AND admissibility AND evaluator_validity AND finite_uncertainty AND actual_usefulness_outputs",
+    "maximum_finite_primary_interval_width": 0.5,
+    "minimum_independent_admissible_clusters": 10,
+    "policy_sha256": "6798eb5d89a1ff66ab92611149d1e0594a85a06d724992afe8add10fc3045865",
+    "prior_evidence_gap": "prior evidence does not establish a causal LOW-versus-MEDIUM reasoning-effort effect on externally evaluated accepted outcomes",
+    "prior_evidence_sha256": "df0cd1c9b4cb0796e424dec32165534604d96e9d2f07ec2d25f611d858483d07",
+    "prohibited_dispositions": [
+      "INCONCLUSIVE",
+      "EXPERIMENT INVALID / TERMINATED"
+    ],
+    "prospective_direct_addition": "a protocol-valid complete experiment with at least 10 independent clusters supplies the direct external-evaluator acceptance and retry-inclusive work estimate absent from prior evidence",
+    "protocol_invalid_batch_stop_permitted": false,
+    "protocol_valid_and_stage_1_pass_required": true,
+    "schema_version": 1,
+    "significance_or_equivalence_test": false,
+    "status": "exploratory-publication-candidate-gate",
+    "usefulness_requires": [
+      "primary_acceptance_point_estimate",
+      "primary_acceptance_interval",
+      "retry_inclusive_work_result",
+      "retry_inclusive_falsification_result"
+    ]
+  },
+  "failure_taxonomy": {
+    "alternate_activation_infrastructure_invalid": [
+      "task_repository_or_container_unavailable",
+      "task_evaluator_infrastructure_unavailable",
+      "frozen_task_binding_corrupt"
+    ],
+    "experimental_outcomes": [
+      "accepted_completed",
+      "evaluator_test_failure",
+      "empty_patch_failure",
+      "agent_subject_failure",
+      "trajectory_timeout"
+    ],
+    "mandatory_batch_stop": [
+      "harness_failure",
+      "isolation_contract_violation",
+      "malformed_inconsistent_measurement",
+      "durable_evidence_incomplete",
+      "runtime_or_source_identity_drift",
+      "stage_1_audit_failed"
+    ],
+    "post_outcome_reclassification_permitted": false,
+    "retryable_infrastructure": [
+      "provider_api_infrastructure_failure",
+      "local_docker_runtime_infrastructure_failure",
+      "official_evaluator_error",
+      "official_evaluator_incomplete"
+    ]
+  },
+  "live_execution_authorized": false,
+  "outcomes": {
+    "experimental_failures_retained_in_assigned_arm": true,
+    "missingness": "report by frozen arm and reason; no imputation",
+    "primary": "official evaluator acceptance",
+    "secondary": [
+      "input_tokens",
+      "cached_input_tokens",
+      "calculated_fresh_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens",
+      "wall_time",
+      "turns",
+      "tool_actions",
+      "search_actions",
+      "correction_trajectory"
+    ]
+  },
+  "privacy": {
+    "private_pool_is_separate": true,
+    "raw_tasks_patches_traces_and_logs_tracked": false,
+    "repository_names_in_contract": false,
+    "task_ids_in_contract": false
+  },
+  "runtime": {
+    "codex_version": "codex-cli 0.151.0",
+    "external_tools_disabled": true,
+    "model": "gpt-5.6-sol",
+    "multi_agent_disabled": true,
+    "runtime_identity": "595f2050d34c767f20bc6ecab9696095e0e892ab6496d416ac4d4d79ed8990ba",
+    "sandbox": "workspace-write",
+    "subject_network_access": false,
+    "tool_configuration_identity": "f1e3439677cb2b9148ea7988349cc3860f51df3e57990c1a47ae9bba0d487358",
+    "user_config_and_rules_loaded": false
+  },
+  "schedule": {
+    "algorithm": "SHA-256-ranked repetition blocks; per-slot AB/BA counterbalancing",
+    "arms": [
+      "low",
+      "medium"
+    ],
+    "cells": [
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-04-low-rep-1",
+        "population_slot": 4,
+        "position": 1,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-04-medium-rep-1",
+        "population_slot": 4,
+        "position": 2,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-08-medium-rep-1",
+        "population_slot": 8,
+        "position": 3,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-08-low-rep-1",
+        "population_slot": 8,
+        "position": 4,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-07-medium-rep-1",
+        "population_slot": 7,
+        "position": 5,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-07-low-rep-1",
+        "population_slot": 7,
+        "position": 6,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-02-low-rep-1",
+        "population_slot": 2,
+        "position": 7,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-02-medium-rep-1",
+        "population_slot": 2,
+        "position": 8,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-10-low-rep-1",
+        "population_slot": 10,
+        "position": 9,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-10-medium-rep-1",
+        "population_slot": 10,
+        "position": 10,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-01-medium-rep-1",
+        "population_slot": 1,
+        "position": 11,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-01-low-rep-1",
+        "population_slot": 1,
+        "position": 12,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-05-low-rep-1",
+        "population_slot": 5,
+        "position": 13,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-05-medium-rep-1",
+        "population_slot": 5,
+        "position": 14,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-03-medium-rep-1",
+        "population_slot": 3,
+        "position": 15,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-03-low-rep-1",
+        "population_slot": 3,
+        "position": 16,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-06-medium-rep-1",
+        "population_slot": 6,
+        "position": 17,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-06-low-rep-1",
+        "population_slot": 6,
+        "position": 18,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-09-low-rep-1",
+        "population_slot": 9,
+        "position": 19,
+        "reasoning_effort": "low",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-09-medium-rep-1",
+        "population_slot": 9,
+        "position": 20,
+        "reasoning_effort": "medium",
+        "repetition": 1
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-04-medium-rep-2",
+        "population_slot": 4,
+        "position": 21,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-04-low-rep-2",
+        "population_slot": 4,
+        "position": 22,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-05-medium-rep-2",
+        "population_slot": 5,
+        "position": 23,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-05-low-rep-2",
+        "population_slot": 5,
+        "position": 24,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-03-low-rep-2",
+        "population_slot": 3,
+        "position": 25,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-03-medium-rep-2",
+        "population_slot": 3,
+        "position": 26,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-02-medium-rep-2",
+        "population_slot": 2,
+        "position": 27,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-02-low-rep-2",
+        "population_slot": 2,
+        "position": 28,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-06-low-rep-2",
+        "population_slot": 6,
+        "position": 29,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-06-medium-rep-2",
+        "population_slot": 6,
+        "position": 30,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-08-low-rep-2",
+        "population_slot": 8,
+        "position": 31,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-08-medium-rep-2",
+        "population_slot": 8,
+        "position": 32,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-01-low-rep-2",
+        "population_slot": 1,
+        "position": 33,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-01-medium-rep-2",
+        "population_slot": 1,
+        "position": 34,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-07-low-rep-2",
+        "population_slot": 7,
+        "position": 35,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-07-medium-rep-2",
+        "population_slot": 7,
+        "position": 36,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-09-medium-rep-2",
+        "population_slot": 9,
+        "position": 37,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-09-low-rep-2",
+        "population_slot": 9,
+        "position": 38,
+        "reasoning_effort": "low",
+        "repetition": 2
+      },
+      {
+        "arm": "medium",
+        "cell_id": "effort-v2-slot-10-medium-rep-2",
+        "population_slot": 10,
+        "position": 39,
+        "reasoning_effort": "medium",
+        "repetition": 2
+      },
+      {
+        "arm": "low",
+        "cell_id": "effort-v2-slot-10-low-rep-2",
+        "population_slot": 10,
+        "position": 40,
+        "reasoning_effort": "low",
+        "repetition": 2
+      }
+    ],
+    "contract_version": "reasoning-effort-v2.0",
+    "manual_edits_permitted": false,
+    "primary_count": 10,
+    "private_pool_sha256": "0456bda2c743eff1b302f5bbe642e35fdface21c6e2a498e55eb2434a8d7277f",
+    "repetitions_per_task_arm": 2,
+    "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+    "schema_name": "engineering-scope-guard.reasoning-effort-v2.schedule",
+    "schema_version": 1,
+    "seed": "engineering-scope-guard-reasoning-effort-v2-order-2026-08-30"
+  },
+  "schema_name": "engineering-scope-guard.reasoning-effort-v2.contract",
+  "schema_version": 1,
+  "scientific_question": {
+    "directional_hypothesis": "Medium reasoning may change acceptance and measured work relative to low; neither direction is presumed.",
+    "frozen_before_subject_outcomes": true,
+    "question": "Under one fixed current Codex model/runtime and heterogeneous externally evaluated coding tasks, how does native reasoning effort affect accepted outcome and agent work?"
+  },
+  "source": {
+    "evaluator_identity": "758a9cc1490706cfd296ea6358cc9c5ef007dd56b85646996af0a44889701992",
+    "harness_source_closure": {
+      "closure_sha256": "2e86944f5507ff4e11c6e3007e626ab2c036500c216c985832b12e13e362090b",
+      "entrypoint_set_sha256": "06fc485eb38cfde2121237de12a3ebbb694917b105c676e47fe298bbc7b84e50",
+      "entrypoints": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "engineering_scope_guard.reasoning_effort_v2_analysis"
+          ],
+          "command_identity_sha256": "721de2b50697b5aae1cb50512b168528160a3a7718e9980f199ba31729511f41",
+          "name": "analysis"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/azure_prediction_evaluator.py"
+          ],
+          "command_identity_sha256": "1ae1262489c192a983f6384f9a14d354b8a4015f3d34fec34d65ef9b232b3ced",
+          "name": "azure_evaluator"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_canary.py",
+            "launch"
+          ],
+          "command_identity_sha256": "abd6e8d89322e8b4414f47da6f7c7d1b14620ab008ae580cd7fdf449215d61a9",
+          "name": "canary_launch"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_freeze.py",
+            "verify"
+          ],
+          "command_identity_sha256": "3f4ab30eb5f7cb05d9b55ed2899f6abee54271ad28eb0e6b25d0da25bf29e8fb",
+          "name": "canary_verify"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_execution_adapter.py",
+            "execute-next"
+          ],
+          "command_identity_sha256": "d7fdf493c400ee1e4d70051c2cae70f527a06effd7669155677eec9965dbd072",
+          "name": "execute_next"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_export.py",
+            "build"
+          ],
+          "command_identity_sha256": "3e15bbe968bd3c19ddf59852359a2f401170ba8be76bae836b0b08196ab40a97",
+          "name": "export_analysis"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_freeze.py",
+            "freeze"
+          ],
+          "command_identity_sha256": "c822231e303f51afe395332988b94b96b6f85de76dc6af206ff21b3ec14953da",
+          "name": "freeze"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_terminal.py"
+          ],
+          "command_identity_sha256": "f9a8d349b47b44c0243d9e20ca05b86e3de7e4b3f2c6acc009f9807266f5467d",
+          "name": "terminal"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/reasoning_effort_v2_export.py",
+            "verify"
+          ],
+          "command_identity_sha256": "41256e80a45b0db0bab86dbe7d3d79d9e97cbe7c86ecf8e676cd4598241e1aa9",
+          "name": "verify_analysis_export"
+        }
+      ],
+      "file_set_sha256": "7040134e76e502f6fdc6a069369bceb957e454f7df70102c97bbe7d3bed03a3a",
+      "files": [
+        {
+          "path": "scripts/azure_prediction_evaluator.py",
+          "sha256": "a2d703825d6b2bf35daf4a68144a1a24a9ae55c42ed9559d512cf7007cce58bb"
+        },
+        {
+          "path": "scripts/azure_prediction_worker.py",
+          "sha256": "3c6bf71691d1ed3b68d0a4356482e0c7a1b5094a4fadaee7961e0f5013b83a78"
+        },
+        {
+          "path": "scripts/evaluator_stable_qualification.py",
+          "sha256": "e8fb70e12320b592677015e601b77ce9ad02fcca5bf427006d319129dbc13454"
+        },
+        {
+          "path": "scripts/launch_surface_contract.py",
+          "sha256": "1ee8779e81117496de2d604a86eabb01a8c408b2dd842ceb26bd8e281eb16afa"
+        },
+        {
+          "path": "scripts/launch_surface_final_readiness.py",
+          "sha256": "e66874a9a373cd8645d3782c3b661d662ae4301d4b589b3713c55349a8b45863"
+        },
+        {
+          "path": "scripts/launch_surface_successor_preflight.py",
+          "sha256": "21828943053b687f957a539062463ec988689cf1a1b3704126c59c43cf836bd9"
+        },
+        {
+          "path": "scripts/pilot_host_qualification.py",
+          "sha256": "a2660eccf1796b52ceea2ea6c3588518d94c7f8ca86649cc1d624d2ad200fa4a"
+        },
+        {
+          "path": "scripts/pilot_runner.py",
+          "sha256": "2cb90c2513d2731bf17196c9c6882232d4ba2426a3dab906fedc0476beaddcb6"
+        },
+        {
+          "path": "scripts/reasoning_effort_v1_runner.py",
+          "sha256": "dde4b73d8c3a759cb0504a6a6667f7a46209849112aab864dfd99558b75b4721"
+        },
+        {
+          "path": "scripts/reasoning_effort_v2_canary.py",
+          "sha256": "44563a0baf1db6551ca97bd4f532455f3f217c6c5c11230902562134e9ce35c6"
+        },
+        {
+          "path": "scripts/reasoning_effort_v2_execution_adapter.py",
+          "sha256": "212f7029b8a2126219dcaf602e423b5f762d463c846723f64cc0813d2785e2a1"
+        },
+        {
+          "path": "scripts/reasoning_effort_v2_export.py",
+          "sha256": "82ed5d01b581e502e46ea87a865aedbd78b3b9124e7fe3add3f6ff9fb72f1f63"
+        },
+        {
+          "path": "scripts/reasoning_effort_v2_freeze.py",
+          "sha256": "552bdf18da2d73020d0746001e2191e1a5b34e127dd66c9812daa53046f94829"
+        },
+        {
+          "path": "scripts/reasoning_effort_v2_runner.py",
+          "sha256": "7a188110af3d0d8af6b09e380db7fcae021424a4bd4ab62bb6752a0640d6053d"
+        },
+        {
+          "path": "scripts/reasoning_effort_v2_terminal.py",
+          "sha256": "5c77fe64f9eb1cafb0818a78a3b9020a5fa43373434a1c30b4f64c36d7ad5a94"
+        },
+        {
+          "path": "scripts/runtime_lock.py",
+          "sha256": "af23288178b87020d5492cbefb224a7c725f1e98c4d608483eab38f2d988b356"
+        },
+        {
+          "path": "scripts/runtime_stability_soak.py",
+          "sha256": "512768872a4dbdbd86275fdb7a2407b357a2bee22a958a42807cde4a6ab501b4"
+        },
+        {
+          "path": "src/engineering_scope_guard/azure_evaluator.py",
+          "sha256": "4c367c76be5b1fb6788269dbd5e6ed55ad7165f3d4408561da4416de45aa04b8"
+        },
+        {
+          "path": "src/engineering_scope_guard/campaign_clock.py",
+          "sha256": "33444338cc983db6c232cbbceafd29b4f1fae8745d6802de7915b97fdab6a2b9"
+        },
+        {
+          "path": "src/engineering_scope_guard/disk_safety.py",
+          "sha256": "e4c49472cab7dfb959cc43c7b3ad54846eddb80e77f018230222fffa1708fb1b"
+        },
+        {
+          "path": "src/engineering_scope_guard/evaluator_stable_qualification.py",
+          "sha256": "ba567d1f763b3a6f718f1a53cab5841069651c67bd0e59fc08ee05501503fe34"
+        },
+        {
+          "path": "src/engineering_scope_guard/experiment.py",
+          "sha256": "0a2fd96f17ada631c3bef87a1396a472e7980b8d3dec53d364f7812c62d142fc"
+        },
+        {
+          "path": "src/engineering_scope_guard/launch_surface.py",
+          "sha256": "5bc99e8fbd1b8da9144dd5abe6be7d250ec8c10cf226d6075ce7a03b0efde7cf"
+        },
+        {
+          "path": "src/engineering_scope_guard/pilot_contract.py",
+          "sha256": "8b77d6d876fddcda7a534f5401dc623135995c850211691c81aa7aa58cb1e132"
+        },
+        {
+          "path": "src/engineering_scope_guard/pilot_integrity.py",
+          "sha256": "47d024a2c62b7213e8bcac05a680f0c6973c6320f0231bfb32b47ece99d1c473"
+        },
+        {
+          "path": "src/engineering_scope_guard/pilot_runner.py",
+          "sha256": "8acf18130d01679c56c2b3041f3885c86f339001408dc6ac42eead97523710a8"
+        },
+        {
+          "path": "src/engineering_scope_guard/pilot_v2.py",
+          "sha256": "240b3d1a199df084468d4c0e26269a8307c886bf35f845dcd0df067d3127aaca"
+        },
+        {
+          "path": "src/engineering_scope_guard/reasoning_effort_v1.py",
+          "sha256": "c32d0a15f5a569fceeaa5a4656eb7817c052270477c35318a129b9f37e97f73f"
+        },
+        {
+          "path": "src/engineering_scope_guard/reasoning_effort_v2.py",
+          "sha256": "583b33e9b2548ae48d2fe060cad8f7309a3c4519e8697541e52cf9c5dfe5f3df"
+        },
+        {
+          "path": "src/engineering_scope_guard/reasoning_effort_v2_analysis.py",
+          "sha256": "cf1284122b6479e59e240b898a91c9c5260d74fdece328813168367beb61be43"
+        },
+        {
+          "path": "src/engineering_scope_guard/reasoning_effort_v2_pre_freeze_terminal.py",
+          "sha256": "9dcabc92724b4138d18419dbd4e7310e0b497af9f35dc697ad8be5b438b290cb"
+        },
+        {
+          "path": "src/engineering_scope_guard/reasoning_effort_v2_terminal.py",
+          "sha256": "be47e35ab9b14b3b2a6288fab106815774d1a6db686c030c0e48e5c47f60ed23"
+        },
+        {
+          "path": "src/engineering_scope_guard/report.py",
+          "sha256": "82ddcccd2c619fae3d8d6ba363a3f579291eb530f231097f1f513224705e8186"
+        },
+        {
+          "path": "src/engineering_scope_guard/repository.py",
+          "sha256": "41be7bcda86cd9e3d2a836fd8eaa37df79ba6fdea6267e2d612b7d6f58c9a352"
+        },
+        {
+          "path": "src/engineering_scope_guard/runtime_lock.py",
+          "sha256": "6b33e5d3e4a20560f0c05ea8196ac55ba793243d1b34028a69b5ce8cac841c64"
+        },
+        {
+          "path": "src/engineering_scope_guard/runtime_soak.py",
+          "sha256": "a7ac91db7b5acd7e15d319e0056b0c4ca8a46640b25a10bf5351bb96fb6b4bee"
+        },
+        {
+          "path": "src/engineering_scope_guard/trace.py",
+          "sha256": "169ae7cd093bf375d5d210e0ceb590e34971b8eb60f29568b12acfe50a8d8e82"
+        }
+      ],
+      "schema_name": "engineering-scope-guard.reasoning-effort-v2-harness-source-closure",
+      "schema_version": 1,
+      "tests_private_and_raw_paths_included": false
+    },
+    "image_pool_identity": "fb13d8c97bd1403864d1b8cc7b73fcd8102efc781e89ab1411af18e53a5df588",
+    "prior_evidence_identity": {
+      "exploratory_not_significance_or_equivalence": true,
+      "file_set_sha256": "92332e23a3054e90e0ad921d7860ef8bc1c04a70135c70d88ed1cf3e37abb057",
+      "files": [
+        {
+          "path": "docs/reports/ESG-RR-001.manifest.json",
+          "sha256": "33e03701cbee7e186514721293b6b4f89d018c5f389d2bfecc863126875ad4ee"
+        },
+        {
+          "path": "docs/PUBLIC_RESEARCH_CLAIM_LEDGER_V0_1.json",
+          "sha256": "9fc57757c8fd5bac337eff30961196e5e14c5300237a296c7c5a4cf0815be847"
+        },
+        {
+          "path": "experiment/current_runtime_requalification_terminal.json",
+          "sha256": "35f3c6fa959ca627290aba880eed789027b25fcfcbaaab49f4aac2bae9d5ac36"
+        }
+      ],
+      "frozen_gap": "prior evidence does not establish a causal LOW-versus-MEDIUM reasoning-effort effect on externally evaluated accepted outcomes",
+      "prior_evidence_sha256": "df0cd1c9b4cb0796e424dec32165534604d96e9d2f07ec2d25f611d858483d07",
+      "prospective_addition": "a protocol-valid complete experiment with at least 10 independent clusters supplies the direct external-evaluator acceptance and retry-inclusive work estimate absent from prior evidence",
+      "schema_version": 1
+    },
+    "private_pool": {
+      "alternate_count": 4,
+      "alternate_order_commitments": [
+        {
+          "alternate_ordinal": 1,
+          "task_commitment_sha256": "d4e21a6407cd4f3b53d2b62a9649d35d49d47a7b2ab09e08a40c26ca431b9e01"
+        },
+        {
+          "alternate_ordinal": 2,
+          "task_commitment_sha256": "01f672ed4564715766add2c636917d9fd507d045a731cc047623ea77c6093bbc"
+        },
+        {
+          "alternate_ordinal": 3,
+          "task_commitment_sha256": "c5fb5deabb9f1a90a97788b2e9306e8c9cd761f09514fcd701dc093883d16a63"
+        },
+        {
+          "alternate_ordinal": 4,
+          "task_commitment_sha256": "56942cd910f4a9a64150819e1576bafbcfeaa0bf5750689e051edf93137e7857"
+        }
+      ],
+      "primary_count": 10,
+      "primary_slot_commitments": [
+        {
+          "population_slot": 1,
+          "task_commitment_sha256": "86e7e5b30d656b075b90774c54592207b7a4fce8db8cdbf1936dcb29ba75e784"
+        },
+        {
+          "population_slot": 2,
+          "task_commitment_sha256": "0aa1a30cfc31c3c62974d30468a7a2afd35c0ad9576350572f9287d12127e5dc"
+        },
+        {
+          "population_slot": 3,
+          "task_commitment_sha256": "7327c88a85b8776b3243315e4f927181e80ccfaa1f3eaf5d34e9c5c9c69eba76"
+        },
+        {
+          "population_slot": 4,
+          "task_commitment_sha256": "3b8878f1fbbe9e54ae1f65f632623c9a188c1993553ef7c09d0cdd4cf030fd40"
+        },
+        {
+          "population_slot": 5,
+          "task_commitment_sha256": "31008c2b58d084e39c91278897f1c431fbf8844b21a3644d20897b8f4065228e"
+        },
+        {
+          "population_slot": 6,
+          "task_commitment_sha256": "37bdc9d5e063452714aeb0952ffb6c1a6bc970e53985e43259b9f8daee6fce92"
+        },
+        {
+          "population_slot": 7,
+          "task_commitment_sha256": "1abc58a645b6210a89f446ba459114bbc2cf1a52df3ee6049a9d333fa35f66f0"
+        },
+        {
+          "population_slot": 8,
+          "task_commitment_sha256": "349641e55a7d69cbf84c01bb214ba6b641c0f65a7a2c9badcd9bcb065f4c7e61"
+        },
+        {
+          "population_slot": 9,
+          "task_commitment_sha256": "bca667f97590a979753ab42d499e2185cf942fc66b1590b015e8d27e4b5c2872"
+        },
+        {
+          "population_slot": 10,
+          "task_commitment_sha256": "084dd5c39917577a601230900a409c8e1755949f667184f45cdd6a783b557e2c"
+        }
+      ],
+      "private_pool_sha256": "0456bda2c743eff1b302f5bbe642e35fdface21c6e2a498e55eb2434a8d7277f",
+      "repository_distinct_across_primary_and_alternates": true,
+      "task_and_repository_identities_withheld": true
+    },
+    "qualification_receipt_sha256": "b38c1ee00113a96e32dca81f0e202c084976a96e738549e0f78b8b46fc7726a8",
+    "qualification_reliability_audit_sha256": "5ff9a3f81aecb7c24c0248b9ae8c43cc80666c643564c332b0f9a874e69e83b5",
+    "source_identity": "159da58fc95d0dab707a0d044384fb38c67219dce6261f61001772239feb7971"
+  },
+  "staging": {
+    "healthy_gate_continues_automatically": true,
+    "outcome_direction_used_for_continuation": false,
+    "stage_1_arm_counts": {
+      "low": 2,
+      "medium": 2
+    },
+    "stage_1_cell_count": 4,
+    "stage_1_cell_ids": [
+      "effort-v2-slot-04-low-rep-1",
+      "effort-v2-slot-04-medium-rep-1",
+      "effort-v2-slot-08-medium-rep-1",
+      "effort-v2-slot-08-low-rep-1"
+    ],
+    "stage_1_cells_retained_in_analysis": true
+  },
+  "status": "frozen-provider-free-live-execution-not-authorized",
+  "stop_rules": {
+    "attempt_3_permitted": false,
+    "nonfrozen_alternate_permitted": false,
+    "second_or_confirmatory_experiment_permitted": false,
+    "stop_at_global_subject_start_cap": true,
+    "stop_on_mandatory_batch_stop": true,
+    "treatment_tuning_after_outcome_permitted": false
+  },
+  "trajectory": {
+    "evaluator_timeout_seconds": 1800,
+    "fresh_subject_session_per_attempt": true,
+    "prompt_delivery": "exact UTF-8 problem_statement bytes plus one LF on stdin",
+    "subject_invocations_per_attempt": 1,
+    "subject_timeout_seconds": 900
+  },
+  "treatment": {
+    "arms": {
+      "low": {
+        "reasoning_effort": "low"
+      },
+      "medium": {
+        "reasoning_effort": "medium"
+      }
+    },
+    "configuration_change_within_arm_permitted": false,
+    "low_is_not_assumed_better": true,
+    "only_variable": "reasoning_effort"
+  }
+}

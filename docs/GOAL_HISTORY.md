@@ -1605,3 +1605,47 @@ experiment requires a separate explicit authorization.
 - `experiment/runtime_locked_reasoning_effort_terminal_result.json`
 
 ---
+
+# Launch-Surface-Locked Reasoning-Effort Experiment
+
+**Status:** abandoned
+
+**Completed:** 2026-09-01
+
+### Goal
+
+Establish a treatment-clean launch contract and, only after all prospective
+gates passed, run one LOW-versus-MEDIUM exploratory experiment.
+
+### Terminal evidence
+
+- Confirmed the predecessor conflict and replaced opaque command construction
+  with structured, self-hashed LOW/MEDIUM profiles whose normalized diff was
+  treatment-only.
+- Used three of four permitted contentless launches: one pre-provider companion
+  defect, then successful LOW and MEDIUM provider round trips.
+- Revalidated 16 qualified independent clusters, froze ten primaries, four
+  alternates, 40 balanced cells, and a maximum of 48 subject starts.
+- Demonstrated the Azure evaluator path prospectively and froze all 12 readiness
+  gates.
+- The first cell's pre-subject revalidation detected evaluator Python
+  package-set identity drift and stopped before subject or evaluator execution.
+- Cleaned successor Azure resources; terminal readbacks showed zero pools,
+  jobs, and active nodes.
+
+### Decision
+
+**EXPERIMENT INVALID / TERMINATED.** There were zero subject starts, zero
+evaluator starts, zero admissible cells, and no LOW/MEDIUM evidence. ESG-RR-002
+is not justified. Do not repair or rerun; another experiment requires a new
+explicit authorization.
+
+### Evidence
+
+- `docs/EVALUATOR_STABLE_REASONING_EFFORT_TERMINAL_REPORT.md`
+- `experiment/evaluator_stable_reasoning_effort_terminal_result.json`
+- `experiment/reasoning_effort_v2_contract.json`
+- `experiment/reasoning_effort_v2_terminal_envelope.json`
+- `experiment/reasoning_effort_v2_analysis.json`
+
+---

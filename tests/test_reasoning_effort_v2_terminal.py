@@ -99,10 +99,13 @@ def integrity_stop_receipt(qualification: dict) -> dict:
 
 
 def experiment_evidence(
-    *, invalid: bool = False, canary_allowance: int = 0
+    *, invalid: bool = False, canary_allowance: int = 0, primary_count: int = 12,
+    maximum_subject_starts: int = 56,
 ) -> tuple[dict, dict, dict, dict]:
     receipt = ready_receipt()
-    pool = build_private_pool(private_tasks(12), private_tasks(4, offset=12))
+    pool = build_private_pool(
+        private_tasks(primary_count), private_tasks(4, offset=primary_count)
+    )
     runtime = receipt["runtime_observation"]
     contract = build_contract(
         pool,
@@ -115,6 +118,7 @@ def experiment_evidence(
         image_pool_identity="c" * 64,
         tool_configuration_identity="fixture-tool-identity",
         maximum_contentless_canary_subject_invocation_starts=canary_allowance,
+        maximum_subject_invocation_starts=maximum_subject_starts,
     )
     envelope = terminal_envelope(contract, invalid=invalid)
     analysis = analyze_reasoning_effort_v2(contract, envelope)
@@ -266,6 +270,8 @@ class ReasoningEffortV2TerminalTests(unittest.TestCase):
             contract=contract,
             terminal_envelope=envelope,
             analysis=analysis,
+            repository_workflow_authorized=True,
+            next_boundary="authorize_second_experiment",
         )
         self.assertEqual(
             set(package),
@@ -335,6 +341,26 @@ class ReasoningEffortV2TerminalTests(unittest.TestCase):
             package[TERMINAL_ENVELOPE_PATH], canonical_artifact_bytes(envelope)
         )
         self.assertEqual(package[ANALYSIS_PATH], canonical_artifact_bytes(analysis))
+
+    def test_experiment_accepts_frozen_subset_of_qualified_population(self) -> None:
+        receipt, contract, envelope, analysis = experiment_evidence(
+            primary_count=10, maximum_subject_starts=48
+        )
+        package = build_terminal_package(
+            terminal_path="experiment_terminal",
+            qualification_receipt=receipt,
+            contract=contract,
+            terminal_envelope=envelope,
+            analysis=analysis,
+            repository_workflow_authorized=True,
+            next_boundary="authorize_second_experiment",
+        )
+        result = parsed(package, TERMINAL_RESULT_PATH)
+        self.assertEqual(result["qualification"]["qualified_independent_clusters"], 16)
+        self.assertEqual(result["experiment"]["frozen_cells"], 40)
+        self.assertEqual(result["experiment"]["subject_invocation_start_cap"], 48)
+        self.assertTrue(result["claim_boundaries"]["pull_request_authorized"])
+        self.assertEqual(result["next_boundary"], "authorize_second_experiment")
 
     def test_experiment_uses_actual_envelope_canary_count(self) -> None:
         receipt, contract, envelope, analysis = experiment_evidence(canary_allowance=1)

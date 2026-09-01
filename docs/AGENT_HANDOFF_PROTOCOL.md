@@ -69,6 +69,9 @@ original evaluator-stable profile preserves its private-repository publication
 boundary. The runtime-locked profile records the public canonical repository,
 the 48-attempt cap, its current terminal artifact paths, and the separately
 authorized public PR workflow without retroactively changing the predecessor.
+The launch-surface-locked profile retains that public 48-attempt boundary while
+pointing to the successor's frozen-contract terminal artifacts and dedicated
+public-safe report.
 
 ## Action vocabulary
 

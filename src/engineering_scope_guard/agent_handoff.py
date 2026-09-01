@@ -12,8 +12,13 @@ from typing import Any
 SCHEMA_VERSION = "1"
 REASONING_EFFORT_STATE_VERSION = "evaluator-stable-reasoning-effort-v1"
 RUNTIME_LOCKED_STATE_VERSION = "runtime-locked-reasoning-effort-v1"
+LAUNCH_SURFACE_LOCKED_STATE_VERSION = "launch-surface-locked-reasoning-effort-v1"
 REASONING_EFFORT_STATE_VERSIONS = frozenset(
-    {REASONING_EFFORT_STATE_VERSION, RUNTIME_LOCKED_STATE_VERSION}
+    {
+        REASONING_EFFORT_STATE_VERSION,
+        RUNTIME_LOCKED_STATE_VERSION,
+        LAUNCH_SURFACE_LOCKED_STATE_VERSION,
+    }
 )
 MAX_HANDOFF_BYTES = 5 * 1024
 GOAL_STATUSES = frozenset({"complete", "blocked", "abandoned"})
@@ -199,6 +204,12 @@ RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS = {
     "terminal_result": "experiment/runtime_locked_reasoning_effort_terminal_result.json",
     "terminal_report": "docs/RUNTIME_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
 }
+LAUNCH_SURFACE_LOCKED_TERMINAL_ARTIFACT_PATHS = {
+    **TERMINAL_ARTIFACT_PATHS,
+    "terminal_report": (
+        "docs/LAUNCH_SURFACE_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md"
+    ),
+}
 
 
 class HandoffValidationError(ValueError):
@@ -374,6 +385,10 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     if state["schema_version"] not in REASONING_EFFORT_STATE_VERSIONS:
         raise HandoffValidationError("experimental_state.schema_version is unsupported")
     runtime_locked = state["schema_version"] == RUNTIME_LOCKED_STATE_VERSION
+    launch_surface_locked = (
+        state["schema_version"] == LAUNCH_SURFACE_LOCKED_STATE_VERSION
+    )
+    public_locked = runtime_locked or launch_surface_locked
     qualification = _object(
         state["qualification"],
         "experimental_state.qualification",
@@ -432,7 +447,7 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     if (
         canary not in (0, 1)
         or total != canary + experiment
-        or total > (48 if runtime_locked else 56)
+        or total > (48 if public_locked else 56)
         or execution["experiment_started"] is not (experiment > 0)
         or execution["evaluator_invocation_starts"] > experiment
         or execution["admissible_cells"] > execution["completed_cells"]
@@ -466,8 +481,13 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
         raise HandoffValidationError("ESG-RR-002 candidate decision is unsupported")
 
     artifact_paths = (
-        RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS if runtime_locked
-        else TERMINAL_ARTIFACT_PATHS
+        RUNTIME_LOCKED_TERMINAL_ARTIFACT_PATHS
+        if runtime_locked
+        else (
+            LAUNCH_SURFACE_LOCKED_TERMINAL_ARTIFACT_PATHS
+            if launch_surface_locked
+            else TERMINAL_ARTIFACT_PATHS
+        )
     )
     artifacts = _object(
         state["public_artifacts"],
@@ -510,12 +530,12 @@ def _validate_reasoning_effort_state(value: dict[str, Any], root: Path) -> None:
     )
     expected_boundaries = {
         "raw_private_material_tracked": False,
-        "repository_private": not runtime_locked,
-        "publication_authorized": runtime_locked,
+        "repository_private": not public_locked,
+        "publication_authorized": public_locked,
         "visibility_change_authorized": False,
         "next_authority_boundary": (
             "authorize_a_separate_successor_program_before_any_retry_or_new_experiment"
-            if runtime_locked else "authorize_private_canonical_branch_push"
+            if public_locked else "authorize_private_canonical_branch_push"
         ),
     }
     if boundaries != expected_boundaries:

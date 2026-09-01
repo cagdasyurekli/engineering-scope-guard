@@ -195,6 +195,15 @@ class ReasoningEffortV2HandoffTests(unittest.TestCase):
                 "experiment_terminal",
             ],
         )
+        self.assertEqual(
+            schema["$defs"]["reasoning_effort_experimental_state"]["properties"]
+            ["schema_version"]["enum"],
+            [
+                "evaluator-stable-reasoning-effort-v1",
+                "runtime-locked-reasoning-effort-v1",
+                "launch-surface-locked-reasoning-effort-v1",
+            ],
+        )
         pre_subject = schema["$defs"]["reasoning_effort_pre_subject_terminal"]
         self.assertEqual(
             pre_subject["properties"]["terminal"]["properties"],

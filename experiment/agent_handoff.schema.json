@@ -491,8 +491,9 @@
         },
         "schema_version": {
           "enum": [
-            "evaluator-stable-reasoning-effort-v1",
-            "runtime-locked-reasoning-effort-v1"
+          "evaluator-stable-reasoning-effort-v1",
+          "runtime-locked-reasoning-effort-v1",
+          "launch-surface-locked-reasoning-effort-v1"
           ]
         },
         "terminal": {
