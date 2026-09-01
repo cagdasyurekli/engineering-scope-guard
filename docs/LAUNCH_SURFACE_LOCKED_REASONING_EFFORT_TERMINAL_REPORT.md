@@ -97,10 +97,12 @@ not pass. No ESG-RR-002 report or Release is created.
   artifacts and zero retry/requeue; three earlier readiness task surfaces
   exposed prospective worker/permission defects and were corrected before
   freeze.
-- The successor pool existed from `2026-08-31T23:46:42Z` until the terminal
-  zero-compute readback at `2026-09-01T00:18:39Z`. At the frozen hourly upper
-  bound of `$0.214`, successor compute is conservatively at most `$0.12` USD
-  equivalent. This is an estimate, not a billing claim.
+- The successor pool was created at `2026-08-31T23:46:42Z`; deletion began at
+  `2026-09-01T00:10:46Z`, and the zero-compute readback passed before the
+  separately owned future-reserve pool was created at `2026-09-01T00:18:15Z`.
+  Conservatively charging the successor through that later boundary at the
+  frozen `$0.214` hourly upper bound yields at most `$0.12` USD equivalent.
+  This is an estimate, not a billing claim.
 - Terminal Azure Batch readback: pools `[]`, jobs `[]`, active nodes `0`.
 - The separate future-reserve workstream was not deleted or resized. Its pause
   was released only after the successor zero-compute readback.
