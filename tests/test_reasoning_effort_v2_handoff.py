@@ -202,6 +202,7 @@ class ReasoningEffortV2HandoffTests(unittest.TestCase):
                 "evaluator-stable-reasoning-effort-v1",
                 "runtime-locked-reasoning-effort-v1",
                 "launch-surface-locked-reasoning-effort-v1",
+                "evaluator-environment-locked-reasoning-effort-v1",
             ],
         )
         pre_subject = schema["$defs"]["reasoning_effort_pre_subject_terminal"]
@@ -209,7 +210,9 @@ class ReasoningEffortV2HandoffTests(unittest.TestCase):
             pre_subject["properties"]["terminal"]["properties"],
             {
                 "disposition": {"const": "EXPERIMENT INVALID / TERMINATED"},
-                "esg_rr_002_candidate_decision": {"const": "not_applicable"},
+                "esg_rr_002_candidate_decision": {
+                    "enum": ["not_applicable", "not_justified"]
+                },
             },
         )
         self.assertIn(

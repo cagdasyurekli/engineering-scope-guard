@@ -2590,3 +2590,57 @@ authorize repairing and rerunning this contract, a second experiment,
 confirmatory execution, ESG-RR-002 publication, a Release, or social/external
 distribution. Any new experiment is the exactly one next authorization
 boundary.
+# 2026-09-01: Prospectively lock evaluator environments before any new reasoning-effort freeze
+
+**Decision:** Treat the user-authorized evaluator-environment-locked program as
+a new lineage. Preserve the launch-surface-locked contract and terminal result
+unchanged. Before any successor subject freeze, represent evaluator identity as
+five explicit layers: evaluator source (E1), immutable execution image (E2),
+resolved package/toolchain state (E3), runner/config identity (E4), and only the
+task-specific inputs that legitimately vary by task (E5). Hash a canonical
+semantic projection that excludes timestamps, temporary paths, process/host
+names, and Azure task IDs.
+
+**Rationale:** The predecessor compared a qualification receipt against a
+newly resolved virtual environment. Python `3.12.13`, the interpreter bytes,
+the evaluator/launch module bytes, and the pinned direct packages matched, but
+the complete installed-distribution hash changed from
+`82d6d5440801cfe448ba268f3e2e6cb64fbfcdba44d1b24ebd8a106c1379773e`
+to `38b429379d977a6ef791c9d1d48f66f711f2c333102d42e03e699f6d063c642a`.
+The old receipt retained only the aggregate hash rather than the normalized
+distribution manifest, so the real environment could not be reconstructed or
+diffed from public evidence. An explicit manifest plus immutable task-image
+mapping is the smallest repair that makes equality scientifically meaningful.
+
+**Protocol consequence:** Pre-freeze infrastructure defects may be repaired
+within the bounded preflight budget. After freeze, any material E1-E5 identity
+change is a mandatory stop; the environment must not be rebuilt or repaired
+inside the same contract. LOW and MEDIUM for each task/repetition must bind to
+the identical evaluator semantic identity. Existing outcome-blind task
+qualification may be reused only after provenance and zero-subject accounting
+are revalidated. The separate Azure Future Evaluator Reserve campaign remains
+out of scope and must not be modified or used for task selection.
+
+# 2026-09-01: Terminate the environment-locked successor before subject freeze
+
+**Decision:** Select `EXPERIMENT INVALID / TERMINATED` and stop this successor
+before freezing a subject contract. Thirteen of fifteen prospective readiness
+gates passed, including the canonical evaluator-environment identity, two
+fresh-worker reproductions, one bounded alternate gold preflight, runtime and
+launch parity, and scientific-integrity checks. The subject-quota gate and the
+no-reserve-contention gate failed.
+
+**Scientific consequence:** The program has zero subject starts, zero evaluator
+starts, zero admissible cells, and no LOW/MEDIUM outcome. Infrastructure
+readiness is not treatment evidence. ESG-RR-002 is not scientifically
+justified, and no report or Release may be created.
+
+**Operational consequence:** No experiment-owned Azure pool, job, or active
+node was created. The separate Future Evaluator Reserve was inspected only for
+contention and was not stopped, resized, deleted, or used for task selection.
+The failed quota gate must not be bypassed with a reset or extra provider use.
+
+**Authorization boundary:** The authorized public-safe terminal branch, PR,
+required checks, and squash merge may proceed. Any later experiment is a new
+successor and requires a new explicit authorization after its own prospective
+gates; this program is not resumable.

@@ -14,7 +14,7 @@ from engineering_scope_guard.pilot_contract import canonical_bytes, digest
 
 
 REPOSITORY = "cagdasyurekli/engineering-scope-guard"
-EXPECTED_COMMIT = "a62c7a74637c7ce9cfb9d7b3414de36ac56c27e9"
+EXPECTED_COMMIT = "e7cb645bd56895fbd20719e5fc6b23112f6da7a1"
 REQUIRED_CHECKS = {
     "Python 3.11",
     "Python 3.14",
