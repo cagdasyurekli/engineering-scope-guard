@@ -1,6 +1,6 @@
 {
   "allowed_actions": [
-    "persist_and_merge"
+    "merge_if_green"
   ],
   "current_decision": {
     "decision": "EXPERIMENT INVALID / TERMINATED",
@@ -106,8 +106,8 @@
     "branch": "codex/launch-surface-locked-reasoning-effort-2026-09-01",
     "head_sha": null,
     "head_sha_semantics": "omitted_to_avoid_self_reference",
-    "pr_number": null,
-    "pr_url": null
+    "pr_number": 2,
+    "pr_url": "https://github.com/cagdasyurekli/engineering-scope-guard/pull/2"
   },
   "goal": {
     "completed_at": "2026-09-01T00:20:18Z",
@@ -117,8 +117,8 @@
   },
   "next_action": {
     "authorization": "explicit_current_request",
-    "kind": "persist_and_merge",
-    "reason": "Persist this terminal record through the authorized public PR and merge workflow; do not start another experiment.",
+    "kind": "merge_if_green",
+    "reason": "Squash-merge PR 2 only after every required CI and CodeQL check passes; do not start another experiment.",
     "requires_explicit_user_authorization": true,
     "safe_without_explicit_authorization": false
   },
@@ -130,9 +130,9 @@
   "schema_version": "1",
   "verification": {
     "ci_required": true,
-    "ci_status": "pending_pr",
+    "ci_status": "derive_from_pr",
     "codeql_required": true,
-    "codeql_status": "pending_pr",
+    "codeql_status": "derive_from_pr",
     "tests_passed": 566
   }
 }
