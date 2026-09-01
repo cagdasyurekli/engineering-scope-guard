@@ -27,7 +27,7 @@
     {
       "path": "docs/LAUNCH_SURFACE_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
       "role": "public-safe terminal report",
-      "sha256": "93e848358c2318e68de1d262e374a4c7f31ad8f72ba4df847b16f9d771512e87"
+      "sha256": "7043967874d856fb23ae0ce7dcc988087d1c939884a89bd05cd19fb1d49c88a0"
     }
   ],
   "experimental_state": {
@@ -70,7 +70,7 @@
       },
       "terminal_report": {
         "path": "docs/LAUNCH_SURFACE_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
-        "sha256": "93e848358c2318e68de1d262e374a4c7f31ad8f72ba4df847b16f9d771512e87"
+        "sha256": "7043967874d856fb23ae0ce7dcc988087d1c939884a89bd05cd19fb1d49c88a0"
       },
       "terminal_result": {
         "path": "experiment/evaluator_stable_reasoning_effort_terminal_result.json",
