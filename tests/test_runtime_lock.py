@@ -67,6 +67,33 @@ class RuntimeLockTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeIdentityError, "binary"):
                 sentinel(receipt, version_runner=lambda _: "codex-cli 0.151.0", environment_observer=environment)
 
+    def test_companion_binary_drift_fails_before_launch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            binary, catalog, _, environment = self._fixture(root)
+            companion = root / "codex-code-mode-host"
+            companion.write_bytes(b"fixed-host")
+            companion.chmod(0o555)
+            receipt = build_runtime_receipt(
+                codex_binary=binary,
+                model_catalog=catalog,
+                model="gpt-5.6-sol",
+                command_template=["exec", 'model_reasoning_effort="<EFFORT>"'],
+                tool_surface={"network": False, "apps": False},
+                sandbox="workspace-write",
+                version_runner=lambda _: "codex-cli 0.151.0",
+                environment_observer=environment,
+                created_at="2026-08-31T00:00:00Z",
+            )
+            companion.chmod(0o755)
+            companion.write_bytes(b"changed-host")
+            with self.assertRaisesRegex(RuntimeIdentityError, "companion"):
+                sentinel(
+                    receipt,
+                    version_runner=lambda _: "codex-cli 0.151.0",
+                    environment_observer=environment,
+                )
+
     def test_catalog_drift_fails_before_launch(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             _, catalog, receipt, environment = self._fixture(Path(directory))

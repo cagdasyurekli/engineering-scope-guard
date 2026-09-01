@@ -29,19 +29,22 @@ class AgentHandoffTests(unittest.TestCase):
         self.assertLessEqual(HANDOFF.stat().st_size, MAX_HANDOFF_BYTES)
         self.assertEqual(
             value["current_decision"]["decision"],
-            "EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED",
+            "EXPERIMENT INVALID / TERMINATED",
         )
         self.assertEqual(
             value["goal"]["decision"],
-            "EXPERIMENT NOT STARTED / RUNTIME-STABILITY GATE FAILED",
+            "EXPERIMENT INVALID / TERMINATED",
         )
         state = value["experimental_state"]
-        self.assertEqual(state["terminal"]["path"], "pre_subject_integrity_stop")
+        self.assertEqual(state["terminal"]["path"], "experiment_terminal")
         self.assertTrue(state["qualification"]["minimum_gate_passed"])
         self.assertEqual(state["qualification"]["qualified_independent_clusters"], 16)
         self.assertFalse(state["execution"]["experiment_started"])
         self.assertEqual(state["execution"]["total_subject_invocation_starts"], 0)
         self.assertEqual(state["execution"]["evaluator_invocation_starts"], 0)
+        self.assertEqual(state["execution"]["schedule_cells"], 40)
+        self.assertEqual(state["execution"]["completed_cells"], 1)
+        self.assertEqual(state["execution"]["missing_cells"], 39)
         self.assertIn(value["next_action"]["kind"], value["allowed_actions"])
         self.assertTrue(value["next_action"]["requires_explicit_user_authorization"])
         self.assertEqual(value["next_action"]["authorization"], "explicit_current_request")
@@ -217,6 +220,10 @@ class AgentHandoffTests(unittest.TestCase):
         validate_handoff(value, ROOT)
 
         value = self.value()
+        value["git"]["pr_number"] = 2
+        value["git"]["pr_url"] = (
+            "https://github.com/cagdasyurekli/engineering-scope-guard/pull/2"
+        )
         value["verification"]["ci_status"] = "pending_pr"
         value["verification"]["codeql_status"] = "pending_pr"
         with self.assertRaisesRegex(HandoffValidationError, "despite PR metadata"):

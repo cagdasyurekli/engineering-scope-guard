@@ -1,130 +1,123 @@
-# Runtime-Locked Reasoning-Effort Exploratory Experiment
+# Launch-Surface-Locked Reasoning-Effort Experiment
 
 ## Goal
 
-Under one fixed observable Codex runtime and model identity, complete at most
-one prospective exploratory comparison of native `low` versus `medium`
-reasoning effort on externally executable coding-task acceptance, but only if
-every infrastructure, evaluator, task-population, quota, and scientific-
-integrity gate passes.
+Establish a launchable, treatment-clean Codex command contract and, only if
+every prospective readiness gate passes, complete one exploratory comparison
+of native `low` versus `medium` reasoning effort on externally executable
+coding-task acceptance.
 
 ## Why now
 
-The prior outcome-blind qualification produced 16 independent clusters with
-zero subject attempts, but the experiment correctly terminated before freeze
-because its mutable model-catalog identity changed. The scientific question is
-still unanswered. This new authorization first removes that failure mode with
-an experiment-local runtime bundle and independently corrects the Azure
-campaign clock before any subject execution.
+The predecessor ended before provider contact because its frozen command
+combined mutually exclusive `--approve-for-me` and `--sandbox` options. It
+produced zero coding-task subject attempts and zero evaluator starts, so LOW
+versus MEDIUM remains unanswered. This separately authorized successor keeps
+the outcome-blind qualified population and scientific question unchanged while
+making launch-surface validation an explicit prospective gate.
 
 ## Success criteria
 
-1. Revalidate the clean public canonical repository, immutable ESG-RR-001 v0.6
-   Release, active main ruleset, CI, CodeQL, privacy, and GitHub noreply identity.
-2. Reuse the 16-cluster outcome-blind qualification only after validating its
-   sealed receipt, per-stage artifacts, zero-subject accounting, source
-   revisions, independence, and absence of outcome-conditioned selection.
-3. Replace Azure `startTime` deadline authority with a self-hashed campaign
-   receipt whose elapsed time is persisted monotonic segments, with fake-clock
-   tests for all required restart, requeue, interruption, and clock cases.
-4. Create an ignored read-only runtime bundle and machine-readable identity
-   receipt binding the exact executable/package digest, version, model,
-   model-catalog bytes, efforts, config/tool surface, environment, and sandbox.
-5. Complete at most two contentless runtime-stability launches before freeze
-   and run the exact runtime sentinel before every subject attempt.
-6. Require all ten prospective readiness gates, including sufficient subject
-   quota and no unresolved scientific-integrity defect.
-7. If and only if every gate passes, freeze ten primary clusters, four
-   alternates, 40 balanced cells, the complete protocol, and an absolute
-   maximum of 48 subject attempts before cell 1. Run no second experiment and
-   no attempt 3.
-8. Report task/repository-cluster acceptance first, then retry-inclusive work,
-   uncertainty, missingness, and adversarial falsification; decide ESG-RR-002
-   separately.
-9. Return Azure to zero active compute and persist only public-safe science
-   through a protected PR and squash merge. Create an immutable GitHub-native
-   Release only if ESG-RR-002 is scientifically justified.
+1. Revalidate canonical public `main`, v0.6, required checks, privacy, ruleset,
+   and GitHub noreply identity.
+2. Identify the exact predecessor command conflict from durable evidence and
+   current Codex `0.151.0` help/package behavior.
+3. Introduce structured LOW and MEDIUM launch profiles, deterministic CLI
+   compatibility validation, normalized treatment-only diffing, and regression
+   coverage for the predecessor defect.
+4. Pin one observable Codex runtime/model/config/tool identity for the entire
+   experiment and persist private profile and runtime hashes.
+5. Validate both profiles offline, then demonstrate one successful contentless
+   provider launch per arm within an absolute four-launch diagnostic budget.
+6. Revalidate at least ten independent outcome-blind qualified clusters, the
+   evaluator revision, corrected monotonic campaign clock, Azure execution and
+   cleanup path, subject quota, and absence of conflicting Azure compute.
+7. If and only if all readiness gates pass, freeze ten primary clusters, four
+   alternates, a balanced 40-cell schedule, and an absolute maximum of 48 new
+   coding-task subject attempts before cell 1.
+8. Persist every pre-cell runtime/launch sentinel and every attempt/evaluator
+   receipt; allow at most two coherent attempts for prospectively frozen
+   `INFRASTRUCTURE_INVALID` conditions, with no attempt 3 or manual rescue.
+9. Analyze acceptance first at task/repository-cluster level, then work and
+   adversarial falsification; choose one permitted exploratory disposition and
+   decide ESG-RR-002 separately.
+10. Return Azure to zero compute. If ESG-RR-002 is justified and all public
+    gates pass, complete the authorized PR, squash merge, and immutable
+    GitHub-native Release; otherwise persist only the smaller disposition.
 
 ## In scope
 
-- Read-only validation of the prior private qualification package.
-- The smallest standard-library Azure campaign-clock and runtime-sentinel
-  changes required by the prospective design.
-- Synthetic Azure validation and independent public qualification fixtures.
-- One frozen LOW-versus-MEDIUM exploratory execution after all gates pass.
-- Deterministic analysis, falsification, public-safe reporting, one canonical
-  PR/merge, and a justified ESG-RR-002 Release.
-- Azure activity within a cumulative $50 USD-equivalent authorization, without
-  PAYG, spending-protection changes, paid support, or promotional-credit excess.
+- A small standard-library launch-profile/compatibility layer integrated with
+  the existing runtime lock and reasoning-effort harness.
+- At most four new contentless diagnostic provider launches.
+- Read-only reuse verification of the existing 16-cluster qualification.
+- Synthetic/readiness Azure work and one gated 40-cell LOW/MEDIUM experiment.
+- Deterministic analysis, falsification, public-safe reporting, and the
+  conditionally authorized repository/Release workflow.
+- Azure activity below the existing $50 USD-equivalent upper-bound authority,
+  without PAYG, spending-protection changes, paid support, or promotional-
+  credit excess.
 
 ## Non-goals
 
-- No reinterpretation of either zero-subject terminal attempt as efficacy
-  evidence and no claim that ESG-RR-002 already exists.
-- No second, confirmatory, or adaptive experiment; no task selection after
-  outcome exposure; no manual rescue of failed patches.
-- No mixed runtimes, automatic runtime update, attempt 3, retry of ordinary
-  coding failure, or Azure timestamp deadline authority.
-- No repository reconstruction or deletion absent a newly discovered material
-  privacy defect.
-- No raw tasks, traces, prompts, quota notes, credentials, private conversation,
-  or remediation history in tracked artifacts.
+- No reinterpretation of predecessor diagnostics as treatment evidence.
+- No task-population rebuild, broad task search, changed scientific question,
+  outcome-dependent selection, second experiment, confirmatory claim, or
+  attempt 3.
+- No runtime mixing or post-freeze command repair/tuning.
+- No raw tasks, traces, prompts, evaluator logs, quota notes, credentials, or
+  private diagnostics in Git.
+- No repository reconstruction/deletion and no interference with another
+  Azure workstream.
 - No social, website, DOI, video, or other external distribution.
 
 ## Evidence required
 
-- Canonical local/GitHub identity and current protection/check results.
-- Sealed qualification and completed-stage validation with zero subject starts.
-- Fake-clock tests, synthetic Azure receipts, cost accounting, and zero-compute
-  readback.
-- Runtime receipt/sentinel hashes, at most two contentless launch receipts,
-  frozen contract/schedule/ledger identities, and immediate per-attempt state.
-- Complete acceptance/work/falsification analysis with repetitions treated as
-  repeated observations, not independent tasks.
-- Full tests, warning-clean compilation, handoff/JSON/link checks, diff/privacy
-  checks, Gitleaks, required CI, and CodeQL.
+- Exact predecessor argv/failure, current CLI help, compatibility-validator
+  result, normalized LOW/MEDIUM diff, and hashed structured profiles.
+- Runtime/version/binary/catalog/config/tool/environment receipts and sentinel
+  history, including successful LOW and MEDIUM contentless provider receipts.
+- Sealed qualification provenance, zero-prior-subject accounting, deterministic
+  primary/alternate ordering, evaluator/campaign-clock receipts, quota evidence,
+  and Azure zero-contention/cleanup readbacks.
+- If execution begins: frozen contract/schedule/ledger hashes, immediate
+  pre-cell sentinel and attempt receipts, evaluator identities, and terminal
+  acceptance/work/falsification artifacts.
+- Focused and full tests, warning-clean compilation, handoff/JSON/link/diff
+  validation, privacy/Gitleaks checks, required CI, and CodeQL.
 
 ## Model/reasoning plan
 
 Use Sol-class high reasoning for experimental integrity, runtime identity,
-analysis, and adversarial review. Use deterministic local tools for mechanical
-implementation and evidence processing. Subject cells use one frozen current
-Codex binary/model and vary only native `low` versus `medium` effort.
+statistical analysis, and adversarial review. Use deterministic local tools for
+mechanical implementation and evidence processing. Subject cells use one
+frozen runtime/model and vary only native `low` versus `medium` effort.
 
 ## Stop conditions
 
-Stop subject execution if the runtime cannot remain pinned, fewer than ten
-independent clusters remain, the corrected evaluator path is unreliable,
-scientific integrity is compromised, quota cannot support the frozen minimum,
-another experiment or confirmatory run would be required, human/private-user
-data is required, new payment/PAYG or more than $50 would be required,
-repository deletion/reconstruction or GitHub Support is required, or external
-distribution is the next step. Preserve completed evidence and state the exact
-blocker; never update a runtime and continue the same experiment.
+Stop before cell 1 if launchability is not demonstrated within four diagnostic
+launches, the runtime cannot remain pinned, fewer than ten independent clusters
+remain, the evaluator/campaign clock is unusable, minimum subject quota is
+unavailable, or scientific integrity is unresolved. Stop remaining execution
+on runtime/launch drift or if another experiment, confirmatory work, new
+payment/PAYG, more than $50, repository reconstruction/deletion, GitHub or
+Microsoft support, or external distribution would be required. Preserve exact
+evidence, terminalize, and do not start another experiment.
 
 ## Status
 
-**Abandoned on 2026-08-31.** The runtime-stability gate exhausted its maximum
-two contentless process launches before any provider event. Both invocations
-exited with code 2 because the frozen command combined mutually exclusive
-`--approve-for-me` and `--sandbox` options. This is configuration evidence, not
-LOW-versus-MEDIUM outcome evidence. No contract, task population, subject cell,
-or evaluator invocation started.
+**Abandoned — terminal on 2026-09-01.** All 12 prospective readiness gates
+passed, then the successor froze ten primaries, four alternates, 40 balanced
+cells, and a 48-start cap. The first cell's pre-subject source revalidation
+detected that the Azure-readiness virtual environment's complete Python package
+set did not equal the evaluator-stable qualification environment's frozen
+package-set identity. The runtime, dataset, evaluator revision, source trees,
+and Python version remained matched, but the package-set mismatch is a frozen
+source/runtime identity drift and therefore a mandatory batch stop.
 
-## Terminal evidence
-
-- The clean canonical root, public v0.6 Release, active ruleset, CI, CodeQL,
-  noreply identity, and 513-test baseline were revalidated.
-- The sealed prior qualification was revalidated at 16 independent,
-  outcome-blind clusters from 20 candidates with zero prior subject starts.
-- Eleven deterministic fake-clock scenarios passed for the independent
-  persisted-monotonic campaign clock.
-- One synthetic Azure task completed without retry; the task-runtime estimate
-  was $0.000133 and the immediate cleanup readback reported zero jobs, pools,
-  and active nodes. This is not a billing claim.
-- The experiment-local Codex 0.151.0 binary and model-catalog bytes were pinned
-  and their sentinels passed. The two allowed contentless invocations then
-  failed locally before emitting JSONL or provider/tool events.
-- `experiment/runtime_locked_reasoning_effort_terminal_result.json` is the
-  public-safe machine-readable terminal record. Private runtime receipts and
-  stderr remain ignored below `.local/`.
+No coding-task subject process started, no evaluator invocation started, no
+alternate was activated, and no treatment outcome exists. The terminal
+scientific disposition is **EXPERIMENT INVALID / TERMINATED**; ESG-RR-002 is
+not justified. Azure cleanup was read back as pools `[]`, jobs `[]`, and zero
+active nodes. The authorized terminal-record repository workflow may complete,
+but another experiment requires a new explicit authorization.

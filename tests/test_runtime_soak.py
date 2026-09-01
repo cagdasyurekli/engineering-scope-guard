@@ -23,7 +23,7 @@ class RuntimeSoakTests(unittest.TestCase):
         ]) + b"\n"
         return lambda *_: subprocess.CompletedProcess([], returncode, raw, b"")
 
-    def test_two_efforts_pass_once_each_and_third_is_blocked(self) -> None:
+    def test_two_efforts_pass_once_each_and_repeat_is_blocked(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             receipt = self._receipt(root)
@@ -31,7 +31,7 @@ class RuntimeSoakTests(unittest.TestCase):
             with patch("engineering_scope_guard.runtime_soak.sentinel", return_value={"observed_identity_sha256": "a" * 64}):
                 run_contentless_launch(receipt, state_path=state, effort="low", runner=self._runner())
                 run_contentless_launch(receipt, state_path=state, effort="medium", runner=self._runner())
-                with self.assertRaisesRegex(RuntimeIdentityError, "maximum"):
+                with self.assertRaisesRegex(RuntimeIdentityError, "already passed"):
                     run_contentless_launch(receipt, state_path=state, effort="low", runner=self._runner())
             self.assertEqual(len(json.loads(state.read_text())["launches"]), 2)
 
@@ -57,8 +57,26 @@ class RuntimeSoakTests(unittest.TestCase):
                         receipt, state_path=state, effort="low",
                         runner=lambda *_: (_ for _ in ()).throw(KeyboardInterrupt()),
                     )
-                with self.assertRaisesRegex(RuntimeIdentityError, "already launched"):
+                run_contentless_launch(receipt, state_path=state, effort="low", runner=self._runner())
+                with self.assertRaisesRegex(RuntimeIdentityError, "already passed"):
                     run_contentless_launch(receipt, state_path=state, effort="low", runner=self._runner())
+
+    def test_each_arm_has_at_most_two_failed_attempts_with_four_total(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            receipt = self._receipt(root)
+            state = root / ".local" / "soak" / "state.json"
+            failing = self._runner(returncode=2)
+            with patch("engineering_scope_guard.runtime_soak.sentinel", return_value={"observed_identity_sha256": "a" * 64}):
+                for effort in ("low", "low", "medium", "medium"):
+                    with self.assertRaisesRegex(RuntimeIdentityError, "closed-surface"):
+                        run_contentless_launch(
+                            receipt, state_path=state, effort=effort, runner=failing
+                        )
+                with self.assertRaisesRegex(RuntimeIdentityError, "maximum"):
+                    run_contentless_launch(
+                        receipt, state_path=state, effort="low", runner=failing
+                    )
 
     def test_failed_prelaunch_allows_one_command_only_receipt_repair(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -88,7 +106,7 @@ class RuntimeSoakTests(unittest.TestCase):
                 original["receipt_sha256"], repaired["receipt_sha256"],
             ])
 
-    def test_receipt_repair_rejects_runtime_core_change(self) -> None:
+    def test_pre_success_repin_allows_runtime_core_change_once(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             original = self._receipt(root)
@@ -104,11 +122,12 @@ class RuntimeSoakTests(unittest.TestCase):
                         original, state_path=state, effort="low",
                         runner=self._runner(returncode=2),
                     )
-                with self.assertRaisesRegex(RuntimeIdentityError, "more than command"):
-                    run_contentless_launch(
-                        repaired, state_path=state, effort="medium", runner=self._runner(),
-                        repair_from_receipt=original,
-                    )
+                run_contentless_launch(
+                    repaired, state_path=state, effort="medium", runner=self._runner(),
+                    repair_from_receipt=original,
+                )
+            saved = json.loads(state.read_text())
+            self.assertEqual(saved["active_runtime_receipt_sha256"], repaired["receipt_sha256"])
 
 
 if __name__ == "__main__":

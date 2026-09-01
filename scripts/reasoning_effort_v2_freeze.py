@@ -18,8 +18,10 @@ from typing import Any, Callable
 
 from engineering_scope_guard.evaluator_stable_qualification import validate_receipt
 from engineering_scope_guard.experiment import ExperimentConfigurationError
+from engineering_scope_guard.launch_surface import validate_launch_contract
 from engineering_scope_guard.pilot_contract import canonical_bytes, digest
 from engineering_scope_guard.reasoning_effort_v1 import USAGE_FIELDS
+from engineering_scope_guard.runtime_lock import sentinel, validate_runtime_receipt
 from engineering_scope_guard.reasoning_effort_v2 import (
     ARMS,
     MAXIMUM_SUBJECT_INVOCATION_STARTS,
@@ -36,11 +38,13 @@ from engineering_scope_guard.reasoning_effort_v2 import (
 
 try:
     from scripts import evaluator_stable_qualification as qualifier_live
+    from scripts import launch_surface_final_readiness as final_readiness
     from scripts import reasoning_effort_v2_execution_adapter as adapter
     from scripts import reasoning_effort_v2_runner as durable
     from scripts.reasoning_effort_v1_runner import parse_subject_trace
 except ModuleNotFoundError:  # Direct ``python scripts/...`` execution.
     import evaluator_stable_qualification as qualifier_live
+    import launch_surface_final_readiness as final_readiness
     import reasoning_effort_v2_execution_adapter as adapter
     import reasoning_effort_v2_runner as durable
     from reasoning_effort_v1_runner import parse_subject_trace
@@ -80,7 +84,7 @@ def _self_hash(value: dict[str, Any], field: str) -> bool:
 
 
 def _canonical_private_read(path: Path, label: str) -> dict[str, Any]:
-    durable._require_private_artifact_path(path)
+    durable._require_private_local_file(path, label)
     try:
         raw = path.read_bytes()
         value = json.loads(raw)
@@ -141,10 +145,16 @@ def _selected(receipt: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[
     return primaries, alternates
 
 
-def _source_identities(receipt: dict[str, Any]) -> dict[str, str]:
+def _source_identities(
+    receipt: dict[str, Any], *,
+    primaries: list[dict[str, Any]] | None = None,
+    alternates: list[dict[str, Any]] | None = None,
+    runtime_identity: str | None = None,
+) -> dict[str, str]:
     source = receipt["source"]
     candidates = {candidate["slot"]: candidate for candidate in receipt["candidates"]}
-    primaries, alternates = _selected(receipt)
+    if primaries is None or alternates is None:
+        primaries, alternates = _selected(receipt)
     evaluator = digest(
         {
             key: source[key]
@@ -164,7 +174,7 @@ def _source_identities(receipt: dict[str, Any]) -> dict[str, str]:
         ]
     )
     return {
-        "runtime_identity": digest(receipt["runtime_observation"]),
+        "runtime_identity": runtime_identity or digest(receipt["runtime_observation"]),
         "source_identity": digest(source),
         "evaluator_identity": evaluator,
         "image_pool_identity": images,
@@ -218,30 +228,51 @@ def _embedded_interface_observation(runtime: dict[str, Any]) -> bool:
 def _contract(
     private_pool: dict[str, Any], receipt: dict[str, Any], *, canary_maximum: int,
     pool_reliability_audit_sha256: str,
+    runtime_override: dict[str, Any] | None = None,
+    selected_primaries: list[dict[str, Any]] | None = None,
+    selected_alternates: list[dict[str, Any]] | None = None,
+    source_identity_override: str | None = None,
+    evaluator_identity_override: str | None = None,
+    launch_surface_contract_sha256: str | None = None,
+    maximum_subject_invocation_starts: int = MAXIMUM_SUBJECT_INVOCATION_STARTS,
 ) -> dict[str, Any]:
-    runtime = receipt["runtime_observation"]
-    identities = _source_identities(receipt)
+    runtime = runtime_override or receipt["runtime_observation"]
+    identities = _source_identities(
+        receipt,
+        primaries=selected_primaries,
+        alternates=selected_alternates,
+        runtime_identity=runtime.get("runtime_identity"),
+    )
     harness_source_closure = build_harness_source_closure(Path(__file__).resolve().parents[1])
     common = dict(
         model=runtime["model"],
         codex_version=runtime["codex_version"],
         runtime_identity=identities["runtime_identity"],
-        source_identity=identities["source_identity"],
+        source_identity=source_identity_override or identities["source_identity"],
         qualification_receipt_sha256=receipt["state_sha256"],
-        evaluator_identity=identities["evaluator_identity"],
+        evaluator_identity=evaluator_identity_override or identities["evaluator_identity"],
         image_pool_identity=identities["image_pool_identity"],
         maximum_contentless_canary_subject_invocation_starts=canary_maximum,
         harness_source_closure=harness_source_closure,
         qualification_reliability_audit_sha256=pool_reliability_audit_sha256,
+        maximum_subject_invocation_starts=maximum_subject_invocation_starts,
     )
     provisional = build_contract(
         private_pool,
         tool_configuration_identity=digest({"status": "derive-from-core-command"}),
         **common,
     )
+    tool_identity = _tool_configuration_identity(provisional)
+    if launch_surface_contract_sha256 is not None:
+        tool_identity = digest(
+            {
+                "derived_tool_configuration_identity": tool_identity,
+                "launch_surface_contract_sha256": launch_surface_contract_sha256,
+            }
+        )
     final = build_contract(
         private_pool,
-        tool_configuration_identity=_tool_configuration_identity(provisional),
+        tool_configuration_identity=tool_identity,
         **common,
     )
     validate_contract(final)
@@ -395,6 +426,11 @@ def freeze(
     reliability_investigation_path: Path | None = None,
     runtime_observer: Callable[[Path, Path], dict[str, Any]] | None = None,
     task_freezer: Callable[..., dict[str, Any]] | None = None,
+    successor_preflight_path: Path | None = None,
+    runtime_receipt_path: Path | None = None,
+    launch_contract_path: Path | None = None,
+    stability_state_path: Path | None = None,
+    final_readiness_path: Path | None = None,
 ) -> dict[str, Any]:
     """Freeze private artifacts; withhold cell authority pending canary evidence."""
 
@@ -421,35 +457,132 @@ def freeze(
         and reliability_audit["investigation"]["cluster_presence_blocks_freeze"] is False,
         "Phase-7 reliability clusters require a complete private investigation",
     )
-    primaries, alternates = _selected(receipt)
-    observer = runtime_observer or qualifier_live._codex_runtime
+    successor_paths = (
+        successor_preflight_path,
+        runtime_receipt_path,
+        launch_contract_path,
+        stability_state_path,
+        final_readiness_path,
+    )
+    successor_mode = all(path is not None for path in successor_paths)
+    _require(
+        successor_mode or all(path is None for path in successor_paths),
+        "successor freeze inputs must be provided together",
+    )
+    successor_gate = None
+    if successor_mode:
+        assert successor_preflight_path is not None
+        assert runtime_receipt_path is not None
+        assert launch_contract_path is not None
+        assert stability_state_path is not None
+        assert final_readiness_path is not None
+        preflight = _canonical_private_read(successor_preflight_path, "successor preflight")
+        runtime_receipt = _canonical_private_read(runtime_receipt_path, "runtime receipt")
+        launch_contract = _canonical_private_read(launch_contract_path, "launch contract")
+        stability_state = _canonical_private_read(stability_state_path, "stability state")
+        readiness = _canonical_private_read(final_readiness_path, "final readiness")
+        final_readiness.validate(readiness)
+        _require(
+            preflight.get("preflight_sha256")
+            == digest({key: value for key, value in preflight.items() if key != "preflight_sha256"})
+            and preflight.get("ready_for_external_gates") is True,
+            "successor preflight is not valid and ready",
+        )
+        validate_runtime_receipt(runtime_receipt)
+        observed_sentinel = sentinel(runtime_receipt)
+        validate_launch_contract(launch_contract)
+        _require(
+            preflight["runtime_receipt_sha256"] == runtime_receipt["receipt_sha256"]
+            and preflight["runtime_sentinel_identity_sha256"]
+            == observed_sentinel["observed_identity_sha256"]
+            and preflight["launch_surface_contract_sha256"]
+            == launch_contract["contract_sha256"]
+            and preflight["stability_gate"]["state_sha256"]
+            == stability_state["state_sha256"],
+            "successor runtime, launch, or stability identity drifted",
+        )
+        _require(
+            readiness["bindings"]["preflight_sha256"] == preflight["preflight_sha256"]
+            and readiness["bindings"]["runtime_receipt_sha256"]
+            == runtime_receipt["receipt_sha256"]
+            and readiness["bindings"]["launch_surface_contract_sha256"]
+            == launch_contract["contract_sha256"]
+            and readiness["bindings"]["stability_state_sha256"]
+            == stability_state["state_sha256"],
+            "final readiness is not bound to successor freeze inputs",
+        )
+        qualified = {
+            item["slot"]: item
+            for item in [
+                *receipt["selection"]["primary"],
+                *receipt["selection"]["alternates"],
+            ]
+        }
+        primaries = [qualified[slot] for slot in preflight["primary_slots"]]
+        alternates = [qualified[slot] for slot in preflight["alternate_slots"]]
+        current_runtime = {
+            "model": runtime_receipt["model"],
+            "codex_version": runtime_receipt["codex_version"],
+            "runtime_identity": runtime_receipt["receipt_sha256"],
+            "supported_reasoning_efforts": runtime_receipt[
+                "supported_reasoning_efforts"
+            ],
+        }
+        successor_gate_body = {
+            "schema_name": "engineering-scope-guard.launch-surface-successor-runtime-gate",
+            "schema_version": 1,
+            "preflight": preflight,
+            "runtime_receipt": runtime_receipt,
+            "launch_contract": launch_contract,
+            "stability_state_sha256": stability_state["state_sha256"],
+            "final_readiness": readiness,
+        }
+        successor_gate = {
+            **successor_gate_body,
+            "successor_runtime_gate_sha256": digest(successor_gate_body),
+        }
+    else:
+        primaries, alternates = _selected(receipt)
+        observer = runtime_observer or qualifier_live._codex_runtime
     resolved_codex = codex_binary.resolve(strict=True)
     resolved_catalog = model_catalog.resolve(strict=True)
-    current_runtime = observer(resolved_codex, resolved_catalog)
-    _require(current_runtime == receipt["runtime_observation"], "current Codex/model runtime differs from qualification")
+    if not successor_mode:
+        current_runtime = observer(resolved_codex, resolved_catalog)
+        _require(current_runtime == receipt["runtime_observation"], "current Codex/model runtime differs from qualification")
     _require(
         current_runtime.get("model") == "gpt-5.6-sol"
         and set(ARMS).issubset(current_runtime.get("supported_reasoning_efforts", [])),
         "current model or LOW/MEDIUM availability differs from the experiment",
     )
-    _require(
-        current_runtime.get("codex_executable_sha256")
-        == hashlib.sha256(resolved_codex.read_bytes()).hexdigest()
-        and current_runtime.get("model_catalog_sha256")
-        == hashlib.sha256(resolved_catalog.read_bytes()).hexdigest(),
-        "current Codex binary or model catalog hash differs from qualification",
-    )
+    if successor_mode:
+        assert successor_gate is not None
+        runtime_receipt = successor_gate["runtime_receipt"]
+        _require(
+            runtime_receipt["codex_binary_sha256"]
+            == hashlib.sha256(resolved_codex.read_bytes()).hexdigest()
+            and runtime_receipt["model_catalog_sha256"]
+            == hashlib.sha256(resolved_catalog.read_bytes()).hexdigest(),
+            "current Codex binary or model catalog differs from successor pin",
+        )
+    else:
+        _require(
+            current_runtime.get("codex_executable_sha256")
+            == hashlib.sha256(resolved_codex.read_bytes()).hexdigest()
+            and current_runtime.get("model_catalog_sha256")
+            == hashlib.sha256(resolved_catalog.read_bytes()).hexdigest(),
+            "current Codex binary or model catalog hash differs from qualification",
+        )
     freezer = task_freezer or adapter.freeze_private_pool_task_from_dataset
     common = {
         "root": root.resolve(),
-        "evaluator_python": evaluator_python.resolve(strict=True),
+        "evaluator_python": adapter.evaluator_executable(evaluator_python),
         "dataset_root": dataset_root.resolve(),
         "qualification_receipt": receipt,
     }
     primary_tasks = [freezer(**common, candidate_slot=item["slot"]) for item in primaries]
     alternate_tasks = [freezer(**common, candidate_slot=item["slot"]) for item in alternates]
     private_pool = build_private_pool(primary_tasks, alternate_tasks)
-    interface_ready = _embedded_interface_observation(current_runtime)
+    interface_ready = successor_mode or _embedded_interface_observation(current_runtime)
     contract = _contract(
         private_pool,
         receipt,
@@ -457,6 +590,29 @@ def freeze(
         pool_reliability_audit_sha256=reliability_audit[
             "pool_reliability_audit_sha256"
         ],
+        runtime_override=current_runtime if successor_mode else None,
+        selected_primaries=primaries if successor_mode else None,
+        selected_alternates=alternates if successor_mode else None,
+        source_identity_override=(
+            digest(
+                {
+                    "qualification_source": receipt["source"],
+                    "successor_preflight_sha256": successor_gate["preflight"][
+                        "preflight_sha256"
+                    ],
+                }
+            )
+            if successor_mode else None
+        ),
+        evaluator_identity_override=(
+            successor_gate["preflight"]["evaluator_identity_sha256"]
+            if successor_mode else None
+        ),
+        launch_surface_contract_sha256=(
+            successor_gate["launch_contract"]["contract_sha256"]
+            if successor_mode else None
+        ),
+        maximum_subject_invocation_starts=(48 if successor_mode else MAXIMUM_SUBJECT_INVOCATION_STARTS),
     )
     gate = durable.build_qualification_gate_from_receipt(
         contract,
@@ -464,6 +620,7 @@ def freeze(
         qualification_receipt_path,
         qualification_raw_root,
         pool_reliability_audit=reliability_audit,
+        successor_runtime_gate=successor_gate,
     )
     authority = None if interface_ready else _canary_authority(
         contract, private_pool, gate, codex_binary=resolved_codex
@@ -511,6 +668,10 @@ def freeze(
         _write_private_json(execution_root / "canary-authority.json", authority)
     if live_seal is not None:
         _write_private_json(execution_root / "live-seal.json", live_seal)
+    if successor_gate is not None:
+        _write_private_json(
+            execution_root / "successor-runtime-gate.json", successor_gate
+        )
     return _safe_summary(state)
 
 
@@ -784,6 +945,11 @@ def _arguments() -> argparse.Namespace:
     parser.add_argument("--dataset-root", type=Path)
     parser.add_argument("--reliability-investigation", type=Path)
     parser.add_argument("--canary-receipt", type=Path)
+    parser.add_argument("--successor-preflight", type=Path)
+    parser.add_argument("--runtime-receipt", type=Path)
+    parser.add_argument("--launch-contract", type=Path)
+    parser.add_argument("--stability-state", type=Path)
+    parser.add_argument("--final-readiness", type=Path)
     return parser.parse_args()
 
 
@@ -802,6 +968,11 @@ def main() -> int:
             codex_binary=args.codex_binary,
             model_catalog=args.model_catalog,
             reliability_investigation_path=args.reliability_investigation,
+            successor_preflight_path=args.successor_preflight,
+            runtime_receipt_path=args.runtime_receipt,
+            launch_contract_path=args.launch_contract,
+            stability_state_path=args.stability_state,
+            final_readiness_path=args.final_readiness,
         )
     else:
         _require(args.canary_receipt is not None, "verify requires --canary-receipt")

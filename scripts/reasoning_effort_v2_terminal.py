@@ -45,6 +45,12 @@ def parser() -> argparse.ArgumentParser:
     value.add_argument("--terminal-envelope", type=Path)
     value.add_argument("--analysis", type=Path)
     value.add_argument("--output-root", type=Path, default=Path("."))
+    value.add_argument("--repository-workflow-authorized", action="store_true")
+    value.add_argument(
+        "--next-boundary",
+        choices=("authorize_private_canonical_branch_push", "authorize_second_experiment"),
+        default="authorize_private_canonical_branch_push",
+    )
     return value
 
 
@@ -90,6 +96,8 @@ def main() -> int:
             terminal_envelope=envelope,
             analysis=analysis,
             integrity_stop=integrity_stop,
+            repository_workflow_authorized=args.repository_workflow_authorized,
+            next_boundary=args.next_boundary,
         )
         root = args.output_root.resolve()
         if args.command == "build":

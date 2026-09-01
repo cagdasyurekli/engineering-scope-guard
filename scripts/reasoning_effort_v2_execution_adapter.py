@@ -16,6 +16,7 @@ import json
 import math
 import os
 from pathlib import Path
+import re
 import secrets
 import shutil
 import signal
@@ -28,6 +29,13 @@ import argparse
 from contextlib import contextmanager
 
 from engineering_scope_guard.experiment import ExperimentConfigurationError
+from engineering_scope_guard.launch_surface import (
+    LaunchSurfaceError,
+    build_launch_profile,
+    rendered_command,
+    validate_launch_contract,
+    validate_treatment_pair,
+)
 from engineering_scope_guard.disk_safety import (
     disk_safety_snapshot,
     public_disk_safety_receipt,
@@ -51,6 +59,11 @@ from engineering_scope_guard.reasoning_effort_v2 import (
     validate_harness_source_closure,
     validate_prior_evidence_identity,
     validate_private_pool_binding,
+)
+from engineering_scope_guard.runtime_lock import (
+    RuntimeIdentityError,
+    sentinel,
+    validate_runtime_receipt,
 )
 
 try:
@@ -115,6 +128,7 @@ class EvaluatorInvocation:
     patch: bytes = b""
     report_bytes: bytes | None = None
     results_bytes: bytes | None = None
+    infrastructure_failure: bool = False
 
 
 @dataclass(frozen=True)
@@ -472,6 +486,7 @@ class LocalPreparedAttempt:
     evaluator_dataset_sha256: str | None = None
     source_row_identity_sha256: str | None = None
     evaluator_docker_lifecycle_events: list[dict[str, Any]] | None = None
+    remote_evaluator_receipt_sha256: str | None = None
     cleaned: bool = False
 
 
@@ -670,6 +685,7 @@ class LocalExecutionBackend:
         partial_cleanup_callback: Callable[[AttemptRequest, Path], dict[str, Any]] | None = None,
         process_identity_observer: Callable[..., dict[str, Any]] | None = None,
         trusted_evaluator_root: Path | None = None,
+        evaluator_mode: str = "local_docker",
     ) -> None:
         validate_contract(contract)
         self.contract = contract
@@ -684,9 +700,20 @@ class LocalExecutionBackend:
         self.partial_cleanup_callback = partial_cleanup_callback
         self._partial_cleanup_evidence: dict[str, dict[str, Any]] = {}
         self.process_identity_observer = process_identity_observer
+        _require(
+            evaluator_mode in {"local_docker", "azure_batch"},
+            "unknown evaluator execution mode",
+        )
+        self._evaluator_mode = evaluator_mode
         self.trusted_evaluator_root = (
             None if trusted_evaluator_root is None else Path(trusted_evaluator_root).resolve(strict=True)
         )
+
+    @property
+    def evaluator_mode(self) -> str:
+        """Default legacy test-constructed backends to the local evaluator."""
+
+        return getattr(self, "_evaluator_mode", "local_docker")
 
     def _state(self, request: AttemptRequest, prepared: Any) -> LocalPreparedAttempt:
         _require(isinstance(prepared, LocalPreparedAttempt), "local prepared state is malformed")
@@ -761,6 +788,20 @@ class LocalExecutionBackend:
     def partial_cleanup_evidence(self, request: AttemptRequest) -> dict[str, Any] | None:
         return self._partial_cleanup_evidence.get(_request_binding(request))
 
+    def prelaunch_evidence(
+        self, request: AttemptRequest, prepared: Any,
+    ) -> dict[str, Any] | None:
+        """Return the already-observed successor sentinel before subject release."""
+
+        state = self._state(request, prepared)
+        context = state.task.context if isinstance(state.task.context, dict) else {}
+        evidence = context.get("successor_prelaunch")
+        _require(
+            evidence is None or isinstance(evidence, dict),
+            "successor prelaunch evidence is malformed",
+        )
+        return evidence
+
     def run_subject(self, request: AttemptRequest, prepared: Any) -> SubjectInvocation:
         state = self._state(request, prepared)
         return run_gated_process(
@@ -787,7 +828,7 @@ class LocalExecutionBackend:
         _require(
             isinstance(state.evaluator_injection_sha256, str)
             and len(state.evaluator_injection_sha256) == 64,
-            "evaluator Docker SDK injection is absent",
+            "evaluator execution identity is absent",
         )
         _require(
             isinstance(state.evaluator_dataset_sha256, str)
@@ -811,8 +852,11 @@ class LocalExecutionBackend:
             "evaluator environment is malformed",
         )
         _require(bool(plan.command), "evaluator command is empty")
-        state.evaluator_containers_before = _docker_container_ids(request.task["resolved_image"])
-        state.evaluator_docker_event_since_ns = time.time_ns()
+        if self.evaluator_mode == "local_docker":
+            state.evaluator_containers_before = _docker_container_ids(
+                request.task["resolved_image"]
+            )
+            state.evaluator_docker_event_since_ns = time.time_ns()
         evaluator_command_sha256 = digest(list(plan.command))
         evaluator_ownership_sha256 = state.evaluator_ownership_marker
         gated = prepare_gated_process(
@@ -823,14 +867,18 @@ class LocalExecutionBackend:
         )
         state.evaluator_plan = replace(plan, cwd=cwd, environment=environment)
         state.evaluator = gated
-        gated.container_identity_sha256 = digest({
-            "resolved_image": request.task["resolved_image"],
-            "baseline_container_ids": sorted(state.evaluator_containers_before),
-            "injection_mechanism": "python_sitecustomize_docker_sdk_label_and_prune_suppression",
-            "injection_sha256": state.evaluator_injection_sha256,
-            "evaluator_dataset_sha256": state.evaluator_dataset_sha256,
-            "source_row_identity_sha256": state.source_row_identity_sha256,
-        })
+        gated.container_identity_sha256 = digest(
+            {
+                "resolved_image": request.task["resolved_image"],
+                "evaluator_mode": self.evaluator_mode,
+                "baseline_container_ids": sorted(
+                    state.evaluator_containers_before or set()
+                ),
+                "execution_identity_sha256": state.evaluator_injection_sha256,
+                "evaluator_dataset_sha256": state.evaluator_dataset_sha256,
+                "source_row_identity_sha256": state.source_row_identity_sha256,
+            }
+        )
         return gated
 
     def run_evaluator(
@@ -842,19 +890,25 @@ class LocalExecutionBackend:
             raw = run_gated_process(
                 gated,
                 stdin=state.evaluator_plan.stdin,
-                timeout_seconds=request.evaluator_timeout_seconds,
+                timeout_seconds=(
+                    request.evaluator_timeout_seconds + 180
+                    if self.evaluator_mode == "azure_batch"
+                    else request.evaluator_timeout_seconds
+                ),
             )
         finally:
-            self._capture_evaluator_containers(request, state)
+            if self.evaluator_mode == "local_docker":
+                self._capture_evaluator_containers(request, state)
         result = state.evaluator_plan.decode(raw)
         _validate_evaluator_result(result)
-        return replace(
-            result,
-            stdout=raw.stdout,
-            stderr=raw.stderr,
-            prediction=state.evaluator_plan.prediction,
-            patch=state.evaluator_plan.patch,
-        )
+        if self.evaluator_mode == "azure_batch":
+            return replace(
+                result,
+                prediction=state.evaluator_plan.prediction,
+                patch=state.evaluator_plan.patch,
+            )
+        return replace(result, stdout=raw.stdout, stderr=raw.stderr,
+            prediction=state.evaluator_plan.prediction, patch=state.evaluator_plan.patch)
 
     def evaluate(
         self, request: AttemptRequest, prepared: Any, subject: SubjectInvocation,
@@ -935,12 +989,29 @@ class LocalExecutionBackend:
         _require(gated is not None, "requested local process phase was never prepared")
         _require(not verify_process_identity(gated), "owned local process is still running")
         if phase == "evaluator":
-            self._capture_evaluator_containers(request, state)
-            observations = _terminal_evaluator_container_observations(
-                request.task["resolved_image"],
-                state.evaluator_container_ids,
-                state.evaluator_docker_lifecycle_events or [],
-            )
+            if self.evaluator_mode == "azure_batch":
+                context = state.task.context if isinstance(state.task.context, dict) else {}
+                receipt_path = context.get("azure_evaluator_receipt_path")
+                _require(
+                    isinstance(receipt_path, str) and Path(receipt_path).is_file(),
+                    "Azure evaluator terminal receipt is absent",
+                )
+                receipt = read_object(Path(receipt_path))
+                _require(
+                    isinstance(receipt, dict)
+                    and receipt.get("status") in {
+                        "pass", "evaluator_infrastructure_failure"
+                    },
+                    "Azure evaluator is not proven terminal",
+                )
+                observations = []
+            else:
+                self._capture_evaluator_containers(request, state)
+                observations = _terminal_evaluator_container_observations(
+                    request.task["resolved_image"],
+                    state.evaluator_container_ids,
+                    state.evaluator_docker_lifecycle_events or [],
+                )
         else:
             context = state.task.context if isinstance(state.task.context, dict) else {}
             materialization_id = context.get("materialization_container_id")
@@ -972,13 +1043,13 @@ class LocalExecutionBackend:
         context = state.task.context if isinstance(state.task.context, dict) else {}
         materialization_id = context.get("materialization_container_id")
         try:
-            if state.evaluator is not None:
+            if state.evaluator is not None and self.evaluator_mode == "local_docker":
                 self._capture_evaluator_containers(request, state)
             evaluator_observations = _terminal_evaluator_container_observations(
                 request.task["resolved_image"],
                 set(state.evaluator_container_ids or set()),
                 state.evaluator_docker_lifecycle_events or [],
-            ) if state.evaluator is not None else []
+            ) if state.evaluator is not None and self.evaluator_mode == "local_docker" else []
             owned_ids: set[str] = set()
             if isinstance(materialization_id, str):
                 owned_ids.add(materialization_id)
@@ -1008,20 +1079,26 @@ class LocalExecutionBackend:
             "event_window_end_ns": state.evaluator_docker_event_until_ns,
             "attribution_mode": (
                 "python_sitecustomize_docker_sdk_label_and_prune_suppression"
-                if state.evaluator is not None else None
+                if state.evaluator is not None and self.evaluator_mode == "local_docker"
+                else "azure_batch_worker_receipt"
+                if state.evaluator is not None
+                else None
             ),
+            "evaluator_mode": self.evaluator_mode,
             "ownership_marker_sha256": state.evaluator_ownership_marker,
             "injection_sha256": state.evaluator_injection_sha256,
             "injection_relative_path": (
                 f"attempts/{request.cell_id}/attempt-{request.attempt}/"
                 "evaluator-python-injection/sitecustomize.py"
-                if state.evaluator is not None else None
+                if state.evaluator is not None and self.evaluator_mode == "local_docker"
+                else None
             ),
             "evaluator_dataset_sha256": state.evaluator_dataset_sha256,
             "evaluator_dataset_relative_path": (
                 f"attempts/{request.cell_id}/attempt-{request.attempt}/"
                 "evaluator-dataset/task.jsonl"
-                if state.evaluator is not None else None
+                if state.evaluator is not None and self.evaluator_mode == "local_docker"
+                else None
             ),
             "source_row_identity_sha256": state.source_row_identity_sha256,
             "lifecycle_events": state.evaluator_docker_lifecycle_events or [],
@@ -1034,6 +1111,17 @@ class LocalExecutionBackend:
             ) from errors[0]
         state.cleaned = True
         return docker_ownership
+
+
+def evaluator_executable(path: Path) -> Path:
+    """Keep the venv entry path while verifying its symlink target exists."""
+
+    absolute = path.absolute()
+    _require(
+        absolute.is_file() and absolute.resolve(strict=True).is_file(),
+        "evaluator Python is missing or invalid",
+    )
+    return absolute
 
 
 def freeze_private_pool_task_from_dataset(
@@ -1065,7 +1153,7 @@ def freeze_private_pool_task_from_dataset(
     docker_image = candidate["docker_image"]
     resolved_image = selected["resolved_image"]
     resolved = resolve_dataset_task(
-        root.resolve(), evaluator_python.resolve(strict=True), dataset_root.resolve(),
+        root.resolve(), evaluator_executable(evaluator_python), dataset_root.resolve(),
         language, task_id, "resolve",
     )
     _require(
@@ -1100,6 +1188,9 @@ def build_local_execution_backend(
     work_root: Path, evaluator_root: Path, dataset_root: Path,
     evaluator_python: Path, codex_binary: str, source_codex_home: Path,
     model_catalog: Path, reserve_receipt: Path,
+    successor_runtime_gate: Path | None = None,
+    azure_evaluator_state_root: Path | None = None,
+    azure_evaluator_worker: Path | None = None,
     process_identity_observer: Callable[..., dict[str, Any]] | None = None,
 ) -> LocalExecutionBackend:
     """Build the project-wired live backend from the frozen v1 primitives.
@@ -1112,11 +1203,56 @@ def build_local_execution_backend(
     root = root.resolve()
     evaluator_root = evaluator_root.resolve()
     dataset_root = dataset_root.resolve()
-    evaluator_python = evaluator_python.resolve(strict=True)
+    evaluator_python = evaluator_executable(evaluator_python)
     source_codex_home = source_codex_home.resolve(strict=True)
     model_catalog = model_catalog.resolve(strict=True)
     reserve_receipt = reserve_receipt.resolve(strict=True)
     resolved_codex = Path(shutil.which(codex_binary) or codex_binary).resolve(strict=True)
+    azure_mode = azure_evaluator_state_root is not None or azure_evaluator_worker is not None
+    _require(
+        not azure_mode
+        or (azure_evaluator_state_root is not None and azure_evaluator_worker is not None),
+        "Azure evaluator inputs must be provided together",
+    )
+    resolved_azure_state = (
+        _private_local_path(azure_evaluator_state_root)
+        if azure_evaluator_state_root is not None
+        else None
+    )
+    resolved_azure_worker = (
+        azure_evaluator_worker.resolve(strict=True)
+        if azure_evaluator_worker is not None
+        else None
+    )
+    successor_gate: dict[str, Any] | None = None
+    if successor_runtime_gate is not None:
+        successor_gate_path = successor_runtime_gate.resolve(strict=True)
+        _require_private_path(successor_gate_path)
+        successor_gate = read_object(successor_gate_path)
+        _require(
+            isinstance(successor_gate, dict)
+            and successor_gate.get("schema_name")
+            == "engineering-scope-guard.launch-surface-successor-runtime-gate"
+            and successor_gate.get("schema_version") == 1
+            and successor_gate.get("successor_runtime_gate_sha256")
+            == digest(
+                {
+                    key: value
+                    for key, value in successor_gate.items()
+                    if key != "successor_runtime_gate_sha256"
+                }
+            ),
+            "successor runtime gate is malformed",
+        )
+        validate_runtime_receipt(successor_gate["runtime_receipt"])
+        validate_launch_contract(successor_gate["launch_contract"])
+        _require(
+            contract["runtime"]["runtime_identity"]
+            == successor_gate["runtime_receipt"]["receipt_sha256"]
+            and contract["source"]["evaluator_identity"]
+            == successor_gate["preflight"]["evaluator_identity_sha256"],
+            "successor gate differs from the frozen contract",
+        )
 
     def _task_callback_impl(
         request: AttemptRequest, attempt_root: Path,
@@ -1142,22 +1278,97 @@ def build_local_execution_backend(
             codex_binary=resolved_codex, model_catalog=model_catalog,
         )
         qualifier_live._revalidate_sources(source_args, qualification_receipt)
-        observed_runtime = qualifier_live._codex_runtime(resolved_codex, model_catalog)
         help_result = subprocess.run(
             [str(resolved_codex), "exec", "--help"],
             capture_output=True, text=True, check=False,
         )
         _require(help_result.returncode == 0, "Codex subject interface is unavailable")
-        for flag in (
-            "--json", "--ephemeral", "--ignore-user-config", "--ignore-rules",
-            "--approve-for-me", "--skip-git-repo-check", "--sandbox", "--model",
-            "--config", "--disable",
-        ):
-            _require(flag in help_result.stdout, f"Codex subject interface lacks {flag}")
-        _require(
-            observed_runtime == qualification_receipt["runtime_observation"],
-            "current Codex/Docker/model runtime differs from qualification",
-        )
+        successor_prelaunch: dict[str, Any] | None = None
+        if successor_gate is None:
+            observed_runtime = qualifier_live._codex_runtime(resolved_codex, model_catalog)
+            try:
+                validate_treatment_pair(
+                    build_launch_profile(
+                        executable=resolved_codex,
+                        model=contract["runtime"]["model"],
+                        reasoning_effort="low",
+                    ),
+                    build_launch_profile(
+                        executable=resolved_codex,
+                        model=contract["runtime"]["model"],
+                        reasoning_effort="medium",
+                    ),
+                    exec_help=help_result.stdout,
+                )
+            except LaunchSurfaceError as error:
+                raise ExperimentConfigurationError(
+                    f"Codex subject launch surface is incompatible: {error}"
+                ) from error
+            _require(
+                observed_runtime == qualification_receipt["runtime_observation"],
+                "current Codex/Docker/model runtime differs from qualification",
+            )
+            runtime_identity = digest(observed_runtime)
+            codex_version = observed_runtime["codex_version"]
+            source_identity = digest(qualification_receipt["source"])
+            evaluator_identity = digest({
+                key: qualification_receipt["source"][key]
+                for key in (
+                    "evaluator_revision", "evaluator_tree_sha256", "evaluator_python",
+                    "embedded_repolaunch_revision", "repolaunch_tree_sha256",
+                )
+            })
+        else:
+            runtime_receipt = successor_gate["runtime_receipt"]
+            launch_contract = successor_gate["launch_contract"]
+            try:
+                runtime_observation = sentinel(runtime_receipt)
+                validate_launch_contract(
+                    launch_contract, exec_help=help_result.stdout
+                )
+                treatment_diff = launch_contract["treatment_diff"]
+            except (LaunchSurfaceError, RuntimeIdentityError) as error:
+                raise ExperimentConfigurationError(
+                    f"successor runtime or launch sentinel failed: {error}"
+                ) from error
+            cell = next(
+                item for item in contract["schedule"]["cells"]
+                if item["cell_id"] == request.cell_id
+            )
+            profile = launch_contract["profiles"][cell["reasoning_effort"]]
+            _require(
+                tuple(rendered_command(profile)) == request.command,
+                "subject command differs from the frozen successor launch profile",
+            )
+            successor_prelaunch_body = {
+                "schema_name": "engineering-scope-guard.launch-surface-pre-cell-sentinel",
+                "schema_version": 1,
+                "contract_sha256": contract["contract_sha256"],
+                "cell_id": request.cell_id,
+                "attempt": request.attempt,
+                "reasoning_effort": cell["reasoning_effort"],
+                "runtime": runtime_observation,
+                "runtime_receipt_sha256": runtime_receipt["receipt_sha256"],
+                "successor_runtime_gate_sha256": successor_gate[
+                    "successor_runtime_gate_sha256"
+                ],
+                "launch_surface_contract_sha256": launch_contract["contract_sha256"],
+                "launch_profile_sha256": launch_contract["profile_sha256s"][
+                    cell["reasoning_effort"]
+                ],
+                "treatment_diff_sha256": launch_contract["treatment_diff_sha256"],
+                "treatment_only": treatment_diff["treatment_only"],
+                "command_sha256": request.command_sha256,
+                "status": "pass",
+            }
+            successor_prelaunch = {
+                **successor_prelaunch_body,
+                "pre_cell_sentinel_sha256": digest(successor_prelaunch_body),
+            }
+            runtime_identity = runtime_receipt["receipt_sha256"]
+            codex_version = runtime_receipt["codex_version"]
+            source_identity = contract["source"]["source_identity"]
+            evaluator_identity = contract["source"]["evaluator_identity"]
         resolved = resolve_dataset_task(
             root, evaluator_python, dataset_root, task["language"], task["task_id"], "resolve"
         )
@@ -1214,18 +1425,12 @@ def build_local_execution_backend(
         environment = v1_environment(codex_home, dataset_root.parent / "hf-cache")
         cell = next(cell for cell in contract["schedule"]["cells"] if cell["cell_id"] == request.cell_id)
         attestation = {
-            "runtime_identity": digest(observed_runtime),
-            "source_identity": digest(qualification_receipt["source"]),
-            "evaluator_identity": digest({
-                key: qualification_receipt["source"][key]
-                for key in (
-                    "evaluator_revision", "evaluator_tree_sha256", "evaluator_python",
-                    "embedded_repolaunch_revision", "repolaunch_tree_sha256",
-                )
-            }),
+            "runtime_identity": runtime_identity,
+            "source_identity": source_identity,
+            "evaluator_identity": evaluator_identity,
             "image_pool_identity": live_seal["qualification_gate"]["image_pool_identity"],
-            "codex_version": observed_runtime["codex_version"],
-            "model": observed_runtime["model"],
+            "codex_version": codex_version,
+            "model": contract["runtime"]["model"],
             "reasoning_effort": cell["reasoning_effort"],
             "resolved_image": task["resolved_image"],
             "credential_isolated": True, "fresh_worktree": True,
@@ -1238,6 +1443,7 @@ def build_local_execution_backend(
             context={
                 "baseline": baseline, "derived": derived, "codex_home": codex_home,
                 "materialization_container_id": container_id,
+                "successor_prelaunch": successor_prelaunch,
             },
         )
 
@@ -1286,12 +1492,6 @@ def build_local_execution_backend(
             isinstance(ownership_marker, str) and len(ownership_marker) == 64,
             "evaluator invocation ownership marker is absent",
         )
-        injection_dir = task_state.workspace.parent / "evaluator-python-injection"
-        injection_path, injection_sha256 = _write_evaluator_docker_sdk_injection(
-            injection_dir,
-            ownership_marker=ownership_marker,
-        )
-        context["evaluator_injection_sha256"] = injection_sha256
         patch = subject_patch_from_baseline(
             task_state.workspace, context["derived"], context["baseline"]
         )
@@ -1301,6 +1501,117 @@ def build_local_execution_backend(
                 sort_keys=True, separators=(",", ":"),
             ) + "\n"
         ).encode()
+        if azure_mode:
+            assert resolved_azure_state is not None
+            assert resolved_azure_worker is not None
+            azure_root = task_state.workspace.parent / "azure-evaluator"
+            azure_root.mkdir(parents=True, mode=0o700)
+            patch_path = azure_root / "patch.diff"
+            _write_private_bytes(patch_path, patch)
+            safe_cell = re.sub(r"[^A-Za-z0-9_-]", "-", request.cell_id)[:36]
+            job_id = f"esgrr002-{safe_cell}-a{request.attempt}"
+            azure_task_id = "eval-1"
+            request_body = {
+                "job_id": job_id,
+                "azure_task_id": azure_task_id,
+                "task": request.task,
+                "patch_path": str(patch_path),
+                "evaluator_timeout_seconds": request.evaluator_timeout_seconds,
+            }
+            request_path = azure_root / "request.json"
+            _write_private_bytes(
+                request_path,
+                (json.dumps(request_body, sort_keys=True, separators=(",", ":")) + "\n").encode(),
+            )
+            context["evaluator_injection_sha256"] = hashlib.sha256(
+                resolved_azure_worker.read_bytes()
+            ).hexdigest()
+            context["evaluator_dataset_sha256"] = digest(
+                {
+                    "task_id": request.task["task_id"],
+                    "source_row_identity_sha256": request.task[
+                        "source_row_identity_sha256"
+                    ],
+                }
+            )
+            context["source_row_identity_sha256"] = request.task[
+                "source_row_identity_sha256"
+            ]
+            receipt_path = (
+                resolved_azure_state / "receipts"
+                / f"{job_id}-{azure_task_id}.json"
+            )
+            context["azure_evaluator_receipt_path"] = str(receipt_path)
+            command = (
+                sys.executable,
+                str(Path(__file__).resolve().parent / "azure_prediction_evaluator.py"),
+                "evaluate",
+                "--state-root",
+                str(resolved_azure_state),
+                "--worker",
+                str(resolved_azure_worker),
+                "--request",
+                str(request_path),
+            )
+            environment = {
+                name: os.environ[name]
+                for name in (
+                    "PATH", "HOME", "TMPDIR", "LANG", "LC_ALL", "SSL_CERT_FILE",
+                    "SSL_CERT_DIR", "HTTPS_PROXY", "HTTP_PROXY", "NO_PROXY", "ALL_PROXY",
+                )
+                if name in os.environ
+            }
+
+            def decode_azure(raw: SubjectInvocation) -> EvaluatorInvocation:
+                receipt = read_object(receipt_path) if receipt_path.is_file() else None
+                artifact_root = (
+                    resolved_azure_state / "artifacts" / job_id / azure_task_id
+                    / "azure-evaluator"
+                )
+                report_path = artifact_root / "official" / request.task["task_id"] / "report.json"
+                results_path = artifact_root / "official" / "results.json"
+                stdout_path = artifact_root / "evaluator.stdout"
+                stderr_path = artifact_root / "evaluator.stderr"
+                report = read_object(report_path) if report_path.is_file() else None
+                results = read_object(results_path) if results_path.is_file() else None
+                return EvaluatorInvocation(
+                    exit_code=(
+                        0
+                        if isinstance(receipt, dict) and receipt.get("status") == "pass"
+                        else raw.exit_code
+                    ),
+                    timed_out=(
+                        bool(receipt.get("timed_out"))
+                        if isinstance(receipt, dict)
+                        else raw.timed_out
+                    ),
+                    report=report,
+                    results=results,
+                    wall_seconds=raw.wall_seconds,
+                    stdout=stdout_path.read_bytes() if stdout_path.is_file() else raw.stdout,
+                    stderr=stderr_path.read_bytes() if stderr_path.is_file() else raw.stderr,
+                    report_bytes=report_path.read_bytes() if report_path.is_file() else None,
+                    results_bytes=results_path.read_bytes() if results_path.is_file() else None,
+                    infrastructure_failure=not (
+                        isinstance(receipt, dict) and receipt.get("status") == "pass"
+                    ),
+                )
+
+            return LocalEvaluatorPlan(
+                command=command,
+                cwd=azure_root,
+                environment=environment,
+                stdin=b"",
+                decode=decode_azure,
+                prediction=prediction,
+                patch=patch,
+            )
+        injection_dir = task_state.workspace.parent / "evaluator-python-injection"
+        injection_path, injection_sha256 = _write_evaluator_docker_sdk_injection(
+            injection_dir,
+            ownership_marker=ownership_marker,
+        )
+        context["evaluator_injection_sha256"] = injection_sha256
         prediction_path = context["derived"] / "prediction.json"
         _write_private_bytes(prediction_path, prediction)
         output = task_state.workspace.parent / "evaluator" / "official"
@@ -1405,7 +1716,8 @@ def build_local_execution_backend(
         evaluator_callback=evaluator_callback, cleanup_callback=cleanup_callback,
         partial_cleanup_callback=partial_cleanup_callback,
         process_identity_observer=process_identity_observer,
-        trusted_evaluator_root=evaluator_root,
+        trusted_evaluator_root=evaluator_root if not azure_mode else None,
+        evaluator_mode="azure_batch" if azure_mode else "local_docker",
     )
 
 
@@ -1857,6 +2169,10 @@ def _validate_evaluator_result(result: EvaluatorInvocation) -> None:
         and (result.results_bytes is None or isinstance(result.results_bytes, bytes)),
         "evaluator structured evidence is malformed",
     )
+    _require(
+        type(result.infrastructure_failure) is bool,
+        "evaluator infrastructure classification is malformed",
+    )
 
 
 def _validated_preparation(
@@ -2132,6 +2448,15 @@ def execute_one_attempt(
             _write_revalidation_receipts(
                 root, contract, live_seal, prepared.attestation
             )
+            prelaunch_evidence = getattr(backend, "prelaunch_evidence", None)
+            if callable(prelaunch_evidence):
+                observed_prelaunch = prelaunch_evidence(request, prepared.state)
+                if observed_prelaunch is not None:
+                    _write_artifact(
+                        root / "artifacts" / cell_id / f"attempt-{attempt}"
+                        / "pre-cell-sentinel.json",
+                        observed_prelaunch,
+                    )
             durable.record_subject_invocation_started(
                 ledger, checkpoint, contract, live_seal, private_pool,
                 cell_id=cell_id, attempt=attempt,
@@ -2254,6 +2579,10 @@ def execute_one_attempt(
                 execution_status = "local_docker_runtime_infrastructure_failure"
                 disposition = "incomplete"
                 anomalies = ["evaluator_timeout"]
+            elif evaluator.infrastructure_failure:
+                execution_status = "local_docker_runtime_infrastructure_failure"
+                disposition = "incomplete"
+                anomalies = ["azure_evaluator_infrastructure_failure"]
             elif evaluator.exit_code != 0 or evaluator.results is None:
                 execution_status = "returned"
                 disposition = "error"
@@ -2732,6 +3061,7 @@ def main() -> int:
         event["event_type"] in {"attempt_2_authorized", "alternate_activated"}
         for event in cell_events
     ) else 1
+    successor_gate_path = execution_root / "successor-runtime-gate.json"
     backend = build_local_execution_backend(
         root=args.root, contract=contract, live_seal=live_seal,
         work_root=execution_root / "attempts",
@@ -2739,6 +3069,17 @@ def main() -> int:
         evaluator_python=args.evaluator_python, codex_binary=args.codex_binary,
         source_codex_home=args.credential_source_codex_home,
         model_catalog=args.model_catalog, reserve_receipt=reserve_receipt,
+        successor_runtime_gate=(
+            successor_gate_path if successor_gate_path.is_file() else None
+        ),
+        azure_evaluator_state_root=(
+            execution_root.parent / "azure"
+            if successor_gate_path.is_file() else None
+        ),
+        azure_evaluator_worker=(
+            args.root.resolve() / "scripts" / "azure_prediction_worker.py"
+            if successor_gate_path.is_file() else None
+        ),
     )
     result = execute_one_attempt(
         backend=backend, contract=contract, private_pool=private_pool,

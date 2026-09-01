@@ -33,6 +33,7 @@ HARNESS_SOURCE_CLOSURE_SCHEMA = (
 )
 HARNESS_ENTRYPOINTS = {
     "analysis": ["python3", "-m", "engineering_scope_guard.reasoning_effort_v2_analysis"],
+    "azure_evaluator": ["python3", "scripts/azure_prediction_evaluator.py"],
     "canary_launch": ["python3", "scripts/reasoning_effort_v2_canary.py", "launch"],
     "canary_verify": ["python3", "scripts/reasoning_effort_v2_freeze.py", "verify"],
     "execute_next": ["python3", "scripts/reasoning_effort_v2_execution_adapter.py", "execute-next"],
@@ -44,6 +45,10 @@ HARNESS_ENTRYPOINTS = {
     ],
 }
 _HARNESS_CLOSURE_SEEDS = (
+    "src/engineering_scope_guard/azure_evaluator.py",
+    "src/engineering_scope_guard/launch_surface.py",
+    "src/engineering_scope_guard/runtime_lock.py",
+    "src/engineering_scope_guard/runtime_soak.py",
     "src/engineering_scope_guard/reasoning_effort_v2.py",
     "src/engineering_scope_guard/reasoning_effort_v2_analysis.py",
     "src/engineering_scope_guard/reasoning_effort_v2_terminal.py",
@@ -53,6 +58,12 @@ _HARNESS_CLOSURE_SEEDS = (
     "scripts/reasoning_effort_v2_canary.py",
     "scripts/reasoning_effort_v2_freeze.py",
     "scripts/reasoning_effort_v2_terminal.py",
+    "scripts/azure_prediction_evaluator.py",
+    "scripts/azure_prediction_worker.py",
+    "scripts/launch_surface_contract.py",
+    "scripts/launch_surface_successor_preflight.py",
+    "scripts/runtime_lock.py",
+    "scripts/runtime_stability_soak.py",
 )
 PRIOR_EVIDENCE_PATHS = (
     "docs/reports/ESG-RR-001.manifest.json",
@@ -617,6 +628,7 @@ def build_contract(
         "neither direction is presumed."
     ),
     maximum_contentless_canary_subject_invocation_starts: int = 0,
+    maximum_subject_invocation_starts: int = MAXIMUM_SUBJECT_INVOCATION_STARTS,
     subject_timeout_seconds: int = 900,
     evaluator_timeout_seconds: int = 1800,
 ) -> dict[str, Any]:
@@ -650,6 +662,14 @@ def build_contract(
         "trajectory timeouts must be positive integers",
     )
     projection = public_pool_projection(private_pool)
+    mandatory_starts = projection["primary_count"] * len(ARMS) * REPETITIONS
+    _require(
+        type(maximum_subject_invocation_starts) is int
+        and mandatory_starts + maximum_contentless_canary_subject_invocation_starts
+        <= maximum_subject_invocation_starts
+        <= MAXIMUM_SUBJECT_INVOCATION_STARTS,
+        "subject invocation cap cannot cover mandatory cells or exceeds the protocol maximum",
+    )
     if harness_source_closure is None:
         harness_source_closure = build_harness_source_closure(
             Path(__file__).resolve().parents[2]
@@ -779,7 +799,7 @@ def build_contract(
         },
         "attempt_accounting": {
             "capacity_unit": "subject_invocation_started",
-            "maximum_subject_invocation_starts": MAXIMUM_SUBJECT_INVOCATION_STARTS,
+            "maximum_subject_invocation_starts": maximum_subject_invocation_starts,
             "maximum_contentless_canary_subject_invocation_starts": (
                 maximum_contentless_canary_subject_invocation_starts
             ),
@@ -1152,7 +1172,10 @@ def validate_contract(contract: dict[str, Any]) -> None:
     canary_max = accounting["maximum_contentless_canary_subject_invocation_starts"]
     _require(
         accounting["capacity_unit"] == "subject_invocation_started"
-        and accounting["maximum_subject_invocation_starts"] == 56
+        and type(accounting["maximum_subject_invocation_starts"]) is int
+        and contract["design"]["cell_count"] + canary_max
+        <= accounting["maximum_subject_invocation_starts"]
+        <= MAXIMUM_SUBJECT_INVOCATION_STARTS
         and type(canary_max) is int and canary_max in (0, 1)
         and accounting["qualification_subject_invocation_starts"] == 0
         and accounting["maximum_attempts_per_cell"] == 2
@@ -1335,6 +1358,9 @@ def _replay_attempt_events(
     validate_contract(contract)
     cells, by_id = _cell_maps(contract)
     projection = contract["source"]["private_pool"]
+    maximum_subject_starts = contract["attempt_accounting"][
+        "maximum_subject_invocation_starts"
+    ]
     assignments = {
         item["population_slot"]: item["task_commitment_sha256"]
         for item in projection["primary_slot_commitments"]
@@ -1408,7 +1434,7 @@ def _replay_attempt_events(
                 "contentless canary maximum exceeded",
             )
             _require(
-                canary_starts + len(cells) <= 56,
+                canary_starts + len(cells) <= maximum_subject_starts,
                 "canary consumes capacity required by mandatory cells",
             )
             continue
@@ -1594,8 +1620,9 @@ def _replay_attempt_events(
                 and payload["experiment_subject_invocation_starts"] == len(subject_starts)
                 and payload["never_started_mandatory_cells"] == never_started
                 and payload["projected_subject_invocation_starts_with_reservation"] == projected
-                and payload["maximum_subject_invocation_starts"] == 56
-                and projected > 56,
+                and payload["maximum_subject_invocation_starts"]
+                == maximum_subject_starts
+                and projected > maximum_subject_starts,
                 "capacity exhaustion does not prove the frozen pre-start boundary",
             )
             if requested_attempt == 2:
@@ -1635,7 +1662,8 @@ def _replay_attempt_events(
                 for frozen in cells
             )
             _require(
-                canary_starts + len(subject_starts) + never_started <= 56,
+                canary_starts + len(subject_starts) + never_started
+                <= maximum_subject_starts,
                 "subject start would consume capacity reserved for mandatory cells",
             )
         elif event_type == "attempt_finished":
@@ -1866,18 +1894,14 @@ def subject_command_arguments(
         None,
     )
     _require(cell is not None, "subject command cell is absent from frozen schedule")
-    return [
-        codex_binary, "exec", "-", "--json", "--ephemeral", "--ignore-user-config",
-        "--ignore-rules", "--approve-for-me", "--skip-git-repo-check", "--sandbox",
-        "workspace-write", "--color", "never", "--model", contract["runtime"]["model"],
-        "--config", f'model_reasoning_effort="{cell["reasoning_effort"]}"',
-        "--config", 'web_search="disabled"', "--config",
-        "sandbox_workspace_write.network_access=false",
-        "--disable", "apps", "--disable", "plugins", "--disable", "browser_use",
-        "--disable", "in_app_browser", "--disable", "computer_use", "--disable",
-        "image_generation", "--disable", "multi_agent", "--disable", "multi_agent_v2",
-        "--disable", "skill_search",
-    ]
+    from .launch_surface import build_launch_profile, rendered_command
+
+    profile = build_launch_profile(
+        executable=codex_binary,
+        model=contract["runtime"]["model"],
+        reasoning_effort=cell["reasoning_effort"],
+    )
+    return rendered_command(profile)
 
 
 def subject_command_identity(contract: dict[str, Any], cell_id: str) -> str:
@@ -1982,7 +2006,8 @@ def validate_analysis_terminal_envelope(
         and experiment_starts >= 0
         and type(total_starts) is int
         and total_starts == canary_starts + experiment_starts
-        and total_starts <= accounting["maximum_subject_invocation_starts"] == 56,
+        and total_starts <= accounting["maximum_subject_invocation_starts"]
+        <= MAXIMUM_SUBJECT_INVOCATION_STARTS,
         "analysis subject-start accounting exceeds or differs from the frozen budget",
     )
     slots = envelope["effective_assignments"]

@@ -105,6 +105,7 @@ def observe_runtime(
         "codex_binary_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(),
         "codex_binary_bytes": binary.stat().st_size,
         "codex_binary_mode": oct(binary.stat().st_mode & 0o777),
+        "runtime_companions": _runtime_companions(binary),
         "model_catalog_path": str(catalog_path),
         "model_catalog_sha256": hashlib.sha256(catalog_raw).hexdigest(),
         "model_catalog_bytes": len(catalog_raw),
@@ -177,6 +178,18 @@ def validate_runtime_receipt(receipt: dict[str, Any]) -> None:
         raise RuntimeIdentityError("runtime environment identity drifted")
     if not {"low", "medium"}.issubset(receipt.get("supported_reasoning_efforts", [])):
         raise RuntimeIdentityError("runtime receipt lacks low or medium effort")
+    companions = receipt.get("runtime_companions")
+    if not isinstance(companions, dict):
+        raise RuntimeIdentityError("runtime companion identity is malformed")
+    for name, identity in companions.items():
+        if (
+            not isinstance(name, str)
+            or not isinstance(identity, dict)
+            or re.fullmatch(r"[0-9a-f]{64}", str(identity.get("sha256"))) is None
+            or not isinstance(identity.get("bytes"), int)
+            or not isinstance(identity.get("mode"), str)
+        ):
+            raise RuntimeIdentityError("runtime companion identity is malformed")
 
 
 def write_private_receipt(path: Path, receipt: dict[str, Any]) -> None:
@@ -195,6 +208,20 @@ def write_private_receipt(path: Path, receipt: dict[str, Any]) -> None:
 def _version(binary: Path) -> str:
     result = subprocess.run([str(binary), "--version"], check=True, capture_output=True, text=True)
     return result.stdout.strip()
+
+
+def _runtime_companions(binary: Path) -> dict[str, dict[str, Any]]:
+    companions: dict[str, dict[str, Any]] = {}
+    for name in ("codex-code-mode-host",):
+        path = binary.parent / name
+        if path.exists():
+            resolved = path.resolve(strict=True)
+            companions[name] = {
+                "sha256": hashlib.sha256(resolved.read_bytes()).hexdigest(),
+                "bytes": resolved.stat().st_size,
+                "mode": oct(resolved.stat().st_mode & 0o777),
+            }
+    return companions
 
 
 def _environment() -> dict[str, str]:

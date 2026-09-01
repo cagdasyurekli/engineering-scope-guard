@@ -2494,3 +2494,99 @@ this program.
 terminal persistence and merge, but not any third stability launch, retry,
 successor experiment, or external distribution. Any such work requires a new
 explicit program authorization.
+
+---
+
+## D-075 — Authorize a launch-surface-locked successor without changing the question
+
+**Decision:** Treat the user-authorized Launch-Surface-Locked Reasoning-Effort
+Experiment as a separate prospective program. Reuse the D-069 qualified,
+outcome-blind population only after its sealed provenance is revalidated. Keep
+the D-073 research question, primary external acceptance outcome, two native
+LOW/MEDIUM arms, two repetitions, cluster-level interpretation, balanced
+schedule, retry classifications, analysis ordering, and claims restrictions.
+Select the first ten eligible independent clusters as primaries and the next
+four as alternates. Freeze 40 mandatory cells and an absolute maximum of 48 new
+coding-task subject attempts.
+
+**Launch-surface repair:** Replace the predecessor's opaque command assembly
+with self-hashed structured argv profiles. The exact D-074 conflict was the
+combination of mutually exclusive `--approve-for-me` and `--sandbox`. The
+successor uses the pinned CLI's native `--approve-for-me` workspace-write mode
+without a redundant explicit sandbox flag. LOW and MEDIUM profiles must have a
+deterministic treatment-only diff. A material profile repair after successor
+freeze terminates the experiment rather than changing the running contract.
+
+**Prospective diagnostics and runtime:** Permit no more than four contentless
+provider launches before freeze, with at most two launches per arm and no
+repeat after that arm passes. These launches establish provider reachability
+and stable termination only; they are not coding-task attempts or efficacy
+evidence. Pin one experiment-local Codex bundle, its required companion,
+observable model catalog, config/tool surface, and launch profiles. Revalidate
+the complete runtime and arm-specific profile immediately before every subject
+release and persist the sentinel receipt. Observable drift stops before launch.
+
+**Evaluator and readiness boundary:** Cell 1 remains unauthorized until both
+contentless arms pass, the 16-cluster provenance is intact, the evaluator
+source and worker identities are pinned, the corrected independent campaign
+clock passes, one Azure task create/execute/receipt/cleanup path is
+deterministically operational, no separate Batch workload is active, the
+current Codex quota snapshot has adequate operational headroom, canonical
+repository health is revalidated, and no scientific-integrity defect remains.
+Azure evaluator receipts must retain task, evaluator, worker/image, elapsed,
+exit, timeout/retry, infrastructure, and zero-compute evidence. A separate
+future-reserve workstream's task outcomes never affect selection.
+
+**Quota interpretation:** The Codex API exposes percentage headroom rather
+than a guaranteed count of coding-task starts. Prospectively require at least
+75% observable weekly headroom, no reached-limit state, and no spend-control
+block immediately before freeze. Record this as an operational readiness gate,
+not a guarantee that every variable-duration cell will fit.
+
+**Status:** Terminal successor. Three contentless launches were used:
+one LOW launch exposed a missing pinned companion before provider contact, the
+bundle was repaired once before freeze, and one LOW plus one MEDIUM launch then
+passed with stable runtime/profile receipts. This is infrastructure evidence
+only. All readiness gates later passed and the contract froze, but the first
+cell's pre-subject revalidation stopped before subject or evaluator launch as
+recorded in D-076.
+
+---
+
+## D-076 — Terminate the launch-surface-locked successor on pre-subject package-set drift
+
+**Decision:** Preserve the frozen 40-cell successor contract and its single
+zero-subject attempt receipt, stop the remaining schedule, and classify the
+program as `EXPERIMENT INVALID / TERMINATED`. Do not repair the evaluator
+environment, rerun cell 1, activate an alternate, or start another experiment.
+
+**Reason:** The 12-gate manifest passed and contract freeze completed. During
+the first cell's stronger pre-subject source revalidation, the executable,
+Python `3.12.13`, evaluator modules, evaluator revision, RepoLaunch revision,
+dataset hashes, and repository source trees matched the qualified identity, but
+the complete evaluator Python package-set SHA-256 differed. The separate
+Azure-readiness virtual environment was therefore not byte-for-byte equivalent
+to the frozen evaluator-stable qualification environment. This is a material
+post-freeze source/runtime identity defect and a mandatory batch stop, not a
+retryable infrastructure condition.
+
+**Scientific boundary:** The ledger contains one durable attempt reservation
+and one terminal prelaunch receipt, but zero coding-task subject starts, zero
+evaluator starts, zero admissible cells, 39 missing cells, and no LOW/MEDIUM
+outcome. The qualified population remains historical infrastructure evidence;
+it does not supply treatment evidence. ESG-RR-002 is not justified, and no
+ESG-RR-002 Release is permitted.
+
+**Infrastructure boundary:** Azure readiness demonstrated one successful
+provider-free evaluator task after prospective worker corrections. At terminal,
+the successor's jobs and pool were deleted and account readbacks returned pools
+`[]`, jobs `[]`, and zero active nodes. Cost remains an upper-bound estimate,
+not a billing claim. The separately authorized future-reserve workstream was
+paused during successor use and released only after the zero-compute readback.
+
+**Authorization boundary:** The current request authorizes the public-safe
+terminal-record branch, PR, required checks, and squash merge. It does not
+authorize repairing and rerunning this contract, a second experiment,
+confirmatory execution, ESG-RR-002 publication, a Release, or social/external
+distribution. Any new experiment is the exactly one next authorization
+boundary.

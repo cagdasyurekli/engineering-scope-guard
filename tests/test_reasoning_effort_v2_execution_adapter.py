@@ -181,6 +181,18 @@ class FakeBackend:
 
 
 class ReasoningEffortV2ExecutionAdapterTests(unittest.TestCase):
+    def test_evaluator_executable_preserves_virtualenv_symlink_path(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / "python-target"
+            target.write_bytes(b"python")
+            target.chmod(0o700)
+            entry = root / "venv" / "bin" / "python"
+            entry.parent.mkdir(parents=True)
+            entry.symlink_to(target)
+            self.assertEqual(adapter.evaluator_executable(entry), entry.absolute())
+            self.assertNotEqual(adapter.evaluator_executable(entry), entry.resolve())
+
     def setUp(self) -> None:
         """Keep adapter behavior tests independent of the CI host's free disk."""
 
@@ -1560,7 +1572,7 @@ class ReasoningEffortV2ExecutionAdapterTests(unittest.TestCase):
                 return resolved_row if mode == "resolve" else {"prompt": "fixture"}
 
             def run_command(command: list[str], **kwargs: object) -> SimpleNamespace:
-                if command[:2] == [str(evaluator_python.resolve()), "-c"]:
+                if command[:2] == [str(adapter.evaluator_executable(evaluator_python)), "-c"]:
                     output_path = Path(command[-1])
                     output_path.parent.mkdir(parents=True, exist_ok=True)
                     row = {**resolved_row, "docker_image": frozen_task["resolved_image"]}
@@ -1582,7 +1594,7 @@ class ReasoningEffortV2ExecutionAdapterTests(unittest.TestCase):
                     flags = " ".join(
                         [
                             "--json", "--ephemeral", "--ignore-user-config", "--ignore-rules",
-                            "--approve-for-me", "--skip-git-repo-check", "--sandbox", "--model",
+                            "--approve-for-me", "--skip-git-repo-check", "--color", "--model",
                             "--config", "--disable",
                         ]
                     )

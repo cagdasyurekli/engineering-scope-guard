@@ -137,6 +137,14 @@ class ReasoningEffortV2FreezeTests(unittest.TestCase):
     def _authority(self) -> dict:
         return json.loads((self.execution_root / "canary-authority.json").read_text())
 
+    def test_external_private_gate_does_not_require_execution_authority(self) -> None:
+        path = self.local / "external-gate.json"
+        _canonical(path, {"status": "pass"})
+        self.assertEqual(
+            freeze_layer._canonical_private_read(path, "external gate"),
+            {"status": "pass"},
+        )
+
     def _canary(self, *, events: list[dict] | None = None) -> dict:
         authority = self._authority()
         lifecycle_path = self.execution_root / "canary-ledger.jsonl"

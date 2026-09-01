@@ -588,6 +588,86 @@ def _require_no_symlink_descent(root: Path, relative: Path, label: str) -> Path:
     return resolved
 
 
+def _qualification_selection_for_pool(
+    receipt: dict[str, Any], private_pool: dict[str, Any]
+) -> dict[str, Any]:
+    terminal = receipt.get("selection")
+    _require(isinstance(terminal, dict), "qualification terminal selection is absent")
+    available = [*terminal["primary"], *terminal["alternates"]]
+    used_slots: set[int] = set()
+
+    def match(task: dict[str, Any]) -> dict[str, Any]:
+        matches = [
+            item for item in available
+            if item["slot"] not in used_slots
+            and task["task_id"] == item["instance_id"]
+            and task["repository"] == item["repo"]
+            and task.get("resolved_image") == item["resolved_image"]
+        ]
+        _require(
+            len(matches) == 1,
+            "private-pool task is absent or ambiguous in terminal qualification",
+        )
+        used_slots.add(matches[0]["slot"])
+        return matches[0]
+
+    value = {
+        "primary": [match(task) for task in private_pool["primaries"]],
+        "alternates": [match(task) for task in private_pool["alternates"]],
+    }
+    return {**value, "population_sha256": qualification_sha256_value(value)}
+
+
+def _validate_successor_runtime_gate_binding(
+    gate: dict[str, Any], receipt: dict[str, Any], contract: dict[str, Any],
+    selection: dict[str, Any],
+) -> None:
+    _require(
+        isinstance(gate, dict)
+        and _self_hash(gate, "successor_runtime_gate_sha256")
+        and gate.get("schema_name")
+        == "engineering-scope-guard.launch-surface-successor-runtime-gate"
+        and gate.get("schema_version") == 1,
+        "successor runtime gate is malformed",
+    )
+    preflight = gate.get("preflight")
+    runtime_receipt = gate.get("runtime_receipt")
+    launch_contract = gate.get("launch_contract")
+    readiness = gate.get("final_readiness")
+    _require(
+        isinstance(preflight, dict)
+        and _self_hash(preflight, "preflight_sha256")
+        and isinstance(runtime_receipt, dict)
+        and _self_hash(runtime_receipt, "receipt_sha256")
+        and isinstance(launch_contract, dict)
+        and _self_hash(launch_contract, "contract_sha256")
+        and isinstance(readiness, dict)
+        and _self_hash(readiness, "final_readiness_sha256")
+        and preflight.get("qualification_receipt_sha256") == receipt["state_sha256"]
+        and preflight.get("primary_slots")
+        == [item["slot"] for item in selection["primary"]]
+        and preflight.get("alternate_slots")
+        == [item["slot"] for item in selection["alternates"]]
+        and preflight.get("runtime_receipt_sha256")
+        == runtime_receipt["receipt_sha256"]
+        and preflight.get("launch_surface_contract_sha256")
+        == launch_contract["contract_sha256"]
+        and gate.get("stability_state_sha256")
+        == preflight.get("stability_gate", {}).get("state_sha256")
+        and readiness.get("bindings", {}).get("preflight_sha256")
+        == preflight["preflight_sha256"]
+        and readiness.get("bindings", {}).get("runtime_receipt_sha256")
+        == runtime_receipt["receipt_sha256"]
+        and readiness.get("bindings", {}).get("launch_surface_contract_sha256")
+        == launch_contract["contract_sha256"]
+        and contract["runtime"]["runtime_identity"]
+        == runtime_receipt["receipt_sha256"]
+        and contract["runtime"]["model"] == runtime_receipt["model"]
+        and contract["runtime"]["codex_version"] == runtime_receipt["codex_version"],
+        "successor runtime gate is not bound to the frozen contract",
+    )
+
+
 def build_qualification_gate_from_receipt(
     contract: dict[str, Any],
     private_pool: dict[str, Any],
@@ -595,6 +675,7 @@ def build_qualification_gate_from_receipt(
     qualification_raw_root: Path,
     *,
     pool_reliability_audit: dict[str, Any] | None = None,
+    successor_runtime_gate: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Derive live eligibility from the actual terminal qualifier evidence."""
 
@@ -607,11 +688,9 @@ def build_qualification_gate_from_receipt(
         receipt["state_sha256"] == contract["source"]["qualification_receipt_sha256"],
         "qualification receipt identity differs from the frozen contract",
     )
-    selection = receipt["selection"]
-    _require(isinstance(selection, dict), "qualification terminal selection is absent")
+    selection = _qualification_selection_for_pool(receipt, private_pool)
     selected = [*selection["primary"], *selection["alternates"]]
     pool_tasks = [*private_pool["primaries"], *private_pool["alternates"]]
-    _require(len(selected) == len(pool_tasks), "qualification selection count differs from private pool")
     candidates = {candidate["slot"]: candidate for candidate in receipt["candidates"]}
     for task, selected_task in zip(pool_tasks, selected, strict=True):
         candidate = candidates[selected_task["slot"]]
@@ -686,8 +765,8 @@ def build_qualification_gate_from_receipt(
                 }
             )
     checks = {key: True for key in QUALIFICATION_CHECKS}
-    derived_runtime_identity = digest(receipt["runtime_observation"])
-    derived_evaluator_identity = digest(
+    historical_runtime_identity = digest(receipt["runtime_observation"])
+    historical_evaluator_identity = digest(
         {
             key: receipt["source"][key]
             for key in (
@@ -696,7 +775,25 @@ def build_qualification_gate_from_receipt(
             )
         }
     )
-    derived_source_identity = digest(receipt["source"])
+    historical_source_identity = digest(receipt["source"])
+    if successor_runtime_gate is None:
+        derived_runtime_identity = historical_runtime_identity
+        derived_evaluator_identity = historical_evaluator_identity
+        derived_source_identity = historical_source_identity
+    else:
+        _validate_successor_runtime_gate_binding(
+            successor_runtime_gate, receipt, contract, selection
+        )
+        preflight = successor_runtime_gate["preflight"]
+        runtime_receipt = successor_runtime_gate["runtime_receipt"]
+        derived_runtime_identity = runtime_receipt["receipt_sha256"]
+        derived_evaluator_identity = preflight["evaluator_identity_sha256"]
+        derived_source_identity = digest(
+            {
+                "qualification_source": receipt["source"],
+                "successor_preflight_sha256": preflight["preflight_sha256"],
+            }
+        )
     derived_image_pool_identity = digest(
         [
             {
@@ -737,6 +834,7 @@ def build_qualification_gate_from_receipt(
         "qualification_stage_receipt_count": len(stage_bindings),
         "qualification_stage_bindings": stage_bindings,
         "qualification_receipt": deepcopy(receipt),
+        "successor_runtime_gate": deepcopy(successor_runtime_gate),
         "pool_reliability_audit": reliability_audit,
         "pool_reliability_audit_sha256": reliability_audit[
             "pool_reliability_audit_sha256"
@@ -765,6 +863,7 @@ def validate_qualification_gate(
             "qualification_population_sha256", "qualification_stage_receipt_set_sha256",
             "qualification_stage_receipt_count", "qualification_stage_bindings",
             "qualification_receipt",
+            "successor_runtime_gate",
             "pool_reliability_audit", "pool_reliability_audit_sha256",
             "evaluator_identity", "image_pool_identity", "runtime_identity",
             "source_identity", "subject_invocation_starts", "checks",
@@ -777,12 +876,10 @@ def validate_qualification_gate(
     receipt = gate["qualification_receipt"]
     validate_qualifier_receipt(receipt)
     validate_pool_reliability_audit(receipt, gate["pool_reliability_audit"])
-    selection = receipt.get("selection")
-    _require(isinstance(selection, dict), "qualification gate lacks terminal selection")
+    selection = _qualification_selection_for_pool(receipt, private_pool)
     selected = [*selection["primary"], *selection["alternates"]]
     pool_tasks = [*private_pool["primaries"], *private_pool["alternates"]]
     candidates = {candidate["slot"]: candidate for candidate in receipt["candidates"]}
-    _require(len(selected) == len(pool_tasks), "qualification gate selection count drifted")
     for task, selected_task in zip(pool_tasks, selected, strict=True):
         candidate = candidates[selected_task["slot"]]
         _require(
@@ -802,15 +899,35 @@ def validate_qualification_gate(
         for selected_task in selected
         for stage in candidates[selected_task["slot"]]["stages"]
     ]
-    derived_runtime_identity = digest(receipt["runtime_observation"])
-    derived_evaluator_identity = digest({
+    historical_runtime_identity = digest(receipt["runtime_observation"])
+    historical_evaluator_identity = digest({
         key: receipt["source"][key]
         for key in (
             "evaluator_revision", "evaluator_tree_sha256", "evaluator_python",
             "embedded_repolaunch_revision", "repolaunch_tree_sha256",
         )
     })
-    derived_source_identity = digest(receipt["source"])
+    historical_source_identity = digest(receipt["source"])
+    successor_runtime_gate = gate["successor_runtime_gate"]
+    if successor_runtime_gate is None:
+        derived_runtime_identity = historical_runtime_identity
+        derived_evaluator_identity = historical_evaluator_identity
+        derived_source_identity = historical_source_identity
+    else:
+        _validate_successor_runtime_gate_binding(
+            successor_runtime_gate, receipt, contract, selection
+        )
+        preflight = successor_runtime_gate["preflight"]
+        derived_runtime_identity = successor_runtime_gate["runtime_receipt"][
+            "receipt_sha256"
+        ]
+        derived_evaluator_identity = preflight["evaluator_identity_sha256"]
+        derived_source_identity = digest(
+            {
+                "qualification_source": receipt["source"],
+                "successor_preflight_sha256": preflight["preflight_sha256"],
+            }
+        )
     derived_image_pool_identity = digest([
         {"slot": item["slot"], "resolved_image": candidates[item["slot"]]["resolved_image"]}
         for item in selected

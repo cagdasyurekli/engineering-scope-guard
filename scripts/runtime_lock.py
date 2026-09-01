@@ -13,18 +13,15 @@ from engineering_scope_guard.runtime_lock import (
     validate_runtime_receipt,
     write_private_receipt,
 )
+from engineering_scope_guard.launch_surface import build_launch_profile
 
 
 COMMAND_TEMPLATE = [
-    "exec", "--json", "--ephemeral", "--ignore-user-config", "--ignore-rules",
-    "--approve-for-me", "--skip-git-repo-check",
-    "--color", "never", "--model", "gpt-5.6-sol", "--config",
-    'model_reasoning_effort="<EFFORT>"', "--config", 'web_search="disabled"',
-    "--config", "sandbox_workspace_write.network_access=false",
-    "--disable", "apps", "--disable", "plugins", "--disable", "browser_use",
-    "--disable", "in_app_browser", "--disable", "computer_use", "--disable",
-    "image_generation", "--disable", "multi_agent", "--disable", "multi_agent_v2",
-    "--disable", "skill_search", "-",
+    'model_reasoning_effort="<EFFORT>"'
+    if item == 'model_reasoning_effort="low"' else item
+    for item in build_launch_profile(
+        executable="<CODEX_BINARY>", model="gpt-5.6-sol", reasoning_effort="low"
+    )["argv"]
 ]
 TOOL_SURFACE = {
     "external_tools": "disabled",

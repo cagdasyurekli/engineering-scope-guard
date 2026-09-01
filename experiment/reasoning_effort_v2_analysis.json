@@ -1,0 +1,1271 @@
+{
+  "acceptance": {
+    "by_arm": {
+      "low": {
+        "accepted": 0,
+        "admissible_cells": 0,
+        "rate": null
+      },
+      "medium": {
+        "accepted": 0,
+        "admissible_cells": 0,
+        "rate": null
+      }
+    },
+    "discordant_repetitions": {
+      "low_only_accepted": 0,
+      "medium_only_accepted": 0,
+      "total": 0
+    },
+    "paired_repository_clusters": null,
+    "paired_slot_differences": []
+  },
+  "analysis_input_sha256": "b7d5728dd8e01eaba27098ed8fbdeb2ac24d1d9681834e7236e17d2aa32afc1f",
+  "analysis_policy_sha256": "d3ca7e63e1c408b2a33be44c497a2c40c966175e5200b4dddf2cf0f8ba47a0a0",
+  "analysis_population": {
+    "admissible_cells": 0,
+    "complete_admissible_slots": 0,
+    "frozen_cells": 40,
+    "frozen_slots": 10,
+    "inadmissible_by_arm_and_termination": {
+      "low:runtime_or_source_identity_drift": 1
+    },
+    "missing_cells": 39,
+    "observed_cells": 1,
+    "rule": "no imputation; repository clusters are the independent bootstrap units"
+  },
+  "analysis_sha256": "fafbf97f1f97c54cfb8393f5b780341f50643d2d410e8d11c4beaa2ad2e07161",
+  "attempt_trajectory": {
+    "attempt_1_to_attempt_2_transitions": [
+      {
+        "attempt_1_attempts": 1,
+        "attempt_1_classification": "runtime_or_source_identity_drift",
+        "attempt_2_activated": 0,
+        "attempt_2_outcomes": {}
+      }
+    ],
+    "attempt_counts_by_arm": {
+      "low": {
+        "attempt_1": 1,
+        "attempt_2": 0,
+        "attempts": 1,
+        "classification_counts": {
+          "runtime_or_source_identity_drift": 1
+        }
+      },
+      "medium": {
+        "attempt_1": 0,
+        "attempt_2": 0,
+        "attempts": 0,
+        "classification_counts": {}
+      }
+    },
+    "diagnostics_by_arm": {
+      "low": {
+        "attempt_2_cache_present_complete_work_attempts": 0,
+        "attempt_2_correction_present_complete_work_attempts": 0,
+        "attempt_2_timeout_attempts": 0,
+        "cache_present_complete_work_attempts": 0,
+        "complete_work_attempts": 0,
+        "correction_present_complete_work_attempts": 0,
+        "retry_complete_work_attempts": 0,
+        "timeout_attempts": 0
+      },
+      "medium": {
+        "attempt_2_cache_present_complete_work_attempts": 0,
+        "attempt_2_correction_present_complete_work_attempts": 0,
+        "attempt_2_timeout_attempts": 0,
+        "cache_present_complete_work_attempts": 0,
+        "complete_work_attempts": 0,
+        "correction_present_complete_work_attempts": 0,
+        "retry_complete_work_attempts": 0,
+        "timeout_attempts": 0
+      }
+    },
+    "work": {
+      "cache_write_input_tokens": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "cached_input_tokens": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "correction_turns": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "fresh_input_tokens": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "input_tokens": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "output_tokens": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "reasoning_output_tokens": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "search_actions": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "tool_actions": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "turns": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      },
+      "wall_seconds": {
+        "by_arm": {
+          "low": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          },
+          "medium": {
+            "accepted_conditional_trajectory": {
+              "accepted_final_outcomes": 0,
+              "accepted_final_outcomes_with_complete_trajectory_work": 0,
+              "caveat": "descriptive post-outcome trajectory; denominator is accepted final outcomes with complete work across every attempt",
+              "complete_work_attempts_in_denominator": 0,
+              "per_accepted_final_outcome": null,
+              "total": 0.0
+            },
+            "all_attempts": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "discarded_or_infrastructure_invalid": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_only": {
+              "complete_work_attempts": 0,
+              "per_complete_work_attempt": null,
+              "total": 0.0
+            },
+            "final_record_vs_all_attempts": {
+              "all_attempt_total": 0.0,
+              "final_record_total": 0.0,
+              "incremental_retry_or_discarded_work": 0.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "claim_boundaries": {
+    "accepted_conditional_work_is_descriptive": true,
+    "equivalence_claim_permitted": false,
+    "exploratory_only": true,
+    "noninferiority_claim_permitted": false
+  },
+  "contract_sha256": "6c07336b5745a8b71bab6ce65eea00a5158c2215be40b6d1534d754ba7d3b947",
+  "esg_rr_002_usefulness": {
+    "primary_acceptance_interval": null,
+    "primary_acceptance_point_estimate": null,
+    "retry_inclusive_falsification_result": {
+      "attempt_2_activations": 0,
+      "sha256": "9aa7d47c772da6b3bc94b656ac1171963a5dae287a9566ad6e5f84cf5682c4f1"
+    },
+    "retry_inclusive_work_result": {
+      "attempts_by_arm": {
+        "low": 1,
+        "medium": 0
+      },
+      "sha256": "c53c063417fc83c02da64bfdc7a2f6b68777bb5f3951a4dc74ba9fadb9e568f3"
+    }
+  },
+  "falsification": {
+    "alternate_use_sensitivity": {
+      "activated_slot_count": 0,
+      "paired_acceptance_without_activated_slots": null
+    },
+    "cache_presence_strata": {
+      "with": {
+        "low": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        },
+        "medium": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        }
+      },
+      "without": {
+        "low": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        },
+        "medium": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        }
+      }
+    },
+    "correction_turn_presence_strata": {
+      "with": {
+        "low": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        },
+        "medium": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        }
+      },
+      "without": {
+        "low": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        },
+        "medium": {
+          "accepted": 0,
+          "cells": 0,
+          "rate": null
+        }
+      }
+    },
+    "evaluator_anomalies": {
+      "cells_with_anomalies": 1,
+      "counts_by_code": {
+        "prelaunch_source_runtime_drift": 1
+      }
+    },
+    "leave_one_repository_cluster_out": [],
+    "leave_one_slot_out": [],
+    "opposite_arm_wins": {
+      "low_only_accepted": 0,
+      "medium_only_accepted": 0
+    },
+    "repetition_disagreement": {
+      "by_arm": {
+        "low": 0,
+        "medium": 0
+      },
+      "total": 0
+    },
+    "timeout_extreme_case_bounds": null
+  },
+  "ledger_head_event_sha256": "bf71070864d9fbfcb69a316c07888912be548cb99f86951a036e1b5553221873",
+  "prior_evidence_comparison": {
+    "gate_policy_matches_prior_evidence": true,
+    "prior_evidence_gap": "prior evidence does not establish a causal LOW-versus-MEDIUM reasoning-effort effect on externally evaluated accepted outcomes",
+    "prior_evidence_sha256": "df0cd1c9b4cb0796e424dec32165534604d96e9d2f07ec2d25f611d858483d07",
+    "prospective_direct_addition": "a protocol-valid complete experiment with at least 10 independent clusters supplies the direct external-evaluator acceptance and retry-inclusive work estimate absent from prior evidence"
+  },
+  "receipt_projections_sha256": "9f37e0246ad180834c37dd03c5b246a05ca98a32b919bd90e0b5c08b5c7a858a",
+  "receipt_set_sha256": "db51b0b288fbb73d25d7a0c3475484dcd7de7230f5d552bdde1c9fba00ce3302",
+  "records_sha256": "b520e4d595fea60344ce1d62b1a50880994a330692ee252c0dc6bb39f4240b00",
+  "schedule_sha256": "7a5464dd860f9842b6cc613daf8a9608d3d49a668935aa79ba7c9919da39a529",
+  "schema_name": "engineering-scope-guard.reasoning-effort-v2-analysis",
+  "schema_version": 1,
+  "scientific_disposition": {
+    "basis": "protocol_valid was false",
+    "label": "EXPERIMENT INVALID / TERMINATED"
+  },
+  "terminal_envelope_sha256": "6ba71e97b9a3cc58b576d47c6c67997bc68353fb4a0d268a144be7accd65701b",
+  "terminal_integrity": {
+    "batch_stop_classification": "runtime_or_source_identity_drift",
+    "protocol_valid": false,
+    "stage_1_audit_sha256": null,
+    "terminal_status": "invalid_terminated"
+  },
+  "work": {
+    "cache_write_input_tokens": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "cached_input_tokens": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "correction_turns": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "fresh_input_tokens": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "input_tokens": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "output_tokens": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "reasoning_output_tokens": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "search_actions": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "tool_actions": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "turns": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    },
+    "wall_seconds": {
+      "by_arm": {
+        "low": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        },
+        "medium": {
+          "accepted_conditional": {
+            "accepted_admissible_cells_with_complete_work": 0,
+            "caveat": "descriptive post-outcome subset; not a randomized estimand",
+            "per_accepted_outcome": null,
+            "total": 0.0
+          },
+          "unconditional": {
+            "complete_work_cells": 0,
+            "per_complete_work_cell": null,
+            "total": 0.0
+          }
+        }
+      },
+      "paired_accepted_conditional": null,
+      "paired_unconditional": null
+    }
+  },
+  "work_policy_caveat": "accepted admissible cells with complete work measurements"
+}
