@@ -1,6 +1,6 @@
 {
   "allowed_actions": [
-    "merge_if_green"
+    "none"
   ],
   "current_decision": {
     "decision": "EXPERIMENT INVALID / TERMINATED",
@@ -12,22 +12,32 @@
     {
       "path": "docs/CURRENT_GOAL.md",
       "role": "terminal goal state",
-      "sha256": "d4471eacc924ff4fd70909dda2808f25a27242f7a12402c7363d5473b3640f69"
+      "sha256": "9711b9cd1b94f06a6a470e53b3ec619999c3d694b59611dc3ca0c4688c63fe0f"
     },
     {
       "path": "docs/GOAL_HISTORY.md",
       "role": "terminal history",
-      "sha256": "ca547685036939fb30aead0fe137198e6a94ab54a6fe348ae93c77cda6162484"
+      "sha256": "93b4a9ded423f290d5593ef9a8ded3355c97bbaeb5d90b8f22ee4c63bf882e8e"
     },
     {
       "path": "docs/DECISIONS.md",
-      "role": "environment lock and terminal decision",
-      "sha256": "e41337aecc777d2582c237feafd372b3cb7a708ce91d1407c29e387e92b48ad5"
+      "role": "decision and closure boundary",
+      "sha256": "e65d4709059f398d5a2d20e33a22f6e6a1634c488cd12188ac1a5e785a653e65"
     },
     {
       "path": "docs/EVALUATOR_ENVIRONMENT_LOCKED_REASONING_EFFORT_TERMINAL_REPORT.md",
       "role": "public-safe terminal report",
       "sha256": "18f2c985e97288281b10e223d9e084c7e38673b801d79542f9532a637d5bc509"
+    },
+    {
+      "path": "docs/POST_HOC_OPERATIONAL_CLOSURE_OBSERVATION.md",
+      "role": "post-hoc closure report",
+      "sha256": "497c746a63ca003ae2889befaecb587aec1e8bed8157fa1bb5183f2d86d6a8b6"
+    },
+    {
+      "path": "experiment/post_hoc_operational_closure_observation.json",
+      "role": "self-hashed post-hoc receipt",
+      "sha256": "52ddd3d6cbdaaa68d84ecdf4b490f3ee5218e39f377b1d1bdd5383f4a2f68d7a"
     }
   ],
   "experimental_state": {
@@ -94,35 +104,36 @@
   ],
   "git": {
     "base_branch": "main",
-    "branch": "codex/evaluator-environment-locked-reasoning-effort-2026-09-01",
+    "branch": "codex/canonical-closure-sync-2026-09-03-01a0668f",
     "head_sha": null,
     "head_sha_semantics": "omitted_to_avoid_self_reference",
-    "pr_number": 4,
-    "pr_url": "https://github.com/cagdasyurekli/engineering-scope-guard/pull/4"
+    "pr_number": null,
+    "pr_url": null
   },
   "goal": {
-    "completed_at": "2026-09-01T09:33:14Z",
-    "decision": "EXPERIMENT INVALID / TERMINATED",
-    "name": "Evaluator-Environment-Locked Reasoning-Effort Experiment",
-    "status": "abandoned"
+    "completed_at": "2026-09-03T09:53:48Z",
+    "decision": "CANONICAL OPERATIONAL CLOSURE SYNCHRONIZED",
+    "name": "Canonical Closure Synchronization",
+    "status": "complete"
   },
   "next_action": {
-    "authorization": "explicit_current_request",
-    "kind": "merge_if_green",
-    "reason": "Squash-merge PR 4 only after every required CI and CodeQL check passes; do not start another experiment.",
-    "requires_explicit_user_authorization": true,
-    "safe_without_explicit_authorization": false
+    "authorization": "not_authorized",
+    "kind": "none",
+    "reason": "Closure is terminal; no experiment or successor is authorized.",
+    "requires_explicit_user_authorization": false,
+    "safe_without_explicit_authorization": true
   },
   "notes": [
-    "13/15 gates passed; quota and reserve gates failed. Zero starts and experiment compute."
+    "Evaluator experiment remains terminal with zero starts and admissible cells.",
+    "Reserve observation is post-hoc; cause, cleanup time, and automation history are unverified. Runner reuse is not authorized."
   ],
   "repository": "cagdasyurekli/engineering-scope-guard",
   "schema_version": "1",
   "verification": {
     "ci_required": true,
-    "ci_status": "derive_from_pr",
+    "ci_status": "pending_pr",
     "codeql_required": true,
-    "codeql_status": "derive_from_pr",
-    "tests_passed": 588
+    "codeql_status": "pending_pr",
+    "tests_passed": 589
   }
 }
