@@ -18,6 +18,7 @@ from engineering_scope_guard.agent_handoff import (
 ROOT = Path(__file__).resolve().parents[1]
 HANDOFF = ROOT / "experiment/agent_handoff.json"
 SCHEMA = ROOT / "experiment/agent_handoff.schema.json"
+POST_HOC_RECEIPT = ROOT / "experiment/post_hoc_operational_closure_observation.json"
 
 
 class AgentHandoffTests(unittest.TestCase):
@@ -33,7 +34,7 @@ class AgentHandoffTests(unittest.TestCase):
         )
         self.assertEqual(
             value["goal"]["decision"],
-            "EXPERIMENT INVALID / TERMINATED",
+            "CANONICAL OPERATIONAL CLOSURE SYNCHRONIZED",
         )
         state = value["experimental_state"]
         self.assertEqual(state["terminal"]["path"], "pre_subject_integrity_stop")
@@ -46,16 +47,25 @@ class AgentHandoffTests(unittest.TestCase):
         self.assertEqual(state["execution"]["completed_cells"], 0)
         self.assertEqual(state["execution"]["missing_cells"], 0)
         self.assertIn(value["next_action"]["kind"], value["allowed_actions"])
-        self.assertTrue(value["next_action"]["requires_explicit_user_authorization"])
-        self.assertEqual(value["next_action"]["authorization"], "explicit_current_request")
-        self.assertIn(value["next_action"]["kind"], {"persist_and_merge", "merge_if_green"})
-        self.assertFalse(value["next_action"]["safe_without_explicit_authorization"])
+        self.assertFalse(value["next_action"]["requires_explicit_user_authorization"])
+        self.assertEqual(value["next_action"]["authorization"], "not_authorized")
+        self.assertEqual(value["next_action"]["kind"], "none")
+        self.assertTrue(value["next_action"]["safe_without_explicit_authorization"])
+        self.assertEqual(value["allowed_actions"], ["none"])
         self.assertIn(value["verification"]["ci_status"], {"pending_pr", "derive_from_pr"})
         self.assertTrue(value["verification"]["codeql_required"])
         self.assertIn(value["verification"]["codeql_status"], {"pending_pr", "derive_from_pr"})
         self.assertNotIn("run_authorized_goal", value["allowed_actions"])
         self.assertIn("run_exploratory_experiment", value["forbidden_actions"])
         self.assertIn("run_confirmatory_experiment", value["forbidden_actions"])
+        self.assertNotEqual(value["git"]["pr_number"], 4)
+        self.assertTrue(
+            any(
+                item["path"]
+                == "experiment/post_hoc_operational_closure_observation.json"
+                for item in value["evidence"]
+            )
+        )
         self.assertIsInstance(value["git"]["pr_number"], (int, type(None)))
         for evidence in value["evidence"]:
             self.assertTrue((ROOT / evidence["path"]).is_file())
@@ -72,6 +82,39 @@ class AgentHandoffTests(unittest.TestCase):
         for evidence in value["evidence"]:
             blob = (ROOT / evidence["path"]).read_bytes()
             self.assertEqual(hashlib.sha256(blob).hexdigest(), evidence["sha256"])
+
+    def test_post_hoc_closure_receipt_is_bounded_self_hashed_and_outcome_blind(self) -> None:
+        value = json.loads(POST_HOC_RECEIPT.read_text(encoding="utf-8"))
+        expected = value.pop("receipt_sha256")
+        canonical = json.dumps(
+            value,
+            sort_keys=True,
+            separators=(",", ":"),
+            ensure_ascii=False,
+        ).encode("utf-8")
+
+        self.assertEqual(hashlib.sha256(canonical).hexdigest(), expected)
+        self.assertTrue(value["post_hoc"])
+        self.assertTrue(value["outcome_blind"])
+        checkpoint = value["campaign_checkpoint_observation"]
+        self.assertEqual(checkpoint["target_record_count"], 50)
+        self.assertEqual(checkpoint["completed_record_count"], 21)
+        self.assertIsNone(checkpoint["last_segment_terminal_zero_state"])
+        self.assertEqual(checkpoint["terminal_stop_reason"], "unverified")
+        azure = value["azure_inventory_observation"]
+        self.assertEqual(azure["pools"], [])
+        self.assertEqual(azure["jobs"], [])
+        self.assertEqual(azure["dedicated_nodes"], 0)
+        self.assertEqual(azure["low_priority_nodes"], 0)
+        self.assertEqual(
+            value["monitoring_automation_observation"]["current_presence"],
+            "unverified",
+        )
+        self.assertFalse(value["runner_reuse_observation"]["reuse_authorized"])
+        serialized = POST_HOC_RECEIPT.read_text(encoding="utf-8")
+        self.assertNotIn("/Users/", serialized)
+        self.assertNotIn("instance_id", serialized)
+        self.assertNotIn("task_id", serialized)
 
     def test_portable_schema_is_valid_json_and_rejects_additional_properties(self) -> None:
         schema = json.loads(SCHEMA.read_text(encoding="utf-8"))

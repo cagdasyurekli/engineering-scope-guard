@@ -1691,3 +1691,44 @@ successor requires a new explicit authorization.
 - `experiment/evaluator_environment_locked_reasoning_effort_terminal_result.json`
 
 ---
+
+# Canonical Closure Synchronization
+
+**Status:** complete
+
+**Completed:** 2026-09-03
+
+### Goal
+
+Synchronize the public repository's canonical handoff with merged PR #4 and a
+separate, explicitly post-hoc operational observation.
+
+### Evidence
+
+- Public `main` and PR #4 both resolved to
+  `376a90171c0ecdd05e7291a62add2d28d452fe6b` before the closure change.
+- The private aggregate checkpoint source was bound by SHA-256 and observed as
+  21 durable records out of a target 50. Its final `terminal_zero_state`
+  remains `null`; historical stop cause is `unverified`.
+- A separate read-only Azure observation returned zero pools, jobs, dedicated
+  nodes, and low-priority nodes during the recorded UTC window.
+- Automation current presence and deletion history remain `unverified` because
+  no independently listable current inventory was available.
+- No verified frozen runner identity supporting reuse was found in the stated
+  evidence scope, so reuse was not authorized. This is not an absolute
+  nonexistence claim.
+
+### Decision
+
+Record the observation as operational and outcome-blind, retain the existing
+Evaluator-Environment-Locked scientific decision unchanged, and set the
+canonical next action to `none`. No experiment, subject, evaluator, or
+successor program was started. A new program requires separate explicit user
+authorization.
+
+### Evidence files
+
+- `docs/POST_HOC_OPERATIONAL_CLOSURE_OBSERVATION.md`
+- `experiment/post_hoc_operational_closure_observation.json`
+
+---

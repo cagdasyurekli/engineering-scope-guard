@@ -1,0 +1,75 @@
+{
+  "azure_inventory_observation": {
+    "cleanup_completion_time": "unverified",
+    "dedicated_nodes": 0,
+    "jobs": [],
+    "low_priority_nodes": 0,
+    "observed_from_utc": "2026-09-03T09:52:29Z",
+    "observed_through_utc": "2026-09-03T09:52:38Z",
+    "pools": [],
+    "record_type": "post-hoc read-only Azure Batch inventory observation"
+  },
+  "campaign_checkpoint_observation": {
+    "completed_record_count": 21,
+    "count_semantics": "durable aggregate checkpoint records; not a claim of scientific admissibility, success, or treatment outcome",
+    "last_segment_terminal_zero_state": null,
+    "record_type": "private aggregate outcome-blind campaign checkpoint",
+    "source_created_at_utc": "2026-09-01T00:18:13.454620+00:00",
+    "source_file_name": "first50-campaign.json",
+    "source_file_sha256": "08cb69435079a1eb79fc8b9cd6a64a0c86cc39ae417a79a7b8046238f4d1f652",
+    "target_record_count": 50,
+    "terminal_stop_reason": "unverified"
+  },
+  "created_at_utc": "2026-09-03T09:53:48Z",
+  "execution_accounting": {
+    "evaluator_started_by_closure": false,
+    "experiment_started_by_closure": false,
+    "subject_started_by_closure": false,
+    "successor_program_started_by_closure": false
+  },
+  "limitations": [
+    "This post-hoc observation does not amend or complete the original campaign checkpoint.",
+    "The historical terminal cause is unverified; no cost-limit or time-limit causation is asserted.",
+    "The Azure observation proves only the aggregate state during its stated observation window, not when cleanup completed.",
+    "The checkpoint count is not evidence that any record was scientifically admissible or successful.",
+    "Automation deletion time and actor are unverified.",
+    "No absolute claim is made that a reusable runner does not exist."
+  ],
+  "monitoring_automation_observation": {
+    "current_presence": "unverified",
+    "deletion_actor": "unverified",
+    "deletion_time": "unverified",
+    "reason": "no independently listable current automation inventory was available for this closure observation"
+  },
+  "outcome_blind": true,
+  "post_hoc": true,
+  "receipt_sha256": "b3024fd446876a83cfbc1da37b2d6f5b2bb62792f89c8b122a2d4dacd2c837cf",
+  "receipt_sha256_algorithm": "SHA-256 of the UTF-8 canonical JSON payload with receipt_sha256 omitted, keys sorted, and separators ',' and ':'",
+  "repository_observation": {
+    "public_main_sha": "376a90171c0ecdd05e7291a62add2d28d452fe6b",
+    "pull_request_4_merge_sha": "376a90171c0ecdd05e7291a62add2d28d452fe6b",
+    "pull_request_4_merged": true,
+    "record_type": "live public GitHub repository observation"
+  },
+  "runner_reuse_observation": {
+    "absolute_nonexistence_claim": false,
+    "observation": "no verified frozen runner identity supporting reuse was found within the inspected evidence scope",
+    "reuse_authorized": false,
+    "searched_evidence": [
+      {
+        "identity": "376a90171c0ecdd05e7291a62add2d28d452fe6b",
+        "record_type": "public repository main commit"
+      },
+      {
+        "identity": "08cb69435079a1eb79fc8b9cd6a64a0c86cc39ae417a79a7b8046238f4d1f652",
+        "record_type": "private aggregate campaign checkpoint SHA-256"
+      },
+      {
+        "identity": "ff7a961489c1c5340fe5e5909a8a999604601ee47505cb45d20f2807368cb6cf",
+        "record_type": "future-reserve protocol file SHA-256"
+      }
+    ]
+  },
+  "schema_name": "engineering-scope-guard.post-hoc-operational-closure-observation",
+  "schema_version": 1
+}

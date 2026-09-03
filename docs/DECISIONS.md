@@ -2590,6 +2590,31 @@ authorize repairing and rerunning this contract, a second experiment,
 confirmatory execution, ESG-RR-002 publication, a Release, or social/external
 distribution. Any new experiment is the exactly one next authorization
 boundary.
+
+---
+
+## D-077 — Synchronize canonical closure with a post-hoc operational observation
+
+**Decision:** Preserve the Evaluator-Environment-Locked terminal scientific
+record unchanged and add one separate outcome-blind operational receipt. The
+receipt binds the aggregate reserve checkpoint by SHA-256, records its 21 of 50
+durable records without interpreting them as admissible or successful, and
+retains the checkpoint's final `terminal_zero_state` as `null`.
+
+**Observation boundary:** A new read-only Azure inventory observation may state
+only the pools, jobs, and node counts seen during its recorded UTC window. It
+does not establish when cleanup completed. The historical campaign stop cause,
+automation current presence and deletion history remain `unverified`. Absence
+of a verified frozen runner identity supporting reuse in the inspected scope
+means reuse is not authorized; it does not establish absolute nonexistence.
+
+**Authority boundary:** Remove the completed PR #4 `merge_if_green` action from
+the canonical handoff and set the next action to `none`. This closure starts no
+experiment, subject, evaluator, or successor program. Any new program requires
+separate explicit user authorization.
+
+---
+
 # 2026-09-01: Prospectively lock evaluator environments before any new reasoning-effort freeze
 
 **Decision:** Treat the user-authorized evaluator-environment-locked program as
