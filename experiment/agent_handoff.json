@@ -107,8 +107,8 @@
     "branch": "codex/canonical-closure-sync-2026-09-03-01a0668f",
     "head_sha": null,
     "head_sha_semantics": "omitted_to_avoid_self_reference",
-    "pr_number": null,
-    "pr_url": null
+    "pr_number": 5,
+    "pr_url": "https://github.com/cagdasyurekli/engineering-scope-guard/pull/5"
   },
   "goal": {
     "completed_at": "2026-09-03T09:53:48Z",
@@ -131,9 +131,9 @@
   "schema_version": "1",
   "verification": {
     "ci_required": true,
-    "ci_status": "pending_pr",
+    "ci_status": "derive_from_pr",
     "codeql_required": true,
-    "codeql_status": "pending_pr",
+    "codeql_status": "derive_from_pr",
     "tests_passed": 589
   }
 }
